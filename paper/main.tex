@@ -2,14 +2,15 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{booktabs,graphicx,amsmath,amssymb,microtype,xcolor,caption}
 \usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
 \input{numbers}
 \newcommand{\TK}[1]{\textcolor{red}{[TK: #1]}}
 \captionsetup{font=small,labelfont=bf}
 \renewcommand{\arraystretch}{1.05}
+\emergencystretch=3em
 
-\title{Accuracy, Calibration and Script Robustness of Decision Models on Bengali:\\
-A Zero-Shot Benchmark with Hand-Written Romanization}
+\title{Decision Models on Bengali:\\Accuracy, Calibration and Script Robustness\\with Hand-Written Romanization}
 \author{Ismail Hossain Polas\\Jahangirnagar University\\\texttt{ismailhossainpolash@gmail.com}}
 \date{\today}
 
@@ -55,15 +56,15 @@ Script robustness has been studied for generative models only \citep{khullar2025
 For calibration and selective prediction I use the standard measures \citep{guo2017calibration,geifman2017selective}; the option-rotation test follows \citet{zheng2024selectors}.
 The tasks are Belebele \citep{bandarkar2023belebele}, SIB-200 \citep{adelani2023sib200}, MASSIVE \citep{fitzgerald2022massive}, SentNoB \citep{islam2021sentnob} and the Bengali translation of XNLI.
 \begin{table}[t]
-\centering\small
-\begin{tabular}{@{}lccccc@{}}\toprule
+\centering\footnotesize
+\resizebox{\linewidth}{!}{\begin{tabular}{@{}lccccc@{}}\toprule
 Study & Decision models & Bengali & Romanized & Calibration & Hand-written text \\\midrule
 \citet{deusser2026jev} & Jev only & per-language file & Belebele, SIB-200 & yes & no \\
 \citet{wang2026chinesejev} & trained model & no & no & yes & no \\
 \citet{khullar2025scriptgap} & no & no & tool-made & routing only & no \\
 \citet{jawad2026fivedialects} & no & dialects & tool-made & no & no \\
 This paper & 9 models & 5 tasks & rule, natural-style, hand & yes & 877 items \\
-\bottomrule\end{tabular}
+\bottomrule\end{tabular}}
 \caption{What each closest study covers, from reading the papers. A ``no'' means the paper does not report it.}
 \label{tab:gap}
 \end{table}
@@ -130,7 +131,7 @@ Laya-multilingual's SentNoB score also depends on the wording of the question: m
 \begin{table}[t]
 \centering\footnotesize
 \input{tables/tab_flash_subset}
-\caption{d3-flash (4-bit) and Jev on the same hash-ordered subset (\flashNmin{} to \flashNmax{} items per task); romanized in brackets. $^\dagger$4-bit quantization of the 9B checkpoint.}
+\caption{d3-flash (4-bit) and Jev on the same hash-ordered subset (\flashNmin{} to \flashNmax{} items per task); romanized in brackets. d3-flash is the 9B checkpoint in 4-bit quantization.}
 \label{tab:flash}
 \end{table}
 \begin{figure}[t]
@@ -157,7 +158,7 @@ The order of models barely moves. Kendall $\tau$ between the hand-written orderi
 \begin{table}[t]
 \centering\footnotesize
 \resizebox{\linewidth}{!}{\input{tables/tab_human}}
-\caption{Accuracy on the \nHuman{} hand-written items (pooled over MASSIVE, SentNoB and XNLI-bn pairs; accuracy for all three) and paired differences with 95\% bootstrap intervals over items. $^\dagger$d3-flash is 4-bit. $^\ddagger$Julia-1 answers only the \julianHuman{} items it can take.}
+\caption{Accuracy on the \nHuman{} hand-written items (pooled over MASSIVE, SentNoB and XNLI-bn pairs; plain accuracy, SentNoB included) and paired differences with 95\% bootstrap intervals over items. $^\dagger$d3-flash is 4-bit. $^\ddagger$Julia-1 answers only the \julianHuman{} items it can take.}
 \label{tab:human}
 \end{table}
 \begin{figure}[t]

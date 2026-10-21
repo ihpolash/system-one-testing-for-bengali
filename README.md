@@ -1,6 +1,6 @@
 # System One decision models on Bengali
 
-Code, result tables and hand-written Banglish for my preprint *Accuracy, Calibration and Script Robustness of Decision Models on Bengali: A Zero-Shot Benchmark with Hand-Written Romanization* (Ismail Hossain Polas, Jahangirnagar University, ismailhossainpolash@gmail.com).
+Code, result tables and hand-written Banglish for my preprint *Decision Models on Bengali: Accuracy, Calibration and Script Robustness with Hand-Written Romanization* (Ismail Hossain Polas, Jahangirnagar University, ismailhossainpolash@gmail.com).
 
 I tested one hosted decision model (Jev) and eight open ones on five Bengali tasks, in Bengali script and in Latin letters, and compared tool-made romanization with Banglish I wrote by hand.
 
@@ -13,7 +13,7 @@ I tested one hosted decision model (Jev) and eight open ones on five Bengali tas
 
 ## What you can rerun
 - `make test` runs the unit tests.
-- `make audit` recomputes the headline numbers from the committed tables and checks them against `paper/numbers.tex`. `make paper` compiles the PDF from the committed source. Both work from a fresh clone.
+- Install `pip install -r requirements.txt` first. `make audit` recomputes the headline numbers from the committed tables and checks them against `paper/numbers.tex`. `make paper` compiles the PDF from the committed source. Both work from a fresh clone.
 - `make collect tables figures` rebuild `analysis/tables/`, the LaTeX tables and the figures from the raw model outputs. Those outputs (`runs/`, the Jev response cache, the 288 MB item file) are not published: Jev's raw responses fall under the provider's terms, and the open-model outputs are large. They are available from the author on request.
 - Running the models again needs a TypeSafe API key for Jev (`TYPESAFE_API_KEY`) and a Kaggle GPU for the open ones (`kaggle/`).
 
