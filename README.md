@@ -14,7 +14,7 @@ I tested one hosted decision model (Jev) and eight open ones on five Bengali tas
 ## What you can rerun
 - `make test` runs the unit tests.
 - Install `pip install -r requirements.txt` first. `make audit` recomputes the headline numbers from the committed tables and checks them against `paper/numbers.tex`. `make paper` compiles the PDF from the committed source. Both work from a fresh clone.
-- `make collect tables figures` rebuild `analysis/tables/`, the LaTeX tables and the figures from the raw model outputs. Those outputs (`runs/`, the Jev response cache, the 288 MB item file) are not published: Jev's raw responses fall under the provider's terms, and the open-model outputs are large. They are available from the author on request.
+- `make collect tables figures` rebuild `analysis/tables/`, the LaTeX tables and the figures from the raw model outputs. Those outputs (`runs/`, the Jev response cache, the 288 MB item file) are not published: Jev's raw responses fall under the provider's terms, and the open-model outputs are large.
 - Running the models again needs a TypeSafe API key for Jev (`TYPESAFE_API_KEY`) and a Kaggle GPU for the open ones (`kaggle/`).
 
 ## Licence
