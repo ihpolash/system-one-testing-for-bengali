@@ -1,11 +1,21 @@
 # System One decision models on Bengali
 
-Code, result tables and hand-written Banglish for the preprint *Accuracy, Calibration and Script Robustness of Decision Models on Bengali: A Zero-Shot Benchmark with Hand-Written Romanization* (Ismail Hossain Polas, Jahangirnagar University).
+Code, result tables and hand-written Banglish for my preprint *Accuracy, Calibration and Script Robustness of Decision Models on Bengali: A Zero-Shot Benchmark with Hand-Written Romanization* (Ismail Hossain Polas, Jahangirnagar University, ismailhossainpolash@gmail.com).
 
-- `harness/` fork of [jev-benchmarking](https://github.com/AppliedMachineLearning-Lab/jev-benchmarking) (MIT, Deußer et al.) with Bengali tasks, romanization variants and adapters for the open models.
-- `analysis/` metrics, tables and figures (`make_tables.py`, `make_figures.py`); `analysis/tables/` holds the result tables the paper is generated from.
-- `paper/` LaTeX source, generated tables, figures and `numbers.tex`.
-- `data/banglish_human_release.csv` the author's corrected Bengali and hand-written Banglish for the MASSIVE and XNLI-bn sentences. SentNoB (CC-BY-ND) text and its Banglish are not included; `data/freeze_splits.py` rebuilds the splits from the public datasets.
-- `Makefile` targets: `test`, `data`, `tables`, `figures`, `paper`. Model inference is not included: Jev needs an API key (`TYPESAFE_API_KEY`), and the open models were run on Kaggle GPUs. Raw Jev responses and item-level predictions are not redistributed.
+I tested one hosted decision model (Jev) and eight open ones on five Bengali tasks, in Bengali script and in Latin letters, and compared tool-made romanization with Banglish I wrote by hand.
 
-Code is MIT-licensed (see `LICENSE`). The Banglish file is CC BY 4.0 and inherits the licences of the source datasets (MASSIVE CC BY 4.0; XNLI-bn CC BY-NC-SA).
+## Layout
+- `paper/` LaTeX source, figures, generated tables and `numbers.tex`. `main.pdf` is built with `tectonic`.
+- `analysis/` metrics, table and figure scripts. `analysis/tables/` holds the result tables the paper is generated from. `audit_numbers.py` recomputes the headline numbers independently of the table script.
+- `harness/` my fork of [jev-benchmarking](https://github.com/AppliedMachineLearning-Lab/jev-benchmarking) (MIT, Deußer et al.), with the Bengali tasks, the romanization variants and adapters for the open models.
+- `kaggle/` the kernel scripts that ran the open models on Kaggle GPUs.
+- `data/banglish_human_release.csv` my corrected Bengali and hand-written Banglish for the MASSIVE and XNLI-bn sentences. SentNoB is CC-BY-ND, so its text and the Banglish of its sentences are not included. `data/freeze_splits.py` rebuilds the splits from the public datasets.
+
+## What you can rerun
+- `make test` runs the unit tests.
+- `make audit` recomputes the headline numbers from the committed tables and checks them against `paper/numbers.tex`. `make paper` compiles the PDF from the committed source. Both work from a fresh clone.
+- `make collect tables figures` rebuild `analysis/tables/`, the LaTeX tables and the figures from the raw model outputs. Those outputs (`runs/`, the Jev response cache, the 288 MB item file) are not published: Jev's raw responses fall under the provider's terms, and the open-model outputs are large. They are available from the author on request.
+- Running the models again needs a TypeSafe API key for Jev (`TYPESAFE_API_KEY`) and a Kaggle GPU for the open ones (`kaggle/`).
+
+## Licence
+Code is MIT (`LICENSE`). The Banglish file is CC BY 4.0 and inherits the licences of the source datasets (MASSIVE CC BY 4.0; XNLI-bn CC BY-NC-SA).

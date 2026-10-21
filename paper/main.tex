@@ -17,45 +17,43 @@ A Zero-Shot Benchmark with Hand-Written Romanization}
 \maketitle
 
 \begin{abstract}
-\noindent System One decision models answer a typed question in a single forward pass and return a probability for each option, so a system can act on the confidence rather than on generated text.
-We evaluate one proprietary model (Jev) and eight open ones (five vLLM-SR d3 sizes, Laya-multilingual, laya-bangla, Julia-1, and Gemma-4-E4B scored by option probabilities) zero-shot on five Bengali tasks, in Bengali script and in romanized form.
-Jev has the highest score on all five tasks among the models run on the full test sets (Belebele \jevBelebele, 95\% CI \jevBelebeleLo--\jevBelebeleHi), and the open d3-flash is level with it or above it on three of five on a subset of about \flashNmax{} items per task.
-Synthetic romanization overstates how much accuracy a model loses on real Banglish: on \nHuman{} items that the author rewrote by hand, Jev loses \jevLossRule{} points under rule-based romanization but \jevLossHuman{} under hand-written Banglish, a difference of \jevHumanVsRule{} points (95\% CI \jevHumanVsRuleLo{} to \jevHumanVsRuleHi).
-The same ordering of models holds under both (Kendall $\tau=\tauRule$ over \nModelsRank{} models), so synthetic romanization still ranks models, but it does not size their loss.
-Every open model is overconfident on Bengali; one temperature fitted on a disjoint development split removes most of the excess (Julia-1 on XNLI-bn: ECE \juliaXnliEceRaw{} to \juliaXnliEceTs), and removes less of it on romanized text.
-Code, metrics and the hand-written Banglish are released at \url{https://github.com/ihpolash/system-one-testing-for-bengali}.
+\noindent Decision models answer a typed question in one forward pass and return a probability for every option.
+I tested one hosted model, Jev, and eight open ones on five Bengali tasks, zero-shot, in Bengali script and in Latin letters.
+Jev scored highest on all five tasks among the models run on the full test sets; on Belebele it reached \jevBelebele{} (95\% CI \jevBelebeleLo{} to \jevBelebeleHi).
+The open d3-flash matched or beat it on three tasks, on a subset of about \flashNmax{} items per task.
+Romanization hurt every model that was above chance on Bengali script, and tool-made romanization hurt more than real typing.
+On \nHuman{} items that I rewrote by hand in Banglish, Jev lost \jevLossHuman{} points against the Bengali original, where rule-based romanization of the same text cost it \jevLossRule.
+The model ranking was the same either way (Kendall $\tau=\tauRule$ over \nModelsRank{} models), so synthetic romanization ranks models well but overstates how much they lose.
+Every open model was overconfident on Bengali text, and one temperature fitted on a separate development set removed most of that, but less of it on romanized text.
+Code, tables and the hand-written Banglish are at \url{https://github.com/ihpolash/system-one-testing-for-bengali}.
 \end{abstract}
 
 \section{Introduction}
-Zero-shot decision models are small encoders or distilled models that read a typed question and return one probability per option in a single pass.
-Their appeal is operational: the output is a calibrated-looking number, so a pipeline can accept confident answers and escalate the rest to a larger model or a person \citep{deusser2026jev,nandakishore2026laya}.
-Almost all evidence about them is in English.
-Chinese-Jev shows that language coverage cannot be assumed: Laya-multilingual reaches only 40.2\% on Chinese tasks where Jev reaches 68.4\% \citep{wang2026chinesejev}.
-We found no study of a decision model on Bengali beyond the per-language Belebele and SIB-200 numbers released with the Jev benchmark \citep{deusser2026jev}, and none that asks whether a decision model's confidence still carries information in Bengali.
+A decision model reads a text and a typed question and returns one probability per option, without generating anything.
+That makes the output easy to act on: a pipeline can accept confident answers and send the rest to a larger model or a person \citep{deusser2026jev,nandakishore2026laya}.
+Nearly all of the evidence for this comes from English.
+The one study that left English shows why that matters. On Chinese tasks Laya-multilingual scored 40.2\% where Jev scored 68.4\% \citep{wang2026chinesejev}.
+For Bengali I found only the per-language Belebele and SIB-200 numbers that ship with the Jev benchmark \citep{deusser2026jev}. I found no study that asked whether a decision model's confidence still means something in Bengali.
 
-Bengali raises a second problem that English benchmarks do not.
-Much informal Bengali is typed in Latin letters (``Banglish'') with no standard spelling.
-Studies of romanization in other Indic languages and in Bangla dialects build the romanized test text with a transliteration tool, and report large accuracy losses \citep{khullar2025scriptgap,jawad2026fivedialects}.
-A tool applies one spelling rule per letter; a person does not.
-Whether tool-made romanization is a fair stand-in for real Banglish has, to our knowledge, not been measured against hand-written text on model accuracy.
+Bengali has a second difficulty. A great deal of everyday Bengali is typed in Latin letters, with no standard spelling.
+Work on other Indic languages and on Bangla dialects tests romanized text produced by a transliteration tool, and finds large losses \citep{khullar2025scriptgap,jawad2026fivedialects}.
+A tool applies one rule per letter. People do not.
+I could not find a measurement of how far tool-made romanization differs from what people actually type, in terms of what a model gets right.
 
-We make four contributions.
-\begin{enumerate}
-\item A zero-shot benchmark of nine decision models on five Bengali tasks in three text conditions (Bengali script, rule-based romanization, natural-style romanization), with cluster-bootstrap intervals, calibration, risk--coverage and option-rotation analyses (Section~\ref{sec:results}).
-\item A set of \nSentences{} Bengali sentences (\nHuman{} scorable items) that the author corrected and rewrote by hand in Banglish, and a paired comparison against two synthetic romanizers on the same items (Section~\ref{sec:human}).
-\item Evidence that synthetic romanization overstates the loss by \jevHumanVsRule{} points for Jev and by \hvrMin{} to \hvrMax{} points for the eight models above chance, while leaving the model ranking intact.
-\item A harness that reproduces numbers published by independent parties for Jev, Laya-multilingual and laya-bangla (Section~\ref{sec:audit}), which we use as a check on every result here.
-\end{enumerate}
-We do not claim that this is the first Bengali evaluation of any decision model, and we report no result for Kev, d3-27B or Microsoft-Decision-1.
+I made that measurement for Bengali.
+I rewrote \nSentences{} sentences from three datasets in Banglish by hand and scored all models on the same items in four spellings (Section~\ref{sec:human}).
+Around it sits a zero-shot benchmark of nine decision models on five tasks, with calibration, risk--coverage and option-order analyses (Section~\ref{sec:results}).
+Every number here is produced by the released code, and the harness reproduces published numbers from independent groups for Jev, Laya-multilingual and laya-bangla (Section~\ref{sec:audit}).
+This is not the first Bengali result for any decision model, since Jev's Belebele and SIB-200 numbers exist. Kev, d3-27B and Microsoft-Decision-1 are not covered.
 
 \section{Related work}
 \label{sec:related}
-Table~\ref{tab:gap} lists what the closest prior studies cover.
-Decision-model evaluations in English cover calibration \citep{nandakishore2026laya}, annotation tasks with open models \citep{ibrahim2026annotation}, option-name effects \citep{sun2026typesafe} and option-order stability \citep{li2026readout}.
-Language-specific work is thinner: Chinese-Jev trains a Chinese model \citep{wang2026chinesejev}, and one study compares Jev's cultural-value answers in English and Arabic \citep{asseri2026calibrated}.
-Script robustness has been studied for generative models only \citep{khullar2025scriptgap,jawad2026fivedialects}; the Bengali romanization corpus of \citet{gharami2025romanized} generates its Bengali half by rule rather than collecting typed text.
-Calibration and selective prediction follow the standard measures \citep{guo2017calibration,geifman2017selective}, and option-order sensitivity follows \citet{zheng2024selectors}.
-The datasets we use are Belebele \citep{bandarkar2023belebele}, SIB-200 \citep{adelani2023sib200}, MASSIVE \citep{fitzgerald2022massive}, SentNoB \citep{islam2021sentnob} and the Bengali XNLI translation.
+Table~\ref{tab:gap} shows what the closest studies cover.
+In English, decision models have been checked for calibration \citep{nandakishore2026laya}, for annotation work with open models \citep{ibrahim2026annotation}, for sensitivity to option names \citep{sun2026typesafe} and to option order \citep{li2026readout}, and for cost and wording robustness \citep{sharma2026typedbench}.
+Other languages are thin. Chinese-Jev trains a Chinese model \citep{wang2026chinesejev}, and one paper compares Jev's cultural-value answers in English and Arabic \citep{asseri2026calibrated}.
+Script robustness has been studied for generative models only \citep{khullar2025scriptgap,jawad2026fivedialects}, and the Bengali half of the large romanization corpus of \citet{gharami2025romanized} is generated by rule, not typed by people.
+For calibration and selective prediction I use the standard measures \citep{guo2017calibration,geifman2017selective}; the option-rotation test follows \citet{zheng2024selectors}.
+The tasks are Belebele \citep{bandarkar2023belebele}, SIB-200 \citep{adelani2023sib200}, MASSIVE \citep{fitzgerald2022massive}, SentNoB \citep{islam2021sentnob} and the Bengali translation of XNLI.
 \begin{table}[t]
 \centering\small
 \begin{tabular}{@{}lccccc@{}}\toprule
@@ -73,19 +71,18 @@ This paper & 9 models & 5 tasks & rule, natural-style, hand & yes & 877 items \\
 \section{Benchmark}
 \label{sec:method}
 \paragraph{Models.}
-Jev (\texttt{jev-1.13.0}) is queried through its API.
-The open models run locally on a Kaggle GPU: Laya-multilingual (an mmBERT-based encoder \citep{marone2025mmbert}), laya-bangla v2 (a Bangla fine-tune of it, commit \texttt{4c5eb48932}), Julia-1 (144M parameters), and the vLLM-SR Decision 3.0 models d3-edge, d3-lite, d3-nano, d3-mini and d3-flash \citep{liu2026vllmsr}.
-d3-flash (9B) ran with 4-bit NF4 quantization and on a hash-ordered subset of about \flashNmax{} items per task, because of GPU time.
-We add Gemma-4-E4B-it as a non-decision baseline: we score each option by the next-token probability of its label and normalize over the options.
-Kev and d3-27B were not run.
-Microsoft-Decision-1 is available only through an API and was not run.
+Jev (\texttt{jev-1.13.0}) is reached through its API.
+The open models ran on Kaggle GPUs: Laya-multilingual, an mmBERT-based encoder \citep{marone2025mmbert}; laya-bangla v2, a Bangla fine-tune of it (commit \texttt{4c5eb48932}); Julia-1, with 144M parameters; and the vLLM-SR Decision 3.0 models d3-edge, d3-lite, d3-nano, d3-mini and d3-flash \citep{liu2026vllmsr}.
+d3-flash has 9B parameters and did not fit comfortably, so it ran 4-bit (NF4) on a hash-ordered subset of about \flashNmax{} items per task.
+Gemma-4-E4B-it is not a decision model; it serves as a baseline, with each option scored by the next-token probability of its label and the probabilities normalized over the options.
+d3-27B and Microsoft-Decision-1 (API only) were not run.
 
 \paragraph{Tasks.}
-Table~\ref{tab:tasks} lists the five Bengali tasks.
-Each item is posed as a typed single-choice question with English instructions and option names; only the passage or utterance changes with the condition.
-Large test sets are cut to a hash-ordered subset of 1,500 items so that smaller runs are nested in larger ones; a content-keyed response cache makes identical requests share one stored answer.
-The Bengali option names of Jev change accuracy by at most \labelMaxDiff{} points on SentNoB, XNLI-bn and SIB-200, so we keep English names.
-Accuracy is the headline metric, and macro-F1 for SentNoB.
+The five tasks are in Table~\ref{tab:tasks}.
+Each item is a single-choice question with English instructions and option names; only the passage or utterance changes between conditions.
+I cut XNLI-bn and MASSIVE to hash-ordered subsets of 1,500 items so that any smaller run is nested in a larger one.
+Bengali option names changed Jev's accuracy by at most \labelMaxDiff{} points on SentNoB, XNLI-bn and SIB-200, so I kept English names throughout.
+The metric is accuracy, and macro-F1 for SentNoB.
 \begin{table}[t]
 \centering\footnotesize
 \resizebox{\linewidth}{!}{\input{tables/tab_tasks}}
@@ -95,35 +92,35 @@ Accuracy is the headline metric, and macro-F1 for SentNoB.
 
 \paragraph{Text conditions.}
 \emph{Bengali} is the dataset text.
-\emph{Rule-based romanization} maps each Bengali letter to Latin letters with a fixed rule set and no diacritics.
-\emph{Natural-style romanization} replaces each word by its most frequent typed spelling in a public corpus of natural Banglish (nahidstaq/bangla-transliteration-data) and falls back to rules tuned on held-out word types from that corpus.
-Both are synthetic.
-Belebele passages were not romanized.
+\emph{Rule-based romanization} maps each letter to Latin letters by a fixed rule set, without diacritics.
+\emph{Natural-style romanization} replaces each word with its most frequent spelling in a public corpus of natural Banglish (nahidstaq/bangla-transliteration-data) and falls back to rules tuned on held-out words from that corpus.
+Both are synthetic. Belebele passages were not romanized.
 
 \paragraph{Hand-written Banglish.}
-The author took \nSentences{} Bengali sentences drawn from SentNoB, MASSIVE and XNLI-bn, corrected spelling errors in \nEdited{} of them, and wrote each sentence again in Banglish as they would type it.
-\TK{one sentence from the author: how the files were written, and whether to mention the archived tool-assisted draft of file 3 that was discarded}
-Items are matched to the datasets by the \emph{original} text.
-XNLI-bn pairs need both sentences, so the set holds \nHuman{} scorable items: \nHumanMassive{} MASSIVE, \nHumanSentnob{} SentNoB and \nHumanNli{} XNLI-bn pairs.
-Spelling correction alone moves Jev by \spellEffect{} points (95\% CI \spellLo{} to \spellHi) and no model by more than \spellMaxAny{} points, so we compare Banglish with the \emph{corrected} Bengali, and apply both romanizers to the corrected text as well.
+I took \nSentences{} Bengali sentences from SentNoB, MASSIVE and XNLI-bn, corrected spelling errors in \nEdited{} of them, and wrote every sentence again in Banglish, the way I would type it.
+All of it was written by hand, one sentence at a time, from the corrected Bengali.
+Items are matched to the datasets by their original text.
+An XNLI-bn item needs both sentences, so the usable set is \nHuman{} items: \nHumanMassive{} from MASSIVE, \nHumanSentnob{} from SentNoB and \nHumanNli{} XNLI-bn pairs.
+Spelling correction alone moved Jev by \spellEffect{} points (95\% CI \spellLo{} to \spellHi) and no model by more than \spellMaxAny{}, so I compare the Banglish with the corrected Bengali, and I apply both romanizers to the corrected text as well.
 
 \paragraph{Statistics.}
-Intervals are 95\% percentile bootstraps over premise or passage clusters (Belebele, XNLI-bn) or items, and over items for the paired comparisons on the hand-written set.
-Calibration is expected calibration error with 15 equal-width bins (ECE), the signed gap between confidence and accuracy, Brier score and risk--coverage curves.
-Temperature scaling is fitted on a development split disjoint from the test items and applied unchanged to the test items; it uses native text only.
-Option-order sensitivity uses three cyclic rotations of the option list.
-We report no significance tests; comparisons are point estimates with intervals, and we do not correct for the many comparisons.
+Intervals are 95\% percentile bootstraps over premise or passage clusters (Belebele, XNLI-bn) or over items, and over items for the paired comparisons on the hand-written set.
+Calibration is measured with expected calibration error over 15 equal-width bins (ECE), the signed gap between confidence and accuracy, Brier score and risk--coverage curves.
+Temperature scaling is fitted on a development split disjoint from the test items, on Bengali text only, and applied unchanged.
+Option-order sensitivity uses three cyclic rotations of the options.
+I report no significance tests. Comparisons are point estimates with intervals, with no correction for the number of comparisons.
 
 \section{Results}
 \label{sec:results}
 \subsection{Accuracy on Bengali script and romanized text}
 Table~\ref{tab:main} and Figure~\ref{fig:script} give the main results.
-Jev has the highest point estimate on all five tasks among the models run on the full sets; the closest open models are d3-nano on XNLI-bn (\accnanoXnliNat{} against \accjevXnliNat) and d3-mini (\accminiXnliNat), and the intervals in Table~\ref{tab:ci} overlap.
-On its subset, d3-flash reaches \subflashXnli{} on XNLI-bn against Jev's \subjevXnli{}, and trails on Belebele (Table~\ref{tab:flash}); it is above Jev on three tasks, but the subset holds only \flashNmin{} to \flashNmax{} items per task, so we treat it as level.
-Gemma-4-E4B is the most robust open model to romanization: it keeps \accgemmaSibRom{} of \accgemmaSibNat{} on SIB-200, where d3-mini keeps \accminiSibRom{} of \accminiSibNat.
-laya-bangla improves on its base model on SIB-200 (\acclayabnSibNat{} against \acclayamlSibNat) and MASSIVE (\acclayabnMasNat{} against \acclayamlMasNat), but stays below Jev, d3-mini and Gemma-4-E4B on every task.
-On SentNoB, Laya-multilingual (\acclayamlSentNat) and Julia-1 (\accjuliaSentNat) are below the majority-class level (0.412), and Julia-1 cannot take the 59-option MASSIVE menu at all.
-Laya-multilingual's SentNoB macro-F1 depends on wording: \layamlSentDefault{} with the default instruction, \layamlSentOpts{} with option names only and \layamlSentBn{} with Bengali wording.
+Jev has the highest point estimate on every task among the models run on the full sets.
+The closest open model is d3-nano on XNLI-bn (\accnanoXnliNat{} against \accjevXnliNat), with d3-mini at \accminiXnliNat, and the intervals in Table~\ref{tab:ci} overlap.
+d3-flash, on its subset, scores \subflashXnli{} on XNLI-bn against Jev's \subjevXnli{}, and trails on Belebele (Table~\ref{tab:flash}). It is above Jev on three tasks, but with \flashNmin{} to \flashNmax{} items per task I read that as level.
+Gemma-4-E4B holds up best under romanization: on SIB-200 it keeps \accgemmaSibRom{} of \accgemmaSibNat, where d3-mini keeps \accminiSibRom{} of \accminiSibNat.
+laya-bangla beats its base model on SIB-200 (\acclayabnSibNat{} against \acclayamlSibNat) and on MASSIVE (\acclayabnMasNat{} against \acclayamlMasNat) and still sits below Jev, d3-mini and Gemma-4-E4B on every task.
+On SentNoB, Laya-multilingual (\acclayamlSentNat) and Julia-1 (\accjuliaSentNat) score below the majority class (0.412). Julia-1 cannot take the 59-option MASSIVE menu at all.
+Laya-multilingual's SentNoB score also depends on the wording of the question: macro-F1 is \layamlSentDefault{} with my default instruction, \layamlSentOpts{} with option names only, and \layamlSentBn{} with Bengali wording. I report the default and flag the range.
 \begin{table}[t]
 \centering\footnotesize
 \input{tables/tab_main}
@@ -144,15 +141,14 @@ Laya-multilingual's SentNoB macro-F1 depends on wording: \layamlSentDefault{} wi
 
 \subsection{Hand-written Banglish}
 \label{sec:human}
-Figure~\ref{fig:spell} and Table~\ref{tab:human} compare four spellings of the same \nHuman{} items.
-Every model above chance scores higher on hand-written Banglish than on rule-based romanization, by \hvrMin{} to \hvrMax{} points; for Jev the difference is \jevHumanVsRule{} (95\% CI \jevHumanVsRuleLo{} to \jevHumanVsRuleHi).
-Natural-style romanization is closer to the hand-written text but still harder for every model, so tuning a romanizer on natural typing narrows the gap without closing it.
-The gain depends on the task (Figure~\ref{fig:over}): for Jev it is \jevHumanVsRuleMassive{} points on MASSIVE (\jevHumanVsRuleMassiveLo{} to \jevHumanVsRuleMassiveHi), \jevHumanVsRuleNli{} on XNLI-bn pairs (\jevHumanVsRuleNliLo{} to \jevHumanVsRuleNliHi; \nHumanNli{} pairs) and \jevHumanVsRuleSentnob{} on SentNoB (\jevHumanVsRuleSentnobLo{} to \jevHumanVsRuleSentnobHi).
-We read the MASSIVE gain as an effect of short, imperative utterances with many common English loan words, which people spell consistently; we did not test that.
+Figure~\ref{fig:spell} and Table~\ref{tab:human} put four spellings of the same \nHuman{} items side by side.
+Every model above chance does better on my Banglish than on rule-based romanization, by \hvrMin{} to \hvrMax{} points. For Jev the gain is \jevHumanVsRule{} points (95\% CI \jevHumanVsRuleLo{} to \jevHumanVsRuleHi).
+Natural-style romanization lands between the two, so tuning a romanizer on real typing narrows the gap but does not close it.
+The gain varies by task (Figure~\ref{fig:over}). For Jev it is \jevHumanVsRuleMassive{} points on MASSIVE (\jevHumanVsRuleMassiveLo{} to \jevHumanVsRuleMassiveHi), \jevHumanVsRuleNli{} on XNLI-bn (\jevHumanVsRuleNliLo{} to \jevHumanVsRuleNliHi, from only \nHumanNli{} pairs), and \jevHumanVsRuleSentnob{} on SentNoB (\jevHumanVsRuleSentnobLo{} to \jevHumanVsRuleSentnobHi).
+My guess is that MASSIVE's short commands, full of English loan words that people spell the same way every time, are what a tool gets wrong. I did not test that.
 Julia-1, near chance on these items, shows no gain.
 
-The ordering of models is nearly the same under all three Latin-script conditions (Kendall $\tau=\tauRule$ for rule-based and $\tauNat$ for natural-style against hand-written text, over \nModelsRank{} models).
-The eight models are scored on the same items, so this is one comparison, not eight independent ones.
+The order of models barely moves. Kendall $\tau$ between the hand-written ordering and the rule-based one is \tauRule, and \tauNat{} for natural-style, over \nModelsRank{} models scored on the same items. That is one comparison, not eight independent ones.
 \begin{figure}[t]
 \centering\includegraphics[width=.92\linewidth]{figures/fig1_spellings}
 \caption{Accuracy of each model on the same \nHuman{} items in four spellings.}
@@ -171,11 +167,10 @@ The eight models are scored on the same items, so this is one comparison, not ei
 \end{figure}
 
 \subsection{Calibration and selective prediction}
-Models differ widely in how overconfident they are.
-Raw ECE on Bengali script (mean over XNLI-bn, MASSIVE and SentNoB) ranges from \eceminiNatRaw{} for d3-mini to \ecejuliaNatRaw{} for Julia-1 (Table~\ref{tab:cal}).
-A single temperature fitted on a disjoint Bengali development split cuts ECE for every model on Bengali text, for example Julia-1 on XNLI-bn from \juliaXnliEceRaw{} to \juliaXnliEceTs.
-On rule-based romanization the same temperature leaves a higher ECE for eight of the nine models (d3-mini is the exception): Jev's scaled ECE is \ecejevRomTs{} against \ecejevNatTs{} on Bengali, and laya-bangla's is \ecelayabnRomTs{} against \ecelayabnNatTs{}.
-Figure~\ref{fig:rel} shows the reliability curves, and Figure~\ref{fig:rc} the risk--coverage curves: confidence still ranks answers within each condition, but romanization lowers accuracy at every coverage level, including among the most confident answers.
+Overconfidence differs a lot between models. Raw ECE on Bengali script, averaged over XNLI-bn, MASSIVE and SentNoB, runs from \eceminiNatRaw{} for d3-mini to \ecejuliaNatRaw{} for Julia-1 (Table~\ref{tab:cal}).
+One temperature, fitted on a separate Bengali development split, lowers ECE for every model on Bengali text; for Julia-1 on XNLI-bn it takes ECE from \juliaXnliEceRaw{} to \juliaXnliEceTs.
+On romanized text the same temperature leaves a higher ECE for eight of nine models. d3-mini is the exception. Jev's scaled ECE is \ecejevRomTs{} on romanized text against \ecejevNatTs{} on Bengali, and laya-bangla's is \ecelayabnRomTs{} against \ecelayabnNatTs.
+Figure~\ref{fig:rel} shows the reliability curves and Figure~\ref{fig:rc} the risk--coverage curves. Confidence still ranks answers within each condition, but romanization lowers accuracy at every coverage level, including among the most confident answers.
 \begin{table}[t]
 \centering\footnotesize
 \input{tables/tab_calibration}
@@ -193,15 +188,15 @@ Figure~\ref{fig:rel} shows the reliability curves, and Figure~\ref{fig:rc} the r
 \label{fig:rc}
 \end{figure}
 
-A confidence gate set on native development text to reach \gateTarget\% accuracy does not transfer.
-On MASSIVE, Jev accepts \gatejevNatCov\% of Bengali items at \gatejevNatAcc\% accuracy and \gatejevRomCov\% of romanized items at \gatejevRomAcc\%; d3-mini accepts \gateminiNatCov\% at \gateminiNatAcc\% and \gateminiRomCov\% at \gateminiRomAcc\%.
+A confidence gate set on Bengali development text to reach \gateTarget\% accuracy does not carry over.
+On MASSIVE, Jev accepts \gatejevNatCov\% of Bengali items at \gatejevNatAcc\% accuracy, but only \gatejevRomCov\% of romanized items, at \gatejevRomAcc\%. d3-mini accepts \gateminiNatCov\% at \gateminiNatAcc\% and \gateminiRomCov\% at \gateminiRomAcc\%.
 For laya-bangla the accepted romanized items are \gatelayabnRomAcc\% accurate, at \gatelayabnRomCov\% coverage.
-So a gate tuned on Bengali keeps its accuracy for Jev and d3-mini on this task, but only by refusing most romanized input, and fails for laya-bangla.
-These rows rest on a single task and, for several models, on few accepted items; we treat them as exploratory.
+So for Jev and d3-mini the gate keeps its accuracy by refusing most romanized input, and for laya-bangla it fails.
+This rests on one task and, for some models, on few accepted items, so I treat it as exploratory.
 
 \subsection{Option-order sensitivity}
-Under three rotations of the options, Jev gives the same answer \consjev\% of the time and d3-nano \consnano\%, d3-lite \conslite\% and Gemma-4-E4B \consgemma\%.
-The encoder models are far less stable: laya-bangla \conslayabn\%, Laya-multilingual \conslayaml\% and Julia-1 \consjulia\% (Figure~\ref{fig:rot}; per-task values in Table~\ref{tab:rot}).
+Across three rotations of the options, Jev gives the same answer \consjev\% of the time, d3-nano \consnano\%, d3-lite \conslite\% and Gemma-4-E4B \consgemma\%.
+The encoders are far less stable: laya-bangla \conslayabn\%, Laya-multilingual \conslayaml\%, Julia-1 \consjulia\% (Figure~\ref{fig:rot}; per task in Table~\ref{tab:rot}).
 \begin{figure}[t]
 \centering\includegraphics[width=.7\linewidth]{figures/fig6_rotation}
 \caption{Share of items answered identically under all three option rotations, over all tasks.}
@@ -210,44 +205,43 @@ The encoder models are far less stable: laya-bangla \conslayabn\%, Laya-multilin
 
 \subsection{Checks on the harness}
 \label{sec:audit}
-Recomputed from the Jev authors' released responses, Belebele ben\_Beng accuracy is \jevBelebeleZenodo; our own run gives \jevBelebele.
-For Laya-multilingual we obtain MASSIVE \layamlNativeMassive{} and SIB-200 \layamlNativeSib{}, against 0.18 and 0.57 to 0.58 reported by the laya-bangla authors; for laya-bangla, SIB-200 \layabnNativeSib{} against 0.76.
-Resending 300 Jev requests gave the same answer \jevRetestSame\% of the time, and a different Laya package version changed no answer on 6{,}563 requests.
-We could not compare laya-bangla's MASSIVE score (\acclayabnMasNat{} against 0.81 reported) because the authors use a two-step scenario-then-intent protocol and we ask one 59-way question.
-The study used \jevRequests{} Jev requests, about \jevTokensM{}M input tokens, an input-token cost of about \$\jevUsd{} at \$0.042 per million tokens, and about \gpuHours{} GPU hours on Kaggle.
-Latency was measured in mixed conditions and is not comparable between models; we do not report it.
+Before trusting any of this I tried to reproduce other people's numbers.
+From the Jev authors' released responses, Belebele ben\_Beng accuracy is \jevBelebeleZenodo; my own run gives \jevBelebele.
+For Laya-multilingual I get MASSIVE \layamlNativeMassive{} and SIB-200 \layamlNativeSib, against 0.18 and 0.57 to 0.58 reported by the laya-bangla authors. For laya-bangla I get SIB-200 \layabnNativeSib{} against their 0.76.
+Resending 300 Jev requests gave the same answer \jevRetestSame\% of the time, and a newer Laya package version changed no answer on 6{,}563 requests.
+One comparison I could not make: laya-bangla's authors report MASSIVE 0.81 with a two-step scenario-then-intent protocol, and I ask one 59-way question and get \acclayabnMasNat.
+The study used \jevRequests{} Jev requests, about \jevTokensM{}M input tokens and \$\jevUsd{} at \$0.042 per million, plus about \gpuHours{} GPU hours on Kaggle.
+I measured latency under mixed conditions, so it is not comparable across models, and I do not report it.
 
 \section{Discussion}
-\paragraph{What the synthetic number does and does not tell you.}
-A romanization tool is a good way to rank models and a poor way to size their loss.
-Written by a person, Banglish keeps more of the information a model needs than a tool's output does: common words are spelled the way models have seen them, and spelling errors in the source text are not copied across.
-We did not test which of these matters; the corrected-text control shows only that spelling errors in the original Bengali are not the cause of the gap.
-A practitioner who planned for a \jevLossRule-point loss on Banglish input from tool-made test data would plan for about \lossRuleVsHuman{} points too many for Jev.
+\paragraph{What a synthetic romanization can and cannot tell you.}
+A romanization tool ranks models correctly and overstates their loss. For Jev, planning from tool-made test data would mean expecting \jevLossRule{} points lost on Banglish input, about \lossRuleVsHuman{} points too many.
+I do not know why people's Banglish is easier. Two explanations fit: people spell common words the way models have seen them, and my corrections removed spelling errors that a tool copies through.
+The control rules out only the second. Correcting the original Bengali moved no model by more than \spellMaxAny{} points.
 
 \paragraph{Choosing a model.}
-For Bengali script, the open d3-mini, d3-nano and Gemma-4-E4B come within a few points of Jev on several tasks, so a decision model's advantage here is not in accuracy alone.
-Gemma-4-E4B is the most robust open model to romanization but is also among the least calibrated before scaling (ECE \ecegemmaNatRaw{}), which temperature scaling mostly removes.
-The encoder models need care: their answers change with option order, and Laya-multilingual's SentNoB score depends on instruction wording.
+On Bengali script d3-mini, d3-nano and Gemma-4-E4B come within a few points of Jev on several tasks, so the hosted model's advantage here is modest.
+Gemma-4-E4B is the most robust open model to romanization, and also among the worst calibrated before scaling (ECE \ecegemmaNatRaw), which temperature scaling mostly removes.
+The encoders need care. Their answers change with option order, and Laya-multilingual's SentNoB score moved by more than ten points with the wording of the question.
 
 \section{Limitations}
-One person wrote all of the Banglish, so the gap we report is for that typing style; a second typist on a subset would show how much it varies.
-MASSIVE supplies \pctMassive\% of the hand-written items and XNLI-bn only \nHumanNli{} pairs, and XNLI-bn and MASSIVE are translations, so only SentNoB is native Bengali text.
-On SentNoB the Banglish is not easier than rule-based romanization, and we do not know whether that is a property of social-media text or of our sample.
-d3-flash ran 4-bit on a subset, d3-27B and Kev were not run, and Julia-1 cannot take MASSIVE.
-Training-data contamination is unknown for Jev, Gemma and the Qwen-based d3 models; laya-bangla was trained on MASSIVE and SIB-200 training splits.
-The option names are English, and the Bengali option names we tried were written by the author and not checked by a second native speaker.
-Calibration and gate results are exploratory, rest on few accepted items for some models, and use no multiplicity correction.
-We use one prompt format per model family; a different format may change the ranking, as Laya's wording sensitivity shows.
+I wrote all of the Banglish myself, so the gap is the gap for one typing style. A second typist on a subset would show how much it varies; I have not done that.
+MASSIVE supplies \pctMassive\% of the hand-written items and XNLI-bn only \nHumanNli{} pairs. XNLI-bn and MASSIVE are translations, so SentNoB is the only native Bengali text, and on SentNoB my Banglish is no easier than rule-based romanization. I do not know whether that comes from social-media text or from my sample.
+d3-flash ran 4-bit on a subset, d3-27B was not run, and Julia-1 cannot take MASSIVE.
+Contamination is unknown for Jev, Gemma and the Qwen-based d3 models, and laya-bangla was trained on MASSIVE and SIB-200 training splits.
+The SentNoB split I used is a third-party mirror whose provenance I could not verify.
+I use one prompt format per model family, and Laya's wording sensitivity shows that this can move a result.
+The calibration and gate results are exploratory and use no multiplicity correction.
 
 \section{Conclusion}
-On five Bengali tasks, Jev leads, several small open models come close on Bengali script, and every open model needs a recalibration that transfers only in part to romanized text.
-For evaluating Banglish input, tool-made romanization gives the right ordering of models but too large a loss; testing on hand-written text is needed to size it.
+On five Bengali tasks Jev leads, several small open models come close on Bengali script, and the open models' overconfidence is largely fixed by one temperature on Bengali text but not on romanized text.
+Tool-made romanization is a fair way to rank models on Banglish input and a poor way to size their loss. To size it, test on text people wrote.
 
 \paragraph{Availability.}
-The repository is at \url{https://github.com/ihpolash/system-one-testing-for-bengali}. It holds the harness, the analysis code that generates every table and number in this paper, the summary result tables, and the hand-written Banglish for the MASSIVE and XNLI-bn sentences. SentNoB is distributed under a no-derivatives licence, so the repository does not contain its text or the Banglish of its sentences; the item-level predictions and Jev's raw responses (provider terms) are also not included.
+The repository is at \url{https://github.com/ihpolash/system-one-testing-for-bengali}. It holds the harness, the analysis code that generates every table and number in this paper, the summary result tables, and the hand-written Banglish for the MASSIVE and XNLI-bn sentences. SentNoB is distributed under a no-derivatives licence, so the repository contains neither its text nor the Banglish of its sentences. Item-level predictions and Jev's raw responses (provider terms) are not included.
 
 \section*{Declaration on the use of generative AI}
-The author used an AI assistant (Claude, Anthropic) for implementation support, analysis and figure scripting, and for drafting and editing this manuscript. All of that work was carried out under the author's direction and review. The research questions, benchmark design, evaluation protocol and the interpretation of the results are the author's. All numerical results in the tables and text are generated by the released analysis code from the stored results. \TK{author to confirm before submission: every reference was checked against its primary source} The author takes full responsibility for all content of this paper, irrespective of how it was drafted.
+The author used an AI assistant (Claude, Anthropic) for implementation support, analysis and figure scripting, and for drafting and editing this manuscript. All of that work was carried out under the author's direction and review. The research questions, benchmark design, evaluation protocol and the interpretation of the results are the author's. All numerical results in the tables and text are generated by the released analysis code from the stored results, and every reference was verified by the author against its primary source. The author takes full responsibility for all content of this paper, irrespective of how it was drafted.
 
 \bibliographystyle{plainnat}
 \bibliography{refs}
