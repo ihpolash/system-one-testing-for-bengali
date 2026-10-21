@@ -1,0 +1,68 @@
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+Tesla T4, 15360 MiB
+Tesla T4, 15360 MiB
+
+$ pip install -q -e /kaggle/working/proj/harness laya 2>&1 | tail -2
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.7/116.7 kB 3.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 384.8/384.8 kB 13.4 MB/s eta 0:00:00
+
+
+===== laya-multilingual
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli --split dev --limit 20 --backend laya --model convaiinnovations/laya-multilingual --max-len 1024 --out /kaggle/working/runs/laya_ml
+00 OK"
+17:37:09 INFO HTTP Request: HEAD https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/rl_agent_config.json "HTTP/1.1 307 Temporary Redirect"
+17:37:09 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/rl_agent_config.json "HTTP/1.1 200 OK"
+17:37:09 INFO HTTP Request: GET https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/rl_agent_config.json "HTTP/1.1 200 OK"
+17:37:09 INFO HTTP Request: HEAD https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/encoder/config.json "HTTP/1.1 307 Temporary Redirect"
+17:37:09 INFO HTTP Request: HEAD https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+17:37:09 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/encoder%2Fconfig.json "HTTP/1.1 200 OK"
+17:37:09 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer%2Ftokenizer_config.json "HTTP/1.1 200 OK"
+17:37:09 INFO HTTP Request: GET https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/encoder%2Fconfig.json "HTTP/1.1 200 OK"
+17:37:09 INFO HTTP Request: GET https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer%2Ftokenizer_config.json "HTTP/1.1 200 OK"
+17:37:09 INFO HTTP Request: GET https://huggingface.co/api/models/convaiinnovations/laya-multilingual/xet-read-token/1720e3e3357cfe1e281542e223f8273b0890ca34 "HTTP/1.1 200 OK"
+17:37:40 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 500 examples [00:00, 33628.14 examples/s]
+17:37:42 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 2419 examples [00:00, 297546.01 examples/s]
+
+lines: 40
+{"key": "a1973f7190c8583ce8aa33d38e7bbde312ad565a80423d7167edd8c43b834154", "task": "bn_sentnob", "uid": "bn/428", "latency_s": 1.1727784359999873, "response": {"model": "hf:convaiinnovations/laya-multilingual", "answers": {"answer": {"type": "choice", "choice": "neutral", "probabilities": {"neutral": 0.94, "positive": 0.0191, "negative": 0.0408}, "confidence": 0.7593, "answer_confidence": 0.94, "action": {"act_probability": 1.0}}}, "usage": {"input_tokens": 76, "output_tokens": 0, "state_tokens": 19, "state_tokens_dropped": 0, "truncated": false, "truncated_questions": []}, "diagnostics": {}}}
+$ pip install -q 'transformers>=5.17' accelerate 2>&1 | tail -2
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 100.5 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 40.0 MB/s eta 0:00:00
+
+
+===== d3-edge
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli --split dev --limit 20 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --out /kaggle/working/runs/d3_edge
+usage: run_system_one_model.py [-h] --backend {kev,laya,julia} --model MODEL
+                               [--tag-suffix TAG_SUFFIX] [--split {eval,dev}]
+                               [--limit LIMIT] --out OUT
+                               [--subfolder SUBFOLDER] [--kev-url KEV_URL]
+                               [--julia-path JULIA_PATH] [--device DEVICE]
+                               [--max-len MAX_LEN]
+                               tasks [tasks ...]
+run_system_one_model.py: error: argument --backend: invalid choice: 'vllmsr' (choose from 'kev', 'laya', 'julia')
+
+
+===== d3-nano
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli --split dev --limit 20 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --out /kaggle/working/runs/d3_nano
+usage: run_system_one_model.py [-h] --backend {kev,laya,julia} --model MODEL
+                               [--tag-suffix TAG_SUFFIX] [--split {eval,dev}]
+                               [--limit LIMIT] --out OUT
+                               [--subfolder SUBFOLDER] [--kev-url KEV_URL]
+                               [--julia-path JULIA_PATH] [--device DEVICE]
+                               [--max-len MAX_LEN]
+                               tasks [tasks ...]
+run_system_one_model.py: error: argument --backend: invalid choice: 'vllmsr' (choose from 'kev', 'laya', 'julia')
+
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 282470 bytes to __results__.html

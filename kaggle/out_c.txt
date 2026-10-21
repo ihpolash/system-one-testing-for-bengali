@@ -1,0 +1,471 @@
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+Tesla T4, 15360 MiB
+Tesla T4, 15360 MiB
+$ pip install -q -e /kaggle/working/proj/harness 2>&1 | tail -1
+
+
+######## laya_ml (elapsed 0 min)
+$ pip install -q laya 2>&1 | tail -1
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 391.9/391.9 kB 21.4 MB/s eta 0:00:00
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 3573 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:12:22 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+15:12:59 INFO bn_sentnob: 200 written
+15:13:04 INFO bn_sentnob: 400 written
+15:13:10 INFO bn_sentnob: 600 written
+15:13:16 INFO bn_sentnob: 800 written
+15:13:22 INFO bn_sentnob: 1000 written
+15:13:27 INFO bn_sentnob: 1200 written
+15:13:33 INFO bn_sentnob: 1400 written
+
+
+15:13:40 INFO bn_belebele: 1600 written
+15:13:45 INFO bn_belebele: 1800 written
+15:13:51 INFO bn_belebele: 2000 written
+15:13:57 INFO bn_belebele: 2200 written
+15:14:03 INFO bn_belebele: 2400 written
+15:14:09 INFO bn_belebele: 2600 written
+15:14:14 INFO bn_belebele: 2800 written
+15:14:20 INFO bn_belebele: 3000 written
+15:14:26 INFO bn_belebele: 3200 written
+
+
+
+15:14:33 INFO bn_sib200: 3400 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 2990 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+
+15:15:01 INFO bn_bnli: 200 written
+15:15:07 INFO bn_bnli: 400 written
+15:15:13 INFO bn_bnli: 600 written
+15:15:19 INFO bn_bnli: 800 written
+15:15:24 INFO bn_bnli: 1000 written
+15:15:30 INFO bn_bnli: 1200 written
+15:15:36 INFO bn_bnli: 1400 written
+
+15:15:42 INFO bn_massive: 1600 written
+15:15:48 INFO bn_massive: 1800 written
+15:15:55 INFO bn_massive: 2000 written
+15:16:01 INFO bn_massive: 2200 written
+15:16:07 INFO bn_massive: 2400 written
+15:16:13 INFO bn_massive: 2600 written
+15:16:20 INFO bn_massive: 2800 written
+== laya_ml eval native rot0: 4.3 min; lines so far: 6563
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 1773 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:16:47 INFO bn_sentnob: 200 written
+15:16:52 INFO bn_sentnob: 400 written
+15:16:58 INFO bn_sentnob: 600 written
+15:17:03 INFO bn_sentnob: 800 written
+15:17:09 INFO bn_sentnob: 1000 written
+15:17:14 INFO bn_sentnob: 1200 written
+15:17:20 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:17:25 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:17:26 INFO bn_sib200: 1600 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 2989 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:17:52 INFO bn_bnli: 200 written
+15:17:58 INFO bn_bnli: 400 written
+15:18:04 INFO bn_bnli: 600 written
+15:18:10 INFO bn_bnli: 800 written
+15:18:15 INFO bn_bnli: 1000 written
+15:18:21 INFO bn_bnli: 1200 written
+15:18:27 INFO bn_bnli: 1400 written
+15:18:33 INFO bn_massive: 1600 written
+15:18:39 INFO bn_massive: 1800 written
+15:18:46 INFO bn_massive: 2000 written
+15:18:52 INFO bn_massive: 2200 written
+15:18:58 INFO bn_massive: 2400 written
+15:19:04 INFO bn_massive: 2600 written
+15:19:10 INFO bn_massive: 2800 written
+== laya_ml eval roman rot0: 2.8 min; lines so far: 11325
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 4422 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+
+15:19:38 INFO bn_sentnob: 200 written
+15:19:44 INFO bn_sentnob: 400 written
+15:19:49 INFO bn_sentnob: 600 written
+15:19:55 INFO bn_sentnob: 800 written
+15:20:01 INFO bn_sentnob: 1000 written
+15:20:07 INFO bn_sentnob: 1200 written
+15:20:12 INFO bn_sentnob: 1400 written
+
+15:20:18 INFO bn_bnli: 1600 written
+15:20:24 INFO bn_bnli: 1800 written
+15:20:30 INFO bn_bnli: 2000 written
+15:20:36 INFO bn_bnli: 2200 written
+15:20:41 INFO bn_bnli: 2400 written
+15:20:47 INFO bn_bnli: 2600 written
+15:20:53 INFO bn_bnli: 2800 written
+
+15:20:59 INFO bn_massive: 3000 written
+15:21:05 INFO bn_massive: 3200 written
+15:21:12 INFO bn_massive: 3400 written
+15:21:18 INFO bn_massive: 3600 written
+15:21:24 INFO bn_massive: 3800 written
+15:21:30 INFO bn_massive: 4000 written
+15:21:37 INFO bn_massive: 4200 written
+15:21:43 INFO bn_massive: 4400 written
+== laya_ml dev native rot0: 2.5 min; lines so far: 15747
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 4413 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:22:05 INFO bn_sentnob: 200 written
+15:22:11 INFO bn_sentnob: 400 written
+15:22:17 INFO bn_sentnob: 600 written
+15:22:22 INFO bn_sentnob: 800 written
+15:22:28 INFO bn_sentnob: 1000 written
+15:22:34 INFO bn_sentnob: 1200 written
+15:22:39 INFO bn_sentnob: 1400 written
+15:22:46 INFO bn_bnli: 1600 written
+15:22:51 INFO bn_bnli: 1800 written
+15:22:57 INFO bn_bnli: 2000 written
+15:23:02 INFO bn_bnli: 2200 written
+15:23:08 INFO bn_bnli: 2400 written
+15:23:14 INFO bn_bnli: 2600 written
+15:23:20 INFO bn_bnli: 2800 written
+15:23:26 INFO bn_massive: 3000 written
+15:23:32 INFO bn_massive: 3200 written
+15:23:39 INFO bn_massive: 3400 written
+15:23:45 INFO bn_massive: 3600 written
+15:23:51 INFO bn_massive: 3800 written
+15:23:57 INFO bn_massive: 4000 written
+15:24:04 INFO bn_massive: 4200 written
+15:24:10 INFO bn_massive: 4400 written
+== laya_ml dev roman rot0: 2.5 min; lines so far: 20160
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 3573 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:24:32 INFO bn_sentnob: 200 written
+15:24:38 INFO bn_sentnob: 400 written
+15:24:44 INFO bn_sentnob: 600 written
+15:24:50 INFO bn_sentnob: 800 written
+15:24:56 INFO bn_sentnob: 1000 written
+15:25:01 INFO bn_sentnob: 1200 written
+15:25:07 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:25:12 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:25:14 INFO bn_belebele: 1600 written
+15:25:20 INFO bn_belebele: 1800 written
+15:25:26 INFO bn_belebele: 2000 written
+15:25:31 INFO bn_belebele: 2200 written
+15:25:37 INFO bn_belebele: 2400 written
+15:25:43 INFO bn_belebele: 2600 written
+15:25:49 INFO bn_belebele: 2800 written
+15:25:55 INFO bn_belebele: 3000 written
+15:26:01 INFO bn_belebele: 3200 written
+15:26:07 INFO bn_sib200: 3400 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 2990 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:26:34 INFO bn_bnli: 200 written
+15:26:40 INFO bn_bnli: 400 written
+15:26:46 INFO bn_bnli: 600 written
+15:26:51 INFO bn_bnli: 800 written
+15:26:57 INFO bn_bnli: 1000 written
+15:27:03 INFO bn_bnli: 1200 written
+15:27:09 INFO bn_bnli: 1400 written
+15:27:15 INFO bn_massive: 1600 written
+15:27:21 INFO bn_massive: 1800 written
+15:27:28 INFO bn_massive: 2000 written
+15:27:34 INFO bn_massive: 2200 written
+15:27:41 INFO bn_massive: 2400 written
+15:27:47 INFO bn_massive: 2600 written
+15:27:53 INFO bn_massive: 2800 written
+== laya_ml eval native rot1: 3.8 min; lines so far: 26723
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 3573 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:28:21 INFO bn_sentnob: 200 written
+15:28:27 INFO bn_sentnob: 400 written
+15:28:33 INFO bn_sentnob: 600 written
+15:28:39 INFO bn_sentnob: 800 written
+15:28:45 INFO bn_sentnob: 1000 written
+15:28:51 INFO bn_sentnob: 1200 written
+15:28:57 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:29:02 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:29:03 INFO bn_belebele: 1600 written
+15:29:09 INFO bn_belebele: 1800 written
+15:29:15 INFO bn_belebele: 2000 written
+15:29:21 INFO bn_belebele: 2200 written
+15:29:27 INFO bn_belebele: 2400 written
+15:29:33 INFO bn_belebele: 2600 written
+15:29:38 INFO bn_belebele: 2800 written
+15:29:44 INFO bn_belebele: 3000 written
+15:29:50 INFO bn_belebele: 3200 written
+15:29:57 INFO bn_sib200: 3400 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 2990 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:30:24 INFO bn_bnli: 200 written
+15:30:30 INFO bn_bnli: 400 written
+15:30:35 INFO bn_bnli: 600 written
+15:30:41 INFO bn_bnli: 800 written
+15:30:47 INFO bn_bnli: 1000 written
+15:30:53 INFO bn_bnli: 1200 written
+15:30:59 INFO bn_bnli: 1400 written
+15:31:05 INFO bn_massive: 1600 written
+15:31:11 INFO bn_massive: 1800 written
+15:31:17 INFO bn_massive: 2000 written
+15:31:24 INFO bn_massive: 2200 written
+15:31:30 INFO bn_massive: 2400 written
+15:31:37 INFO bn_massive: 2600 written
+15:31:43 INFO bn_massive: 2800 written
+== laya_ml eval native rot2: 3.8 min; lines so far: 33286
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 1773 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:32:11 INFO bn_sentnob: 200 written
+15:32:17 INFO bn_sentnob: 400 written
+15:32:22 INFO bn_sentnob: 600 written
+15:32:28 INFO bn_sentnob: 800 written
+15:32:34 INFO bn_sentnob: 1000 written
+15:32:39 INFO bn_sentnob: 1200 written
+15:32:45 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:32:50 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:32:51 INFO bn_sib200: 1600 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 2989 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:33:18 INFO bn_bnli: 200 written
+15:33:23 INFO bn_bnli: 400 written
+15:33:29 INFO bn_bnli: 600 written
+15:33:35 INFO bn_bnli: 800 written
+15:33:40 INFO bn_bnli: 1000 written
+15:33:46 INFO bn_bnli: 1200 written
+15:33:52 INFO bn_bnli: 1400 written
+15:33:58 INFO bn_massive: 1600 written
+15:34:04 INFO bn_massive: 1800 written
+15:34:10 INFO bn_massive: 2000 written
+15:34:16 INFO bn_massive: 2200 written
+15:34:23 INFO bn_massive: 2400 written
+15:34:29 INFO bn_massive: 2600 written
+15:34:35 INFO bn_massive: 2800 written
+== laya_ml eval roman rot1: 2.9 min; lines so far: 38048
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 1773 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:35:03 INFO bn_sentnob: 200 written
+15:35:08 INFO bn_sentnob: 400 written
+15:35:14 INFO bn_sentnob: 600 written
+15:35:20 INFO bn_sentnob: 800 written
+15:35:25 INFO bn_sentnob: 1000 written
+15:35:31 INFO bn_sentnob: 1200 written
+15:35:37 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:35:41 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:35:43 INFO bn_sib200: 1600 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml
+wrote 2989 responses to /kaggle/working/runs/laya_ml; 0 unsupported/failed items (see failures.jsonl)
+15:36:09 INFO bn_bnli: 200 written
+15:36:15 INFO bn_bnli: 400 written
+15:36:21 INFO bn_bnli: 600 written
+15:36:26 INFO bn_bnli: 800 written
+15:36:32 INFO bn_bnli: 1000 written
+15:36:38 INFO bn_bnli: 1200 written
+15:36:43 INFO bn_bnli: 1400 written
+15:36:49 INFO bn_massive: 1600 written
+15:36:55 INFO bn_massive: 1800 written
+15:37:01 INFO bn_massive: 2000 written
+15:37:07 INFO bn_massive: 2200 written
+15:37:13 INFO bn_massive: 2400 written
+15:37:20 INFO bn_massive: 2600 written
+15:37:26 INFO bn_massive: 2800 written
+== laya_ml eval roman rot2: 2.8 min; lines so far: 42810
+
+######## julia1 (elapsed 25 min)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+$ pip install -q -e /kaggle/tmp/Julia-1 2>&1 | tail -1
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 91.2 MB/s eta 0:00:00
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 3350 responses to /kaggle/working/runs/julia1; 223 unsupported/failed items (see failures.jsonl)
+15:38:20 INFO bn_sentnob: 200 written
+15:38:25 INFO bn_sentnob: 400 written
+15:38:30 INFO bn_sentnob: 600 written
+15:38:35 INFO bn_sentnob: 800 written
+15:38:40 INFO bn_sentnob: 1000 written
+15:38:45 INFO bn_sentnob: 1200 written
+15:38:50 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:38:54 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:38:55 INFO bn_belebele: 1600 written
+15:39:01 INFO bn_belebele: 1800 written
+15:39:07 INFO bn_belebele: 2000 written
+15:39:13 INFO bn_belebele: 2200 written
+15:39:19 INFO bn_belebele: 2400 written
+15:39:25 INFO bn_belebele: 2600 written
+15:39:31 INFO bn_belebele: 2800 written
+15:39:36 INFO bn_belebele: 3000 written
+15:39:42 INFO bn_belebele: 3200 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1500 responses to /kaggle/working/runs/julia1; 1490 unsupported/failed items (see failures.jsonl)
+15:40:08 INFO bn_bnli: 200 written
+15:40:13 INFO bn_bnli: 400 written
+15:40:18 INFO bn_bnli: 600 written
+15:40:22 INFO bn_bnli: 800 written
+15:40:27 INFO bn_bnli: 1000 written
+15:40:32 INFO bn_bnli: 1200 written
+15:40:37 INFO bn_bnli: 1400 written
+== julia1 eval native rot0: 2.7 min; lines so far: 4850
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1569 responses to /kaggle/working/runs/julia1; 204 unsupported/failed items (see failures.jsonl)
+15:41:00 INFO bn_sentnob: 200 written
+15:41:05 INFO bn_sentnob: 400 written
+15:41:10 INFO bn_sentnob: 600 written
+15:41:14 INFO bn_sentnob: 800 written
+15:41:19 INFO bn_sentnob: 1000 written
+15:41:24 INFO bn_sentnob: 1200 written
+15:41:29 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:41:33 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1500 responses to /kaggle/working/runs/julia1; 1489 unsupported/failed items (see failures.jsonl)
+15:41:54 INFO bn_bnli: 200 written
+15:41:59 INFO bn_bnli: 400 written
+15:42:03 INFO bn_bnli: 600 written
+15:42:08 INFO bn_bnli: 800 written
+15:42:13 INFO bn_bnli: 1000 written
+15:42:18 INFO bn_bnli: 1200 written
+15:42:23 INFO bn_bnli: 1400 written
+== julia1 eval roman rot0: 1.8 min; lines so far: 7919
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 2941 responses to /kaggle/working/runs/julia1; 1481 unsupported/failed items (see failures.jsonl)
+15:42:46 INFO bn_sentnob: 200 written
+15:42:50 INFO bn_sentnob: 400 written
+15:42:55 INFO bn_sentnob: 600 written
+15:43:00 INFO bn_sentnob: 800 written
+15:43:04 INFO bn_sentnob: 1000 written
+15:43:09 INFO bn_sentnob: 1200 written
+15:43:14 INFO bn_sentnob: 1400 written
+15:43:19 INFO bn_bnli: 1600 written
+15:43:24 INFO bn_bnli: 1800 written
+15:43:29 INFO bn_bnli: 2000 written
+15:43:33 INFO bn_bnli: 2200 written
+15:43:38 INFO bn_bnli: 2400 written
+15:43:43 INFO bn_bnli: 2600 written
+15:43:48 INFO bn_bnli: 2800 written
+== julia1 dev native rot0: 1.4 min; lines so far: 10860
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 2937 responses to /kaggle/working/runs/julia1; 1476 unsupported/failed items (see failures.jsonl)
+15:44:12 INFO bn_sentnob: 200 written
+15:44:17 INFO bn_sentnob: 400 written
+15:44:22 INFO bn_sentnob: 600 written
+15:44:26 INFO bn_sentnob: 800 written
+15:44:31 INFO bn_sentnob: 1000 written
+15:44:36 INFO bn_sentnob: 1200 written
+15:44:40 INFO bn_sentnob: 1400 written
+15:44:45 INFO bn_bnli: 1600 written
+15:44:50 INFO bn_bnli: 1800 written
+15:44:55 INFO bn_bnli: 2000 written
+15:44:59 INFO bn_bnli: 2200 written
+15:45:04 INFO bn_bnli: 2400 written
+15:45:09 INFO bn_bnli: 2600 written
+15:45:14 INFO bn_bnli: 2800 written
+== julia1 dev roman rot0: 1.4 min; lines so far: 13797
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 3350 responses to /kaggle/working/runs/julia1; 223 unsupported/failed items (see failures.jsonl)
+15:45:38 INFO bn_sentnob: 200 written
+15:45:43 INFO bn_sentnob: 400 written
+15:45:48 INFO bn_sentnob: 600 written
+15:45:52 INFO bn_sentnob: 800 written
+15:45:57 INFO bn_sentnob: 1000 written
+15:46:02 INFO bn_sentnob: 1200 written
+15:46:07 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:46:11 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:46:13 INFO bn_belebele: 1600 written
+15:46:19 INFO bn_belebele: 1800 written
+15:46:24 INFO bn_belebele: 2000 written
+15:46:30 INFO bn_belebele: 2200 written
+15:46:36 INFO bn_belebele: 2400 written
+15:46:42 INFO bn_belebele: 2600 written
+15:46:48 INFO bn_belebele: 2800 written
+15:46:54 INFO bn_belebele: 3000 written
+15:47:00 INFO bn_belebele: 3200 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1500 responses to /kaggle/working/runs/julia1; 1490 unsupported/failed items (see failures.jsonl)
+15:47:25 INFO bn_bnli: 200 written
+15:47:30 INFO bn_bnli: 400 written
+15:47:35 INFO bn_bnli: 600 written
+15:47:40 INFO bn_bnli: 800 written
+15:47:45 INFO bn_bnli: 1000 written
+15:47:50 INFO bn_bnli: 1200 written
+15:47:55 INFO bn_bnli: 1400 written
+== julia1 eval native rot1: 2.7 min; lines so far: 18647
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 3350 responses to /kaggle/working/runs/julia1; 223 unsupported/failed items (see failures.jsonl)
+15:48:18 INFO bn_sentnob: 200 written
+15:48:23 INFO bn_sentnob: 400 written
+15:48:27 INFO bn_sentnob: 600 written
+15:48:32 INFO bn_sentnob: 800 written
+15:48:37 INFO bn_sentnob: 1000 written
+15:48:42 INFO bn_sentnob: 1200 written
+15:48:46 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:48:50 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:48:52 INFO bn_belebele: 1600 written
+15:48:58 INFO bn_belebele: 1800 written
+15:49:04 INFO bn_belebele: 2000 written
+15:49:09 INFO bn_belebele: 2200 written
+15:49:15 INFO bn_belebele: 2400 written
+15:49:21 INFO bn_belebele: 2600 written
+15:49:27 INFO bn_belebele: 2800 written
+15:49:32 INFO bn_belebele: 3000 written
+15:49:38 INFO bn_belebele: 3200 written
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1500 responses to /kaggle/working/runs/julia1; 1490 unsupported/failed items (see failures.jsonl)
+15:50:04 INFO bn_bnli: 200 written
+15:50:09 INFO bn_bnli: 400 written
+15:50:14 INFO bn_bnli: 600 written
+15:50:19 INFO bn_bnli: 800 written
+15:50:23 INFO bn_bnli: 1000 written
+15:50:28 INFO bn_bnli: 1200 written
+15:50:33 INFO bn_bnli: 1400 written
+== julia1 eval native rot2: 2.6 min; lines so far: 23497
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1569 responses to /kaggle/working/runs/julia1; 204 unsupported/failed items (see failures.jsonl)
+15:50:57 INFO bn_sentnob: 200 written
+15:51:01 INFO bn_sentnob: 400 written
+15:51:06 INFO bn_sentnob: 600 written
+15:51:11 INFO bn_sentnob: 800 written
+15:51:16 INFO bn_sentnob: 1000 written
+15:51:20 INFO bn_sentnob: 1200 written
+15:51:25 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:51:29 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1500 responses to /kaggle/working/runs/julia1; 1489 unsupported/failed items (see failures.jsonl)
+15:51:51 INFO bn_bnli: 200 written
+15:51:56 INFO bn_bnli: 400 written
+15:52:00 INFO bn_bnli: 600 written
+15:52:05 INFO bn_bnli: 800 written
+15:52:10 INFO bn_bnli: 1000 written
+15:52:15 INFO bn_bnli: 1200 written
+15:52:19 INFO bn_bnli: 1400 written
+== julia1 eval roman rot1: 1.8 min; lines so far: 26566
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1569 responses to /kaggle/working/runs/julia1; 204 unsupported/failed items (see failures.jsonl)
+15:52:43 INFO bn_sentnob: 200 written
+15:52:48 INFO bn_sentnob: 400 written
+15:52:52 INFO bn_sentnob: 600 written
+15:52:57 INFO bn_sentnob: 800 written
+15:53:02 INFO bn_sentnob: 1000 written
+15:53:07 INFO bn_sentnob: 1200 written
+15:53:11 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:53:15 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1
+wrote 1500 responses to /kaggle/working/runs/julia1; 1489 unsupported/failed items (see failures.jsonl)
+15:53:37 INFO bn_bnli: 200 written
+15:53:41 INFO bn_bnli: 400 written
+15:53:46 INFO bn_bnli: 600 written
+15:53:51 INFO bn_bnli: 800 written
+15:53:55 INFO bn_bnli: 1000 written
+15:54:00 INFO bn_bnli: 1200 written
+15:54:05 INFO bn_bnli: 1400 written
+== julia1 eval roman rot2: 1.8 min; lines so far: 29635
+ALL DONE 0.700770299103525 h
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 295193 bytes to __results__.html

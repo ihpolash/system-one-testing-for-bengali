@@ -1,0 +1,839 @@
+[{"stream_name":"stdout","time":1.373022567,"data":"$ nvidia-smi --query-gpu=name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":1.4106808499999999,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":1.410705785,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.410710218,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.410713632,"data":"$ pip install -q -e /kaggle/working/proj/harness 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":12.150141116,"data":"\n"}
+,{"stream_name":"stdout","time":12.150192974,"data":"\n"}
+,{"stream_name":"stdout","time":12.150198414,"data":"######## d3_edge (elapsed 0 min)\n"}
+,{"stream_name":"stdout","time":12.15020248,"data":"$ pip install -q 'transformers\u003e=5.17' accelerate 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":28.937293113,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 35.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":28.937477834,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":367.44474073,"data":"wrote 3573 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":367.444771975,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":367.444793187,"data":"15:12:46 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":367.444799395,"data":"\n"}
+,{"stream_name":"stdout","time":367.444803948,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":367.444810437,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":367.444815564,"data":"15:13:11 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":367.44481962,"data":"15:13:21 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":367.444823703,"data":"15:13:32 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":367.444827712,"data":"15:13:43 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":367.444831742,"data":"15:13:53 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":367.444835939,"data":"15:14:04 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":367.444845046,"data":"15:14:15 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":367.444848066,"data":"\n"}
+,{"stream_name":"stdout","time":367.4448507,"data":"\n"}
+,{"stream_name":"stdout","time":367.444853284,"data":"15:14:30 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":367.44485607,"data":"15:14:50 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":367.444858777,"data":"15:15:12 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":367.444861525,"data":"15:15:33 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":367.444864205,"data":"15:15:55 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":367.44487818,"data":"15:16:17 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":367.444893242,"data":"15:16:39 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":367.444897376,"data":"15:17:01 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":367.444901031,"data":"15:17:23 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":367.444905281,"data":"\n"}
+,{"stream_name":"stdout","time":367.444908922,"data":"\n"}
+,{"stream_name":"stdout","time":367.444912052,"data":"\n"}
+,{"stream_name":"stdout","time":367.444915085,"data":"15:17:45 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":367.444918377,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":684.819550327,"data":"wrote 2990 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":684.819604972,"data":"\n"}
+,{"stream_name":"stdout","time":684.819610898,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":684.819617687,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":684.819622805,"data":"15:18:25 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":684.819627642,"data":"15:18:38 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":684.819631874,"data":"15:18:52 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":684.819636811,"data":"15:19:06 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":684.819641465,"data":"15:19:20 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":684.819645966,"data":"15:19:35 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":684.819650227,"data":"15:19:49 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":684.819654951,"data":"\n"}
+,{"stream_name":"stdout","time":684.819659572,"data":"15:20:10 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":684.819663718,"data":"15:20:36 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":684.819668092,"data":"15:21:03 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":684.819672676,"data":"15:21:30 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":684.819676958,"data":"15:21:56 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":684.819681232,"data":"15:22:23 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":684.819686757,"data":"15:22:49 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":684.825562331,"data":"== d3_edge eval native rot0: 10.9 min; lines so far: 6563\n"}
+,{"stream_name":"stdout","time":684.825803643,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":799.486858936,"data":"wrote 1773 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":799.486902659,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":799.486925483,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":799.486928769,"data":"15:23:39 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":799.486930997,"data":"15:23:51 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":799.486933243,"data":"15:24:02 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":799.48693538,"data":"15:24:13 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":799.486937506,"data":"15:24:25 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":799.48693972,"data":"15:24:36 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":799.486941846,"data":"15:24:47 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":799.486944022,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":799.486946411,"data":"15:24:57 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":799.486948755,"data":"15:24:59 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":799.486950942,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":1113.816785109,"data":"wrote 2989 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1113.816839278,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":1113.816847319,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":1113.816852316,"data":"15:25:37 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1113.816856423,"data":"15:25:50 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1113.816860582,"data":"15:26:04 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1113.816864951,"data":"15:26:18 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1113.816869118,"data":"15:26:32 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1113.816877941,"data":"15:26:45 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1113.816881342,"data":"15:26:59 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1113.816884059,"data":"15:27:20 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":1113.816886763,"data":"15:27:46 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":1113.816889537,"data":"15:28:13 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":1113.816892248,"data":"15:28:39 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":1113.816894955,"data":"15:29:05 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":1113.816910913,"data":"15:29:32 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":1113.816913331,"data":"15:29:58 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":1113.826657034,"data":"== d3_edge eval roman rot0: 7.1 min; lines so far: 11325\n"}
+,{"stream_name":"stdout","time":1113.826873862,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":1514.435854884,"data":"wrote 4422 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1514.435899934,"data":"\n"}
+,{"stream_name":"stdout","time":1514.435906092,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":1514.435912278,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":1514.435917666,"data":"15:30:49 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1514.43592226,"data":"15:31:00 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1514.435929925,"data":"15:31:12 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1514.435933146,"data":"15:31:23 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1514.435936045,"data":"15:31:35 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1514.435938951,"data":"15:31:47 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1514.435941842,"data":"15:31:58 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1514.435944817,"data":"\n"}
+,{"stream_name":"stdout","time":1514.435947626,"data":"15:32:12 INFO bn_bnli: 1600 written\n"}
+,{"stream_name":"stdout","time":1514.435950513,"data":"15:32:26 INFO bn_bnli: 1800 written\n"}
+,{"stream_name":"stdout","time":1514.43595341,"data":"15:32:40 INFO bn_bnli: 2000 written\n"}
+,{"stream_name":"stdout","time":1514.435956373,"data":"15:32:54 INFO bn_bnli: 2200 written\n"}
+,{"stream_name":"stdout","time":1514.435959248,"data":"15:33:08 INFO bn_bnli: 2400 written\n"}
+,{"stream_name":"stdout","time":1514.435962185,"data":"15:33:23 INFO bn_bnli: 2600 written\n"}
+,{"stream_name":"stdout","time":1514.435966646,"data":"15:33:37 INFO bn_bnli: 2800 written\n"}
+,{"stream_name":"stdout","time":1514.435981127,"data":"\n"}
+,{"stream_name":"stdout","time":1514.435986116,"data":"15:33:55 INFO bn_massive: 3000 written\n"}
+,{"stream_name":"stdout","time":1514.435991143,"data":"15:34:21 INFO bn_massive: 3200 written\n"}
+,{"stream_name":"stdout","time":1514.435996051,"data":"15:34:48 INFO bn_massive: 3400 written\n"}
+,{"stream_name":"stdout","time":1514.436000368,"data":"15:35:15 INFO bn_massive: 3600 written\n"}
+,{"stream_name":"stdout","time":1514.436004656,"data":"15:35:41 INFO bn_massive: 3800 written\n"}
+,{"stream_name":"stdout","time":1514.436008906,"data":"15:36:08 INFO bn_massive: 4000 written\n"}
+,{"stream_name":"stdout","time":1514.436013246,"data":"15:36:35 INFO bn_massive: 4200 written\n"}
+,{"stream_name":"stdout","time":1514.43601758,"data":"15:37:01 INFO bn_massive: 4400 written\n"}
+,{"stream_name":"stdout","time":1514.451215236,"data":"== d3_edge dev native rot0: 6.7 min; lines so far: 15747\n"}
+,{"stream_name":"stdout","time":1514.451514517,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":1908.026129742,"data":"wrote 4413 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1908.026190347,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":1908.026200279,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":1908.026206393,"data":"15:37:29 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1908.026211205,"data":"15:37:40 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1908.026216047,"data":"15:37:52 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1908.02622078,"data":"15:38:03 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1908.026227685,"data":"15:38:14 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1908.0262357,"data":"15:38:25 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1908.026238958,"data":"15:38:37 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1908.026242203,"data":"15:38:50 INFO bn_bnli: 1600 written\n"}
+,{"stream_name":"stdout","time":1908.026245455,"data":"15:39:04 INFO bn_bnli: 1800 written\n"}
+,{"stream_name":"stdout","time":1908.02624858,"data":"15:39:18 INFO bn_bnli: 2000 written\n"}
+,{"stream_name":"stdout","time":1908.026251748,"data":"15:39:31 INFO bn_bnli: 2200 written\n"}
+,{"stream_name":"stdout","time":1908.026254899,"data":"15:39:45 INFO bn_bnli: 2400 written\n"}
+,{"stream_name":"stdout","time":1908.026258136,"data":"15:39:59 INFO bn_bnli: 2600 written\n"}
+,{"stream_name":"stdout","time":1908.026261263,"data":"15:40:13 INFO bn_bnli: 2800 written\n"}
+,{"stream_name":"stdout","time":1908.026264959,"data":"15:40:31 INFO bn_massive: 3000 written\n"}
+,{"stream_name":"stdout","time":1908.026283759,"data":"15:40:57 INFO bn_massive: 3200 written\n"}
+,{"stream_name":"stdout","time":1908.026289875,"data":"15:41:24 INFO bn_massive: 3400 written\n"}
+,{"stream_name":"stdout","time":1908.026295416,"data":"15:41:50 INFO bn_massive: 3600 written\n"}
+,{"stream_name":"stdout","time":1908.026300848,"data":"15:42:17 INFO bn_massive: 3800 written\n"}
+,{"stream_name":"stdout","time":1908.026305688,"data":"15:42:43 INFO bn_massive: 4000 written\n"}
+,{"stream_name":"stdout","time":1908.026310512,"data":"15:43:09 INFO bn_massive: 4200 written\n"}
+,{"stream_name":"stdout","time":1908.026315217,"data":"15:43:36 INFO bn_massive: 4400 written\n"}
+,{"stream_name":"stdout","time":1908.045938461,"data":"== d3_edge dev roman rot0: 6.6 min; lines so far: 20160\n"}
+,{"stream_name":"stdout","time":1908.046131095,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":2225.403751497,"data":"wrote 3573 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":2225.403793861,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":2225.403813214,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":2225.403817623,"data":"15:44:03 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":2225.403820918,"data":"15:44:14 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":2225.403824358,"data":"15:44:26 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":2225.403827752,"data":"15:44:37 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":2225.403831643,"data":"15:44:49 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":2225.403834937,"data":"15:45:00 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":2225.403838578,"data":"15:45:12 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":2225.403841788,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":2225.403845406,"data":"15:45:21 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":2225.403848968,"data":"15:45:27 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":2225.403852326,"data":"15:45:48 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":2225.403855803,"data":"15:46:10 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":2225.403859594,"data":"15:46:32 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":2225.403863748,"data":"15:46:54 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":2225.403868376,"data":"15:47:17 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":2225.403872234,"data":"15:47:39 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":2225.403875692,"data":"15:48:01 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":2225.403879141,"data":"15:48:23 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":2225.403883,"data":"15:48:45 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":2225.403886594,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":2544.025495386,"data":"wrote 2990 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":2544.025549118,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":2544.025558338,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":2544.025564444,"data":"15:49:23 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":2544.025569053,"data":"15:49:38 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":2544.025584308,"data":"15:49:52 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":2544.025587691,"data":"15:50:06 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":2544.025592645,"data":"15:50:20 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":2544.025599707,"data":"15:50:34 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":2544.025602299,"data":"15:50:49 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":2544.025604539,"data":"15:51:09 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":2544.025606684,"data":"15:51:36 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":2544.02560881,"data":"15:52:02 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":2544.025610934,"data":"15:52:29 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":2544.025613147,"data":"15:52:55 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":2544.025615261,"data":"15:53:22 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":2544.0256174,"data":"15:53:48 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":2544.05056624,"data":"== d3_edge eval native rot1: 10.6 min; lines so far: 26723\n"}
+,{"stream_name":"stdout","time":2544.050588775,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":2861.435062263,"data":"wrote 3573 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":2861.435116449,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":2861.435125662,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":2861.435131822,"data":"15:54:39 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":2861.435136929,"data":"15:54:50 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":2861.435141761,"data":"15:55:02 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":2861.435146741,"data":"15:55:14 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":2861.435151694,"data":"15:55:25 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":2861.435156734,"data":"15:55:37 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":2861.4351618,"data":"15:55:48 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":2861.435166498,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":2861.435172,"data":"15:55:58 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":2861.435177579,"data":"15:56:03 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":2861.435182685,"data":"15:56:24 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":2861.43518971,"data":"15:56:46 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":2861.435195156,"data":"15:57:09 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":2861.435213242,"data":"15:57:30 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":2861.435217629,"data":"15:57:53 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":2861.435221456,"data":"15:58:15 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":2861.435225902,"data":"15:58:37 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":2861.435230431,"data":"15:59:00 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":2861.435234566,"data":"15:59:21 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":2861.435238977,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":3180.047781606,"data":"wrote 2990 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":3180.047839641,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":3180.047847171,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":3180.047852215,"data":"15:59:59 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":3180.047856437,"data":"16:00:14 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":3180.047860486,"data":"16:00:28 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":3180.047864473,"data":"16:00:42 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":3180.04786847,"data":"16:00:57 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":3180.047872518,"data":"16:01:11 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":3180.047878368,"data":"16:01:25 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":3180.047885859,"data":"16:01:45 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":3180.047888659,"data":"16:02:12 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":3180.047891355,"data":"16:02:38 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":3180.047894044,"data":"16:03:05 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":3180.047896715,"data":"16:03:31 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":3180.047900372,"data":"16:03:58 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":3180.047916205,"data":"16:04:24 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":3180.07705611,"data":"== d3_edge eval native rot2: 10.6 min; lines so far: 33286\n"}
+,{"stream_name":"stdout","time":3180.077214022,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":3295.312112775,"data":"wrote 1773 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":3295.312152218,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":3295.312159271,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":3295.312176749,"data":"16:05:15 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":3295.312180452,"data":"16:05:26 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":3295.312183934,"data":"16:05:38 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":3295.312187418,"data":"16:05:49 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":3295.312190919,"data":"16:06:01 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":3295.312194193,"data":"16:06:12 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":3295.312197998,"data":"16:06:23 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":3295.312201499,"data":"16:06:35 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":3295.312205059,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":3610.321685697,"data":"wrote 2989 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":3610.321752605,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":3610.321761184,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":3610.321766441,"data":"16:07:13 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":3610.321770938,"data":"16:07:27 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":3610.321775306,"data":"16:07:41 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":3610.321779711,"data":"16:07:54 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":3610.321784001,"data":"16:08:08 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":3610.321788474,"data":"16:08:22 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":3610.321792663,"data":"16:08:35 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":3610.321797018,"data":"16:08:56 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":3610.321807503,"data":"16:09:23 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":3610.321810856,"data":"16:09:49 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":3610.321813733,"data":"16:10:15 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":3610.321816591,"data":"16:10:42 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":3610.321819562,"data":"16:11:08 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":3610.321836464,"data":"16:11:35 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":3610.356915859,"data":"== d3_edge eval roman rot1: 7.2 min; lines so far: 38048\n"}
+,{"stream_name":"stdout","time":3610.356950668,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":3726.014867324,"data":"wrote 1773 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":3726.014932199,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":3726.01493909,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":3726.014942001,"data":"16:12:26 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":3726.014944498,"data":"16:12:37 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":3726.014946911,"data":"16:12:48 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":3726.014949186,"data":"16:13:00 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":3726.014951448,"data":"16:13:11 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":3726.014953807,"data":"16:13:22 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":3726.014956086,"data":"16:13:33 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":3726.014958429,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":3726.014960984,"data":"16:13:43 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":3726.014963497,"data":"16:13:46 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":3726.014965846,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":4041.126598545,"data":"wrote 2989 responses to /kaggle/working/runs/d3_edge; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":4041.126659643,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":4041.126672157,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":4041.126678187,"data":"16:14:24 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":4041.126683279,"data":"16:14:38 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":4041.126688209,"data":"16:14:51 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":4041.126693229,"data":"16:15:05 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":4041.126698166,"data":"16:15:19 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":4041.126703083,"data":"16:15:32 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":4041.126708064,"data":"16:15:46 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":4041.126712973,"data":"16:16:07 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":4041.126717934,"data":"16:16:33 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":4041.126722814,"data":"16:17:00 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":4041.126737377,"data":"16:17:26 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":4041.126741602,"data":"16:17:53 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":4041.126745691,"data":"16:18:19 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":4041.126749575,"data":"16:18:46 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":4041.1726226,"data":"== d3_edge eval roman rot2: 7.2 min; lines so far: 42810\n"}
+,{"stream_name":"stdout","time":4041.172649188,"data":"\n"}
+,{"stream_name":"stdout","time":4041.172653767,"data":"######## d3_lite (elapsed 67 min)\n"}
+,{"stream_name":"stdout","time":4041.172868346,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":4711.247519309,"data":"wrote 3573 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":4711.247586437,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":4711.247592975,"data":"16:19:21 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":4711.24759758,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":4711.247603607,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":4711.247608244,"data":"16:20:01 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":4711.247612852,"data":"16:20:25 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":4711.247617461,"data":"16:20:49 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":4711.247621858,"data":"16:21:14 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":4711.247626292,"data":"16:21:38 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":4711.247630557,"data":"16:22:02 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":4711.247634741,"data":"16:22:26 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":4711.247639201,"data":"16:22:56 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":4711.247643157,"data":"16:23:43 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":4711.247647405,"data":"16:24:30 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":4711.247651899,"data":"16:25:17 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":4711.247656304,"data":"16:26:04 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":4711.247660528,"data":"16:26:52 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":4711.247664576,"data":"16:27:40 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":4711.247668648,"data":"16:28:27 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":4711.247672868,"data":"16:29:15 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":4711.247676972,"data":"16:29:59 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":4711.247682243,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":5377.30669584,"data":"wrote 2990 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":5377.306761841,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":5377.306771088,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":5377.306777844,"data":"16:31:05 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":5377.306782402,"data":"16:31:36 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":5377.306787212,"data":"16:32:06 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":5377.306791988,"data":"16:32:36 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":5377.306797093,"data":"16:33:07 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":5377.306801399,"data":"16:33:37 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":5377.306805628,"data":"16:34:08 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":5377.306810008,"data":"16:34:52 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":5377.306814413,"data":"16:35:49 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":5377.306819043,"data":"16:36:45 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":5377.306823898,"data":"16:37:42 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":5377.306828096,"data":"16:38:39 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":5377.306832316,"data":"16:39:36 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":5377.306836692,"data":"16:40:33 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":5377.313286215,"data":"== d3_lite eval native rot0: 22.3 min; lines so far: 6563\n"}
+,{"stream_name":"stdout","time":5377.313639519,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":5604.348512391,"data":"wrote 1773 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":5604.348579026,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":5604.348587112,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":5604.348593212,"data":"16:42:05 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":5604.348597892,"data":"16:42:29 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":5604.348602007,"data":"16:42:53 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":5604.34860617,"data":"16:43:17 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":5604.348621513,"data":"16:43:41 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":5604.348624906,"data":"16:44:05 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":5604.348628157,"data":"16:44:28 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":5604.348631475,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":5604.348635032,"data":"16:44:49 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":5604.348638694,"data":"16:44:53 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":5604.3486421,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":6261.951789862,"data":"wrote 2989 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":6261.951858759,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":6261.951867283,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":6261.95187327,"data":"16:45:57 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":6261.951878926,"data":"16:46:27 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":6261.951884337,"data":"16:46:56 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":6261.95188947,"data":"16:47:25 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":6261.9518944,"data":"16:47:55 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":6261.951900042,"data":"16:48:24 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":6261.951904869,"data":"16:48:54 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":6261.951909833,"data":"16:49:37 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":6261.951914589,"data":"16:50:34 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":6261.951919955,"data":"16:51:31 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":6261.951925952,"data":"16:52:27 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":6261.951932339,"data":"16:53:24 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":6261.951937304,"data":"16:54:21 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":6261.951942067,"data":"16:55:18 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":6261.963811846,"data":"== d3_lite eval roman rot0: 14.7 min; lines so far: 11325\n"}
+,{"stream_name":"stdout","time":6261.964081969,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":7102.5888724,"data":"wrote 4422 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":7102.588922293,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":7102.588959373,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":7102.588964984,"data":"16:56:51 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":7102.588968852,"data":"16:57:16 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":7102.5889726,"data":"16:57:40 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":7102.588976432,"data":"16:58:04 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":7102.58898002,"data":"16:58:29 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":7102.588983081,"data":"16:58:53 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":7102.588986475,"data":"16:59:18 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":7102.588990469,"data":"16:59:47 INFO bn_bnli: 1600 written\n"}
+,{"stream_name":"stdout","time":7102.588993703,"data":"17:00:17 INFO bn_bnli: 1800 written\n"}
+,{"stream_name":"stdout","time":7102.588996985,"data":"17:00:48 INFO bn_bnli: 2000 written\n"}
+,{"stream_name":"stdout","time":7102.589000156,"data":"17:01:18 INFO bn_bnli: 2200 written\n"}
+,{"stream_name":"stdout","time":7102.5890034,"data":"17:01:48 INFO bn_bnli: 2400 written\n"}
+,{"stream_name":"stdout","time":7102.58900658,"data":"17:02:19 INFO bn_bnli: 2600 written\n"}
+,{"stream_name":"stdout","time":7102.589009763,"data":"17:02:49 INFO bn_bnli: 2800 written\n"}
+,{"stream_name":"stdout","time":7102.589013002,"data":"17:03:28 INFO bn_massive: 3000 written\n"}
+,{"stream_name":"stdout","time":7102.589018123,"data":"17:04:25 INFO bn_massive: 3200 written\n"}
+,{"stream_name":"stdout","time":7102.589025025,"data":"17:05:21 INFO bn_massive: 3400 written\n"}
+,{"stream_name":"stdout","time":7102.58902734,"data":"17:06:18 INFO bn_massive: 3600 written\n"}
+,{"stream_name":"stdout","time":7102.589029468,"data":"17:07:15 INFO bn_massive: 3800 written\n"}
+,{"stream_name":"stdout","time":7102.589032023,"data":"17:08:12 INFO bn_massive: 4000 written\n"}
+,{"stream_name":"stdout","time":7102.589047447,"data":"17:09:09 INFO bn_massive: 4200 written\n"}
+,{"stream_name":"stdout","time":7102.58905135,"data":"17:10:06 INFO bn_massive: 4400 written\n"}
+,{"stream_name":"stdout","time":7102.604217937,"data":"== d3_lite dev native rot0: 14.0 min; lines so far: 15747\n"}
+,{"stream_name":"stdout","time":7102.604494113,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":7930.950309122,"data":"wrote 4413 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":7930.950367585,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":7930.950375572,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":7930.950381503,"data":"17:10:51 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":7930.95040583,"data":"17:11:15 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":7930.950430813,"data":"17:11:38 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":7930.95043468,"data":"17:12:02 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":7930.9504382,"data":"17:12:27 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":7930.950442056,"data":"17:12:51 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":7930.950445609,"data":"17:13:15 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":7930.950449051,"data":"17:13:43 INFO bn_bnli: 1600 written\n"}
+,{"stream_name":"stdout","time":7930.950452338,"data":"17:14:13 INFO bn_bnli: 1800 written\n"}
+,{"stream_name":"stdout","time":7930.950456664,"data":"17:14:42 INFO bn_bnli: 2000 written\n"}
+,{"stream_name":"stdout","time":7930.9504603,"data":"17:15:12 INFO bn_bnli: 2200 written\n"}
+,{"stream_name":"stdout","time":7930.950463642,"data":"17:15:41 INFO bn_bnli: 2400 written\n"}
+,{"stream_name":"stdout","time":7930.950467531,"data":"17:16:11 INFO bn_bnli: 2600 written\n"}
+,{"stream_name":"stdout","time":7930.95047128,"data":"17:16:40 INFO bn_bnli: 2800 written\n"}
+,{"stream_name":"stdout","time":7930.950474814,"data":"17:17:19 INFO bn_massive: 3000 written\n"}
+,{"stream_name":"stdout","time":7930.950478259,"data":"17:18:16 INFO bn_massive: 3200 written\n"}
+,{"stream_name":"stdout","time":7930.950481837,"data":"17:19:13 INFO bn_massive: 3400 written\n"}
+,{"stream_name":"stdout","time":7930.950485594,"data":"17:20:09 INFO bn_massive: 3600 written\n"}
+,{"stream_name":"stdout","time":7930.950489491,"data":"17:21:06 INFO bn_massive: 3800 written\n"}
+,{"stream_name":"stdout","time":7930.950493088,"data":"17:22:03 INFO bn_massive: 4000 written\n"}
+,{"stream_name":"stdout","time":7930.950497145,"data":"17:23:00 INFO bn_massive: 4200 written\n"}
+,{"stream_name":"stdout","time":7930.950500964,"data":"17:23:57 INFO bn_massive: 4400 written\n"}
+,{"stream_name":"stdout","time":7930.969261291,"data":"== d3_lite dev roman rot0: 13.8 min; lines so far: 20160\n"}
+,{"stream_name":"stdout","time":7930.969472475,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":8588.979237043,"data":"wrote 3573 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":8588.97927971,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":8588.97928594,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":8588.979289343,"data":"17:24:39 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":8588.979292328,"data":"17:25:03 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":8588.979295306,"data":"17:25:28 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":8588.979298174,"data":"17:25:52 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":8588.979301154,"data":"17:26:17 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":8588.979303988,"data":"17:26:41 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":8588.979316551,"data":"17:27:05 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":8588.97931896,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":8588.97932126,"data":"17:27:25 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":8588.979323593,"data":"17:27:35 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":8588.979325814,"data":"17:28:21 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":8588.979327951,"data":"17:29:08 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":8588.97933007,"data":"17:29:55 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":8588.979332183,"data":"17:30:42 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":8588.979334374,"data":"17:31:30 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":8588.979336486,"data":"17:32:18 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":8588.9793386,"data":"17:33:05 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":8588.979340709,"data":"17:33:53 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":8588.979342901,"data":"17:34:37 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":8588.9793451,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":9255.941862396,"data":"wrote 2990 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":9255.941907803,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":9255.941917147,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":9255.941923017,"data":"17:35:43 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":9255.941927478,"data":"17:36:14 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":9255.941932448,"data":"17:36:44 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":9255.941937478,"data":"17:37:14 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":9255.941941538,"data":"17:37:45 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":9255.94194594,"data":"17:38:15 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":9255.941950497,"data":"17:38:46 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":9255.941955018,"data":"17:39:30 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":9255.941959336,"data":"17:40:27 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":9255.941964118,"data":"17:41:24 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":9255.941969052,"data":"17:42:21 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":9255.941973426,"data":"17:43:18 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":9255.94197775,"data":"17:44:14 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":9255.941996816,"data":"17:45:11 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":9255.966637763,"data":"== d3_lite eval native rot1: 22.1 min; lines so far: 26723\n"}
+,{"stream_name":"stdout","time":9255.966799092,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":9913.227557186,"data":"wrote 3573 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":9913.22762911,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":9913.227640121,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":9913.227645302,"data":"17:46:44 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":9913.227649551,"data":"17:47:08 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":9913.227653641,"data":"17:47:32 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":9913.227657806,"data":"17:47:56 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":9913.227667269,"data":"17:48:21 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":9913.227670441,"data":"17:48:45 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":9913.227673177,"data":"17:49:09 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":9913.227675943,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":9913.227678882,"data":"17:49:30 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":9913.22768173,"data":"17:49:39 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":9913.227684417,"data":"17:50:25 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":9913.227687073,"data":"17:51:12 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":9913.227689755,"data":"17:52:00 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":9913.22769243,"data":"17:52:47 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":9913.227695125,"data":"17:53:34 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":9913.227697775,"data":"17:54:22 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":9913.227700438,"data":"17:55:09 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":9913.227704153,"data":"17:55:57 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":9913.227720238,"data":"17:56:41 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":9913.227725163,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":10580.47990567,"data":"wrote 2990 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":10580.479959953,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":10580.479979456,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":10580.479984572,"data":"17:57:48 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":10580.479994593,"data":"17:58:19 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":10580.479997443,"data":"17:58:49 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":10580.479999843,"data":"17:59:19 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":10580.480002443,"data":"17:59:50 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":10580.480004843,"data":"18:00:20 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":10580.480007311,"data":"18:00:50 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":10580.480009708,"data":"18:01:34 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":10580.480012275,"data":"18:02:31 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":10580.480014778,"data":"18:03:28 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":10580.480017329,"data":"18:04:25 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":10580.480019734,"data":"18:05:22 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":10580.480022119,"data":"18:06:19 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":10580.480025263,"data":"18:07:16 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":10580.509080252,"data":"== d3_lite eval native rot2: 22.1 min; lines so far: 33286\n"}
+,{"stream_name":"stdout","time":10580.509296697,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":10807.876078103,"data":"wrote 1773 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":10807.876129124,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":10807.876135339,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":10807.876138893,"data":"18:08:48 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":10807.876141872,"data":"18:09:13 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":10807.876144844,"data":"18:09:36 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":10807.876147649,"data":"18:10:00 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":10807.876150642,"data":"18:10:24 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":10807.876153492,"data":"18:10:48 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":10807.876156353,"data":"18:11:12 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":10807.876159131,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":10807.876176272,"data":"18:11:32 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":10807.876178819,"data":"18:11:37 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":10807.876181031,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":11467.096799029,"data":"wrote 2989 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":11467.096858247,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":11467.096863711,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":11467.096867098,"data":"18:12:42 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":11467.096869983,"data":"18:13:11 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":11467.096872736,"data":"18:13:40 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":11467.096875416,"data":"18:14:10 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":11467.096878074,"data":"18:14:40 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":11467.096880741,"data":"18:15:09 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":11467.096883489,"data":"18:15:39 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":11467.096886141,"data":"18:16:22 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":11467.09688884,"data":"18:17:19 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":11467.096891509,"data":"18:18:16 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":11467.096894275,"data":"18:19:13 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":11467.09689692,"data":"18:20:09 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":11467.096899591,"data":"18:21:06 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":11467.096902265,"data":"18:22:03 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":11467.13481892,"data":"== d3_lite eval roman rot1: 14.8 min; lines so far: 38048\n"}
+,{"stream_name":"stdout","time":11467.135122602,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":11694.263466882,"data":"wrote 1773 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":11694.26351216,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":11694.263519519,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":11694.263524893,"data":"18:23:35 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":11694.263542186,"data":"18:23:59 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":11694.263545762,"data":"18:24:23 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":11694.263549027,"data":"18:24:47 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":11694.263552413,"data":"18:25:11 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":11694.263555819,"data":"18:25:34 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":11694.263559108,"data":"18:25:58 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":11694.263579817,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":11694.26358395,"data":"18:26:18 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":11694.263588079,"data":"18:26:23 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":11694.263591953,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":12352.845053932,"data":"wrote 2989 responses to /kaggle/working/runs/d3_lite; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":12352.845100824,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":12352.845109748,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":12352.845115376,"data":"18:27:28 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":12352.845120412,"data":"18:27:58 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":12352.845125444,"data":"18:28:27 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":12352.845130174,"data":"18:28:56 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":12352.845134833,"data":"18:29:26 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":12352.845139702,"data":"18:29:55 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":12352.845144446,"data":"18:30:25 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":12352.84514947,"data":"18:31:08 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":12352.8451542,"data":"18:32:05 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":12352.845158645,"data":"18:33:02 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":12352.845163488,"data":"18:33:59 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":12352.845168087,"data":"18:34:55 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":12352.845172622,"data":"18:35:52 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":12352.84517751,"data":"18:36:49 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":12352.88659441,"data":"== d3_lite eval roman rot2: 14.8 min; lines so far: 42810\n"}
+,{"stream_name":"stdout","time":12352.886621999,"data":"\n"}
+,{"stream_name":"stdout","time":12352.886626625,"data":"######## d3_nano (elapsed 206 min)\n"}
+,{"stream_name":"stdout","time":12352.886796426,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":13879.72134239,"data":"wrote 3573 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":13879.721399287,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":13879.721435254,"data":"18:37:52 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":13879.721443874,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":13879.721450267,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":13879.721455486,"data":"18:39:16 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":13879.721459847,"data":"18:40:09 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":13879.721464226,"data":"18:41:04 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":13879.721468687,"data":"18:41:58 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":13879.721478161,"data":"18:42:54 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":13879.721481327,"data":"18:43:47 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":13879.721484264,"data":"18:44:41 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":13879.721487162,"data":"18:45:47 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":13879.721490188,"data":"18:47:36 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":13879.721493109,"data":"18:49:27 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":13879.721496023,"data":"18:51:18 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":13879.721498872,"data":"18:53:09 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":13879.721501826,"data":"18:55:02 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":13879.721504677,"data":"18:56:55 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":13879.721507549,"data":"18:58:47 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":13879.721510402,"data":"19:00:39 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":13879.721513295,"data":"19:02:21 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":13879.721516205,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":15424.296030644,"data":"wrote 2990 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":15424.296080066,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":15424.296088535,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":15424.296116795,"data":"19:04:36 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":15424.296120994,"data":"19:05:47 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":15424.296124656,"data":"19:06:58 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":15424.296128309,"data":"19:08:08 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":15424.296131692,"data":"19:09:20 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":15424.296135497,"data":"19:10:30 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":15424.296139131,"data":"19:11:41 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":15424.296142638,"data":"19:13:24 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":15424.296146049,"data":"19:15:37 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":15424.296149725,"data":"19:17:51 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":15424.296153381,"data":"19:20:05 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":15424.296156875,"data":"19:22:19 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":15424.296160464,"data":"19:24:33 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":15424.296163884,"data":"19:26:47 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":15424.302240002,"data":"== d3_nano eval native rot0: 51.2 min; lines so far: 6563\n"}
+,{"stream_name":"stdout","time":15424.302467503,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":15911.000015233,"data":"wrote 1773 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":15911.00006467,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":15911.000070755,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":15911.000074413,"data":"19:30:01 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":15911.000077515,"data":"19:30:54 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":15911.000080557,"data":"19:31:47 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":15911.00008347,"data":"19:32:41 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":15911.000086347,"data":"19:33:34 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":15911.000089219,"data":"19:34:27 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":15911.000092181,"data":"19:35:20 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":15911.000095093,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":15911.00009818,"data":"19:36:05 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":15911.000119217,"data":"19:36:14 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":15911.000121982,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":17436.235919443,"data":"wrote 2989 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":17436.235977243,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":17436.235986061,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":17436.235991454,"data":"19:38:24 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":17436.235995692,"data":"19:39:33 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":17436.235999702,"data":"19:40:41 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":17436.236003729,"data":"19:41:49 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":17436.236007693,"data":"19:42:59 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":17436.23601356,"data":"19:44:07 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":17436.236020889,"data":"19:45:15 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":17436.236023695,"data":"19:46:57 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":17436.236026386,"data":"19:49:10 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":17436.236029063,"data":"19:51:24 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":17436.236031731,"data":"19:53:38 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":17436.23603447,"data":"19:55:52 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":17436.236037121,"data":"19:58:06 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":17436.236039811,"data":"20:00:19 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":17436.246733651,"data":"== d3_nano eval roman rot0: 33.5 min; lines so far: 11325\n"}
+,{"stream_name":"stdout","time":17436.247041311,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":19369.134292811,"data":"wrote 4422 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":19369.134342177,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":19369.134351236,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":19369.134357367,"data":"20:03:36 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":19369.134370547,"data":"20:04:30 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":19369.134375696,"data":"20:05:24 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":19369.134405285,"data":"20:06:19 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":19369.13442546,"data":"20:07:15 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":19369.134429736,"data":"20:08:09 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":19369.134433147,"data":"20:09:04 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":19369.134438884,"data":"20:10:12 INFO bn_bnli: 1600 written\n"}
+,{"stream_name":"stdout","time":19369.134442727,"data":"20:11:22 INFO bn_bnli: 1800 written\n"}
+,{"stream_name":"stdout","time":19369.134446905,"data":"20:12:33 INFO bn_bnli: 2000 written\n"}
+,{"stream_name":"stdout","time":19369.134450878,"data":"20:13:44 INFO bn_bnli: 2200 written\n"}
+,{"stream_name":"stdout","time":19369.134455059,"data":"20:14:55 INFO bn_bnli: 2400 written\n"}
+,{"stream_name":"stdout","time":19369.134459316,"data":"20:16:06 INFO bn_bnli: 2600 written\n"}
+,{"stream_name":"stdout","time":19369.134463097,"data":"20:17:17 INFO bn_bnli: 2800 written\n"}
+,{"stream_name":"stdout","time":19369.134466667,"data":"20:18:46 INFO bn_massive: 3000 written\n"}
+,{"stream_name":"stdout","time":19369.134470507,"data":"20:21:00 INFO bn_massive: 3200 written\n"}
+,{"stream_name":"stdout","time":19369.13447409,"data":"20:23:14 INFO bn_massive: 3400 written\n"}
+,{"stream_name":"stdout","time":19369.134478325,"data":"20:25:28 INFO bn_massive: 3600 written\n"}
+,{"stream_name":"stdout","time":19369.134482277,"data":"20:27:42 INFO bn_massive: 3800 written\n"}
+,{"stream_name":"stdout","time":19369.134485977,"data":"20:29:56 INFO bn_massive: 4000 written\n"}
+,{"stream_name":"stdout","time":19369.134489605,"data":"20:32:10 INFO bn_massive: 4200 written\n"}
+,{"stream_name":"stdout","time":19369.134494174,"data":"20:34:24 INFO bn_massive: 4400 written\n"}
+,{"stream_name":"stdout","time":19369.149301836,"data":"== d3_nano dev native rot0: 32.2 min; lines so far: 15747\n"}
+,{"stream_name":"stdout","time":19369.149492081,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":21269.317607362,"data":"wrote 4413 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":21269.317653077,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":21269.317661714,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":21269.317666739,"data":"20:35:49 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":21269.317670867,"data":"20:36:42 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":21269.317675022,"data":"20:37:34 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":21269.317680867,"data":"20:38:28 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":21269.31768843,"data":"20:39:22 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":21269.317691244,"data":"20:40:15 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":21269.317693989,"data":"20:41:09 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":21269.317696687,"data":"20:42:14 INFO bn_bnli: 1600 written\n"}
+,{"stream_name":"stdout","time":21269.317709503,"data":"20:43:23 INFO bn_bnli: 1800 written\n"}
+,{"stream_name":"stdout","time":21269.31771177,"data":"20:44:31 INFO bn_bnli: 2000 written\n"}
+,{"stream_name":"stdout","time":21269.317713894,"data":"20:45:39 INFO bn_bnli: 2200 written\n"}
+,{"stream_name":"stdout","time":21269.317716017,"data":"20:46:48 INFO bn_bnli: 2400 written\n"}
+,{"stream_name":"stdout","time":21269.317718214,"data":"20:47:56 INFO bn_bnli: 2600 written\n"}
+,{"stream_name":"stdout","time":21269.317720483,"data":"20:49:05 INFO bn_bnli: 2800 written\n"}
+,{"stream_name":"stdout","time":21269.317736329,"data":"20:50:34 INFO bn_massive: 3000 written\n"}
+,{"stream_name":"stdout","time":21269.317740131,"data":"20:52:48 INFO bn_massive: 3200 written\n"}
+,{"stream_name":"stdout","time":21269.317744016,"data":"20:55:02 INFO bn_massive: 3400 written\n"}
+,{"stream_name":"stdout","time":21269.317747788,"data":"20:57:15 INFO bn_massive: 3600 written\n"}
+,{"stream_name":"stdout","time":21269.317751826,"data":"20:59:29 INFO bn_massive: 3800 written\n"}
+,{"stream_name":"stdout","time":21269.317755525,"data":"21:01:43 INFO bn_massive: 4000 written\n"}
+,{"stream_name":"stdout","time":21269.317758798,"data":"21:03:56 INFO bn_massive: 4200 written\n"}
+,{"stream_name":"stdout","time":21269.317762039,"data":"21:06:10 INFO bn_massive: 4400 written\n"}
+,{"stream_name":"stdout","time":21269.339436022,"data":"== d3_nano dev roman rot0: 31.7 min; lines so far: 20160\n"}
+,{"stream_name":"stdout","time":21269.339618017,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":22768.179109229,"data":"wrote 3573 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":22768.179165759,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":22768.179174392,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":22768.179180551,"data":"21:07:27 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":22768.179185616,"data":"21:08:21 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":22768.179190486,"data":"21:09:15 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":22768.179195332,"data":"21:10:09 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":22768.179200206,"data":"21:11:05 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":22768.17920498,"data":"21:11:58 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":22768.179209794,"data":"21:12:52 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":22768.179214996,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":22768.179220435,"data":"21:13:38 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":22768.179225606,"data":"21:13:57 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":22768.179230512,"data":"21:15:46 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":22768.179250766,"data":"21:17:37 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":22768.179254889,"data":"21:19:28 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":22768.179259006,"data":"21:21:19 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":22768.179263466,"data":"21:23:11 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":22768.179267454,"data":"21:25:04 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":22768.179272323,"data":"21:26:56 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":22768.179277446,"data":"21:28:48 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":22768.179281439,"data":"21:30:30 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":22768.179285975,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":24311.132526191,"data":"wrote 2990 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":24311.132561574,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":24311.132568753,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":24311.132573863,"data":"21:32:43 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":24311.132578194,"data":"21:33:54 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":24311.132582729,"data":"21:35:05 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":24311.132587226,"data":"21:36:16 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":24311.132591927,"data":"21:37:28 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":24311.132596853,"data":"21:38:38 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":24311.132601484,"data":"21:39:49 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":24311.132605471,"data":"21:41:31 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":24311.132609869,"data":"21:43:45 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":24311.132614463,"data":"21:45:59 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":24311.132618312,"data":"21:48:12 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":24311.132622664,"data":"21:50:26 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":24311.132643405,"data":"21:52:40 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":24311.132648666,"data":"21:54:54 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":24311.166363491,"data":"== d3_nano eval native rot1: 50.7 min; lines so far: 26723\n"}
+,{"stream_name":"stdout","time":24311.166896899,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":25809.698456048,"data":"wrote 3573 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":25809.698521849,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":25809.698549928,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":25809.698554351,"data":"21:58:09 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":25809.698557928,"data":"21:59:02 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":25809.698561219,"data":"21:59:57 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":25809.698564624,"data":"22:00:51 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":25809.698567898,"data":"22:01:46 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":25809.698571306,"data":"22:02:40 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":25809.698574656,"data":"22:03:34 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":25809.698578116,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":25809.698581515,"data":"22:04:20 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":25809.698585131,"data":"22:04:39 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":25809.698588487,"data":"22:06:28 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":25809.698591844,"data":"22:08:19 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":25809.698595159,"data":"22:10:10 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":25809.698598619,"data":"22:12:01 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":25809.698602001,"data":"22:13:53 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":25809.698604997,"data":"22:15:46 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":25809.698609008,"data":"22:17:37 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":25809.698613338,"data":"22:19:29 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":25809.698617146,"data":"22:21:11 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":25809.698620588,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":27354.236265847,"data":"wrote 2990 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":27354.236318147,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":27354.236326007,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":27354.236330916,"data":"22:23:25 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":27354.236335133,"data":"22:24:36 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":27354.236354989,"data":"22:25:47 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":27354.236357594,"data":"22:26:58 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":27354.236359688,"data":"22:28:10 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":27354.236361877,"data":"22:29:20 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":27354.236364008,"data":"22:30:31 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":27354.236366206,"data":"22:32:14 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":27354.236368344,"data":"22:34:28 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":27354.236370455,"data":"22:36:42 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":27354.236372552,"data":"22:38:55 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":27354.236374733,"data":"22:41:09 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":27354.236376831,"data":"22:43:23 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":27354.236378956,"data":"22:45:37 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":27354.266612946,"data":"== d3_nano eval native rot2: 50.7 min; lines so far: 33286\n"}
+,{"stream_name":"stdout","time":27354.266820593,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":27842.024227296,"data":"wrote 1773 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":27842.024286009,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":27842.024293839,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":27842.024298958,"data":"22:48:52 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":27842.024303243,"data":"22:49:45 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":27842.024307331,"data":"22:50:38 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":27842.024316509,"data":"22:51:32 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":27842.024320178,"data":"22:52:26 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":27842.024323061,"data":"22:53:18 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":27842.024325808,"data":"22:54:11 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":27842.024328617,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":27842.024331524,"data":"22:54:56 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":27842.024334531,"data":"22:55:05 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":27842.024337281,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":29367.614531688,"data":"wrote 2989 responses to /kaggle/working/runs/d3_nano; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":29367.61460209,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":29367.614609122,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":29367.614614135,"data":"22:57:15 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":29367.614618106,"data":"22:58:24 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":29367.614621599,"data":"22:59:32 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":29367.614625181,"data":"23:00:40 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":29367.614628989,"data":"23:01:50 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":29367.614632608,"data":"23:02:58 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":29367.614636126,"data":"23:04:07 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":29367.614639549,"data":"23:05:49 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":29367.614643668,"data":"23:08:02 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":29367.614647326,"data":"23:10:16 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":29367.614650793,"data":"23:12:30 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":29367.614654488,"data":"23:14:43 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":29367.614658261,"data":"23:16:57 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":29367.614661814,"data":"23:19:11 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":29367.649232047,"data":"== d3_nano eval roman rot1: 33.6 min; lines so far: 38048\n"}
+,{"stream_name":"stdout","time":29367.649255691,"data":"TIME GUARD: skipping remaining settings\n"}
+,{"stream_name":"stdout","time":29367.649260317,"data":"\n"}
+,{"stream_name":"stdout","time":29367.649263734,"data":"######## d3_mini (elapsed 489 min)\n"}
+,{"stream_name":"stdout","time":29367.64926712,"data":"TIME GUARD: skipping remaining settings\n"}
+,{"stream_name":"stdout","time":29367.649270565,"data":"ALL DONE 8.154305281374189 h\n"}
+,{"stream_name":"stderr","time":29369.579270687,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":29369.579299207,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":29369.803576127,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":29369.803602007,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":29370.5473591,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":29371.492862297,"data":"[NbConvertApp] Writing 295193 bytes to __results__.html\n"}
+]

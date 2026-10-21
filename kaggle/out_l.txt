@@ -1,0 +1,152 @@
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+Tesla T4, 15360 MiB
+Tesla T4, 15360 MiB
+$ pip install -q -e /kaggle/working/proj/harness 'laya==0.4.11' 2>&1 | tail -2
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 430.9/430.9 kB 11.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 kB 1.9 MB/s eta 0:00:00
+$ python -c "import laya; print('laya', laya.__version__)"
+laya 0.4.11
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla
+wrote 3573 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+12:41:50 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+12:42:35 INFO bn_sentnob: 200 written
+12:42:41 INFO bn_sentnob: 400 written
+12:42:47 INFO bn_sentnob: 600 written
+12:42:53 INFO bn_sentnob: 800 written
+12:42:59 INFO bn_sentnob: 1000 written
+12:43:05 INFO bn_sentnob: 1200 written
+12:43:11 INFO bn_sentnob: 1400 written
+
+
+12:43:20 INFO bn_belebele: 1600 written
+12:43:26 INFO bn_belebele: 1800 written
+12:43:32 INFO bn_belebele: 2000 written
+12:43:38 INFO bn_belebele: 2200 written
+12:43:44 INFO bn_belebele: 2400 written
+12:43:50 INFO bn_belebele: 2600 written
+12:43:56 INFO bn_belebele: 2800 written
+12:44:02 INFO bn_belebele: 3000 written
+12:44:08 INFO bn_belebele: 3200 written
+
+
+
+12:44:17 INFO bn_sib200: 3400 written
+   -> /kaggle/working/runs/laya_bangla: 3573 lines (3 min elapsed)
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla
+wrote 2990 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)
+
+12:44:46 INFO bn_bnli: 200 written
+12:44:52 INFO bn_bnli: 400 written
+12:44:58 INFO bn_bnli: 600 written
+12:45:04 INFO bn_bnli: 800 written
+12:45:10 INFO bn_bnli: 1000 written
+12:45:16 INFO bn_bnli: 1200 written
+12:45:22 INFO bn_bnli: 1400 written
+
+12:45:29 INFO bn_massive: 1600 written
+12:45:36 INFO bn_massive: 1800 written
+12:45:42 INFO bn_massive: 2000 written
+12:45:49 INFO bn_massive: 2200 written
+12:45:56 INFO bn_massive: 2400 written
+12:46:02 INFO bn_massive: 2600 written
+12:46:09 INFO bn_massive: 2800 written
+   -> /kaggle/working/runs/laya_bangla: 6563 lines (5 min elapsed)
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla
+wrote 1773 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)
+12:46:38 INFO bn_sentnob: 200 written
+12:46:44 INFO bn_sentnob: 400 written
+12:46:50 INFO bn_sentnob: 600 written
+12:46:56 INFO bn_sentnob: 800 written
+12:47:02 INFO bn_sentnob: 1000 written
+12:47:08 INFO bn_sentnob: 1200 written
+12:47:14 INFO bn_sentnob: 1400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+12:47:20 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+12:47:21 INFO bn_sib200: 1600 written
+   -> /kaggle/working/runs/laya_bangla: 8336 lines (6 min elapsed)
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla
+wrote 2989 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)
+12:47:49 INFO bn_bnli: 200 written
+12:47:55 INFO bn_bnli: 400 written
+12:48:00 INFO bn_bnli: 600 written
+12:48:06 INFO bn_bnli: 800 written
+12:48:12 INFO bn_bnli: 1000 written
+12:48:18 INFO bn_bnli: 1200 written
+12:48:24 INFO bn_bnli: 1400 written
+12:48:31 INFO bn_massive: 1600 written
+12:48:37 INFO bn_massive: 1800 written
+12:48:44 INFO bn_massive: 2000 written
+12:48:51 INFO bn_massive: 2200 written
+12:48:57 INFO bn_massive: 2400 written
+12:49:04 INFO bn_massive: 2600 written
+12:49:10 INFO bn_massive: 2800 written
+   -> /kaggle/working/runs/laya_bangla: 11325 lines (8 min elapsed)
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla
+wrote 4422 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)
+
+12:49:39 INFO bn_sentnob: 200 written
+12:49:45 INFO bn_sentnob: 400 written
+12:49:51 INFO bn_sentnob: 600 written
+12:49:58 INFO bn_sentnob: 800 written
+12:50:04 INFO bn_sentnob: 1000 written
+12:50:10 INFO bn_sentnob: 1200 written
+12:50:16 INFO bn_sentnob: 1400 written
+
+12:50:23 INFO bn_bnli: 1600 written
+12:50:29 INFO bn_bnli: 1800 written
+12:50:35 INFO bn_bnli: 2000 written
+12:50:41 INFO bn_bnli: 2200 written
+12:50:47 INFO bn_bnli: 2400 written
+12:50:54 INFO bn_bnli: 2600 written
+12:51:00 INFO bn_bnli: 2800 written
+
+12:51:07 INFO bn_massive: 3000 written
+12:51:13 INFO bn_massive: 3200 written
+12:51:20 INFO bn_massive: 3400 written
+12:51:27 INFO bn_massive: 3600 written
+12:51:34 INFO bn_massive: 3800 written
+12:51:41 INFO bn_massive: 4000 written
+12:51:48 INFO bn_massive: 4200 written
+12:51:55 INFO bn_massive: 4400 written
+   -> /kaggle/working/runs/laya_bangla: 15747 lines (10 min elapsed)
+$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla
+wrote 4413 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)
+12:52:18 INFO bn_sentnob: 200 written
+12:52:24 INFO bn_sentnob: 400 written
+12:52:30 INFO bn_sentnob: 600 written
+12:52:36 INFO bn_sentnob: 800 written
+12:52:41 INFO bn_sentnob: 1000 written
+12:52:47 INFO bn_sentnob: 1200 written
+12:52:53 INFO bn_sentnob: 1400 written
+12:52:59 INFO bn_bnli: 1600 written
+12:53:05 INFO bn_bnli: 1800 written
+12:53:11 INFO bn_bnli: 2000 written
+12:53:16 INFO bn_bnli: 2200 written
+12:53:22 INFO bn_bnli: 2400 written
+12:53:28 INFO bn_bnli: 2600 written
+12:53:34 INFO bn_bnli: 2800 written
+12:53:40 INFO bn_massive: 3000 written
+12:53:47 INFO bn_massive: 3200 written
+12:53:53 INFO bn_massive: 3400 written
+12:54:00 INFO bn_massive: 3600 written
+12:54:06 INFO bn_massive: 3800 written
+12:54:13 INFO bn_massive: 4000 written
+12:54:19 INFO bn_massive: 4200 written
+12:54:26 INFO bn_massive: 4400 written
+   -> /kaggle/working/runs/laya_bangla: 20160 lines (13 min elapsed)
+Traceback (most recent call last):
+  File "/kaggle/src/script.py", line 49, in <module>
+    run(tasks, "eval", "", LB, out, BN_VARIANT=v, BN_ROT=rot); run(LARGE, "eval", "--limit 1500", LB, out, BN_VARIANT=v, BN_ROT=rot)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/src/script.py", line 33, in run
+    e = dict(os.environ, BN_QLANG="en", BN_ROT="0", **{k: str(v) for k, v in env.items()})
+TypeError: dict() got multiple values for keyword argument 'BN_ROT'
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 296061 bytes to __results__.html

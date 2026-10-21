@@ -1,0 +1,250 @@
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+Tesla T4, 15360 MiB
+Tesla T4, 15360 MiB
+$ pip install -q -e /kaggle/working/proj/harness 2>&1 | tail -1
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 kB 1.3 MB/s eta 0:00:00
+
+######## laya_ml (elapsed 0 min)
+$ pip install -q laya 2>&1 | tail -2
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.6/117.6 kB 2.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 410.1/410.1 kB 9.5 MB/s eta 0:00:00
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml_human
+wrote 882 responses to /kaggle/working/runs/laya_ml_human; 0 unsupported/failed items (see failures.jsonl)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:50:18 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+15:50:56 INFO bn_sentnob: 200 written
+
+15:51:02 INFO bn_massive: 400 written
+15:51:09 INFO bn_massive: 600 written
+15:51:15 INFO bn_massive: 800 written
+
+== laya_ml native: 1.3 min; lines so far 882
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml_human
+wrote 882 responses to /kaggle/working/runs/laya_ml_human; 0 unsupported/failed items (see failures.jsonl)
+15:51:42 INFO bn_sentnob: 200 written
+15:51:48 INFO bn_massive: 400 written
+15:51:54 INFO bn_massive: 600 written
+15:52:01 INFO bn_massive: 800 written
+== laya_ml roman: 0.7 min; lines so far 1764
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml_human
+wrote 780 responses to /kaggle/working/runs/laya_ml_human; 0 unsupported/failed items (see failures.jsonl)
+15:52:25 INFO bn_sentnob: 200 written
+15:52:31 INFO bn_massive: 400 written
+15:52:37 INFO bn_massive: 600 written
+== laya_ml roman_nat: 0.7 min; lines so far 2544
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml_human
+wrote 691 responses to /kaggle/working/runs/laya_ml_human; 0 unsupported/failed items (see failures.jsonl)
+15:53:04 INFO bn_sentnob: 200 written
+15:53:10 INFO bn_massive: 400 written
+15:53:16 INFO bn_massive: 600 written
+== laya_ml human: 0.6 min; lines so far 3235
+
+######## julia1 (elapsed 3 min)
+$ python -c "from huggingface_hub import snapshot_download as s; s('SupersonicLabs/Julia-1', local_dir='/kaggle/tmp/Julia-1')" && pip install -q -e /kaggle/tmp/Julia-1 2>&1 | tail -2
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 74.5 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 73.5 MB/s eta 0:00:00
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1_human
+wrote 385 responses to /kaggle/working/runs/julia1_human; 497 unsupported/failed items (see failures.jsonl)
+15:54:09 INFO bn_sentnob: 200 written
+== julia1 native: 0.5 min; lines so far 385
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1_human
+wrote 385 responses to /kaggle/working/runs/julia1_human; 497 unsupported/failed items (see failures.jsonl)
+15:54:34 INFO bn_sentnob: 200 written
+== julia1 roman: 0.4 min; lines so far 770
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1_human
+wrote 361 responses to /kaggle/working/runs/julia1_human; 419 unsupported/failed items (see failures.jsonl)
+15:54:59 INFO bn_sentnob: 200 written
+== julia1 roman_nat: 0.4 min; lines so far 1131
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1_human
+wrote 325 responses to /kaggle/working/runs/julia1_human; 366 unsupported/failed items (see failures.jsonl)
+15:55:23 INFO bn_sentnob: 200 written
+== julia1 human: 0.4 min; lines so far 1456
+
+######## d3_edge (elapsed 5 min)
+$ pip install -q 'transformers>=5.17' accelerate 2>&1 | tail -2
+diffusers 0.40.0 requires huggingface-hub<2.0,>=1.23.0, but you have huggingface-hub 2.2.0 which is incompatible.
+gradio-client 2.6.1 requires huggingface-hub<2.0,>=0.19.3, but you have huggingface-hub 2.2.0 which is incompatible.
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --out /kaggle/working/runs/d3_edge_human
+wrote 882 responses to /kaggle/working/runs/d3_edge_human; 0 unsupported/failed items (see failures.jsonl)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:55:52 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+15:56:16 INFO bn_sentnob: 200 written
+15:56:32 INFO bn_massive: 400 written
+15:56:57 INFO bn_massive: 600 written
+15:57:23 INFO bn_massive: 800 written
+== d3_edge native: 1.8 min; lines so far 882
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --out /kaggle/working/runs/d3_edge_human
+wrote 882 responses to /kaggle/working/runs/d3_edge_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+15:57:53 INFO bn_sentnob: 200 written
+15:58:10 INFO bn_massive: 400 written
+15:58:35 INFO bn_massive: 600 written
+15:59:01 INFO bn_massive: 800 written
+== d3_edge roman: 1.6 min; lines so far 1764
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --out /kaggle/working/runs/d3_edge_human
+wrote 780 responses to /kaggle/working/runs/d3_edge_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+15:59:31 INFO bn_sentnob: 200 written
+15:59:49 INFO bn_massive: 400 written
+16:00:15 INFO bn_massive: 600 written
+== d3_edge roman_nat: 1.4 min; lines so far 2544
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --out /kaggle/working/runs/d3_edge_human
+wrote 691 responses to /kaggle/working/runs/d3_edge_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:00:58 INFO bn_sentnob: 200 written
+16:01:19 INFO bn_massive: 400 written
+16:01:45 INFO bn_massive: 600 written
+== d3_edge human: 1.3 min; lines so far 3235
+
+######## gemma4_e4b (elapsed 12 min)
+$ python scripts/run_open_model.py bn_sentnob bn_massive bn_bnli --split eval --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b_human
+shard 0/1: wrote 882 responses to /kaggle/working/runs/gemma4_e4b_human
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:02:03 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:05:15 INFO shard 0/1: +512 examples (512 prompts, 127009 tokens) in 71.8s, 512 total
+16:06:48 INFO shard 0/1: +370 examples (370 prompts, 157020 tokens) in 92.7s, 882 total
+== gemma4_e4b native: 4.9 min; lines so far 882
+$ python scripts/run_open_model.py bn_sentnob bn_massive bn_bnli --split eval --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b_human
+shard 0/1: wrote 882 responses to /kaggle/working/runs/gemma4_e4b_human
+16:08:31 INFO shard 0/1: +512 examples (512 prompts, 129415 tokens) in 73.4s, 512 total
+16:10:03 INFO shard 0/1: +370 examples (370 prompts, 158979 tokens) in 92.2s, 882 total
+== gemma4_e4b roman: 3.3 min; lines so far 1764
+$ python scripts/run_open_model.py bn_sentnob bn_massive bn_bnli --split eval --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b_human
+shard 0/1: wrote 780 responses to /kaggle/working/runs/gemma4_e4b_human
+16:11:48 INFO shard 0/1: +512 examples (512 prompts, 137216 tokens) in 78.6s, 512 total
+16:12:52 INFO shard 0/1: +268 examples (268 prompts, 110416 tokens) in 64.3s, 780 total
+== gemma4_e4b roman_nat: 2.8 min; lines so far 2544
+$ python scripts/run_open_model.py bn_sentnob bn_massive bn_bnli --split eval --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b_human
+shard 0/1: wrote 691 responses to /kaggle/working/runs/gemma4_e4b_human
+16:14:44 INFO shard 0/1: +512 examples (512 prompts, 150952 tokens) in 86.4s, 512 total
+16:15:22 INFO shard 0/1: +179 examples (179 prompts, 67728 tokens) in 38.6s, 691 total
+== gemma4_e4b human: 2.5 min; lines so far 3235
+
+######## d3_lite (elapsed 25 min)
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --out /kaggle/working/runs/d3_lite_human
+wrote 882 responses to /kaggle/working/runs/d3_lite_human; 0 unsupported/failed items (see failures.jsonl)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:15:33 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:16:11 INFO bn_sentnob: 200 written
+16:16:46 INFO bn_massive: 400 written
+16:17:41 INFO bn_massive: 600 written
+16:18:35 INFO bn_massive: 800 written
+== d3_lite native: 3.5 min; lines so far 882
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --out /kaggle/working/runs/d3_lite_human
+wrote 882 responses to /kaggle/working/runs/d3_lite_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:19:26 INFO bn_sentnob: 200 written
+16:20:01 INFO bn_massive: 400 written
+16:20:55 INFO bn_massive: 600 written
+16:21:49 INFO bn_massive: 800 written
+== d3_lite roman: 3.2 min; lines so far 1764
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --out /kaggle/working/runs/d3_lite_human
+wrote 780 responses to /kaggle/working/runs/d3_lite_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:22:40 INFO bn_sentnob: 200 written
+16:23:18 INFO bn_massive: 400 written
+16:24:12 INFO bn_massive: 600 written
+== d3_lite roman_nat: 2.8 min; lines so far 2544
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --out /kaggle/working/runs/d3_lite_human
+wrote 691 responses to /kaggle/working/runs/d3_lite_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:25:30 INFO bn_sentnob: 200 written
+16:26:14 INFO bn_massive: 400 written
+16:27:08 INFO bn_massive: 600 written
+== d3_lite human: 2.5 min; lines so far 3235
+
+######## d3_nano (elapsed 37 min)
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --out /kaggle/working/runs/d3_nano_human
+wrote 882 responses to /kaggle/working/runs/d3_nano_human; 0 unsupported/failed items (see failures.jsonl)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:27:36 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:28:59 INFO bn_sentnob: 200 written
+16:30:17 INFO bn_massive: 400 written
+16:32:25 INFO bn_massive: 600 written
+16:34:33 INFO bn_massive: 800 written
+== d3_nano native: 7.7 min; lines so far 882
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --out /kaggle/working/runs/d3_nano_human
+wrote 882 responses to /kaggle/working/runs/d3_nano_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:36:12 INFO bn_sentnob: 200 written
+16:37:29 INFO bn_massive: 400 written
+16:39:37 INFO bn_massive: 600 written
+16:41:45 INFO bn_massive: 800 written
+== d3_nano roman: 7.2 min; lines so far 1764
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --out /kaggle/working/runs/d3_nano_human
+wrote 780 responses to /kaggle/working/runs/d3_nano_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:43:23 INFO bn_sentnob: 200 written
+16:44:49 INFO bn_massive: 400 written
+16:46:57 INFO bn_massive: 600 written
+== d3_nano roman_nat: 6.2 min; lines so far 2544
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --out /kaggle/working/runs/d3_nano_human
+wrote 691 responses to /kaggle/working/runs/d3_nano_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:49:38 INFO bn_sentnob: 200 written
+16:51:19 INFO bn_massive: 400 written
+16:53:27 INFO bn_massive: 600 written
+== d3_nano human: 5.6 min; lines so far 3235
+
+######## d3_mini (elapsed 64 min)
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --out /kaggle/working/runs/d3_mini_human
+wrote 882 responses to /kaggle/working/runs/d3_mini_human; 0 unsupported/failed items (see failures.jsonl)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:54:17 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+16:57:39 INFO bn_sentnob: 200 written
+17:01:01 INFO bn_massive: 400 written
+17:06:33 INFO bn_massive: 600 written
+17:12:05 INFO bn_massive: 800 written
+== d3_mini native: 19.4 min; lines so far 882
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --out /kaggle/working/runs/d3_mini_human
+wrote 882 responses to /kaggle/working/runs/d3_mini_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+17:16:06 INFO bn_sentnob: 200 written
+17:19:27 INFO bn_massive: 400 written
+17:24:58 INFO bn_massive: 600 written
+17:30:30 INFO bn_massive: 800 written
+== d3_mini roman: 18.4 min; lines so far 1764
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --out /kaggle/working/runs/d3_mini_human
+wrote 780 responses to /kaggle/working/runs/d3_mini_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+17:34:18 INFO bn_sentnob: 200 written
+17:38:02 INFO bn_massive: 400 written
+17:43:33 INFO bn_massive: 600 written
+== d3_mini roman_nat: 15.8 min; lines so far 2544
+$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --out /kaggle/working/runs/d3_mini_human
+wrote 691 responses to /kaggle/working/runs/d3_mini_human; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+17:50:05 INFO bn_sentnob: 200 written
+17:54:28 INFO bn_massive: 400 written
+17:59:59 INFO bn_massive: 600 written
+== d3_mini human: 14.0 min; lines so far 3235
+ALL DONE 2.194769950244162 h
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 291972 bytes to __results__.html

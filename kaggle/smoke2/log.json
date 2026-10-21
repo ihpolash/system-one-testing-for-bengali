@@ -1,0 +1,69 @@
+[{"stream_name":"stdout","time":1.401573951,"data":"$ nvidia-smi --query-gpu=name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":1.439826603,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":1.43985251,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.439855552,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.4398706510000001,"data":"\n"}
+,{"stream_name":"stdout","time":1.439874743,"data":"$ pip install -q -e /kaggle/working/proj/harness laya 2\u003e\u00261 | tail -2\n"}
+,{"stream_name":"stdout","time":13.587087781,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.7/116.7 kB 3.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.587140857,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 384.8/384.8 kB 13.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.587147407,"data":"\n"}
+,{"stream_name":"stdout","time":13.587257491999999,"data":"\n"}
+,{"stream_name":"stdout","time":13.587275307,"data":"===== laya-multilingual\n"}
+,{"stream_name":"stdout","time":13.587279424,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli --split dev --limit 20 --backend laya --model convaiinnovations/laya-multilingual --max-len 1024 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":64.60589391,"data":"00 OK\"\n"}
+,{"stream_name":"stdout","time":64.606201722,"data":"17:37:09 INFO HTTP Request: HEAD https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/rl_agent_config.json \"HTTP/1.1 307 Temporary Redirect\"\n"}
+,{"stream_name":"stdout","time":64.606215926,"data":"17:37:09 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/rl_agent_config.json \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.606222499,"data":"17:37:09 INFO HTTP Request: GET https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/rl_agent_config.json \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.60622821,"data":"17:37:09 INFO HTTP Request: HEAD https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/encoder/config.json \"HTTP/1.1 307 Temporary Redirect\"\n"}
+,{"stream_name":"stdout","time":64.606233541,"data":"17:37:09 INFO HTTP Request: HEAD https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer/tokenizer_config.json \"HTTP/1.1 307 Temporary Redirect\"\n"}
+,{"stream_name":"stdout","time":64.606238421,"data":"17:37:09 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/encoder%2Fconfig.json \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.606243284,"data":"17:37:09 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer%2Ftokenizer_config.json \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.606251433,"data":"17:37:09 INFO HTTP Request: GET https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/encoder%2Fconfig.json \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.606256356,"data":"17:37:09 INFO HTTP Request: GET https://huggingface.co/api/resolve-cache/models/convaiinnovations/laya-multilingual/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer%2Ftokenizer_config.json \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.606275415,"data":"17:37:09 INFO HTTP Request: GET https://huggingface.co/api/models/convaiinnovations/laya-multilingual/xet-read-token/1720e3e3357cfe1e281542e223f8273b0890ca34 \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.606283435,"data":"17:37:40 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.606287381,"data":"\n"}
+,{"stream_name":"stdout","time":64.606291257,"data":"Generating train split: 0 examples [00:00, ? examples/s]\n"}
+,{"stream_name":"stdout","time":64.606295084,"data":"Generating train split: 500 examples [00:00, 33628.14 examples/s]\n"}
+,{"stream_name":"stdout","time":64.606298919,"data":"17:37:42 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py \"HTTP/1.1 200 OK\"\n"}
+,{"stream_name":"stdout","time":64.606302854,"data":"\n"}
+,{"stream_name":"stdout","time":64.606306287,"data":"Generating train split: 0 examples [00:00, ? examples/s]\n"}
+,{"stream_name":"stdout","time":64.606310521,"data":"Generating train split: 2419 examples [00:00, 297546.01 examples/s]\n"}
+,{"stream_name":"stdout","time":64.606314652,"data":"\n"}
+,{"stream_name":"stdout","time":64.606318453,"data":"lines: 40\n"}
+,{"stream_name":"stdout","time":64.606324619,"data":"{\"key\": \"a1973f7190c8583ce8aa33d38e7bbde312ad565a80423d7167edd8c43b834154\", \"task\": \"bn_sentnob\", \"uid\": \"bn/428\", \"latency_s\": 1.1727784359999873, \"response\": {\"model\": \"hf:convaiinnovations/laya-multilingual\", \"answers\": {\"answer\": {\"type\": \"choice\", \"choice\": \"neutral\", \"probabilities\": {\"neutral\": 0.94, \"positive\": 0.0191, \"negative\": 0.0408}, \"confidence\": 0.7593, \"answer_confidence\": 0.94, \"action\": {\"act_probability\": 1.0}}}, \"usage\": {\"input_tokens\": 76, \"output_tokens\": 0, \"state_tokens\": 19, \"state_tokens_dropped\": 0, \"truncated\": false, \"truncated_questions\": []}, \"diagnostics\": {}}}\n"}
+,{"stream_name":"stdout","time":64.606333906,"data":"$ pip install -q 'transformers\u003e=5.17' accelerate 2\u003e\u00261 | tail -2\n"}
+,{"stream_name":"stdout","time":80.744369891,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 100.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":80.744412142,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 40.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":80.744417561,"data":"\n"}
+,{"stream_name":"stdout","time":80.74442084,"data":"\n"}
+,{"stream_name":"stdout","time":80.744424676,"data":"===== d3-edge\n"}
+,{"stream_name":"stdout","time":80.744428612,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli --split dev --limit 20 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":82.322839402,"data":"usage: run_system_one_model.py [-h] --backend {kev,laya,julia} --model MODEL\n"}
+,{"stream_name":"stdout","time":82.322891599,"data":"                               [--tag-suffix TAG_SUFFIX] [--split {eval,dev}]\n"}
+,{"stream_name":"stdout","time":82.322899518,"data":"                               [--limit LIMIT] --out OUT\n"}
+,{"stream_name":"stdout","time":82.32290209,"data":"                               [--subfolder SUBFOLDER] [--kev-url KEV_URL]\n"}
+,{"stream_name":"stdout","time":82.322904374,"data":"                               [--julia-path JULIA_PATH] [--device DEVICE]\n"}
+,{"stream_name":"stdout","time":82.322906574,"data":"                               [--max-len MAX_LEN]\n"}
+,{"stream_name":"stdout","time":82.322931588,"data":"                               tasks [tasks ...]\n"}
+,{"stream_name":"stdout","time":82.322936045,"data":"run_system_one_model.py: error: argument --backend: invalid choice: 'vllmsr' (choose from 'kev', 'laya', 'julia')\n"}
+,{"stream_name":"stdout","time":82.322940219,"data":"\n"}
+,{"stream_name":"stdout","time":82.322943826,"data":"\n"}
+,{"stream_name":"stdout","time":82.322947501,"data":"===== d3-nano\n"}
+,{"stream_name":"stdout","time":82.322951408,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli --split dev --limit 20 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":83.883266344,"data":"usage: run_system_one_model.py [-h] --backend {kev,laya,julia} --model MODEL\n"}
+,{"stream_name":"stdout","time":83.883299636,"data":"                               [--tag-suffix TAG_SUFFIX] [--split {eval,dev}]\n"}
+,{"stream_name":"stdout","time":83.883304797,"data":"                               [--limit LIMIT] --out OUT\n"}
+,{"stream_name":"stdout","time":83.883308893,"data":"                               [--subfolder SUBFOLDER] [--kev-url KEV_URL]\n"}
+,{"stream_name":"stdout","time":83.883313289,"data":"                               [--julia-path JULIA_PATH] [--device DEVICE]\n"}
+,{"stream_name":"stdout","time":83.883317327,"data":"                               [--max-len MAX_LEN]\n"}
+,{"stream_name":"stdout","time":83.883321155,"data":"                               tasks [tasks ...]\n"}
+,{"stream_name":"stdout","time":83.883325171,"data":"run_system_one_model.py: error: argument --backend: invalid choice: 'vllmsr' (choose from 'kev', 'laya', 'julia')\n"}
+,{"stream_name":"stdout","time":83.883329477,"data":"\n"}
+,{"stream_name":"stderr","time":85.89398958,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":85.89402858,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":86.140456505,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":86.140492057,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":86.913499424,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":87.939453133,"data":"[NbConvertApp] Writing 282470 bytes to __results__.html\n"}
+]

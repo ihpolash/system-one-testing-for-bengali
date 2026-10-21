@@ -1,0 +1,62 @@
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+Tesla T4, 15360 MiB
+Tesla T4, 15360 MiB
+$ pip install -q -e /kaggle/working/proj/harness 'transformers>=5.17' accelerate bitsandbytes 2>&1 | tail -2
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 40.8 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 kB 2.8 MB/s eta 0:00:00
+$ python scripts/run_system_one_model.py bn_belebele bn_sentnob --split eval --limit 8 --backend vllmsr --model vllm-sr/d3-flash --tag-suffix @521525effa --d3-bnb 4 --out /kaggle/working/smoke_flash_4
+PATCH HIT: quantizing Qwen3_5Model to 4-bit
+wrote 16 responses to /kaggle/working/smoke_flash_4; 0 unsupported/failed items (see failures.jsonl)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+18:53:44 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+
+smoke 4-bit: 16 rows in 181s (includes load), valid=True
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 bn_bnli bn_massive --split eval --limit 400 --backend vllmsr --model vllm-sr/d3-flash --tag-suffix @521525effa --d3-bnb 4 --out /kaggle/working/runs/d3_flash
+PATCH HIT: quantizing Qwen3_5Model to 4-bit
+wrote 1803 responses to /kaggle/working/runs/d3_flash; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+19:01:11 INFO bn_sentnob: 200 written
+19:05:42 INFO bn_sentnob: 400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+19:05:43 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+19:14:39 INFO bn_belebele: 600 written
+19:23:44 INFO bn_belebele: 800 written
+
+
+
+19:28:23 INFO bn_sib200: 1000 written
+
+19:34:17 INFO bn_bnli: 1200 written
+19:40:12 INFO bn_bnli: 1400 written
+
+19:50:54 INFO bn_massive: 1600 written
+20:01:42 INFO bn_massive: 1800 written
+== d3_flash 4-bit eval native rot0: 65.5 min; lines so far 1803
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 bn_bnli bn_massive --split eval --limit 400 --backend vllmsr --model vllm-sr/d3-flash --tag-suffix @521525effa --d3-bnb 4 --out /kaggle/working/runs/d3_flash
+PATCH HIT: quantizing Qwen3_5Model to 4-bit
+wrote 1402 responses to /kaggle/working/runs/d3_flash; 0 unsupported/failed items (see failures.jsonl)
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+20:06:41 INFO bn_sentnob: 200 written
+20:11:08 INFO bn_sentnob: 400 written
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+20:11:08 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+20:15:38 INFO bn_sib200: 600 written
+20:21:20 INFO bn_bnli: 800 written
+20:27:05 INFO bn_bnli: 1000 written
+20:37:47 INFO bn_massive: 1200 written
+20:48:34 INFO bn_massive: 1400 written
+== d3_flash 4-bit eval roman rot0: 46.8 min; lines so far 3205
+ALL DONE 1.8726960672272577 h
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 291049 bytes to __results__.html

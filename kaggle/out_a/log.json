@@ -1,0 +1,574 @@
+[{"stream_name":"stdout","time":3.010068,"data":"$ nvidia-smi --query-gpu=name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":3.048859616,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":3.048884704,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":3.048897508,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":3.048900858,"data":"$ pip install -q -e /kaggle/working/proj/harness 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":14.8731068,"data":"\n"}
+,{"stream_name":"stdout","time":14.873140286,"data":"\n"}
+,{"stream_name":"stdout","time":14.873148752,"data":"######## laya_ml (elapsed 0 min)\n"}
+,{"stream_name":"stdout","time":14.873151536,"data":"$ pip install -q laya 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":19.175798942,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 384.8/384.8 kB 11.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":19.175923826000002,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":185.024124311,"data":"wrote 3561 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":185.024172327,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":185.024177869,"data":"17:40:20 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":185.024181522,"data":"\n"}
+,{"stream_name":"stdout","time":185.024184526,"data":"17:41:00 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":185.024187728,"data":"17:41:07 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":185.024190909,"data":"17:41:13 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":185.024193927,"data":"17:41:19 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":185.024196872,"data":"17:41:25 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":185.024199983,"data":"17:41:31 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":185.024203022,"data":"17:41:37 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":185.024206007,"data":"\n"}
+,{"stream_name":"stdout","time":185.024214579,"data":"\n"}
+,{"stream_name":"stdout","time":185.02421773,"data":"17:41:45 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":185.024221175,"data":"17:41:51 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":185.024224178,"data":"17:41:57 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":185.024227203,"data":"17:42:03 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":185.024230202,"data":"17:42:10 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":185.024233193,"data":"17:42:16 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":185.024236181,"data":"17:42:22 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":185.024239257,"data":"17:42:28 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":185.024242261,"data":"17:42:34 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":185.024245321,"data":"\n"}
+,{"stream_name":"stdout","time":185.02424826,"data":"\n"}
+,{"stream_name":"stdout","time":185.024251221,"data":"\n"}
+,{"stream_name":"stdout","time":185.024264965,"data":"17:42:43 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":185.024267786,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":295.975809519,"data":"wrote 2990 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":295.975856127,"data":"\n"}
+,{"stream_name":"stdout","time":295.975860977,"data":"17:43:13 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":295.975864467,"data":"17:43:19 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":295.975867533,"data":"17:43:25 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":295.975870641,"data":"17:43:31 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":295.975873657,"data":"17:43:37 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":295.975877144,"data":"17:43:44 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":295.975880282,"data":"17:43:50 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":295.975883284,"data":"\n"}
+,{"stream_name":"stdout","time":295.975886245,"data":"17:43:56 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":295.975889236,"data":"17:44:03 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":295.975892219,"data":"17:44:10 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":295.975895294,"data":"17:44:16 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":295.975898359,"data":"17:44:23 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":295.975901336,"data":"17:44:29 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":295.975904841,"data":"17:44:36 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":295.981426002,"data":"== laya_ml native rot0: 4.6 min; lines so far: 6551\n"}
+,{"stream_name":"stdout","time":295.981716613,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":368.029861899,"data":"wrote 1757 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":368.029943389,"data":"17:45:05 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":368.029950096,"data":"17:45:11 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":368.029955388,"data":"17:45:17 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":368.029959939,"data":"17:45:23 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":368.029964489,"data":"17:45:29 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":368.029968963,"data":"17:45:36 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":368.029975142,"data":"17:45:42 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":368.029983785,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":368.029987245,"data":"17:45:47 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":368.029990463,"data":"17:45:49 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":368.029994145,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":477.113473116,"data":"wrote 2989 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":477.113528974,"data":"17:46:16 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":477.113538756,"data":"17:46:22 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":477.113542016,"data":"17:46:28 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":477.113545249,"data":"17:46:34 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":477.113548282,"data":"17:46:40 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":477.113551454,"data":"17:46:46 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":477.113554758,"data":"17:46:52 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":477.113557737,"data":"17:46:58 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":477.113560781,"data":"17:47:05 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":477.113563964,"data":"17:47:11 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":477.113581178,"data":"17:47:18 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":477.113587139,"data":"17:47:24 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":477.113592594,"data":"17:47:31 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":477.11359819,"data":"17:47:37 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":477.123861024,"data":"== laya_ml roman rot0: 3.0 min; lines so far: 11297\n"}
+,{"stream_name":"stdout","time":477.124065225,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":606.669078956,"data":"wrote 3561 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":606.669122961,"data":"17:48:06 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":606.669141654,"data":"17:48:12 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":606.669146355,"data":"17:48:18 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":606.669150651,"data":"17:48:24 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":606.669155241,"data":"17:48:30 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":606.669159594,"data":"17:48:36 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":606.669164515,"data":"17:48:42 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":606.669168785,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":606.669173735,"data":"17:48:47 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":606.669197006,"data":"17:48:50 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":606.669201451,"data":"17:48:56 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":606.669206096,"data":"17:49:03 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":606.669210712,"data":"17:49:09 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":606.669215934,"data":"17:49:15 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":606.669221346,"data":"17:49:21 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":606.669238287,"data":"17:49:28 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":606.66924234,"data":"17:49:34 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":606.669246161,"data":"17:49:40 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":606.669249874,"data":"17:49:47 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":606.669253776,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":718.333655126,"data":"wrote 2990 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":718.333701936,"data":"17:50:15 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":718.333706513,"data":"17:50:21 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":718.333709587,"data":"17:50:27 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":718.333712471,"data":"17:50:34 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":718.333715365,"data":"17:50:40 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":718.333718287,"data":"17:50:46 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":718.333721294,"data":"17:50:52 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":718.333724029,"data":"17:50:58 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":718.333726879,"data":"17:51:05 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":718.333729628,"data":"17:51:12 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":718.333732618,"data":"17:51:18 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":718.333735405,"data":"17:51:25 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":718.333738499,"data":"17:51:31 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":718.333741674,"data":"17:51:38 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":718.348685706,"data":"== laya_ml native rot1: 4.0 min; lines so far: 17848\n"}
+,{"stream_name":"stdout","time":718.348909132,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":848.273749472,"data":"wrote 3561 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":848.27379659,"data":"17:52:07 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":848.273801181,"data":"17:52:13 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":848.273805048,"data":"17:52:19 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":848.273808224,"data":"17:52:25 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":848.273811371,"data":"17:52:32 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":848.27381444,"data":"17:52:38 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":848.273817522,"data":"17:52:44 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":848.273820572,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":848.27382385,"data":"17:52:49 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":848.27382707,"data":"17:52:52 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":848.273841458,"data":"17:52:58 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":848.27384461,"data":"17:53:04 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":848.273847006,"data":"17:53:10 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":848.273849385,"data":"17:53:17 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":848.273851806,"data":"17:53:23 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":848.273854113,"data":"17:53:29 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":848.273856528,"data":"17:53:35 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":848.273858934,"data":"17:53:42 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":848.273861438,"data":"17:53:49 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":848.273863968,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":958.86353061,"data":"wrote 2990 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":958.863580856,"data":"17:54:17 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":958.86358703,"data":"17:54:23 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":958.863591593,"data":"17:54:29 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":958.863596059,"data":"17:54:35 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":958.863600452,"data":"17:54:41 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":958.863604877,"data":"17:54:47 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":958.863609272,"data":"17:54:53 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":958.863613727,"data":"17:55:00 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":958.863624328,"data":"17:55:06 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":958.863627943,"data":"17:55:13 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":958.863630954,"data":"17:55:19 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":958.863633888,"data":"17:55:26 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":958.863636902,"data":"17:55:32 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":958.863639881,"data":"17:55:39 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":958.884370804,"data":"== laya_ml native rot2: 4.0 min; lines so far: 24399\n"}
+,{"stream_name":"stdout","time":958.884559854,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":1028.646016304,"data":"wrote 1757 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":1028.646074653,"data":"17:56:08 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1028.646079243,"data":"17:56:14 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1028.646082479,"data":"17:56:20 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1028.646085415,"data":"17:56:25 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1028.646088378,"data":"17:56:31 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1028.646091425,"data":"17:56:37 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1028.646094399,"data":"17:56:43 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1028.64610947,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1028.646112032,"data":"17:56:47 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1028.646114479,"data":"17:56:50 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":1028.646116806,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":1138.831711942,"data":"wrote 2989 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":1138.831756966,"data":"17:57:17 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1138.831763696,"data":"17:57:23 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1138.831768774,"data":"17:57:29 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1138.831773892,"data":"17:57:35 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1138.831778676,"data":"17:57:41 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1138.831783017,"data":"17:57:47 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1138.831788622,"data":"17:57:53 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1138.831793952,"data":"17:58:00 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":1138.831798557,"data":"17:58:06 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":1138.831803765,"data":"17:58:13 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":1138.831808974,"data":"17:58:19 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":1138.831813608,"data":"17:58:26 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":1138.831818884,"data":"17:58:32 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":1138.83182402,"data":"17:58:39 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":1138.856406866,"data":"== laya_ml roman rot1: 3.0 min; lines so far: 29145\n"}
+,{"stream_name":"stdout","time":1138.856442528,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":1208.532342999,"data":"wrote 1757 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":1208.532403399,"data":"17:59:07 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1208.5324098,"data":"17:59:13 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1208.532414437,"data":"17:59:19 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1208.532418725,"data":"17:59:25 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1208.532422923,"data":"17:59:31 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1208.532428916,"data":"17:59:37 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1208.532436119,"data":"17:59:43 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1208.532439167,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1208.532442601,"data":"17:59:47 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1208.532455403,"data":"17:59:50 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":1208.532457855,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":1320.596219676,"data":"wrote 2989 responses to /kaggle/working/runs/laya_ml\n"}
+,{"stream_name":"stdout","time":1320.596255368,"data":"18:00:17 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1320.596262786,"data":"18:00:23 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1320.596269987,"data":"18:00:29 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1320.59627567,"data":"18:00:36 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1320.596283086,"data":"18:00:42 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1320.596290506,"data":"18:00:48 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1320.596297827,"data":"18:00:54 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1320.596303859,"data":"18:01:00 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":1320.596310993,"data":"18:01:07 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":1320.596317053,"data":"18:01:14 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":1320.596322769,"data":"18:01:20 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":1320.596328449,"data":"18:01:27 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":1320.596335587,"data":"18:01:34 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":1320.596341655,"data":"18:01:40 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":1320.625005589,"data":"== laya_ml roman rot2: 3.0 min; lines so far: 33891\n"}
+,{"stream_name":"stdout","time":1320.625050257,"data":"\n"}
+,{"stream_name":"stdout","time":1320.625058892,"data":"######## julia1 (elapsed 22 min)\n"}
+,{"stream_name":"stderr","time":1321.384909965,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1327.826031932,"data":"$ pip install -q -e /kaggle/tmp/Julia-1 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":1350.079575115,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 67.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":1350.079773615,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1414.496505476,"data":"ownloads.\n"}
+,{"stream_name":"stdout","time":1414.496551757,"data":"18:03:14 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1414.496557104,"data":"18:03:17 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":1414.496560456,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1414.496563659,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1414.496567468,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1414.496570525,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1414.496582041,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1414.49658489,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1414.496587586,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1414.496590206,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1414.496592858,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1414.496595416,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1414.49659807,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1414.49660042,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1414.49660291,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1414.49660537,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 33, in predict_typed\n"}
+,{"stream_name":"stdout","time":1414.496607925,"data":"    scores=engine.logits(rows)\n"}
+,{"stream_name":"stdout","time":1414.49661032,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1414.496612862,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1414.496615228,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 187, in logits\n"}
+,{"stream_name":"stdout","time":1414.496617806,"data":"    encoded = self._encode(rows)\n"}
+,{"stream_name":"stdout","time":1414.496620138,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 107, in _encode\n"}
+,{"stream_name":"stdout","time":1414.496622626,"data":"    encoded = sequence(self._tokens, row, self.max_length, self.head_length,\n"}
+,{"stream_name":"stdout","time":1414.496625109,"data":"                       strict=self.strict_encoding)\n"}
+,{"stream_name":"stdout","time":1414.496627584,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 85, in sequence\n"}
+,{"stream_name":"stdout","time":1414.49663007,"data":"    raise ValueError('Option exceeds 48-token model contract')\n"}
+,{"stream_name":"stdout","time":1414.496632506,"data":"ValueError: Option exceeds 48-token model contract\n"}
+,{"stream_name":"stdout","time":1414.496635286,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1467.773522667,"data":"18:03:41 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1467.773575121,"data":"18:03:46 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1467.77358097,"data":"18:03:51 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1467.773586297,"data":"18:03:56 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1467.773591279,"data":"18:04:01 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1467.773596011,"data":"18:04:06 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1467.77360106,"data":"18:04:11 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1467.773606199,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1467.773622503,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1467.773628067,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1467.77363247,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1467.773636233,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1467.773640321,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1467.773644599,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1467.773648926,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1467.773653067,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1467.773656946,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1467.773661257,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1467.773665486,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1467.77366951,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1467.773673005,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":1467.773676987,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":1467.773681161,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1467.773685109,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":1467.773689265,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":1467.773693911,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":1467.775554129,"data":"== julia1 native rot0: 2.0 min; lines so far: 3205\n"}
+,{"stream_name":"stdout","time":1467.775775131,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1522.780807691,"data":" INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1522.780851925,"data":"18:04:40 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1522.780856524,"data":"18:04:45 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1522.780859583,"data":"18:04:49 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1522.780862786,"data":"18:04:54 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1522.780865771,"data":"18:04:59 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1522.780868713,"data":"18:05:04 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1522.780871659,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1522.780874726,"data":"18:05:07 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1522.780892305,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1522.780894891,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1522.780897981,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1522.780900236,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1522.780902391,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1522.780904797,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1522.780907507,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1522.780910034,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1522.780912514,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1522.780914936,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1522.780917334,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1522.780919552,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1522.780921906,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1522.780924151,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":1522.780926475,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":1522.780928681,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1522.78093091,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":1522.780933211,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":1522.780936355,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":1522.780938824,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1575.678319189,"data":"18:05:30 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1575.678353697,"data":"18:05:35 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1575.678359937,"data":"18:05:39 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1575.678364353,"data":"18:05:44 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1575.678368699,"data":"18:05:49 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1575.678372697,"data":"18:05:54 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1575.678381074,"data":"18:05:59 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1575.678385846,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1575.6783902,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1575.67839585,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1575.678400606,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1575.678404703,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1575.678421137,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1575.67842532,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1575.678429442,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1575.678433207,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1575.678437082,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1575.678441635,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1575.678445408,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1575.678449286,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1575.67845347,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":1575.678457408,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":1575.678460737,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1575.678463991,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":1575.678467433,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":1575.678471548,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":1575.681637495,"data":"== julia1 roman rot0: 1.8 min; lines so far: 6258\n"}
+,{"stream_name":"stdout","time":1575.681881757,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1636.58349824,"data":"ownloads.\n"}
+,{"stream_name":"stdout","time":1636.583539818,"data":"18:06:56 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1636.583547164,"data":"18:06:59 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":1636.583552086,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1636.583556593,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1636.583561982,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1636.583566475,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1636.583574063,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1636.583577301,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1636.583580444,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1636.583583685,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1636.583586909,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1636.583599822,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1636.583602666,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1636.583604963,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1636.583608189,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1636.583621325,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 33, in predict_typed\n"}
+,{"stream_name":"stdout","time":1636.583626135,"data":"    scores=engine.logits(rows)\n"}
+,{"stream_name":"stdout","time":1636.583630191,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1636.583634631,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1636.583638853,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 187, in logits\n"}
+,{"stream_name":"stdout","time":1636.583642704,"data":"    encoded = self._encode(rows)\n"}
+,{"stream_name":"stdout","time":1636.583646199,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 107, in _encode\n"}
+,{"stream_name":"stdout","time":1636.583649865,"data":"    encoded = sequence(self._tokens, row, self.max_length, self.head_length,\n"}
+,{"stream_name":"stdout","time":1636.583653518,"data":"                       strict=self.strict_encoding)\n"}
+,{"stream_name":"stdout","time":1636.583657215,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 85, in sequence\n"}
+,{"stream_name":"stdout","time":1636.583661365,"data":"    raise ValueError('Option exceeds 48-token model contract')\n"}
+,{"stream_name":"stdout","time":1636.583665139,"data":"ValueError: Option exceeds 48-token model contract\n"}
+,{"stream_name":"stdout","time":1636.583668813,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1691.14640953,"data":"18:07:24 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1691.146447752,"data":"18:07:29 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1691.146454752,"data":"18:07:34 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1691.146459666,"data":"18:07:39 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1691.146465437,"data":"18:07:44 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1691.146470544,"data":"18:07:49 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1691.146475319,"data":"18:07:54 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1691.146480642,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1691.146486162,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1691.146492183,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1691.146497754,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1691.146502959,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1691.146508562,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1691.146514407,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1691.146533102,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1691.146538138,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1691.146542106,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1691.14654734,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1691.14655186,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1691.146556048,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1691.14656047,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":1691.146565,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":1691.146569203,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1691.146573161,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":1691.146577931,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":1691.146583102,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":1691.152822796,"data":"== julia1 native rot1: 1.9 min; lines so far: 9463\n"}
+,{"stream_name":"stdout","time":1691.153351574,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1752.447747192,"data":"ownloads.\n"}
+,{"stream_name":"stdout","time":1752.447806735,"data":"18:08:52 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1752.447815419,"data":"18:08:55 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":1752.447821107,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1752.447826151,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1752.447831439,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1752.447835789,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1752.447840167,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1752.447844805,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1752.447851076,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1752.447859092,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1752.447862503,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1752.447865594,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1752.447868807,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1752.447882169,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1752.447884923,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1752.447887594,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 33, in predict_typed\n"}
+,{"stream_name":"stdout","time":1752.447903781,"data":"    scores=engine.logits(rows)\n"}
+,{"stream_name":"stdout","time":1752.447909136,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1752.447913789,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1752.447917982,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 187, in logits\n"}
+,{"stream_name":"stdout","time":1752.447922335,"data":"    encoded = self._encode(rows)\n"}
+,{"stream_name":"stdout","time":1752.447925812,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 107, in _encode\n"}
+,{"stream_name":"stdout","time":1752.447929589,"data":"    encoded = sequence(self._tokens, row, self.max_length, self.head_length,\n"}
+,{"stream_name":"stdout","time":1752.447933248,"data":"                       strict=self.strict_encoding)\n"}
+,{"stream_name":"stdout","time":1752.447936921,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 85, in sequence\n"}
+,{"stream_name":"stdout","time":1752.447951268,"data":"    raise ValueError('Option exceeds 48-token model contract')\n"}
+,{"stream_name":"stdout","time":1752.447954708,"data":"ValueError: Option exceeds 48-token model contract\n"}
+,{"stream_name":"stdout","time":1752.447958143,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1807.635216117,"data":"18:09:20 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1807.635267514,"data":"18:09:25 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1807.635274749,"data":"18:09:30 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1807.635282148,"data":"18:09:35 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1807.635289551,"data":"18:09:40 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1807.635296908,"data":"18:09:45 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1807.635302622,"data":"18:09:51 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1807.635308538,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1807.63531573,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1807.635321636,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1807.63532735,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1807.635333125,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1807.635338753,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1807.635344366,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1807.635351426,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1807.635357262,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1807.635374508,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1807.635379861,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1807.635385478,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1807.635390976,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1807.635396452,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":1807.635402124,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":1807.635407751,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1807.63541337,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":1807.635418908,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":1807.635424457,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":1807.642155352,"data":"== julia1 native rot2: 1.9 min; lines so far: 12668\n"}
+,{"stream_name":"stdout","time":1807.642408443,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1862.487056933,"data":" INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1862.487110961,"data":"18:10:19 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1862.487118271,"data":"18:10:24 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1862.487123637,"data":"18:10:29 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1862.48712888,"data":"18:10:34 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1862.487134124,"data":"18:10:39 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1862.487138639,"data":"18:10:43 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1862.487143135,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1862.48714782,"data":"18:10:47 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1862.487152624,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1862.487158913,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1862.487167645,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1862.487170619,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1862.487173597,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1862.48717886,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1862.487182489,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1862.487185733,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1862.487211331,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1862.48721618,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1862.487220915,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1862.487224965,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1862.487229714,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1862.487233521,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":1862.487237157,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":1862.487240752,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1862.487244211,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":1862.487247907,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":1862.487252119,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":1862.487255962,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1916.422325814,"data":"18:11:10 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1916.422367248,"data":"18:11:15 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1916.422374646,"data":"18:11:20 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1916.422379519,"data":"18:11:25 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1916.422384356,"data":"18:11:30 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1916.42238936,"data":"18:11:34 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1916.422394762,"data":"18:11:39 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1916.422399351,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1916.422403929,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1916.42240937,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1916.422417593,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1916.4224208,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1916.422424216,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1916.422427342,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1916.422431022,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1916.422446788,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1916.422452057,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1916.422457436,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1916.422473242,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1916.422477835,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1916.422481983,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":1916.422486332,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":1916.422490431,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1916.4224944,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":1916.422499712,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":1916.422504482,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":1916.430557058,"data":"== julia1 roman rot1: 1.8 min; lines so far: 15721\n"}
+,{"stream_name":"stdout","time":1916.430801029,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":1971.772763359,"data":" INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1971.772814589,"data":"18:12:09 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1971.772821369,"data":"18:12:13 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1971.772826754,"data":"18:12:18 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1971.772831254,"data":"18:12:23 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1971.772835725,"data":"18:12:28 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1971.772840552,"data":"18:12:33 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1971.772845162,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1971.772849966,"data":"18:12:36 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1971.772860776,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":1971.772864126,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":1971.772867758,"data":"    main()\n"}
+,{"stream_name":"stdout","time":1971.77287079,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":1971.772873801,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":1971.772876938,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":1971.772879941,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":1971.772883232,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":1971.77288654,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1971.772889721,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":1971.77291813,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":1971.772923266,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":1971.772927478,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":1971.772931132,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":1971.772935173,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":1971.772938694,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":1971.772942108,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":1971.772945783,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":1971.772950082,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":1971.772953838,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":2026.073974485,"data":"18:12:59 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":2026.074051136,"data":"18:13:04 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":2026.074058926,"data":"18:13:09 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":2026.074063793,"data":"18:13:14 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":2026.074074414,"data":"18:13:19 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":2026.07407785,"data":"18:13:24 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":2026.074080892,"data":"18:13:29 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":2026.074083886,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":2026.074086894,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 145, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":2026.07409058,"data":"    main()\n"}
+,{"stream_name":"stdout","time":2026.074093514,"data":"    ~~~~^^\n"}
+,{"stream_name":"stdout","time":2026.074096381,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 129, in main\n"}
+,{"stream_name":"stdout","time":2026.074099518,"data":"    res = predict(e.state, e.questions)\n"}
+,{"stream_name":"stdout","time":2026.074102624,"data":"  File \"/kaggle/working/proj/harness/scripts/run_system_one_model.py\", line 57, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":2026.074105827,"data":"    return (lambda state, questions: engine.predict(state=state, questions=questions)), {\"julia_path\": args.julia_path}\n"}
+,{"stream_name":"stdout","time":2026.07410909,"data":"                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":2026.074112176,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":2026.07411572,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":2026.07411871,"data":"  File \"/kaggle/tmp/Julia-1/julia/router/engine.py\", line 201, in predict\n"}
+,{"stream_name":"stdout","time":2026.07412178,"data":"    return predict_typed(self, state if rows is None else rows, questions)\n"}
+,{"stream_name":"stdout","time":2026.074124781,"data":"  File \"/kaggle/tmp/Julia-1/julia/typed.py\", line 31, in predict_typed\n"}
+,{"stream_name":"stdout","time":2026.074146288,"data":"    validate_row(row,len(rows)+1)\n"}
+,{"stream_name":"stdout","time":2026.074148954,"data":"    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":2026.074151307,"data":"  File \"/kaggle/tmp/Julia-1/julia/data.py\", line 26, in validate_row\n"}
+,{"stream_name":"stdout","time":2026.07415379,"data":"    raise ValueError(prefix + 'options must contain 2–20 nonempty rendered descriptions')\n"}
+,{"stream_name":"stdout","time":2026.074157116,"data":"ValueError: JSONL line 1: options must contain 2–20 nonempty rendered descriptions\n"}
+,{"stream_name":"stdout","time":2026.083425945,"data":"== julia1 roman rot2: 1.8 min; lines so far: 18774\n"}
+,{"stream_name":"stdout","time":2026.083442159,"data":"ALL DONE 0.5586695541938146 h\n"}
+,{"stream_name":"stderr","time":2028.261578567,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2028.261606319,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2028.527506328,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2028.527532053,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2029.335323155,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2030.356201666,"data":"[NbConvertApp] Writing 292565 bytes to __results__.html\n"}
+]

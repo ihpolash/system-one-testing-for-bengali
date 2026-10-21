@@ -1,0 +1,50 @@
+{
+  "belebele": {
+    "file": "belebele.jsonl",
+    "n": 900,
+    "sha256": "4f06ba1c0800488d1c40856a10bff73fab8eaef5bb25becb58686f89f28db3e1",
+    "source": "facebook/belebele ben_Beng test"
+  },
+  "sib200": {
+    "file": "sib200.jsonl",
+    "n": 204,
+    "sha256": "ef9c5c03dd173fd830b1963311aaf2f4e3a8205d9ed6e51d42b85483c7822a03",
+    "source": "Davlan/sib200 ben_Beng test"
+  },
+  "massive": {
+    "file": "massive.jsonl",
+    "n": 2974,
+    "sha256": "c4bef04b2c5018ef5dfa153de6930ec2bc0cf2581d21e7b195cd3975a5f2378e",
+    "source": "SetFit/amazon_massive_intent_bn-BD test (mirror of MASSIVE bn-BD)"
+  },
+  "bnli": {
+    "file": "bnli.jsonl",
+    "n": 4895,
+    "sha256": "e1be60d7fc23e811f058045d61d76e3214fc0faa2a8feeb5cad757a12154a817",
+    "source": "csebuetnlp/xnli_bn test (parquet conversion)"
+  },
+  "sentnob": {
+    "file": "sentnob.jsonl",
+    "n": 1586,
+    "sha256": "8a49a3b96ed78448f24de4deb8c7d1cdfa6711c37aeb33b58fb76ff809fbf1e0",
+    "source": "sadi2oo3q/SentNoB test (third-party mirror of the original split; provenance unverified; BLUB table lists 1,567 test, mirror has 1,586)"
+  },
+  "sentnob_dev": {
+    "file": "sentnob_dev.jsonl",
+    "n": 1567,
+    "sha256": "30c8bba8a80a439b35ed9b78a578a61ff303abf1936c04113ce8ebd4c6b5da9f",
+    "source": "sadi2oo3q/SentNoB validation (1,567), used for pilots and temperature scaling"
+  },
+  "bnli_dev": {
+    "file": "bnli_dev.jsonl",
+    "n": 2419,
+    "sha256": "a75c7bba8372a1e646ddead690a6f87eab910ca885d1a2e5ae5a129606828c5e",
+    "source": "csebuetnlp/xnli_bn validation"
+  },
+  "massive_dev": {
+    "file": "massive_dev.jsonl",
+    "n": 2033,
+    "sha256": "6c0e48172c710a2eefa9dcf8e7c86613bbd9fccf9a26e18b06997de435900df5",
+    "source": "SetFit massive bn-BD validation"
+  }
+}

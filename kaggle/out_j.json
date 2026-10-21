@@ -1,0 +1,58 @@
+[{"stream_name":"stdout","time":1.884596301,"data":"$ nvidia-smi --query-gpu=name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":1.9229516119999999,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":1.9229854560000001,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.922988894,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.922991605,"data":"$ pip install -q -e /kaggle/working/proj/harness 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":12.623806797,"data":"\n"}
+,{"stream_name":"stdout","time":12.623843722,"data":"\n"}
+,{"stream_name":"stdout","time":12.623851188,"data":"######## julia1 (elapsed 0 min)\n"}
+,{"stream_name":"stderr","time":14.048241264,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":23.781000435,"data":"$ pip install -q -e /kaggle/tmp/Julia-1 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":45.945743244,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 91.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":45.945887741,"data":"$ python scripts/run_system_one_model.py bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":89.895757276,"data":"wrote 204 responses to /kaggle/working/runs/julia1; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":89.895791823,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":89.895798266,"data":"14:28:38 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":89.895804126,"data":"\n"}
+,{"stream_name":"stdout","time":89.895808456,"data":"\n"}
+,{"stream_name":"stdout","time":89.895813036,"data":"\n"}
+,{"stream_name":"stdout","time":89.895817411,"data":"14:28:46 INFO bn_sib200: 200 written\n"}
+,{"stream_name":"stdout","time":89.896066904,"data":"== julia1 eval native rot0: 0.7 min; lines so far: 204\n"}
+,{"stream_name":"stdout","time":89.896331941,"data":"$ python scripts/run_system_one_model.py bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":113.060586038,"data":"wrote 204 responses to /kaggle/working/runs/julia1; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":113.060623549,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":113.060627833,"data":"14:29:04 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":113.060631286,"data":"14:29:10 INFO bn_sib200: 200 written\n"}
+,{"stream_name":"stdout","time":113.061044024,"data":"== julia1 eval roman rot0: 0.4 min; lines so far: 408\n"}
+,{"stream_name":"stdout","time":113.061209591,"data":"$ python scripts/run_system_one_model.py bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":135.8428013,"data":"wrote 204 responses to /kaggle/working/runs/julia1; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":135.842865576,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":135.84287146,"data":"14:29:27 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":135.842875166,"data":"14:29:33 INFO bn_sib200: 200 written\n"}
+,{"stream_name":"stdout","time":135.843326154,"data":"== julia1 eval native rot1: 0.4 min; lines so far: 612\n"}
+,{"stream_name":"stdout","time":135.843583244,"data":"$ python scripts/run_system_one_model.py bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":158.424106069,"data":"wrote 204 responses to /kaggle/working/runs/julia1; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":158.424144829,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":158.424148703,"data":"14:29:50 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":158.42415139,"data":"14:29:56 INFO bn_sib200: 200 written\n"}
+,{"stream_name":"stdout","time":158.424840133,"data":"== julia1 eval native rot2: 0.4 min; lines so far: 816\n"}
+,{"stream_name":"stdout","time":158.425073177,"data":"$ python scripts/run_system_one_model.py bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":181.413552193,"data":"wrote 204 responses to /kaggle/working/runs/julia1; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":181.413590915,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":181.413602207,"data":"14:30:12 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":181.41360586,"data":"14:30:19 INFO bn_sib200: 200 written\n"}
+,{"stream_name":"stdout","time":181.414294416,"data":"== julia1 eval roman rot1: 0.4 min; lines so far: 1020\n"}
+,{"stream_name":"stdout","time":181.414710369,"data":"$ python scripts/run_system_one_model.py bn_sib200 --split eval  --backend julia --model SupersonicLabs/Julia-1 --julia-path /kaggle/tmp/Julia-1 --max-len 4096 --out /kaggle/working/runs/julia1\n"}
+,{"stream_name":"stdout","time":204.662041606,"data":"wrote 204 responses to /kaggle/working/runs/julia1; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":204.662086139,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":204.662092645,"data":"14:30:37 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":204.662097546,"data":"14:30:42 INFO bn_sib200: 200 written\n"}
+,{"stream_name":"stdout","time":204.663010157,"data":"== julia1 eval roman rot2: 0.4 min; lines so far: 1224\n"}
+,{"stream_name":"stdout","time":204.663033675,"data":"ALL DONE 0.05334422873126136 h\n"}
+,{"stream_name":"stderr","time":206.699116181,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":206.699151856,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":206.916895044,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":206.916923482,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":207.67238624,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":208.582297308,"data":"[NbConvertApp] Writing 293685 bytes to __results__.html\n"}
+]

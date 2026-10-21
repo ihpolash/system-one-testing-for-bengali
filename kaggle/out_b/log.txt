@@ -1,0 +1,1179 @@
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+Tesla T4, 15360 MiB
+Tesla T4, 15360 MiB
+$ pip install -q -e /kaggle/working/proj/harness 2>&1 | tail -1
+
+
+######## d3_edge (elapsed 0 min)
+$ pip install -q 'transformers>=5.17' accelerate 2>&1 | tail -1
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 39.3 MB/s eta 0:00:00
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+wnloaded from https://huggingface.co/vllm-sr/d3-edge:
+- d3_runtime.py
+- d3_format.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+[transformers] A new version of the following files was downloaded from https://huggingface.co/vllm-sr/d3-edge:
+- modeling_d3.py
+- d3_runtime.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_edge native rot0: 0.7 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_edge roman rot0: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_edge native rot1: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_edge native rot2: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_edge roman rot1: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/18d61df78684675463af9ae732872478845c5a79/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_edge roman rot2: 0.3 min; lines so far: 0
+
+######## d3_lite (elapsed 3 min)
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+wnloaded from https://huggingface.co/vllm-sr/d3-lite:
+- d3_runtime.py
+- d3_format.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+[transformers] A new version of the following files was downloaded from https://huggingface.co/vllm-sr/d3-lite:
+- modeling_d3.py
+- d3_runtime.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_lite native rot0: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_lite roman rot0: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_lite native rot1: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_lite native rot2: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_lite roman rot1: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/a8d25a91ef75552803f7009d25b7bd435991abd9/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_lite roman rot2: 0.3 min; lines so far: 0
+
+######## d3_nano (elapsed 4 min)
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+wnloaded from https://huggingface.co/vllm-sr/d3-nano:
+- d3_runtime.py
+- d3_format.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+[transformers] A new version of the following files was downloaded from https://huggingface.co/vllm-sr/d3-nano:
+- modeling_d3.py
+- d3_runtime.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_nano native rot0: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_nano roman rot0: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_nano native rot1: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_nano native rot2: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_nano roman rot1: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/3aeb1c22a5632aac72353c36b3d0111c40e7dbf4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_nano roman rot2: 0.3 min; lines so far: 0
+
+######## d3_mini (elapsed 6 min)
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+wnloaded from https://huggingface.co/vllm-sr/d3-mini:
+- d3_runtime.py
+- d3_format.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+[transformers] A new version of the following files was downloaded from https://huggingface.co/vllm-sr/d3-mini:
+- modeling_d3.py
+- d3_runtime.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_mini native rot0: 0.4 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_mini roman rot0: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_mini native rot1: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_mini native rot2: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_mini roman rot1: 0.3 min; lines so far: 0
+$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 103, in main
+    predict, versions = make_predict(args)
+                        ~~~~~~~~~~~~^^^^^^
+  File "/kaggle/working/proj/harness/scripts/run_system_one_model.py", line 63, in make_predict
+    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, torch_dtype=torch.float16, device_map=args.device)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 394, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/a475367de0d8133a3c1a2a0dc12303d89cfa2ab4/modeling_d3.py", line 165, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: torch_dtype: d3 numerics are fixed by the checkpoint (BF16 backbone, FP32 readout); pass None or 'auto'
+== d3_mini roman rot2: 0.3 min; lines so far: 0
+ALL DONE 0.14169895039664374 h
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 292565 bytes to __results__.html

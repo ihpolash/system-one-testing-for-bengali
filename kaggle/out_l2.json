@@ -1,0 +1,278 @@
+[{"stream_name":"stdout","time":24.213963786,"data":"$ nvidia-smi --query-gpu=name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":24.252906578,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":24.252935737,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":24.25294001,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":24.252943862,"data":"$ pip install -q -e /kaggle/working/proj/harness 'laya==0.4.11' 2\u003e\u00261 | tail -2\n"}
+,{"stream_name":"stdout","time":36.692501371,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 430.9/430.9 kB 14.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":36.692537117,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 kB 2.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":36.69254292,"data":"$ python -c \"import laya; print('laya', laya.__version__)\"\n"}
+,{"stream_name":"stdout","time":36.819539347,"data":"laya 0.4.11\n"}
+,{"stream_name":"stdout","time":36.819742407,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla\n"}
+,{"stream_name":"stdout","time":203.61372081,"data":"wrote 3573 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":203.61376394,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":203.613770118,"data":"12:58:17 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":203.613774764,"data":"\n"}
+,{"stream_name":"stdout","time":203.613779086,"data":"12:59:04 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":203.61378301,"data":"12:59:10 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":203.613787645,"data":"12:59:16 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":203.613791794,"data":"12:59:22 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":203.613796116,"data":"12:59:27 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":203.613800376,"data":"12:59:33 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":203.61380552399999,"data":"12:59:39 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":203.613809712,"data":"\n"}
+,{"stream_name":"stdout","time":203.613813752,"data":"\n"}
+,{"stream_name":"stdout","time":203.613818113,"data":"12:59:47 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":203.613822074,"data":"12:59:53 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":203.613826546,"data":"12:59:58 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":203.613830864,"data":"13:00:04 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":203.613835389,"data":"13:00:10 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":203.613840012,"data":"13:00:16 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":203.613844191,"data":"13:00:22 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":203.613848276,"data":"13:00:28 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":203.613852307,"data":"13:00:34 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":203.613869664,"data":"\n"}
+,{"stream_name":"stdout","time":203.613873727,"data":"\n"}
+,{"stream_name":"stdout","time":203.61387718,"data":"\n"}
+,{"stream_name":"stdout","time":203.613880166,"data":"13:00:41 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":203.615970291,"data":"   -\u003e /kaggle/working/runs/laya_bangla: 3573 lines (3 min elapsed)\n"}
+,{"stream_name":"stdout","time":203.616172572,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla\n"}
+,{"stream_name":"stdout","time":308.220306449,"data":"wrote 2990 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":308.220347811,"data":"\n"}
+,{"stream_name":"stdout","time":308.220364188,"data":"13:01:10 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":308.220370062,"data":"13:01:16 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":308.220374874,"data":"13:01:22 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":308.220379539,"data":"13:01:27 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":308.220384219,"data":"13:01:33 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":308.220388721,"data":"13:01:39 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":308.220392778,"data":"13:01:45 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":308.220396761,"data":"\n"}
+,{"stream_name":"stdout","time":308.220400694,"data":"13:01:51 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":308.22040469,"data":"13:01:57 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":308.220408834,"data":"13:02:03 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":308.220417966,"data":"13:02:10 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":308.220421121,"data":"13:02:16 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":308.220423896,"data":"13:02:22 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":308.220426596,"data":"13:02:28 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":308.225920334,"data":"   -\u003e /kaggle/working/runs/laya_bangla: 6563 lines (5 min elapsed)\n"}
+,{"stream_name":"stdout","time":308.226124976,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla\n"}
+,{"stream_name":"stdout","time":373.650259329,"data":"wrote 1773 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":373.650327449,"data":"13:02:55 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":373.65033453,"data":"13:03:00 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":373.650339072,"data":"13:03:06 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":373.650343285,"data":"13:03:11 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":373.650347455,"data":"13:03:17 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":373.650351687,"data":"13:03:22 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":373.650355774,"data":"13:03:28 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":373.650359879,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":373.65037541,"data":"13:03:33 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":373.65038244,"data":"13:03:35 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":373.656508737,"data":"   -\u003e /kaggle/working/runs/laya_bangla: 8336 lines (6 min elapsed)\n"}
+,{"stream_name":"stdout","time":373.656728194,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla\n"}
+,{"stream_name":"stdout","time":476.468911855,"data":"wrote 2989 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":476.468956984,"data":"13:04:00 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":476.468963781,"data":"13:04:06 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":476.468969153,"data":"13:04:12 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":476.468974069,"data":"13:04:17 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":476.468978712,"data":"13:04:23 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":476.46898348,"data":"13:04:28 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":476.468987927,"data":"13:04:34 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":476.468991987,"data":"13:04:40 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":476.46899679,"data":"13:04:46 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":476.469001252,"data":"13:04:52 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":476.469006196,"data":"13:04:58 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":476.469010493,"data":"13:05:04 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":476.469014574,"data":"13:05:11 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":476.46901866,"data":"13:05:17 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":476.478256077,"data":"   -\u003e /kaggle/working/runs/laya_bangla: 11325 lines (7 min elapsed)\n"}
+,{"stream_name":"stdout","time":476.478484302,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla\n"}
+,{"stream_name":"stdout","time":597.121101049,"data":"wrote 3573 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":597.121157854,"data":"13:05:43 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":597.121166628,"data":"13:05:49 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":597.121172015,"data":"13:05:54 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":597.121176508,"data":"13:06:00 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":597.121181116,"data":"13:06:06 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":597.12118574,"data":"13:06:11 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":597.121189956,"data":"13:06:17 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":597.121194184,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":597.121198751,"data":"13:06:22 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":597.121215194,"data":"13:06:25 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":597.121219194,"data":"13:06:30 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":597.121222778,"data":"13:06:36 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":597.121225889,"data":"13:06:42 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":597.121229066,"data":"13:06:48 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":597.121233359,"data":"13:06:53 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":597.121236709,"data":"13:06:59 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":597.121239969,"data":"13:07:05 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":597.121243496,"data":"13:07:11 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":597.12124717,"data":"13:07:18 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":597.132386407,"data":"   -\u003e /kaggle/working/runs/laya_bangla: 14898 lines (9 min elapsed)\n"}
+,{"stream_name":"stdout","time":597.132577474,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla\n"}
+,{"stream_name":"stdout","time":699.889296343,"data":"wrote 2990 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":699.889338923,"data":"13:07:44 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":699.889360309,"data":"13:07:49 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":699.889365854,"data":"13:07:55 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":699.889375543,"data":"13:08:00 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":699.889380493,"data":"13:08:06 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":699.889385485,"data":"13:08:12 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":699.889389878,"data":"13:08:17 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":699.889394141,"data":"13:08:23 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":699.889398386,"data":"13:08:29 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":699.889402657,"data":"13:08:36 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":699.889406979,"data":"13:08:42 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":699.889411344,"data":"13:08:48 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":699.889421255,"data":"13:08:54 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":699.889424437,"data":"13:09:00 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":699.903318973,"data":"   -\u003e /kaggle/working/runs/laya_bangla: 17888 lines (11 min elapsed)\n"}
+,{"stream_name":"stdout","time":699.903554074,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla\n"}
+,{"stream_name":"stdout","time":765.482103998,"data":"wrote 1773 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":765.482169814,"data":"13:09:27 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":765.482187773,"data":"13:09:32 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":765.482191671,"data":"13:09:38 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":765.482195111,"data":"13:09:43 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":765.482199229,"data":"13:09:49 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":765.482203038,"data":"13:09:54 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":765.482206813,"data":"13:10:00 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":765.482209938,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":765.482213954,"data":"13:10:05 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":765.482217621,"data":"13:10:07 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":765.497712588,"data":"   -\u003e /kaggle/working/runs/laya_bangla: 19661 lines (12 min elapsed)\n"}
+,{"stream_name":"stdout","time":765.497888591,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla\n"}
+,{"stream_name":"stdout","time":869.228783765,"data":"wrote 2989 responses to /kaggle/working/runs/laya_bangla; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":869.228834047,"data":"13:10:32 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":869.22883862,"data":"13:10:38 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":869.228842073,"data":"13:10:43 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":869.228845546,"data":"13:10:49 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":869.228848696,"data":"13:10:55 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":869.228851716,"data":"13:11:00 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":869.228854722,"data":"13:11:06 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":869.228857727,"data":"13:11:12 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":869.228860651,"data":"13:11:18 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":869.22886372,"data":"13:11:24 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":869.228866682,"data":"13:11:30 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":869.228869587,"data":"13:11:36 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":869.228872576,"data":"13:11:43 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":869.228875638,"data":"13:11:49 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":869.248275985,"data":"   -\u003e /kaggle/working/runs/laya_bangla: 22650 lines (14 min elapsed)\n"}
+,{"stream_name":"stdout","time":869.248488938,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml_v0411\n"}
+,{"stream_name":"stdout","time":995.844353508,"data":"wrote 3573 responses to /kaggle/working/runs/laya_ml_v0411; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":995.84440021,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":995.844422106,"data":"13:12:00 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":995.844425426,"data":"13:12:20 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":995.844427775,"data":"13:12:26 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":995.844429907,"data":"13:12:32 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":995.844432071,"data":"13:12:38 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":995.844434154,"data":"13:12:44 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":995.844436285,"data":"13:12:50 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":995.844438875,"data":"13:12:55 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":995.844454596,"data":"13:13:03 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":995.844458634,"data":"13:13:09 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":995.844462468,"data":"13:13:14 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":995.844466137,"data":"13:13:20 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":995.844470074,"data":"13:13:26 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":995.844473966,"data":"13:13:32 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":995.844477643,"data":"13:13:38 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":995.844481186,"data":"13:13:44 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":995.844484413,"data":"13:13:49 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":995.844487746,"data":"13:13:57 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":995.846515243,"data":"   -\u003e /kaggle/working/runs/laya_ml_v0411: 3573 lines (16 min elapsed)\n"}
+,{"stream_name":"stdout","time":995.846787383,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml_v0411\n"}
+,{"stream_name":"stdout","time":1099.112636751,"data":"wrote 2990 responses to /kaggle/working/runs/laya_ml_v0411; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1099.112675189,"data":"13:14:24 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":1099.112679325,"data":"13:14:29 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":1099.112682247,"data":"13:14:35 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":1099.11268513,"data":"13:14:41 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":1099.112688703,"data":"13:14:46 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":1099.112702701,"data":"13:14:52 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":1099.112707619,"data":"13:14:57 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":1099.112712429,"data":"13:15:03 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":1099.112717325,"data":"13:15:09 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":1099.11272187,"data":"13:15:15 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":1099.11272591,"data":"13:15:21 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":1099.112729894,"data":"13:15:27 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":1099.112733892,"data":"13:15:33 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":1099.112752671,"data":"13:15:39 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":1099.117803211,"data":"   -\u003e /kaggle/working/runs/laya_ml_v0411: 6563 lines (18 min elapsed)\n"}
+,{"stream_name":"stdout","time":1099.118033534,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_human\n"}
+,{"stream_name":"stdout","time":1140.039104214,"data":"wrote 877 responses to /kaggle/working/runs/laya_bangla_human; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1140.039217944,"data":"13:16:05 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1140.039227974,"data":"13:16:12 INFO bn_massive: 400 written\n"}
+,{"stream_name":"stdout","time":1140.039233184,"data":"13:16:18 INFO bn_massive: 600 written\n"}
+,{"stream_name":"stdout","time":1140.039238197,"data":"13:16:24 INFO bn_massive: 800 written\n"}
+,{"stream_name":"stdout","time":1140.040780559,"data":"   -\u003e /kaggle/working/runs/laya_bangla_human: 877 lines (18 min elapsed)\n"}
+,{"stream_name":"stdout","time":1140.040947768,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_human\n"}
+,{"stream_name":"stdout","time":1180.660042002,"data":"wrote 877 responses to /kaggle/working/runs/laya_bangla_human; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1180.660095839,"data":"13:16:46 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1180.66010244,"data":"13:16:52 INFO bn_massive: 400 written\n"}
+,{"stream_name":"stdout","time":1180.660106691,"data":"13:16:58 INFO bn_massive: 600 written\n"}
+,{"stream_name":"stdout","time":1180.660110774,"data":"13:17:04 INFO bn_massive: 800 written\n"}
+,{"stream_name":"stdout","time":1180.662295055,"data":"   -\u003e /kaggle/working/runs/laya_bangla_human: 1754 lines (19 min elapsed)\n"}
+,{"stream_name":"stdout","time":1180.662484867,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_human\n"}
+,{"stream_name":"stdout","time":1218.073765472,"data":"wrote 776 responses to /kaggle/working/runs/laya_bangla_human; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1218.073803664,"data":"13:17:27 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1218.073809523,"data":"13:17:33 INFO bn_massive: 400 written\n"}
+,{"stream_name":"stdout","time":1218.073814208,"data":"13:17:39 INFO bn_massive: 600 written\n"}
+,{"stream_name":"stdout","time":1218.077195019,"data":"   -\u003e /kaggle/working/runs/laya_bangla_human: 2530 lines (20 min elapsed)\n"}
+,{"stream_name":"stdout","time":1218.077412385,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_human\n"}
+,{"stream_name":"stdout","time":1258.516019494,"data":"wrote 877 responses to /kaggle/working/runs/laya_bangla_human; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1258.516075458,"data":"13:18:04 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1258.516082948,"data":"13:18:10 INFO bn_massive: 400 written\n"}
+,{"stream_name":"stdout","time":1258.516088609,"data":"13:18:16 INFO bn_massive: 600 written\n"}
+,{"stream_name":"stdout","time":1258.516104977,"data":"13:18:22 INFO bn_massive: 800 written\n"}
+,{"stream_name":"stdout","time":1258.520604179,"data":"   -\u003e /kaggle/working/runs/laya_bangla_human: 3407 lines (20 min elapsed)\n"}
+,{"stream_name":"stdout","time":1258.520843326,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_human\n"}
+,{"stream_name":"stdout","time":1275.798896919,"data":"wrote 81 responses to /kaggle/working/runs/laya_bangla_human; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1275.802989722,"data":"   -\u003e /kaggle/working/runs/laya_bangla_human: 3488 lines (21 min elapsed)\n"}
+,{"stream_name":"stdout","time":1275.803236429,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_human\n"}
+,{"stream_name":"stdout","time":1292.650758748,"data":"wrote 64 responses to /kaggle/working/runs/laya_bangla_human; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1292.654989656,"data":"   -\u003e /kaggle/working/runs/laya_bangla_human: 3552 lines (21 min elapsed)\n"}
+,{"stream_name":"stdout","time":1292.655163151,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_massive bn_bnli --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_human\n"}
+,{"stream_name":"stdout","time":1309.317720183,"data":"wrote 65 responses to /kaggle/working/runs/laya_bangla_human; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1309.321789907,"data":"   -\u003e /kaggle/working/runs/laya_bangla_human: 3617 lines (21 min elapsed)\n"}
+,{"stream_name":"stdout","time":1309.321997763,"data":"$ python scripts/run_system_one_model.py bn_sentnob --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_tmpl_min\n"}
+,{"stream_name":"stdout","time":1366.985134623,"data":"wrote 1569 responses to /kaggle/working/runs/laya_bangla_tmpl_min; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1366.985201803,"data":"13:19:36 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1366.985208935,"data":"13:19:41 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1366.985213616,"data":"13:19:46 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1366.985218372,"data":"13:19:52 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1366.985223032,"data":"13:19:57 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1366.985227538,"data":"13:20:03 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1366.985231536,"data":"13:20:08 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1366.986257387,"data":"   -\u003e /kaggle/working/runs/laya_bangla_tmpl_min: 1569 lines (22 min elapsed)\n"}
+,{"stream_name":"stdout","time":1366.986498102,"data":"$ python scripts/run_system_one_model.py bn_sentnob --split eval  --backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096 --out /kaggle/working/runs/laya_bangla_tmpl_bn\n"}
+,{"stream_name":"stdout","time":1425.19525502,"data":"wrote 1569 responses to /kaggle/working/runs/laya_bangla_tmpl_bn; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1425.19529464,"data":"13:20:33 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1425.195311411,"data":"13:20:39 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1425.195315844,"data":"13:20:45 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1425.195319221,"data":"13:20:50 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1425.195322346,"data":"13:20:56 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1425.195325531,"data":"13:21:01 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1425.195328964,"data":"13:21:07 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1425.196411639,"data":"   -\u003e /kaggle/working/runs/laya_bangla_tmpl_bn: 1569 lines (23 min elapsed)\n"}
+,{"stream_name":"stdout","time":1425.196595817,"data":"$ python scripts/run_system_one_model.py bn_sentnob --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml_tmpl_min\n"}
+,{"stream_name":"stdout","time":1483.79658144,"data":"wrote 1569 responses to /kaggle/working/runs/laya_ml_tmpl_min; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1483.796621941,"data":"13:21:32 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1483.796625921,"data":"13:21:38 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1483.796629358,"data":"13:21:43 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1483.796632302,"data":"13:21:49 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1483.796635245,"data":"13:21:54 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1483.796638209,"data":"13:22:00 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1483.796641333,"data":"13:22:05 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1483.797886342,"data":"   -\u003e /kaggle/working/runs/laya_ml_tmpl_min: 1569 lines (24 min elapsed)\n"}
+,{"stream_name":"stdout","time":1483.79817281,"data":"$ python scripts/run_system_one_model.py bn_sentnob --split eval  --backend laya --model convaiinnovations/laya-multilingual --max-len 4096 --out /kaggle/working/runs/laya_ml_tmpl_bn\n"}
+,{"stream_name":"stdout","time":1543.120975165,"data":"wrote 1569 responses to /kaggle/working/runs/laya_ml_tmpl_bn; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":1543.12101609,"data":"13:22:31 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":1543.121022243,"data":"13:22:36 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":1543.121026548,"data":"13:22:42 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":1543.121030993,"data":"13:22:48 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":1543.121035704,"data":"13:22:53 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":1543.121040053,"data":"13:22:59 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":1543.121044346,"data":"13:23:04 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":1543.122349095,"data":"   -\u003e /kaggle/working/runs/laya_ml_tmpl_bn: 1569 lines (25 min elapsed)\n"}
+,{"stream_name":"stdout","time":1543.122377545,"data":"ALL DONE 0.4184174730380376 h\n"}
+,{"stream_name":"stderr","time":1545.141976333,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1545.142006456,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1545.402276912,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1545.40230631,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1546.170827705,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1547.178458282,"data":"[NbConvertApp] Writing 296112 bytes to __results__.html\n"}
+]

@@ -1,0 +1,286 @@
+task,variant,split,rot,model,answered,expected,coverage
+Belebele,native,eval,0,d3-edge,1800,1800,1.0
+Belebele,native,eval,0,d3-flash (4/8-bit),400,1800,0.2222222222222222
+Belebele,native,eval,0,d3-lite,1800,1800,1.0
+Belebele,native,eval,0,d3-mini,1800,1800,1.0
+Belebele,native,eval,0,d3-nano,1800,1800,1.0
+Belebele,native,eval,0,gemma-4-E4B-it,1800,1800,1.0
+Belebele,native,eval,0,jev-1.13.0,1800,1800,1.0
+Belebele,native,eval,0,julia-1,1781,1800,0.9894444444444445
+Belebele,native,eval,0,laya-bangla v2,1800,1800,1.0
+Belebele,native,eval,0,laya-multilingual,1800,1800,1.0
+Belebele,native,eval,1,d3-edge,1800,1800,1.0
+Belebele,native,eval,1,d3-lite,1800,1800,1.0
+Belebele,native,eval,1,d3-nano,1800,1800,1.0
+Belebele,native,eval,1,gemma-4-E4B-it,1800,1800,1.0
+Belebele,native,eval,1,jev-1.13.0,1800,1800,1.0
+Belebele,native,eval,1,julia-1,1781,1800,0.9894444444444445
+Belebele,native,eval,1,laya-bangla v2,1800,1800,1.0
+Belebele,native,eval,1,laya-multilingual,1800,1800,1.0
+Belebele,native,eval,2,d3-edge,1800,1800,1.0
+Belebele,native,eval,2,d3-lite,1800,1800,1.0
+Belebele,native,eval,2,d3-nano,1800,1800,1.0
+Belebele,native,eval,2,gemma-4-E4B-it,1800,1800,1.0
+Belebele,native,eval,2,jev-1.13.0,1800,1800,1.0
+Belebele,native,eval,2,julia-1,1781,1800,0.9894444444444445
+Belebele,native,eval,2,laya-bangla v2,1800,1800,1.0
+Belebele,native,eval,2,laya-multilingual,1800,1800,1.0
+XNLI-bn,native,dev,0,d3-edge,1500,1500,1.0
+XNLI-bn,native,dev,0,d3-lite,1500,1500,1.0
+XNLI-bn,native,dev,0,d3-mini,1500,1500,1.0
+XNLI-bn,native,dev,0,d3-nano,1500,1500,1.0
+XNLI-bn,native,dev,0,gemma-4-E4B-it,1500,1500,1.0
+XNLI-bn,native,dev,0,jev-1.13.0,1500,1500,1.0
+XNLI-bn,native,dev,0,julia-1,1500,1500,1.0
+XNLI-bn,native,dev,0,laya-bangla v2,1500,1500,1.0
+XNLI-bn,native,dev,0,laya-multilingual,1500,1500,1.0
+XNLI-bn,native,eval,0,d3-edge,1500,1500,1.0
+XNLI-bn,native,eval,0,d3-flash (4/8-bit),400,1500,0.26666666666666666
+XNLI-bn,native,eval,0,d3-lite,1500,1500,1.0
+XNLI-bn,native,eval,0,d3-mini,1500,1500,1.0
+XNLI-bn,native,eval,0,d3-nano,1500,1500,1.0
+XNLI-bn,native,eval,0,gemma-4-E4B-it,1500,1500,1.0
+XNLI-bn,native,eval,0,jev-1.13.0,1500,1500,1.0
+XNLI-bn,native,eval,0,julia-1,1500,1500,1.0
+XNLI-bn,native,eval,0,laya-bangla v2,1500,1500,1.0
+XNLI-bn,native,eval,0,laya-multilingual,1500,1500,1.0
+XNLI-bn,native,eval,1,d3-edge,1500,1500,1.0
+XNLI-bn,native,eval,1,d3-lite,1500,1500,1.0
+XNLI-bn,native,eval,1,d3-nano,1500,1500,1.0
+XNLI-bn,native,eval,1,gemma-4-E4B-it,1500,1500,1.0
+XNLI-bn,native,eval,1,jev-1.13.0,1500,1500,1.0
+XNLI-bn,native,eval,1,julia-1,1500,1500,1.0
+XNLI-bn,native,eval,1,laya-bangla v2,1500,1500,1.0
+XNLI-bn,native,eval,1,laya-multilingual,1500,1500,1.0
+XNLI-bn,native,eval,2,d3-edge,1500,1500,1.0
+XNLI-bn,native,eval,2,d3-lite,1500,1500,1.0
+XNLI-bn,native,eval,2,d3-nano,1500,1500,1.0
+XNLI-bn,native,eval,2,gemma-4-E4B-it,1500,1500,1.0
+XNLI-bn,native,eval,2,jev-1.13.0,1500,1500,1.0
+XNLI-bn,native,eval,2,julia-1,1500,1500,1.0
+XNLI-bn,native,eval,2,laya-bangla v2,1500,1500,1.0
+XNLI-bn,native,eval,2,laya-multilingual,1500,1500,1.0
+XNLI-bn,roman,dev,0,d3-edge,1500,1500,1.0
+XNLI-bn,roman,dev,0,d3-lite,1500,1500,1.0
+XNLI-bn,roman,dev,0,d3-mini,1500,1500,1.0
+XNLI-bn,roman,dev,0,d3-nano,1500,1500,1.0
+XNLI-bn,roman,dev,0,gemma-4-E4B-it,1500,1500,1.0
+XNLI-bn,roman,dev,0,jev-1.13.0,1500,1500,1.0
+XNLI-bn,roman,dev,0,julia-1,1500,1500,1.0
+XNLI-bn,roman,dev,0,laya-bangla v2,1500,1500,1.0
+XNLI-bn,roman,dev,0,laya-multilingual,1500,1500,1.0
+XNLI-bn,roman,eval,0,d3-edge,1500,1500,1.0
+XNLI-bn,roman,eval,0,d3-flash (4/8-bit),400,1500,0.26666666666666666
+XNLI-bn,roman,eval,0,d3-lite,1500,1500,1.0
+XNLI-bn,roman,eval,0,d3-mini,1500,1500,1.0
+XNLI-bn,roman,eval,0,d3-nano,1500,1500,1.0
+XNLI-bn,roman,eval,0,gemma-4-E4B-it,1500,1500,1.0
+XNLI-bn,roman,eval,0,jev-1.13.0,1500,1500,1.0
+XNLI-bn,roman,eval,0,julia-1,1500,1500,1.0
+XNLI-bn,roman,eval,0,laya-bangla v2,1500,1500,1.0
+XNLI-bn,roman,eval,0,laya-multilingual,1500,1500,1.0
+XNLI-bn,roman,eval,1,d3-edge,1500,1500,1.0
+XNLI-bn,roman,eval,1,d3-lite,1500,1500,1.0
+XNLI-bn,roman,eval,1,d3-nano,1500,1500,1.0
+XNLI-bn,roman,eval,1,gemma-4-E4B-it,1500,1500,1.0
+XNLI-bn,roman,eval,1,jev-1.13.0,1500,1500,1.0
+XNLI-bn,roman,eval,1,julia-1,1500,1500,1.0
+XNLI-bn,roman,eval,1,laya-bangla v2,1500,1500,1.0
+XNLI-bn,roman,eval,1,laya-multilingual,1500,1500,1.0
+XNLI-bn,roman,eval,2,d3-edge,1500,1500,1.0
+XNLI-bn,roman,eval,2,d3-lite,1500,1500,1.0
+XNLI-bn,roman,eval,2,gemma-4-E4B-it,1500,1500,1.0
+XNLI-bn,roman,eval,2,jev-1.13.0,1500,1500,1.0
+XNLI-bn,roman,eval,2,julia-1,1500,1500,1.0
+XNLI-bn,roman,eval,2,laya-bangla v2,1500,1500,1.0
+XNLI-bn,roman,eval,2,laya-multilingual,1500,1500,1.0
+XNLI-bn,roman_nat,eval,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,native,dev,0,d3-edge,1500,1500,1.0
+MASSIVE,native,dev,0,d3-flash (4/8-bit),2,1500,0.0013333333333333333
+MASSIVE,native,dev,0,d3-lite,1500,1500,1.0
+MASSIVE,native,dev,0,d3-mini,1500,1500,1.0
+MASSIVE,native,dev,0,d3-nano,1500,1500,1.0
+MASSIVE,native,dev,0,gemma-4-E4B-it,1500,1500,1.0
+MASSIVE,native,dev,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,native,dev,0,laya-bangla v2,1500,1500,1.0
+MASSIVE,native,dev,0,laya-multilingual,1500,1500,1.0
+MASSIVE,native,eval,0,d3-edge,1500,1500,1.0
+MASSIVE,native,eval,0,d3-flash (4/8-bit),403,1500,0.26866666666666666
+MASSIVE,native,eval,0,d3-lite,1500,1500,1.0
+MASSIVE,native,eval,0,d3-mini,1500,1500,1.0
+MASSIVE,native,eval,0,d3-nano,1500,1500,1.0
+MASSIVE,native,eval,0,gemma-4-E4B-it,1500,1500,1.0
+MASSIVE,native,eval,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,native,eval,0,laya-bangla v2,1500,1500,1.0
+MASSIVE,native,eval,0,laya-multilingual,1500,1500,1.0
+MASSIVE,native,eval,1,d3-edge,1500,1500,1.0
+MASSIVE,native,eval,1,d3-lite,1500,1500,1.0
+MASSIVE,native,eval,1,d3-nano,1500,1500,1.0
+MASSIVE,native,eval,1,gemma-4-E4B-it,1500,1500,1.0
+MASSIVE,native,eval,1,jev-1.13.0,1500,1500,1.0
+MASSIVE,native,eval,1,laya-bangla v2,1500,1500,1.0
+MASSIVE,native,eval,1,laya-multilingual,1500,1500,1.0
+MASSIVE,native,eval,2,d3-edge,1500,1500,1.0
+MASSIVE,native,eval,2,d3-lite,1500,1500,1.0
+MASSIVE,native,eval,2,d3-nano,1500,1500,1.0
+MASSIVE,native,eval,2,gemma-4-E4B-it,1500,1500,1.0
+MASSIVE,native,eval,2,jev-1.13.0,1500,1500,1.0
+MASSIVE,native,eval,2,laya-bangla v2,1500,1500,1.0
+MASSIVE,native,eval,2,laya-multilingual,1500,1500,1.0
+MASSIVE,roman,dev,0,d3-edge,1500,1500,1.0
+MASSIVE,roman,dev,0,d3-flash (4/8-bit),3,1500,0.002
+MASSIVE,roman,dev,0,d3-lite,1500,1500,1.0
+MASSIVE,roman,dev,0,d3-mini,1500,1500,1.0
+MASSIVE,roman,dev,0,d3-nano,1500,1500,1.0
+MASSIVE,roman,dev,0,gemma-4-E4B-it,1500,1500,1.0
+MASSIVE,roman,dev,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,roman,dev,0,laya-bangla v2,1500,1500,1.0
+MASSIVE,roman,dev,0,laya-multilingual,1500,1500,1.0
+MASSIVE,roman,eval,0,d3-edge,1500,1500,1.0
+MASSIVE,roman,eval,0,d3-flash (4/8-bit),403,1500,0.26866666666666666
+MASSIVE,roman,eval,0,d3-lite,1500,1500,1.0
+MASSIVE,roman,eval,0,d3-mini,1500,1500,1.0
+MASSIVE,roman,eval,0,d3-nano,1500,1500,1.0
+MASSIVE,roman,eval,0,gemma-4-E4B-it,1500,1500,1.0
+MASSIVE,roman,eval,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,roman,eval,0,laya-bangla v2,1500,1500,1.0
+MASSIVE,roman,eval,0,laya-multilingual,1500,1500,1.0
+MASSIVE,roman,eval,1,d3-edge,1500,1500,1.0
+MASSIVE,roman,eval,1,d3-lite,1500,1500,1.0
+MASSIVE,roman,eval,1,d3-nano,1500,1500,1.0
+MASSIVE,roman,eval,1,gemma-4-E4B-it,1500,1500,1.0
+MASSIVE,roman,eval,1,jev-1.13.0,1500,1500,1.0
+MASSIVE,roman,eval,1,laya-bangla v2,1500,1500,1.0
+MASSIVE,roman,eval,1,laya-multilingual,1500,1500,1.0
+MASSIVE,roman,eval,2,d3-edge,1500,1500,1.0
+MASSIVE,roman,eval,2,d3-lite,1500,1500,1.0
+MASSIVE,roman,eval,2,d3-nano,1,1500,0.0006666666666666666
+MASSIVE,roman,eval,2,gemma-4-E4B-it,1500,1500,1.0
+MASSIVE,roman,eval,2,jev-1.13.0,1500,1500,1.0
+MASSIVE,roman,eval,2,laya-bangla v2,1500,1500,1.0
+MASSIVE,roman,eval,2,laya-multilingual,1500,1500,1.0
+MASSIVE,roman_nat,eval,0,jev-1.13.0,1500,1500,1.0
+SentNoB,native,dev,0,d3-edge,1500,1500,1.0
+SentNoB,native,dev,0,d3-flash (4/8-bit),8,1500,0.005333333333333333
+SentNoB,native,dev,0,d3-lite,1500,1500,1.0
+SentNoB,native,dev,0,d3-mini,1500,1500,1.0
+SentNoB,native,dev,0,d3-nano,1500,1500,1.0
+SentNoB,native,dev,0,gemma-4-E4B-it,1500,1500,1.0
+SentNoB,native,dev,0,jev-1.13.0,1500,1500,1.0
+SentNoB,native,dev,0,julia-1,1500,1500,1.0
+SentNoB,native,dev,0,laya-bangla v2,1500,1500,1.0
+SentNoB,native,dev,0,laya-multilingual,1500,1500,1.0
+SentNoB,native,eval,0,d3-edge,1586,1586,1.0
+SentNoB,native,eval,0,d3-flash (4/8-bit),405,1586,0.255359394703657
+SentNoB,native,eval,0,d3-lite,1586,1586,1.0
+SentNoB,native,eval,0,d3-mini,1586,1586,1.0
+SentNoB,native,eval,0,d3-nano,1586,1586,1.0
+SentNoB,native,eval,0,gemma-4-E4B-it,1586,1586,1.0
+SentNoB,native,eval,0,jev-1.13.0,1586,1586,1.0
+SentNoB,native,eval,0,julia-1,1586,1586,1.0
+SentNoB,native,eval,0,laya-bangla v2,1586,1586,1.0
+SentNoB,native,eval,0,laya-multilingual,1586,1586,1.0
+SentNoB,native,eval,1,d3-edge,1586,1586,1.0
+SentNoB,native,eval,1,d3-lite,1586,1586,1.0
+SentNoB,native,eval,1,d3-nano,1586,1586,1.0
+SentNoB,native,eval,1,gemma-4-E4B-it,1586,1586,1.0
+SentNoB,native,eval,1,jev-1.13.0,1586,1586,1.0
+SentNoB,native,eval,1,julia-1,1586,1586,1.0
+SentNoB,native,eval,1,laya-bangla v2,1586,1586,1.0
+SentNoB,native,eval,1,laya-multilingual,1586,1586,1.0
+SentNoB,native,eval,2,d3-edge,1586,1586,1.0
+SentNoB,native,eval,2,d3-lite,1586,1586,1.0
+SentNoB,native,eval,2,d3-nano,1586,1586,1.0
+SentNoB,native,eval,2,gemma-4-E4B-it,1586,1586,1.0
+SentNoB,native,eval,2,jev-1.13.0,1586,1586,1.0
+SentNoB,native,eval,2,julia-1,1586,1586,1.0
+SentNoB,native,eval,2,laya-bangla v2,1586,1586,1.0
+SentNoB,native,eval,2,laya-multilingual,1586,1586,1.0
+SentNoB,roman,dev,0,d3-edge,1500,1500,1.0
+SentNoB,roman,dev,0,d3-flash (4/8-bit),9,1500,0.006
+SentNoB,roman,dev,0,d3-lite,1500,1500,1.0
+SentNoB,roman,dev,0,d3-mini,1500,1500,1.0
+SentNoB,roman,dev,0,d3-nano,1500,1500,1.0
+SentNoB,roman,dev,0,gemma-4-E4B-it,1500,1500,1.0
+SentNoB,roman,dev,0,jev-1.13.0,1500,1500,1.0
+SentNoB,roman,dev,0,julia-1,1500,1500,1.0
+SentNoB,roman,dev,0,laya-bangla v2,1500,1500,1.0
+SentNoB,roman,dev,0,laya-multilingual,1500,1500,1.0
+SentNoB,roman,eval,0,d3-edge,1586,1586,1.0
+SentNoB,roman,eval,0,d3-flash (4/8-bit),405,1586,0.255359394703657
+SentNoB,roman,eval,0,d3-lite,1586,1586,1.0
+SentNoB,roman,eval,0,d3-mini,1586,1586,1.0
+SentNoB,roman,eval,0,d3-nano,1586,1586,1.0
+SentNoB,roman,eval,0,gemma-4-E4B-it,1586,1586,1.0
+SentNoB,roman,eval,0,jev-1.13.0,1586,1586,1.0
+SentNoB,roman,eval,0,julia-1,1586,1586,1.0
+SentNoB,roman,eval,0,laya-bangla v2,1586,1586,1.0
+SentNoB,roman,eval,0,laya-multilingual,1586,1586,1.0
+SentNoB,roman,eval,1,d3-edge,1586,1586,1.0
+SentNoB,roman,eval,1,d3-lite,1586,1586,1.0
+SentNoB,roman,eval,1,d3-nano,1586,1586,1.0
+SentNoB,roman,eval,1,gemma-4-E4B-it,1586,1586,1.0
+SentNoB,roman,eval,1,jev-1.13.0,1586,1586,1.0
+SentNoB,roman,eval,1,julia-1,1586,1586,1.0
+SentNoB,roman,eval,1,laya-bangla v2,1586,1586,1.0
+SentNoB,roman,eval,1,laya-multilingual,1586,1586,1.0
+SentNoB,roman,eval,2,d3-edge,1586,1586,1.0
+SentNoB,roman,eval,2,d3-lite,1586,1586,1.0
+SentNoB,roman,eval,2,gemma-4-E4B-it,1586,1586,1.0
+SentNoB,roman,eval,2,jev-1.13.0,1586,1586,1.0
+SentNoB,roman,eval,2,julia-1,1586,1586,1.0
+SentNoB,roman,eval,2,laya-bangla v2,1586,1586,1.0
+SentNoB,roman,eval,2,laya-multilingual,1586,1586,1.0
+SentNoB,roman_nat,eval,0,jev-1.13.0,1586,1586,1.0
+SIB-200,native,eval,0,d3-edge,204,204,1.0
+SIB-200,native,eval,0,d3-flash (4/8-bit),204,204,1.0
+SIB-200,native,eval,0,d3-lite,204,204,1.0
+SIB-200,native,eval,0,d3-mini,204,204,1.0
+SIB-200,native,eval,0,d3-nano,204,204,1.0
+SIB-200,native,eval,0,gemma-4-E4B-it,204,204,1.0
+SIB-200,native,eval,0,jev-1.13.0,204,204,1.0
+SIB-200,native,eval,0,julia-1,204,204,1.0
+SIB-200,native,eval,0,laya-bangla v2,204,204,1.0
+SIB-200,native,eval,0,laya-multilingual,204,204,1.0
+SIB-200,native,eval,1,d3-edge,204,204,1.0
+SIB-200,native,eval,1,d3-lite,204,204,1.0
+SIB-200,native,eval,1,d3-nano,204,204,1.0
+SIB-200,native,eval,1,gemma-4-E4B-it,204,204,1.0
+SIB-200,native,eval,1,jev-1.13.0,204,204,1.0
+SIB-200,native,eval,1,julia-1,204,204,1.0
+SIB-200,native,eval,1,laya-bangla v2,204,204,1.0
+SIB-200,native,eval,1,laya-multilingual,204,204,1.0
+SIB-200,native,eval,2,d3-edge,204,204,1.0
+SIB-200,native,eval,2,d3-lite,204,204,1.0
+SIB-200,native,eval,2,d3-nano,204,204,1.0
+SIB-200,native,eval,2,gemma-4-E4B-it,204,204,1.0
+SIB-200,native,eval,2,jev-1.13.0,204,204,1.0
+SIB-200,native,eval,2,julia-1,204,204,1.0
+SIB-200,native,eval,2,laya-bangla v2,204,204,1.0
+SIB-200,native,eval,2,laya-multilingual,204,204,1.0
+SIB-200,roman,eval,0,d3-edge,204,204,1.0
+SIB-200,roman,eval,0,d3-flash (4/8-bit),204,204,1.0
+SIB-200,roman,eval,0,d3-lite,204,204,1.0
+SIB-200,roman,eval,0,d3-mini,204,204,1.0
+SIB-200,roman,eval,0,d3-nano,204,204,1.0
+SIB-200,roman,eval,0,gemma-4-E4B-it,204,204,1.0
+SIB-200,roman,eval,0,jev-1.13.0,204,204,1.0
+SIB-200,roman,eval,0,julia-1,204,204,1.0
+SIB-200,roman,eval,0,laya-bangla v2,204,204,1.0
+SIB-200,roman,eval,0,laya-multilingual,204,204,1.0
+SIB-200,roman,eval,1,d3-edge,204,204,1.0
+SIB-200,roman,eval,1,d3-lite,204,204,1.0
+SIB-200,roman,eval,1,d3-nano,204,204,1.0
+SIB-200,roman,eval,1,gemma-4-E4B-it,204,204,1.0
+SIB-200,roman,eval,1,jev-1.13.0,204,204,1.0
+SIB-200,roman,eval,1,julia-1,204,204,1.0
+SIB-200,roman,eval,1,laya-bangla v2,204,204,1.0
+SIB-200,roman,eval,1,laya-multilingual,204,204,1.0
+SIB-200,roman,eval,2,d3-edge,204,204,1.0
+SIB-200,roman,eval,2,d3-lite,204,204,1.0
+SIB-200,roman,eval,2,gemma-4-E4B-it,204,204,1.0
+SIB-200,roman,eval,2,jev-1.13.0,204,204,1.0
+SIB-200,roman,eval,2,julia-1,204,204,1.0
+SIB-200,roman,eval,2,laya-bangla v2,204,204,1.0
+SIB-200,roman,eval,2,laya-multilingual,204,204,1.0
+SIB-200,roman_nat,eval,0,jev-1.13.0,204,204,1.0

@@ -1,0 +1,181 @@
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+Tesla T4, 15360 MiB
+Tesla T4, 15360 MiB
+$ pip install -q -e /kaggle/working/proj/harness 'transformers>=5.0' accelerate 2>&1 | tail -1
+
+$ python scripts/run_open_model.py bn_belebele bn_sentnob --split eval --limit 40 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/smoke_float16
+shard 0/1: wrote 80 responses to /kaggle/working/smoke_float16
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+14:45:41 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+
+
+14:47:54 INFO shard 0/1: +80 examples (80 prompts, 16156 tokens) in 10.9s, 80 total
+smoke float16: 80 rows, mean valid mass 1.000, ok=True
+$ python scripts/run_open_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 3573 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+14:48:20 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+14:49:09 INFO shard 0/1: +512 examples (512 prompts, 64186 tokens) in 32.4s, 512 total
+14:49:44 INFO shard 0/1: +512 examples (512 prompts, 64910 tokens) in 34.4s, 1024 total
+14:50:21 INFO shard 0/1: +512 examples (512 prompts, 63990 tokens) in 36.8s, 1536 total
+14:51:42 INFO shard 0/1: +512 examples (512 prompts, 135964 tokens) in 80.4s, 2048 total
+14:53:07 INFO shard 0/1: +512 examples (512 prompts, 142922 tokens) in 84.3s, 2560 total
+14:54:31 INFO shard 0/1: +512 examples (512 prompts, 142735 tokens) in 84.2s, 3072 total
+
+
+
+14:55:35 INFO shard 0/1: +501 examples (501 prompts, 106146 tokens) in 62.6s, 3573 total
+$ python scripts/run_open_model.py bn_bnli bn_massive --split eval --limit 1500 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 2990 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+14:55:45 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+14:56:51 INFO shard 0/1: +512 examples (512 prompts, 83790 tokens) in 49.7s, 512 total
+14:57:39 INFO shard 0/1: +512 examples (512 prompts, 84194 tokens) in 48.2s, 1024 total
+
+14:58:35 INFO shard 0/1: +512 examples (512 prompts, 94636 tokens) in 55.3s, 1536 total
+15:01:12 INFO shard 0/1: +512 examples (512 prompts, 243018 tokens) in 156.8s, 2048 total
+15:03:49 INFO shard 0/1: +512 examples (512 prompts, 243121 tokens) in 157.5s, 2560 total
+15:06:01 INFO shard 0/1: +430 examples (430 prompts, 204240 tokens) in 132.0s, 2990 total
+== gemma eval native rot0: 18.0 min; lines so far 6563
+$ python scripts/run_open_model.py bn_sentnob bn_sib200 --split eval  --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 1773 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:06:15 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:07:09 INFO shard 0/1: +512 examples (512 prompts, 67939 tokens) in 40.3s, 512 total
+15:07:48 INFO shard 0/1: +512 examples (512 prompts, 69148 tokens) in 39.9s, 1024 total
+15:08:27 INFO shard 0/1: +512 examples (512 prompts, 67849 tokens) in 39.1s, 1536 total
+15:08:47 INFO shard 0/1: +237 examples (237 prompts, 31957 tokens) in 19.1s, 1773 total
+$ python scripts/run_open_model.py bn_bnli bn_massive --split eval --limit 1500 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 2989 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:08:57 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:10:10 INFO shard 0/1: +512 examples (512 prompts, 94025 tokens) in 55.7s, 512 total
+15:11:05 INFO shard 0/1: +512 examples (512 prompts, 94416 tokens) in 54.3s, 1024 total
+15:12:06 INFO shard 0/1: +512 examples (512 prompts, 104064 tokens) in 60.9s, 1536 total
+15:14:42 INFO shard 0/1: +512 examples (512 prompts, 244658 tokens) in 156.5s, 2048 total
+15:17:19 INFO shard 0/1: +512 examples (512 prompts, 244907 tokens) in 157.0s, 2560 total
+15:19:31 INFO shard 0/1: +429 examples (429 prompts, 205188 tokens) in 131.2s, 2989 total
+== gemma eval roman rot0: 13.5 min; lines so far 11325
+$ python scripts/run_open_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 4422 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:19:41 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+15:20:35 INFO shard 0/1: +512 examples (512 prompts, 64290 tokens) in 38.0s, 512 total
+15:21:13 INFO shard 0/1: +512 examples (512 prompts, 65353 tokens) in 37.8s, 1024 total
+
+15:21:53 INFO shard 0/1: +512 examples (512 prompts, 68346 tokens) in 39.5s, 1536 total
+15:22:41 INFO shard 0/1: +512 examples (512 prompts, 83609 tokens) in 48.4s, 2048 total
+15:23:30 INFO shard 0/1: +512 examples (512 prompts, 84054 tokens) in 48.7s, 2560 total
+
+15:24:46 INFO shard 0/1: +512 examples (512 prompts, 124335 tokens) in 75.5s, 3072 total
+15:27:23 INFO shard 0/1: +512 examples (512 prompts, 243018 tokens) in 157.0s, 3584 total
+15:30:01 INFO shard 0/1: +512 examples (512 prompts, 242988 tokens) in 157.8s, 4096 total
+15:31:41 INFO shard 0/1: +326 examples (326 prompts, 154749 tokens) in 99.8s, 4422 total
+== gemma dev native rot0: 12.2 min; lines so far 15747
+$ python scripts/run_open_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 4413 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:31:51 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:32:48 INFO shard 0/1: +512 examples (512 prompts, 68241 tokens) in 40.4s, 512 total
+15:33:28 INFO shard 0/1: +512 examples (512 prompts, 69552 tokens) in 40.2s, 1024 total
+15:34:12 INFO shard 0/1: +512 examples (512 prompts, 73718 tokens) in 42.8s, 1536 total
+15:35:06 INFO shard 0/1: +512 examples (512 prompts, 93402 tokens) in 54.2s, 2048 total
+15:36:00 INFO shard 0/1: +512 examples (512 prompts, 94313 tokens) in 54.4s, 2560 total
+15:37:21 INFO shard 0/1: +512 examples (512 prompts, 133293 tokens) in 80.4s, 3072 total
+15:39:59 INFO shard 0/1: +512 examples (512 prompts, 244749 tokens) in 157.4s, 3584 total
+15:42:36 INFO shard 0/1: +512 examples (512 prompts, 244671 tokens) in 157.6s, 4096 total
+15:44:13 INFO shard 0/1: +317 examples (317 prompts, 151576 tokens) in 97.0s, 4413 total
+== gemma dev roman rot0: 12.5 min; lines so far 20160
+$ python scripts/run_open_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 3573 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:44:24 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:45:18 INFO shard 0/1: +512 examples (512 prompts, 64186 tokens) in 37.7s, 512 total
+15:45:55 INFO shard 0/1: +512 examples (512 prompts, 64910 tokens) in 37.3s, 1024 total
+15:46:32 INFO shard 0/1: +512 examples (512 prompts, 63990 tokens) in 36.4s, 1536 total
+15:47:54 INFO shard 0/1: +512 examples (512 prompts, 135964 tokens) in 80.5s, 2048 total
+15:49:18 INFO shard 0/1: +512 examples (512 prompts, 142922 tokens) in 84.3s, 2560 total
+15:50:42 INFO shard 0/1: +512 examples (512 prompts, 142735 tokens) in 83.6s, 3072 total
+15:51:45 INFO shard 0/1: +501 examples (501 prompts, 106146 tokens) in 62.9s, 3573 total
+$ python scripts/run_open_model.py bn_bnli bn_massive --split eval --limit 1500 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 2990 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:51:56 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+15:53:02 INFO shard 0/1: +512 examples (512 prompts, 83790 tokens) in 49.5s, 512 total
+15:53:51 INFO shard 0/1: +512 examples (512 prompts, 84194 tokens) in 48.3s, 1024 total
+15:54:46 INFO shard 0/1: +512 examples (512 prompts, 94636 tokens) in 55.4s, 1536 total
+15:57:23 INFO shard 0/1: +512 examples (512 prompts, 243018 tokens) in 157.2s, 2048 total
+16:00:01 INFO shard 0/1: +512 examples (512 prompts, 243121 tokens) in 157.2s, 2560 total
+16:02:13 INFO shard 0/1: +430 examples (430 prompts, 204240 tokens) in 132.1s, 2990 total
+== gemma eval native rot1: 18.0 min; lines so far 26723
+$ python scripts/run_open_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 3573 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:02:23 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:03:18 INFO shard 0/1: +512 examples (512 prompts, 64186 tokens) in 37.8s, 512 total
+16:03:55 INFO shard 0/1: +512 examples (512 prompts, 64910 tokens) in 37.5s, 1024 total
+16:04:32 INFO shard 0/1: +512 examples (512 prompts, 63990 tokens) in 36.4s, 1536 total
+16:05:55 INFO shard 0/1: +512 examples (512 prompts, 135964 tokens) in 80.5s, 2048 total
+16:07:19 INFO shard 0/1: +512 examples (512 prompts, 142922 tokens) in 84.1s, 2560 total
+16:08:43 INFO shard 0/1: +512 examples (512 prompts, 142735 tokens) in 84.1s, 3072 total
+16:09:46 INFO shard 0/1: +501 examples (501 prompts, 106146 tokens) in 62.7s, 3573 total
+$ python scripts/run_open_model.py bn_bnli bn_massive --split eval --limit 1500 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 2990 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:09:57 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:11:05 INFO shard 0/1: +512 examples (512 prompts, 83790 tokens) in 49.7s, 512 total
+16:11:53 INFO shard 0/1: +512 examples (512 prompts, 84194 tokens) in 48.3s, 1024 total
+16:12:49 INFO shard 0/1: +512 examples (512 prompts, 94636 tokens) in 55.4s, 1536 total
+16:15:26 INFO shard 0/1: +512 examples (512 prompts, 243018 tokens) in 156.9s, 2048 total
+16:18:03 INFO shard 0/1: +512 examples (512 prompts, 243121 tokens) in 157.4s, 2560 total
+16:20:16 INFO shard 0/1: +430 examples (430 prompts, 204240 tokens) in 132.3s, 2990 total
+== gemma eval native rot2: 18.0 min; lines so far 33286
+$ python scripts/run_open_model.py bn_sentnob bn_sib200 --split eval  --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 1773 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:20:26 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:21:24 INFO shard 0/1: +512 examples (512 prompts, 67939 tokens) in 40.3s, 512 total
+16:22:04 INFO shard 0/1: +512 examples (512 prompts, 69148 tokens) in 39.9s, 1024 total
+16:22:43 INFO shard 0/1: +512 examples (512 prompts, 67849 tokens) in 39.1s, 1536 total
+16:23:03 INFO shard 0/1: +237 examples (237 prompts, 31957 tokens) in 19.1s, 1773 total
+$ python scripts/run_open_model.py bn_bnli bn_massive --split eval --limit 1500 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 2989 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:23:14 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:24:27 INFO shard 0/1: +512 examples (512 prompts, 94025 tokens) in 55.7s, 512 total
+16:25:21 INFO shard 0/1: +512 examples (512 prompts, 94416 tokens) in 54.5s, 1024 total
+16:26:22 INFO shard 0/1: +512 examples (512 prompts, 104064 tokens) in 60.7s, 1536 total
+16:28:59 INFO shard 0/1: +512 examples (512 prompts, 244658 tokens) in 156.9s, 2048 total
+16:31:36 INFO shard 0/1: +512 examples (512 prompts, 244907 tokens) in 157.1s, 2560 total
+16:33:48 INFO shard 0/1: +429 examples (429 prompts, 205188 tokens) in 131.6s, 2989 total
+== gemma eval roman rot1: 13.5 min; lines so far 38048
+$ python scripts/run_open_model.py bn_sentnob bn_sib200 --split eval  --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 1773 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:34:03 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:34:57 INFO shard 0/1: +512 examples (512 prompts, 67939 tokens) in 40.2s, 512 total
+16:35:37 INFO shard 0/1: +512 examples (512 prompts, 69148 tokens) in 40.0s, 1024 total
+16:36:16 INFO shard 0/1: +512 examples (512 prompts, 67849 tokens) in 39.2s, 1536 total
+16:36:37 INFO shard 0/1: +237 examples (237 prompts, 31957 tokens) in 19.2s, 1773 total
+$ python scripts/run_open_model.py bn_bnli bn_massive --split eval --limit 1500 --model google/gemma-4-E4B-it --device auto --dtype float16 --max-batch-tokens 3072 --out /kaggle/working/runs/gemma4_e4b
+shard 0/1: wrote 2989 responses to /kaggle/working/runs/gemma4_e4b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:36:48 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+16:38:02 INFO shard 0/1: +512 examples (512 prompts, 94025 tokens) in 55.6s, 512 total
+16:38:57 INFO shard 0/1: +512 examples (512 prompts, 94416 tokens) in 54.5s, 1024 total
+16:39:58 INFO shard 0/1: +512 examples (512 prompts, 104064 tokens) in 61.0s, 1536 total
+16:42:35 INFO shard 0/1: +512 examples (512 prompts, 244658 tokens) in 156.6s, 2048 total
+16:45:11 INFO shard 0/1: +512 examples (512 prompts, 244907 tokens) in 156.8s, 2560 total
+16:47:23 INFO shard 0/1: +429 examples (429 prompts, 205188 tokens) in 131.4s, 2989 total
+== gemma eval roman rot2: 13.6 min; lines so far 42810
+ALL DONE 1.9893707870112525 h
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 295405 bytes to __results__.html

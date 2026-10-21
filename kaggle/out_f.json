@@ -1,0 +1,63 @@
+[{"stream_name":"stdout","time":1.236762275,"data":"$ nvidia-smi --query-gpu=name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":1.273668736,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":1.27370512,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.2737100510000001,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.273713983,"data":"$ pip install -q -e /kaggle/working/proj/harness 'transformers\u003e=5.17' accelerate bitsandbytes 2\u003e\u00261 | tail -2\n"}
+,{"stream_name":"stdout","time":26.442133759,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 40.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":26.442181439,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 kB 2.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":26.442357898,"data":"$ python scripts/run_system_one_model.py bn_belebele bn_sentnob --split eval --limit 8 --backend vllmsr --model vllm-sr/d3-flash --tag-suffix @521525effa --d3-bnb 4 --out /kaggle/working/smoke_flash_4\n"}
+,{"stream_name":"stdout","time":207.712255872,"data":"PATCH HIT: quantizing Qwen3_5Model to 4-bit\n"}
+,{"stream_name":"stdout","time":207.712317203,"data":"wrote 16 responses to /kaggle/working/smoke_flash_4; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":207.712323731,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":207.712328808,"data":"18:53:44 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":207.712333809,"data":"\n"}
+,{"stream_name":"stdout","time":207.712338121,"data":"\n"}
+,{"stream_name":"stdout","time":207.712348163,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":207.712352915,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":207.712356473,"data":"\n"}
+,{"stream_name":"stdout","time":207.712843054,"data":"smoke 4-bit: 16 rows in 181s (includes load), valid=True\n"}
+,{"stream_name":"stdout","time":207.71315151,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 bn_bnli bn_massive --split eval --limit 400 --backend vllmsr --model vllm-sr/d3-flash --tag-suffix @521525effa --d3-bnb 4 --out /kaggle/working/runs/d3_flash\n"}
+,{"stream_name":"stdout","time":4140.492830609,"data":"PATCH HIT: quantizing Qwen3_5Model to 4-bit\n"}
+,{"stream_name":"stdout","time":4140.492887305,"data":"wrote 1803 responses to /kaggle/working/runs/d3_flash; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":4140.492891593,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":4140.49289586,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":4140.492909354,"data":"19:01:11 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":4140.492911883,"data":"19:05:42 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":4140.49291414,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":4140.492916419,"data":"19:05:43 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":4140.492919063,"data":"19:14:39 INFO bn_belebele: 600 written\n"}
+,{"stream_name":"stdout","time":4140.492921279,"data":"19:23:44 INFO bn_belebele: 800 written\n"}
+,{"stream_name":"stdout","time":4140.492923425,"data":"\n"}
+,{"stream_name":"stdout","time":4140.49292546,"data":"\n"}
+,{"stream_name":"stdout","time":4140.49292753,"data":"\n"}
+,{"stream_name":"stdout","time":4140.492929558,"data":"19:28:23 INFO bn_sib200: 1000 written\n"}
+,{"stream_name":"stdout","time":4140.492931705,"data":"\n"}
+,{"stream_name":"stdout","time":4140.492933826,"data":"19:34:17 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":4140.492935963,"data":"19:40:12 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":4140.492938099,"data":"\n"}
+,{"stream_name":"stdout","time":4140.492940229,"data":"19:50:54 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":4140.492942383,"data":"20:01:42 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":4140.495426966,"data":"== d3_flash 4-bit eval native rot0: 65.5 min; lines so far 1803\n"}
+,{"stream_name":"stdout","time":4140.49570617,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 bn_bnli bn_massive --split eval --limit 400 --backend vllmsr --model vllm-sr/d3-flash --tag-suffix @521525effa --d3-bnb 4 --out /kaggle/working/runs/d3_flash\n"}
+,{"stream_name":"stdout","time":6949.415016863,"data":"PATCH HIT: quantizing Qwen3_5Model to 4-bit\n"}
+,{"stream_name":"stdout","time":6949.415086397,"data":"wrote 1402 responses to /kaggle/working/runs/d3_flash; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":6949.415097318,"data":"[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":6949.415102192,"data":"[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.\n"}
+,{"stream_name":"stdout","time":6949.415105475,"data":"20:06:41 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":6949.415108433,"data":"20:11:08 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":6949.415111228,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":6949.415114208,"data":"20:11:08 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":6949.415117139,"data":"20:15:38 INFO bn_sib200: 600 written\n"}
+,{"stream_name":"stdout","time":6949.415119972,"data":"20:21:20 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":6949.415122683,"data":"20:27:05 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":6949.415125423,"data":"20:37:47 INFO bn_massive: 1200 written\n"}
+,{"stream_name":"stdout","time":6949.415152805,"data":"20:48:34 INFO bn_massive: 1400 written\n"}
+,{"stream_name":"stdout","time":6949.41875315,"data":"== d3_flash 4-bit eval roman rot0: 46.8 min; lines so far 3205\n"}
+,{"stream_name":"stdout","time":6949.41877155,"data":"ALL DONE 1.8726960672272577 h\n"}
+,{"stream_name":"stderr","time":6951.389993424,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":6951.390021032,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":6951.610584701,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":6951.610612328,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":6952.347654009,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":6953.245825571,"data":"[NbConvertApp] Writing 291049 bytes to __results__.html\n"}
+]

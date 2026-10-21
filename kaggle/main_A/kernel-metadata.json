@@ -1,0 +1,2 @@
+{"id": "ipolas/bn-s1-main-a", "title": "bn-s1-main-a", "code_file": "run_A.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["ipolas/bn-s1-code"], "competition_sources": [], "kernel_sources": []}

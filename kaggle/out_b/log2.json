@@ -1,0 +1,1632 @@
+[{"stream_name":"stdout","time":1.319563826,"data":"$ nvidia-smi --query-gpu=name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":1.364781534,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":1.364812112,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.364815395,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.364817954,"data":"$ pip install -q -e /kaggle/working/proj/harness 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":12.922310432,"data":"\n"}
+,{"stream_name":"stdout","time":12.922345112,"data":"\n"}
+,{"stream_name":"stdout","time":12.922349911,"data":"######## d3_edge (elapsed 0 min)\n"}
+,{"stream_name":"stdout","time":12.922353679,"data":"$ pip install -q 'transformers\u003e=5.17' accelerate 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":30.604688877,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 36.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":30.604915644,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":79.882099963,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":79.882185499,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":79.882196854,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":79.882202705,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":79.882207183,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":79.882211733,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":79.882216242,"data":"    )\n"}
+,{"stream_name":"stdout","time":79.882220573,"data":"    ^\n"}
+,{"stream_name":"stdout","time":79.882225338,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":79.88223036,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":79.882234894,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":79.882239326,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":79.88224414,"data":"        },\n"}
+,{"stream_name":"stdout","time":79.882248874,"data":"    )\n"}
+,{"stream_name":"stdout","time":79.882253553,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":79.882259148,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":79.882263828,"data":"        root,\n"}
+,{"stream_name":"stdout","time":79.882268514,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":79.882273537,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":79.882278222,"data":"    )\n"}
+,{"stream_name":"stdout","time":79.882283058,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":79.882288336,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":79.882304741,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":79.88230908,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":79.882313228,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":79.882316815,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":79.882320656,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":79.882324442,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":79.882328486,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":79.882331748,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":79.882335196,"data":"    )\n"}
+,{"stream_name":"stdout","time":79.882338419,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":79.882341953,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":90.800746916,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":90.80080473699999,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":90.800813098,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":90.800817963,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":90.800822383,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":90.800826746,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":90.800831563,"data":"    )\n"}
+,{"stream_name":"stdout","time":90.800835924,"data":"    ^\n"}
+,{"stream_name":"stdout","time":90.80084033,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":90.800845297,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":90.800849605,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":90.80085394,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":90.800858922,"data":"        },\n"}
+,{"stream_name":"stdout","time":90.800863229,"data":"    )\n"}
+,{"stream_name":"stdout","time":90.800867294,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":90.800872343,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":90.800876651,"data":"        root,\n"}
+,{"stream_name":"stdout","time":90.80088084,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":90.800885171,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":90.800889564,"data":"    )\n"}
+,{"stream_name":"stdout","time":90.80089377,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":90.800910811,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":90.80091514,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":90.800919766,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":90.800924287,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":90.800928506,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":90.800933215,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":90.800937737,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":90.800942513,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":90.800946847,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":90.800951238,"data":"    )\n"}
+,{"stream_name":"stdout","time":90.800955567,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":90.800960065,"data":"== d3_edge native rot0: 1.0 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":90.80102233,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":101.638308964,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":101.638343145,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":101.638353382,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":101.638355871,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":101.638358208,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":101.638360627,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":101.638362986,"data":"    )\n"}
+,{"stream_name":"stdout","time":101.638365149,"data":"    ^\n"}
+,{"stream_name":"stdout","time":101.638367354,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":101.638369941,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":101.638372531,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":101.638374831,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":101.638377366,"data":"        },\n"}
+,{"stream_name":"stdout","time":101.638379497,"data":"    )\n"}
+,{"stream_name":"stdout","time":101.63838173,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":101.638384206,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":101.638386321,"data":"        root,\n"}
+,{"stream_name":"stdout","time":101.638399021,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":101.638401392,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":101.638403579,"data":"    )\n"}
+,{"stream_name":"stdout","time":101.638405683,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":101.63840809,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":101.638410267,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":101.638412421,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":101.638414728,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":101.638416898,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":101.63841925,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":101.638421527,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":101.638423912,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":101.638426043,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":101.638428463,"data":"    )\n"}
+,{"stream_name":"stdout","time":101.638430575,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":101.638432946,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":112.407242535,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":112.407279595,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":112.407285298,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":112.407289502,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":112.407298294,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":112.407302614,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":112.40730706,"data":"    )\n"}
+,{"stream_name":"stdout","time":112.407311342,"data":"    ^\n"}
+,{"stream_name":"stdout","time":112.407316398,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":112.407321928,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":112.407327063,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":112.40733134,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":112.40733589,"data":"        },\n"}
+,{"stream_name":"stdout","time":112.407340596,"data":"    )\n"}
+,{"stream_name":"stdout","time":112.407344777,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":112.407361622,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":112.407365771,"data":"        root,\n"}
+,{"stream_name":"stdout","time":112.407369376,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":112.407374699,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":112.407378602,"data":"    )\n"}
+,{"stream_name":"stdout","time":112.407381622,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":112.407385164,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":112.407388237,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":112.407392191,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":112.40739585,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":112.407399036,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":112.407402776,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":112.407405893,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":112.407409238,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":112.407412702,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":112.407416009,"data":"    )\n"}
+,{"stream_name":"stdout","time":112.407419164,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":112.407422396,"data":"== d3_edge roman rot0: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":112.40744184,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":123.20520369,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":123.205239313,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":123.205246297,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":123.205250558,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":123.205254144,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":123.205258012,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":123.205261738,"data":"    )\n"}
+,{"stream_name":"stdout","time":123.20526516,"data":"    ^\n"}
+,{"stream_name":"stdout","time":123.205268532,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":123.205272759,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":123.205282472,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":123.205285516,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":123.205308221,"data":"        },\n"}
+,{"stream_name":"stdout","time":123.205310551,"data":"    )\n"}
+,{"stream_name":"stdout","time":123.205313091,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":123.205328777,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":123.205332533,"data":"        root,\n"}
+,{"stream_name":"stdout","time":123.205336332,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":123.205339914,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":123.205344038,"data":"    )\n"}
+,{"stream_name":"stdout","time":123.205347326,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":123.205351051,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":123.205354272,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":123.205357509,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":123.205360963,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":123.205364198,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":123.205367612,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":123.205370939,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":123.205374464,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":123.205377617,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":123.205381118,"data":"    )\n"}
+,{"stream_name":"stdout","time":123.205384281,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":123.205387761,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":133.8648316,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":133.864868767,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":133.864873725,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":133.864877387,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":133.864880815,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":133.864884547,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":133.864888335,"data":"    )\n"}
+,{"stream_name":"stdout","time":133.864891572,"data":"    ^\n"}
+,{"stream_name":"stdout","time":133.864894993,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":133.86491133,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":133.864914965,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":133.864918142,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":133.864922097,"data":"        },\n"}
+,{"stream_name":"stdout","time":133.86492546,"data":"    )\n"}
+,{"stream_name":"stdout","time":133.864928798,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":133.864932794,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":133.864936333,"data":"        root,\n"}
+,{"stream_name":"stdout","time":133.864939573,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":133.864942901,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":133.864946124,"data":"    )\n"}
+,{"stream_name":"stdout","time":133.864949364,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":133.864952582,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":133.864955808,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":133.864959254,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":133.864962575,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":133.864965945,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":133.864969842,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":133.864973722,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":133.864977487,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":133.864980956,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":133.864984996,"data":"    )\n"}
+,{"stream_name":"stdout","time":133.864988427,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":133.864991781,"data":"== d3_edge native rot1: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":133.865069179,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":144.703021545,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":144.703060713,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":144.703073209,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":144.703076699,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":144.703079683,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":144.703082845,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":144.703094473,"data":"    )\n"}
+,{"stream_name":"stdout","time":144.703096721,"data":"    ^\n"}
+,{"stream_name":"stdout","time":144.703098846,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":144.703101375,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":144.703103539,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":144.703105711,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":144.703108474,"data":"        },\n"}
+,{"stream_name":"stdout","time":144.703110753,"data":"    )\n"}
+,{"stream_name":"stdout","time":144.703112863,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":144.703115256,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":144.703117352,"data":"        root,\n"}
+,{"stream_name":"stdout","time":144.703119509,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":144.703121725,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":144.703123915,"data":"    )\n"}
+,{"stream_name":"stdout","time":144.703126081,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":144.703128525,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":144.703130674,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":144.703132856,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":144.703135248,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":144.703137385,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":144.703139675,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":144.703141906,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":144.703144211,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":144.70314634,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":144.703148653,"data":"    )\n"}
+,{"stream_name":"stdout","time":144.703150711,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":144.703153038,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":155.606934767,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":155.606968386,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":155.606973317,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":155.606976941,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":155.606980475,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":155.606997417,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":155.607002394,"data":"    )\n"}
+,{"stream_name":"stdout","time":155.607005939,"data":"    ^\n"}
+,{"stream_name":"stdout","time":155.607009384,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":155.607013504,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":155.607016977,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":155.607020544,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":155.607024476,"data":"        },\n"}
+,{"stream_name":"stdout","time":155.6070279,"data":"    )\n"}
+,{"stream_name":"stdout","time":155.6070313,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":155.607035465,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":155.607039495,"data":"        root,\n"}
+,{"stream_name":"stdout","time":155.60704343,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":155.607047817,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":155.607051889,"data":"    )\n"}
+,{"stream_name":"stdout","time":155.607056194,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":155.607060823,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":155.607065207,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":155.607069281,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":155.607073612,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":155.607077811,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":155.607081989,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":155.607085769,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":155.607089447,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":155.607093867,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":155.607098113,"data":"    )\n"}
+,{"stream_name":"stdout","time":155.607101858,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":155.607105767,"data":"== d3_edge native rot2: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":155.607114576,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":166.503278183,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":166.503331742,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":166.503354099,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":166.503358093,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":166.503361505,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":166.503365013,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":166.503368395,"data":"    )\n"}
+,{"stream_name":"stdout","time":166.503371623,"data":"    ^\n"}
+,{"stream_name":"stdout","time":166.503376753,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":166.503383626,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":166.503385823,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":166.503387986,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":166.503390536,"data":"        },\n"}
+,{"stream_name":"stdout","time":166.503392736,"data":"    )\n"}
+,{"stream_name":"stdout","time":166.503394835,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":166.503397268,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":166.503399394,"data":"        root,\n"}
+,{"stream_name":"stdout","time":166.503401631,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":166.503403833,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":166.503406022,"data":"    )\n"}
+,{"stream_name":"stdout","time":166.503408128,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":166.503410518,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":166.503412644,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":166.503414913,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":166.503418195,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":166.503432101,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":166.503436289,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":166.503440408,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":166.503444499,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":166.503448131,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":166.503451653,"data":"    )\n"}
+,{"stream_name":"stdout","time":166.503454706,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":166.503458224,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":177.505904685,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":177.505939992,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":177.505945737,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":177.505950038,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":177.5059544,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":177.505959011,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":177.505963575,"data":"    )\n"}
+,{"stream_name":"stdout","time":177.505967785,"data":"    ^\n"}
+,{"stream_name":"stdout","time":177.505972031,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":177.505976676,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":177.505981065,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":177.505985292,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":177.505990271,"data":"        },\n"}
+,{"stream_name":"stdout","time":177.505994521,"data":"    )\n"}
+,{"stream_name":"stdout","time":177.50599904,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":177.506003708,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":177.506007526,"data":"        root,\n"}
+,{"stream_name":"stdout","time":177.506011361,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":177.506015337,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":177.506019744,"data":"    )\n"}
+,{"stream_name":"stdout","time":177.506024123,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":177.506028982,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":177.506033848,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":177.506038205,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":177.506043466,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":177.506047607,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":177.506051813,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":177.506056197,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":177.506060353,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":177.50606475,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":177.506069497,"data":"    )\n"}
+,{"stream_name":"stdout","time":177.506073357,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":177.506089785,"data":"== d3_edge roman rot1: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":177.506127851,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":188.632053365,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":188.632091992,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":188.632097239,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":188.632100931,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":188.632104589,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":188.632108325,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":188.632111992,"data":"    )\n"}
+,{"stream_name":"stdout","time":188.632115296,"data":"    ^\n"}
+,{"stream_name":"stdout","time":188.632118859,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":188.63212879,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":188.632131274,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":188.632133652,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":188.632136457,"data":"        },\n"}
+,{"stream_name":"stdout","time":188.632138744,"data":"    )\n"}
+,{"stream_name":"stdout","time":188.63214102,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":188.632144343,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":188.632146721,"data":"        root,\n"}
+,{"stream_name":"stdout","time":188.632148985,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":188.632156211,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":188.632158727,"data":"    )\n"}
+,{"stream_name":"stdout","time":188.632161113,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":188.632163811,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":188.632166132,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":188.632168449,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":188.632171016,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":188.632173267,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":188.632175839,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":188.632178177,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":188.632180616,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":188.632182992,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":188.632196812,"data":"    )\n"}
+,{"stream_name":"stdout","time":188.632199155,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":188.63220162,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-edge --tag-suffix @18d61df786 --max-len 4096 --out /kaggle/working/runs/d3_edge\n"}
+,{"stream_name":"stdout","time":199.630089322,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":199.630125469,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":199.630135879,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":199.630148809,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":199.630151505,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":199.630154084,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":199.630156615,"data":"    )\n"}
+,{"stream_name":"stdout","time":199.630158926,"data":"    ^\n"}
+,{"stream_name":"stdout","time":199.630161595,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":199.630164476,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":199.630166852,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":199.630169171,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":199.630172128,"data":"        },\n"}
+,{"stream_name":"stdout","time":199.630174495,"data":"    )\n"}
+,{"stream_name":"stdout","time":199.630176764,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":199.630179423,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":199.630181679,"data":"        root,\n"}
+,{"stream_name":"stdout","time":199.630183985,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":199.630186347,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":199.630188689,"data":"    )\n"}
+,{"stream_name":"stdout","time":199.630190916,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_edge/20c745653400d191ecacd99c4eafc0c5900dc15e/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":199.630193565,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":199.630195871,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":199.630198199,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":199.630200637,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":199.630206523,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":199.630209087,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":199.630211523,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":199.630241846,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":199.630246339,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":199.630257101,"data":"    )\n"}
+,{"stream_name":"stdout","time":199.630261682,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":199.630265763,"data":"== d3_edge roman rot2: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":199.630269866,"data":"\n"}
+,{"stream_name":"stdout","time":199.630273715,"data":"######## d3_lite (elapsed 3 min)\n"}
+,{"stream_name":"stdout","time":199.630301053,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":225.116836402,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":225.116879157,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":225.116897947,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":225.116903235,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":225.116908247,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":225.116913315,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":225.116918001,"data":"    )\n"}
+,{"stream_name":"stdout","time":225.116921874,"data":"    ^\n"}
+,{"stream_name":"stdout","time":225.116925974,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":225.116931097,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":225.116937239,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":225.11694443,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":225.116947914,"data":"        },\n"}
+,{"stream_name":"stdout","time":225.116950557,"data":"    )\n"}
+,{"stream_name":"stdout","time":225.11695328,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":225.116956344,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":225.11695906,"data":"        root,\n"}
+,{"stream_name":"stdout","time":225.116961827,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":225.116964675,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":225.11696745,"data":"    )\n"}
+,{"stream_name":"stdout","time":225.116970107,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":225.116973152,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":225.11697581,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":225.11698986,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":225.117007868,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":225.117011549,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":225.11701514,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":225.11701854,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":225.117022016,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":225.117025249,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":225.117028834,"data":"    )\n"}
+,{"stream_name":"stdout","time":225.117031937,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":225.117035366,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":235.898091085,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":235.898146581,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":235.8981531,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":235.898157499,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":235.898161197,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":235.89816492,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":235.898168855,"data":"    )\n"}
+,{"stream_name":"stdout","time":235.898172224,"data":"    ^\n"}
+,{"stream_name":"stdout","time":235.898175628,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":235.898179604,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":235.898183036,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":235.898186456,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":235.898190284,"data":"        },\n"}
+,{"stream_name":"stdout","time":235.898193666,"data":"    )\n"}
+,{"stream_name":"stdout","time":235.898197086,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":235.898201076,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":235.89820626,"data":"        root,\n"}
+,{"stream_name":"stdout","time":235.898213404,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":235.898215906,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":235.898218214,"data":"    )\n"}
+,{"stream_name":"stdout","time":235.89822044,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":235.898223002,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":235.8982522,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":235.898257261,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":235.898261808,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":235.898265784,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":235.89827036,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":235.89827472,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":235.898278909,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":235.89828284,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":235.898287378,"data":"    )\n"}
+,{"stream_name":"stdout","time":235.898290811,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":235.898294693,"data":"== d3_lite native rot0: 0.6 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":235.898302416,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":246.646543746,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":246.646579206,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":246.646584321,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":246.646587934,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":246.646591472,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":246.646595222,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":246.646599005,"data":"    )\n"}
+,{"stream_name":"stdout","time":246.646602284,"data":"    ^\n"}
+,{"stream_name":"stdout","time":246.646606417,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":246.646611596,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":246.646615262,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":246.646618849,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":246.646623068,"data":"        },\n"}
+,{"stream_name":"stdout","time":246.646626544,"data":"    )\n"}
+,{"stream_name":"stdout","time":246.646630632,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":246.646647009,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":246.646651154,"data":"        root,\n"}
+,{"stream_name":"stdout","time":246.646654979,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":246.646658724,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":246.646673523,"data":"    )\n"}
+,{"stream_name":"stdout","time":246.646677136,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":246.646681011,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":246.646684697,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":246.646688155,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":246.646692061,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":246.646695915,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":246.646700181,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":246.646704421,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":246.646708016,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":246.646727222,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":246.646736714,"data":"    )\n"}
+,{"stream_name":"stdout","time":246.646740646,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":246.646744619,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":257.445521934,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":257.445561602,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":257.445566462,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":257.445570417,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":257.445592532,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":257.445597817,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":257.445602782,"data":"    )\n"}
+,{"stream_name":"stdout","time":257.44560737,"data":"    ^\n"}
+,{"stream_name":"stdout","time":257.445611466,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":257.44561614,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":257.445620192,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":257.445631089,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":257.445636411,"data":"        },\n"}
+,{"stream_name":"stdout","time":257.445640598,"data":"    )\n"}
+,{"stream_name":"stdout","time":257.44564476,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":257.445649479,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":257.445654068,"data":"        root,\n"}
+,{"stream_name":"stdout","time":257.445669339,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":257.445673135,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":257.445677057,"data":"    )\n"}
+,{"stream_name":"stdout","time":257.445680695,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":257.445685197,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":257.445688621,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":257.445692452,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":257.44569612,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":257.445699364,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":257.445702905,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":257.445706287,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":257.445709749,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":257.445731639,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":257.445736161,"data":"    )\n"}
+,{"stream_name":"stdout","time":257.445739426,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":257.445742858,"data":"== d3_lite roman rot0: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":257.445751489,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":268.389880448,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":268.389917966,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":268.389923381,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":268.389927367,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":268.389931045,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":268.389934959,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":268.389938792,"data":"    )\n"}
+,{"stream_name":"stdout","time":268.389942165,"data":"    ^\n"}
+,{"stream_name":"stdout","time":268.389945655,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":268.38994987,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":268.389953491,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":268.389957034,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":268.389961053,"data":"        },\n"}
+,{"stream_name":"stdout","time":268.389964524,"data":"    )\n"}
+,{"stream_name":"stdout","time":268.389983186,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":268.389987527,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":268.389991365,"data":"        root,\n"}
+,{"stream_name":"stdout","time":268.38999509,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":268.389999141,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":268.390003307,"data":"    )\n"}
+,{"stream_name":"stdout","time":268.39000691,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":268.390011415,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":268.390015576,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":268.390019415,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":268.390023841,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":268.390027726,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":268.390031639,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":268.390035359,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":268.390039147,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":268.390043245,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":268.390047477,"data":"    )\n"}
+,{"stream_name":"stdout","time":268.390051168,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":268.390055226,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":279.211805108,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":279.211865783,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":279.211871816,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":279.211875754,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":279.21187981,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":279.211883475,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":279.211887317,"data":"    )\n"}
+,{"stream_name":"stdout","time":279.211890596,"data":"    ^\n"}
+,{"stream_name":"stdout","time":279.211894017,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":279.211897878,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":279.211901022,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":279.211904275,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":279.211934345,"data":"        },\n"}
+,{"stream_name":"stdout","time":279.211937005,"data":"    )\n"}
+,{"stream_name":"stdout","time":279.211939145,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":279.211941603,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":279.211943711,"data":"        root,\n"}
+,{"stream_name":"stdout","time":279.21194588,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":279.211948103,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":279.211950288,"data":"    )\n"}
+,{"stream_name":"stdout","time":279.211952401,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":279.211954928,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":279.211957081,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":279.211959237,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":279.211961537,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":279.211963784,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":279.211966127,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":279.211968428,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":279.211970729,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":279.211972851,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":279.211975181,"data":"    )\n"}
+,{"stream_name":"stdout","time":279.211977323,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":279.211979574,"data":"== d3_lite native rot1: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":279.212058958,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":290.031683594,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":290.031734515,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":290.031742749,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":290.031747624,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":290.031751998,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":290.031756595,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":290.03176121,"data":"    )\n"}
+,{"stream_name":"stdout","time":290.031765309,"data":"    ^\n"}
+,{"stream_name":"stdout","time":290.031769475,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":290.03178681,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":290.031790687,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":290.031794289,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":290.031798325,"data":"        },\n"}
+,{"stream_name":"stdout","time":290.031802121,"data":"    )\n"}
+,{"stream_name":"stdout","time":290.031805625,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":290.031809591,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":290.031813663,"data":"        root,\n"}
+,{"stream_name":"stdout","time":290.03181745,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":290.03182183,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":290.031825476,"data":"    )\n"}
+,{"stream_name":"stdout","time":290.031829412,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":290.03183324,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":290.03183686,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":290.031840222,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":290.031844102,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":290.031847814,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":290.031851709,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":290.031855483,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":290.031859205,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":290.031862982,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":290.031867007,"data":"    )\n"}
+,{"stream_name":"stdout","time":290.03187069,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":290.031874229,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":300.823533867,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":300.823568278,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":300.823573087,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":300.8235768,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":300.823580448,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":300.823584081,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":300.823599656,"data":"    )\n"}
+,{"stream_name":"stdout","time":300.82360275999997,"data":"    ^\n"}
+,{"stream_name":"stdout","time":300.823605901,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":300.823609647,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":300.823612687,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":300.823615998,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":300.823619916,"data":"        },\n"}
+,{"stream_name":"stdout","time":300.823623699,"data":"    )\n"}
+,{"stream_name":"stdout","time":300.82362734,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":300.823631795,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":300.823634954,"data":"        root,\n"}
+,{"stream_name":"stdout","time":300.823638044,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":300.82364635,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":300.823649665,"data":"    )\n"}
+,{"stream_name":"stdout","time":300.82365288,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":300.823656462,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":300.82366023,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":300.823663506,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":300.823666858,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":300.823669698,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":300.823672919,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":300.823676297,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":300.823680128,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":300.823683883,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":300.823687934,"data":"    )\n"}
+,{"stream_name":"stdout","time":300.823691469,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":300.823695604,"data":"== d3_lite native rot2: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":300.823703008,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":311.553939794,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":311.553975554,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":311.553981026,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":311.553984689,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":311.554000542,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":311.554004236,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":311.554007661,"data":"    )\n"}
+,{"stream_name":"stdout","time":311.554010816,"data":"    ^\n"}
+,{"stream_name":"stdout","time":311.554014002,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":311.554017959,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":311.554021227,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":311.554024381,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":311.554028794,"data":"        },\n"}
+,{"stream_name":"stdout","time":311.554032045,"data":"    )\n"}
+,{"stream_name":"stdout","time":311.554035227,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":311.554040309,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":311.554044599,"data":"        root,\n"}
+,{"stream_name":"stdout","time":311.554047822,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":311.554051434,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":311.554055088,"data":"    )\n"}
+,{"stream_name":"stdout","time":311.554058458,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":311.554062578,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":311.554066355,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":311.554069816,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":311.554073976,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":311.554077846,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":311.554082232,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":311.554085907,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":311.554089699,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":311.554093246,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":311.554097036,"data":"    )\n"}
+,{"stream_name":"stdout","time":311.554100676,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":311.554104672,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":322.304572995,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":322.304616455,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":322.304651236,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":322.304655582,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":322.304659686,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":322.304664004,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":322.304668373,"data":"    )\n"}
+,{"stream_name":"stdout","time":322.304672591,"data":"    ^\n"}
+,{"stream_name":"stdout","time":322.304676095,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":322.304680635,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":322.304685019,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":322.304688972,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":322.304693882,"data":"        },\n"}
+,{"stream_name":"stdout","time":322.304697778,"data":"    )\n"}
+,{"stream_name":"stdout","time":322.304701583,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":322.304706191,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":322.304709962,"data":"        root,\n"}
+,{"stream_name":"stdout","time":322.304714077,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":322.304718205,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":322.304722037,"data":"    )\n"}
+,{"stream_name":"stdout","time":322.304746931,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":322.304752142,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":322.304756396,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":322.304760505,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":322.304764287,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":322.304767889,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":322.304771693,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":322.304775311,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":322.304778996,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":322.304782412,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":322.304787021,"data":"    )\n"}
+,{"stream_name":"stdout","time":322.304790932,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":322.304795331,"data":"== d3_lite roman rot1: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":322.304802731,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":333.313770298,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":333.313807648,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":333.313813329,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":333.313817534,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":333.313821676,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":333.31382584,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":333.31383024,"data":"    )\n"}
+,{"stream_name":"stdout","time":333.313834261,"data":"    ^\n"}
+,{"stream_name":"stdout","time":333.313838238,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":333.313843752,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":333.313848952,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":333.313853011,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":333.313858354,"data":"        },\n"}
+,{"stream_name":"stdout","time":333.313862509,"data":"    )\n"}
+,{"stream_name":"stdout","time":333.313866814,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":333.313871936,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":333.313875773,"data":"        root,\n"}
+,{"stream_name":"stdout","time":333.31388006,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":333.313884998,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":333.313889477,"data":"    )\n"}
+,{"stream_name":"stdout","time":333.313893855,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":333.3138988,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":333.313903397,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":333.313908044,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":333.313912508,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":333.313916873,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":333.313921364,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":333.31392595,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":333.313930426,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":333.313934836,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":333.313939592,"data":"    )\n"}
+,{"stream_name":"stdout","time":333.313943378,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":333.31395932,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-lite --tag-suffix @a8d25a91ef --max-len 4096 --out /kaggle/working/runs/d3_lite\n"}
+,{"stream_name":"stdout","time":344.272733177,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":344.272784782,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":344.272790652,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":344.272794451,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":344.272797871,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":344.272801509,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":344.272805125,"data":"    )\n"}
+,{"stream_name":"stdout","time":344.272808526,"data":"    ^\n"}
+,{"stream_name":"stdout","time":344.272812227,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":344.272816485,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":344.272820444,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":344.272824368,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":344.27282969,"data":"        },\n"}
+,{"stream_name":"stdout","time":344.272834045,"data":"    )\n"}
+,{"stream_name":"stdout","time":344.272837947,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":344.272842173,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":344.272845455,"data":"        root,\n"}
+,{"stream_name":"stdout","time":344.272848661,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":344.272852527,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":344.272856007,"data":"    )\n"}
+,{"stream_name":"stdout","time":344.272859495,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_lite/3c49f5c0bd48a4b28e29b8ec1f38f56e199f3d61/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":344.272863287,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":344.272866919,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":344.272870544,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":344.272874481,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":344.272879086,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":344.272883194,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":344.272887569,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":344.272891869,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":344.272895965,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":344.272912797,"data":"    )\n"}
+,{"stream_name":"stdout","time":344.272916319,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":344.272919983,"data":"== d3_lite roman rot2: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":344.272923289,"data":"\n"}
+,{"stream_name":"stdout","time":344.272926527,"data":"######## d3_nano (elapsed 6 min)\n"}
+,{"stream_name":"stdout","time":344.272940655,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":385.142371517,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":385.142410193,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":385.142416456,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":385.142421157,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":385.142426236,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":385.142432599,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":385.142437449,"data":"    )\n"}
+,{"stream_name":"stdout","time":385.142442077,"data":"    ^\n"}
+,{"stream_name":"stdout","time":385.142446493,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":385.142451968,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":385.142457485,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":385.142462087,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":385.142467623,"data":"        },\n"}
+,{"stream_name":"stdout","time":385.142472361,"data":"    )\n"}
+,{"stream_name":"stdout","time":385.142477354,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":385.142482697,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":385.142487777,"data":"        root,\n"}
+,{"stream_name":"stdout","time":385.142492617,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":385.142497286,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":385.142502445,"data":"    )\n"}
+,{"stream_name":"stdout","time":385.142507081,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":385.142512386,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":385.142516857,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":385.142522005,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":385.142527133,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":385.142531851,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":385.142547369,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":385.1425512,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":385.142554898,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":385.142558267,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":385.142563583,"data":"    )\n"}
+,{"stream_name":"stdout","time":385.142566945,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":385.142572491,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":396.176376023,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":396.17641038,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":396.176415524,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":396.17641958,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":396.176423359,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":396.176427461,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":396.17643096,"data":"    )\n"}
+,{"stream_name":"stdout","time":396.176434105,"data":"    ^\n"}
+,{"stream_name":"stdout","time":396.176437406,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":396.176441524,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":396.176444921,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":396.176448362,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":396.176452624,"data":"        },\n"}
+,{"stream_name":"stdout","time":396.17645619,"data":"    )\n"}
+,{"stream_name":"stdout","time":396.176460023,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":396.17646447,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":396.176468192,"data":"        root,\n"}
+,{"stream_name":"stdout","time":396.176471928,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":396.176475994,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":396.176479669,"data":"    )\n"}
+,{"stream_name":"stdout","time":396.176487154,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":396.176491248,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":396.176494727,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":396.1764982,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":396.176514846,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":396.176519302,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":396.176523416,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":396.176527679,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":396.176531642,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":396.176535683,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":396.176539564,"data":"    )\n"}
+,{"stream_name":"stdout","time":396.176543199,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":396.176546511,"data":"== d3_nano native rot0: 0.9 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":396.176552866,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":407.192543908,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":407.192589354,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":407.19260855,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":407.192612989,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":407.192617141,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":407.192621697,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":407.192625713,"data":"    )\n"}
+,{"stream_name":"stdout","time":407.192629098,"data":"    ^\n"}
+,{"stream_name":"stdout","time":407.192632462,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":407.192636868,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":407.192640406,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":407.192643886,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":407.192648044,"data":"        },\n"}
+,{"stream_name":"stdout","time":407.192656927,"data":"    )\n"}
+,{"stream_name":"stdout","time":407.192659583,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":407.192662233,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":407.192664474,"data":"        root,\n"}
+,{"stream_name":"stdout","time":407.192666746,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":407.1926691,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":407.192671502,"data":"    )\n"}
+,{"stream_name":"stdout","time":407.192673747,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":407.192686876,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":407.192689895,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":407.192707073,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":407.192711854,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":407.192715846,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":407.192720496,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":407.19274279,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":407.192746762,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":407.192750198,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":407.19275392,"data":"    )\n"}
+,{"stream_name":"stdout","time":407.192757313,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":407.192761417,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":418.22126853,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":418.221304349,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":418.221310045,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":418.221314537,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":418.221318931,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":418.221323424,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":418.221328003,"data":"    )\n"}
+,{"stream_name":"stdout","time":418.221331992,"data":"    ^\n"}
+,{"stream_name":"stdout","time":418.221335998,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":418.22134094,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":418.221345068,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":418.221349316,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":418.221353602,"data":"        },\n"}
+,{"stream_name":"stdout","time":418.22135741,"data":"    )\n"}
+,{"stream_name":"stdout","time":418.221361061,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":418.221365208,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":418.221369025,"data":"        root,\n"}
+,{"stream_name":"stdout","time":418.221373175,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":418.221377911,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":418.221396111,"data":"    )\n"}
+,{"stream_name":"stdout","time":418.221399853,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":418.221403772,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":418.221406878,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":418.221410133,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":418.221413648,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":418.221416792,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":418.221420321,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":418.221423617,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":418.221427108,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":418.22143069,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":418.221434692,"data":"    )\n"}
+,{"stream_name":"stdout","time":418.221438357,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":418.221441913,"data":"== d3_nano roman rot0: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":418.221477111,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":429.343892198,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":429.343929532,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":429.3439334,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":429.343936444,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":429.343948411,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":429.343952876,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":429.343956914,"data":"    )\n"}
+,{"stream_name":"stdout","time":429.343960736,"data":"    ^\n"}
+,{"stream_name":"stdout","time":429.343964931,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":429.343969117,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":429.343972369,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":429.343975719,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":429.343979406,"data":"        },\n"}
+,{"stream_name":"stdout","time":429.343982592,"data":"    )\n"}
+,{"stream_name":"stdout","time":429.343985769,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":429.343992925,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":429.344006191,"data":"        root,\n"}
+,{"stream_name":"stdout","time":429.344008514,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":429.344010734,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":429.344012939,"data":"    )\n"}
+,{"stream_name":"stdout","time":429.344015008,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":429.344017477,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":429.344019624,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":429.344021866,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":429.344024156,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":429.344026358,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":429.344028649,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":429.344031466,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":429.344043063,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":429.344047209,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":429.344051189,"data":"    )\n"}
+,{"stream_name":"stdout","time":429.344055336,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":429.344059378,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":440.334977977,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":440.335016411,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":440.335020102,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":440.335022639,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":440.335025834,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":440.335041465,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":440.335045772,"data":"    )\n"}
+,{"stream_name":"stdout","time":440.335049455,"data":"    ^\n"}
+,{"stream_name":"stdout","time":440.335053622,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":440.335058057,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":440.33506129,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":440.335064511,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":440.335068105,"data":"        },\n"}
+,{"stream_name":"stdout","time":440.33507128,"data":"    )\n"}
+,{"stream_name":"stdout","time":440.335089337,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":440.335093841,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":440.335097505,"data":"        root,\n"}
+,{"stream_name":"stdout","time":440.335104835,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":440.335108443,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":440.335112632,"data":"    )\n"}
+,{"stream_name":"stdout","time":440.335115892,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":440.335120066,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":440.335123657,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":440.335127578,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":440.335131909,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":440.335135384,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":440.335139719,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":440.335143754,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":440.335148043,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":440.335151787,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":440.335155452,"data":"    )\n"}
+,{"stream_name":"stdout","time":440.335158831,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":440.335162562,"data":"== d3_nano native rot1: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":440.335190884,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":451.117046475,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":451.117119147,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":451.117127707,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":451.117133053,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":451.117137674,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":451.117142375,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":451.117146732,"data":"    )\n"}
+,{"stream_name":"stdout","time":451.117150738,"data":"    ^\n"}
+,{"stream_name":"stdout","time":451.117154684,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":451.117159387,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":451.117174182,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":451.117177931,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":451.117187266,"data":"        },\n"}
+,{"stream_name":"stdout","time":451.117189996,"data":"    )\n"}
+,{"stream_name":"stdout","time":451.117192103,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":451.117194566,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":451.117196675,"data":"        root,\n"}
+,{"stream_name":"stdout","time":451.11719887,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":451.117201999,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":451.117216314,"data":"    )\n"}
+,{"stream_name":"stdout","time":451.117220246,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":451.117224624,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":451.117228479,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":451.117232229,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":451.117235724,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":451.117238961,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":451.117242391,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":451.117245733,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":451.117249216,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":451.117252544,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":451.117255997,"data":"    )\n"}
+,{"stream_name":"stdout","time":451.117259194,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":451.117262724,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":461.881116543,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":461.881164368,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":461.88117055,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":461.881174834,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":461.881178829,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":461.881182387,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":461.881185742,"data":"    )\n"}
+,{"stream_name":"stdout","time":461.88118883,"data":"    ^\n"}
+,{"stream_name":"stdout","time":461.881192032,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":461.881226942,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":461.881231141,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":461.881235566,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":461.881239812,"data":"        },\n"}
+,{"stream_name":"stdout","time":461.881244572,"data":"    )\n"}
+,{"stream_name":"stdout","time":461.881248552,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":461.881253318,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":461.881257294,"data":"        root,\n"}
+,{"stream_name":"stdout","time":461.881261106,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":461.881264944,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":461.881268716,"data":"    )\n"}
+,{"stream_name":"stdout","time":461.881272002,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":461.881276633,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":461.881280514,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":461.881284524,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":461.881288864,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":461.881292872,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":461.881296904,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":461.881301119,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":461.881305206,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":461.881309367,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":461.881313674,"data":"    )\n"}
+,{"stream_name":"stdout","time":461.881317034,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":461.881320669,"data":"== d3_nano native rot2: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":461.881328104,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":472.733408322,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":472.733444462,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":472.733449344,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":472.733452996,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":472.733460626,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":472.733463683,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":472.733476521,"data":"    )\n"}
+,{"stream_name":"stdout","time":472.733478706,"data":"    ^\n"}
+,{"stream_name":"stdout","time":472.733480942,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":472.733483411,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":472.733485582,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":472.733487843,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":472.733490409,"data":"        },\n"}
+,{"stream_name":"stdout","time":472.733492572,"data":"    )\n"}
+,{"stream_name":"stdout","time":472.733494759,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":472.733497292,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":472.733499398,"data":"        root,\n"}
+,{"stream_name":"stdout","time":472.733501587,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":472.733503787,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":472.733505983,"data":"    )\n"}
+,{"stream_name":"stdout","time":472.733508074,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":472.733510541,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":472.733512692,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":472.733514852,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":472.733517162,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":472.733519316,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":472.733521614,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":472.733523867,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":472.733526162,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":472.73352829,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":472.733530607,"data":"    )\n"}
+,{"stream_name":"stdout","time":472.733535976,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":472.733538345,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":483.449834329,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":483.449889651,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":483.449895198,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":483.449898415,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":483.44990939,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":483.449912013,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":483.449914262,"data":"    )\n"}
+,{"stream_name":"stdout","time":483.449916355,"data":"    ^\n"}
+,{"stream_name":"stdout","time":483.4499185,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":483.449921028,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":483.449923182,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":483.449925347,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":483.449928004,"data":"        },\n"}
+,{"stream_name":"stdout","time":483.449930274,"data":"    )\n"}
+,{"stream_name":"stdout","time":483.449932424,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":483.44993489,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":483.44993704,"data":"        root,\n"}
+,{"stream_name":"stdout","time":483.449939203,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":483.449941397,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":483.449943568,"data":"    )\n"}
+,{"stream_name":"stdout","time":483.44994566,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":483.449948158,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":483.449950313,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":483.449952453,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":483.449954772,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":483.449956963,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":483.449959284,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":483.44996151,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":483.449963818,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":483.449965957,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":483.449968277,"data":"    )\n"}
+,{"stream_name":"stdout","time":483.449970359,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":483.449972638,"data":"== d3_nano roman rot1: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":483.450083614,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":494.149192151,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":494.149232927,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":494.149248197,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":494.149250752,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":494.149253065,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":494.149255341,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":494.149257581,"data":"    )\n"}
+,{"stream_name":"stdout","time":494.149259676,"data":"    ^\n"}
+,{"stream_name":"stdout","time":494.149261872,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":494.149264359,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":494.149266534,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":494.149268753,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":494.149271822,"data":"        },\n"}
+,{"stream_name":"stdout","time":494.149273939,"data":"    )\n"}
+,{"stream_name":"stdout","time":494.149276049,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":494.149278492,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":494.149280673,"data":"        root,\n"}
+,{"stream_name":"stdout","time":494.149282772,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":494.149284945,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":494.149287129,"data":"    )\n"}
+,{"stream_name":"stdout","time":494.149289292,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":494.149291694,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":494.149293856,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":494.149296011,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":494.149298301,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":494.14930045,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":494.149302772,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":494.14930499,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":494.149307285,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":494.149309437,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":494.149311741,"data":"    )\n"}
+,{"stream_name":"stdout","time":494.149313795,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":494.149316104,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-nano --tag-suffix @3aeb1c22a5 --max-len 4096 --out /kaggle/working/runs/d3_nano\n"}
+,{"stream_name":"stdout","time":504.891756254,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":504.891791681,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":504.891797864,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":504.891801644,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":504.891805108,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":504.891808587,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":504.891811954,"data":"    )\n"}
+,{"stream_name":"stdout","time":504.891815169,"data":"    ^\n"}
+,{"stream_name":"stdout","time":504.891818369,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":504.891822116,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":504.891825386,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":504.891828664,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":504.891832418,"data":"        },\n"}
+,{"stream_name":"stdout","time":504.891835638,"data":"    )\n"}
+,{"stream_name":"stdout","time":504.891838839,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":504.891842649,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":504.891845684,"data":"        root,\n"}
+,{"stream_name":"stdout","time":504.891853746,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":504.891856336,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":504.891858513,"data":"    )\n"}
+,{"stream_name":"stdout","time":504.891860574,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_nano/9d9b937f5f117f78c030ea7ba677c0b3d328ec58/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":504.891863103,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":504.891866226,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":504.891886161,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":504.891890474,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":504.891894213,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":504.891898705,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":504.891902349,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":504.891905923,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":504.891909917,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":504.891913561,"data":"    )\n"}
+,{"stream_name":"stdout","time":504.891917346,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":504.891935183,"data":"== d3_nano roman rot2: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":504.891939211,"data":"\n"}
+,{"stream_name":"stdout","time":504.891942346,"data":"######## d3_mini (elapsed 8 min)\n"}
+,{"stream_name":"stdout","time":504.891951107,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":564.306592898,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":564.306647891,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":564.306655209,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":564.306659784,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":564.306664396,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":564.306669292,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":564.306674223,"data":"    )\n"}
+,{"stream_name":"stdout","time":564.306678675,"data":"    ^\n"}
+,{"stream_name":"stdout","time":564.306683212,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":564.306690072,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":564.306695728,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":564.306700646,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":564.306705632,"data":"        },\n"}
+,{"stream_name":"stdout","time":564.306710731,"data":"    )\n"}
+,{"stream_name":"stdout","time":564.306730426,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":564.30673573,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":564.306740122,"data":"        root,\n"}
+,{"stream_name":"stdout","time":564.306744959,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":564.306751028,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":564.30675634,"data":"    )\n"}
+,{"stream_name":"stdout","time":564.306761016,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":564.306766136,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":564.306770816,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":564.306775478,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":564.306780618,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":564.306785464,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":564.306790667,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":564.306806394,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":564.306811789,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":564.306819434,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":564.306822612,"data":"    )\n"}
+,{"stream_name":"stdout","time":564.306824867,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":564.30682742,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":576.094803399,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":576.094838577,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":576.094843202,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":576.094846773,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":576.094850411,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":576.094854388,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":576.094858158,"data":"    )\n"}
+,{"stream_name":"stdout","time":576.094861551,"data":"    ^\n"}
+,{"stream_name":"stdout","time":576.094865359,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":576.094869389,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":576.094872742,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":576.094875888,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":576.094879715,"data":"        },\n"}
+,{"stream_name":"stdout","time":576.094882757,"data":"    )\n"}
+,{"stream_name":"stdout","time":576.094885856,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":576.094889398,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":576.094892575,"data":"        root,\n"}
+,{"stream_name":"stdout","time":576.094895699,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":576.094898906,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":576.094902105,"data":"    )\n"}
+,{"stream_name":"stdout","time":576.094905733,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":576.094910063,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":576.094914087,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":576.094918088,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":576.094922288,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":576.094925404,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":576.094940909,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":576.094944513,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":576.094947814,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":576.09495104,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":576.094954309,"data":"    )\n"}
+,{"stream_name":"stdout","time":576.09495752,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":576.09496154,"data":"== d3_mini native rot0: 1.2 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":576.095006339,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":586.987823029,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":586.987865483,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":586.987869977,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":586.987872385,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":586.987874728,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":586.987877171,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":586.987879562,"data":"    )\n"}
+,{"stream_name":"stdout","time":586.987881651,"data":"    ^\n"}
+,{"stream_name":"stdout","time":586.987883808,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":586.987886365,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":586.987888561,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":586.987890746,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":586.9878938,"data":"        },\n"}
+,{"stream_name":"stdout","time":586.987895998,"data":"    )\n"}
+,{"stream_name":"stdout","time":586.987898117,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":586.987900542,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":586.987902633,"data":"        root,\n"}
+,{"stream_name":"stdout","time":586.987904787,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":586.987906982,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":586.987909164,"data":"    )\n"}
+,{"stream_name":"stdout","time":586.987911299,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":586.987913771,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":586.987915947,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":586.987927561,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":586.987930013,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":586.987932177,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":586.987935165,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":586.987937552,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":586.987939847,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":586.987942077,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":586.987944405,"data":"    )\n"}
+,{"stream_name":"stdout","time":586.987946501,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":586.987948852,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":597.874060648,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":597.87410142,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":597.874124408,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":597.874128481,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":597.874131953,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":597.874135428,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":597.874138935,"data":"    )\n"}
+,{"stream_name":"stdout","time":597.874142201,"data":"    ^\n"}
+,{"stream_name":"stdout","time":597.874145498,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":597.874149188,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":597.874152458,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":597.874155735,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":597.874159549,"data":"        },\n"}
+,{"stream_name":"stdout","time":597.874162805,"data":"    )\n"}
+,{"stream_name":"stdout","time":597.87416601,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":597.874169664,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":597.874173015,"data":"        root,\n"}
+,{"stream_name":"stdout","time":597.874176254,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":597.874179647,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":597.87418296,"data":"    )\n"}
+,{"stream_name":"stdout","time":597.874186215,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":597.874199964,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":597.874202821,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":597.874205341,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":597.874208069,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":597.874210731,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":597.874213405,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":597.874216035,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":597.874218791,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":597.874221351,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":597.874224107,"data":"    )\n"}
+,{"stream_name":"stdout","time":597.87422656,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":597.874244967,"data":"== d3_mini roman rot0: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":597.874299843,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":608.801707186,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":608.80175857,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":608.801764735,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":608.801768695,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":608.801772303,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":608.801775989,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":608.801779901,"data":"    )\n"}
+,{"stream_name":"stdout","time":608.801783868,"data":"    ^\n"}
+,{"stream_name":"stdout","time":608.80178736,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":608.801791673,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":608.801795595,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":608.801799558,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":608.801803899,"data":"        },\n"}
+,{"stream_name":"stdout","time":608.801807415,"data":"    )\n"}
+,{"stream_name":"stdout","time":608.80181087,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":608.80181491,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":608.801818655,"data":"        root,\n"}
+,{"stream_name":"stdout","time":608.801822415,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":608.801837971,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":608.80184204,"data":"    )\n"}
+,{"stream_name":"stdout","time":608.801845764,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":608.801849868,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":608.801853275,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":608.801856527,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":608.801860062,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":608.801863325,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":608.801866891,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":608.80188642,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":608.80189064,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":608.801894403,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":608.801898544,"data":"    )\n"}
+,{"stream_name":"stdout","time":608.801901846,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":608.801905948,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":619.590296682,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":619.590332795,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":619.59033751,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":619.590340956,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":619.590344347,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":619.59034806,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":619.590351979,"data":"    )\n"}
+,{"stream_name":"stdout","time":619.590355566,"data":"    ^\n"}
+,{"stream_name":"stdout","time":619.590359138,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":619.590363352,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":619.590367478,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":619.590370476,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":619.590374082,"data":"        },\n"}
+,{"stream_name":"stdout","time":619.590377042,"data":"    )\n"}
+,{"stream_name":"stdout","time":619.590380219,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":619.590383705,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":619.590399603,"data":"        root,\n"}
+,{"stream_name":"stdout","time":619.590402693,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":619.590406235,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":619.590410172,"data":"    )\n"}
+,{"stream_name":"stdout","time":619.590413605,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":619.590417604,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":619.590421185,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":619.590425136,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":619.590429008,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":619.590432064,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":619.590435601,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":619.590438857,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":619.590442715,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":619.590446207,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":619.590450104,"data":"    )\n"}
+,{"stream_name":"stdout","time":619.590453058,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":619.590456379,"data":"== d3_mini native rot1: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":619.590465667,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":630.541566643,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":630.541608846,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":630.541615286,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":630.541619932,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":630.541624614,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":630.541629625,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":630.541634269,"data":"    )\n"}
+,{"stream_name":"stdout","time":630.541639514,"data":"    ^\n"}
+,{"stream_name":"stdout","time":630.541656396,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":630.541661174,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":630.54166579,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":630.541670046,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":630.541675353,"data":"        },\n"}
+,{"stream_name":"stdout","time":630.54169401,"data":"    )\n"}
+,{"stream_name":"stdout","time":630.541698103,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":630.541702087,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":630.541705807,"data":"        root,\n"}
+,{"stream_name":"stdout","time":630.541709566,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":630.541713336,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":630.541716978,"data":"    )\n"}
+,{"stream_name":"stdout","time":630.54172116,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":630.54174363,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":630.5417474,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":630.541751205,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":630.541755726,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":630.541759766,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":630.541771143,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":630.541774862,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":630.541778348,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":630.541781563,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":630.5417851,"data":"    )\n"}
+,{"stream_name":"stdout","time":630.541788215,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":630.541791707,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":641.460734354,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":641.46077031,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":641.460775206,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":641.460779082,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":641.460782671,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":641.460786321,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":641.460793952,"data":"    )\n"}
+,{"stream_name":"stdout","time":641.460797432,"data":"    ^\n"}
+,{"stream_name":"stdout","time":641.460800902,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":641.460804946,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":641.460819696,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":641.460823158,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":641.460827081,"data":"        },\n"}
+,{"stream_name":"stdout","time":641.460830425,"data":"    )\n"}
+,{"stream_name":"stdout","time":641.460833794,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":641.460855088,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":641.460858654,"data":"        root,\n"}
+,{"stream_name":"stdout","time":641.460862238,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":641.460866047,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":641.460869717,"data":"    )\n"}
+,{"stream_name":"stdout","time":641.460873353,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":641.460877057,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":641.460880421,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":641.460883609,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":641.460887313,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":641.460890791,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":641.460894346,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":641.460897948,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":641.460901877,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":641.460905725,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":641.460909927,"data":"    )\n"}
+,{"stream_name":"stdout","time":641.460913585,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":641.460917914,"data":"== d3_mini native rot2: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":641.461004036,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":652.439833811,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":652.439871346,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":652.439876595,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":652.439880227,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":652.439883857,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":652.439887846,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":652.439891448,"data":"    )\n"}
+,{"stream_name":"stdout","time":652.439894644,"data":"    ^\n"}
+,{"stream_name":"stdout","time":652.439910508,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":652.439914488,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":652.439917924,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":652.439921184,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":652.439925909,"data":"        },\n"}
+,{"stream_name":"stdout","time":652.439930415,"data":"    )\n"}
+,{"stream_name":"stdout","time":652.439933869,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":652.439937791,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":652.439941302,"data":"        root,\n"}
+,{"stream_name":"stdout","time":652.439944748,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":652.439948443,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":652.439952822,"data":"    )\n"}
+,{"stream_name":"stdout","time":652.439956179,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":652.439960359,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":652.439964218,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":652.439967964,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":652.439972238,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":652.439975747,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":652.439979451,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":652.439983023,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":652.439986889,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":652.439990306,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":652.439994172,"data":"    )\n"}
+,{"stream_name":"stdout","time":652.439997686,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":652.440001733,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":663.274216363,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":663.274251747,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":663.274257668,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":663.274262168,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":663.274266524,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":663.274271121,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":663.274285701,"data":"    )\n"}
+,{"stream_name":"stdout","time":663.27428909,"data":"    ^\n"}
+,{"stream_name":"stdout","time":663.274292743,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":663.274296864,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":663.274300186,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":663.274303445,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":663.274307471,"data":"        },\n"}
+,{"stream_name":"stdout","time":663.274310884,"data":"    )\n"}
+,{"stream_name":"stdout","time":663.274314133,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":663.27431814,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":663.274321488,"data":"        root,\n"}
+,{"stream_name":"stdout","time":663.274324577,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":663.274327694,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":663.274330786,"data":"    )\n"}
+,{"stream_name":"stdout","time":663.274333794,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":663.274337341,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":663.274340505,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":663.274343648,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":663.274347255,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":663.274350876,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":663.274354788,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":663.274358683,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":663.274363064,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":663.274366508,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":663.274369978,"data":"    )\n"}
+,{"stream_name":"stdout","time":663.274372874,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":663.274376189,"data":"== d3_mini roman rot1: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":663.27442666,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":674.031204703,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":674.031267422,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":674.031271965,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":674.031283917,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":674.031286391,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":674.031288678,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":674.031290918,"data":"    )\n"}
+,{"stream_name":"stdout","time":674.031293027,"data":"    ^\n"}
+,{"stream_name":"stdout","time":674.031295265,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":674.031297778,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":674.031299928,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":674.031302132,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":674.031305373,"data":"        },\n"}
+,{"stream_name":"stdout","time":674.031307524,"data":"    )\n"}
+,{"stream_name":"stdout","time":674.031309694,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":674.031312131,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":674.031314325,"data":"        root,\n"}
+,{"stream_name":"stdout","time":674.031316455,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":674.03131869,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":674.031320904,"data":"    )\n"}
+,{"stream_name":"stdout","time":674.031323111,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":674.031325533,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":674.031327677,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":674.031330053,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":674.03133243,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":674.031334973,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":674.031337355,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":674.031339583,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":674.031341883,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":674.031344061,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":674.03134643,"data":"    )\n"}
+,{"stream_name":"stdout","time":674.031348489,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":674.031350826,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":684.891900779,"data":"wn numerics\n"}
+,{"stream_name":"stdout","time":684.891937999,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 394, in from_pretrained\n"}
+,{"stream_name":"stdout","time":684.891959648,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stdout","time":684.891963088,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":684.891965347,"data":"        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\n"}
+,{"stream_name":"stdout","time":684.891967639,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":684.891969978,"data":"    )\n"}
+,{"stream_name":"stdout","time":684.891972088,"data":"    ^\n"}
+,{"stream_name":"stdout","time":684.891974221,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/modeling_d3.py\", line 183, in from_pretrained\n"}
+,{"stream_name":"stdout","time":684.891976707,"data":"    runtime = D3.from_pretrained(\n"}
+,{"stream_name":"stdout","time":684.891978979,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stdout","time":684.891981158,"data":"    ...\u003c8 lines\u003e...\n"}
+,{"stream_name":"stdout","time":684.8919837,"data":"        },\n"}
+,{"stream_name":"stdout","time":684.891985816,"data":"    )\n"}
+,{"stream_name":"stdout","time":684.891988035,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1282, in from_pretrained\n"}
+,{"stream_name":"stdout","time":684.891990538,"data":"    return cls(\n"}
+,{"stream_name":"stdout","time":684.891992643,"data":"        root,\n"}
+,{"stream_name":"stdout","time":684.891994738,"data":"    ...\u003c6 lines\u003e...\n"}
+,{"stream_name":"stdout","time":684.891997015,"data":"        permutation_average=permutation_average,\n"}
+,{"stream_name":"stdout","time":684.891999201,"data":"    )\n"}
+,{"stream_name":"stdout","time":684.89200131,"data":"  File \"/kaggle/tmp/hf/modules/transformers_modules/vllm_hyphen_sr/d3_hyphen_mini/0e78bbdbe3cf480ed1461c185c9e0c4fa9258011/d3_runtime.py\", line 1173, in __init__\n"}
+,{"stream_name":"stdout","time":684.892003718,"data":"    torch.cuda.set_device(self.device)\n"}
+,{"stream_name":"stdout","time":684.892005869,"data":"    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":684.892008052,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py\", line 636, in set_device\n"}
+,{"stream_name":"stdout","time":684.892010366,"data":"    device = _get_device_index(device)\n"}
+,{"stream_name":"stdout","time":684.892012511,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/cuda/_utils.py\", line 546, in _get_device_index\n"}
+,{"stream_name":"stdout","time":684.892014825,"data":"    return _torch_get_device_index(device, optional, allow_cpu)\n"}
+,{"stream_name":"stdout","time":684.892017049,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_utils.py\", line 888, in _get_device_index\n"}
+,{"stream_name":"stdout","time":684.892019342,"data":"    raise ValueError(\n"}
+,{"stream_name":"stdout","time":684.892021477,"data":"        f\"Expected a torch.device with a specified index or an integer, but got:{device}\"\n"}
+,{"stream_name":"stdout","time":684.892023794,"data":"    )\n"}
+,{"stream_name":"stdout","time":684.892025969,"data":"ValueError: Expected a torch.device with a specified index or an integer, but got:cuda\n"}
+,{"stream_name":"stdout","time":684.892028234,"data":"== d3_mini roman rot2: 0.4 min; lines so far: 0\n"}
+,{"stream_name":"stdout","time":684.892032994,"data":"ALL DONE 0.1866582284371058 h\n"}
+,{"stream_name":"stderr","time":686.954887207,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":686.954921498,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":687.238093907,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":687.238130387,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":688.036580424,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":689.060907583,"data":"[NbConvertApp] Writing 292699 bytes to __results__.html\n"}
+]

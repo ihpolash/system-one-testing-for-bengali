@@ -1,0 +1,182 @@
+[{"stream_name":"stdout","time":1.492853396,"data":"$ nvidia-smi --query-gpu=name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":1.530825825,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":1.530851857,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.530861663,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.530864261,"data":"$ pip install -q -e /kaggle/working/proj/harness 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":12.736168011,"data":"\n"}
+,{"stream_name":"stdout","time":12.73620295,"data":"\n"}
+,{"stream_name":"stdout","time":12.736207397,"data":"######## d3_mini (elapsed 0 min)\n"}
+,{"stream_name":"stdout","time":12.736210961,"data":"$ pip install -q flash-linear-attention || true 2\u003e\u00261 | tail -1\n"}
+,{"stream_name":"stdout","time":18.187945729,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 239.5 kB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.187983822,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.3/45.3 kB 359.5 kB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.18799266,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 399.6/399.6 kB 9.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.187995582,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 819.2/819.2 kB 30.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.188105346,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_belebele bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":5784.730326805,"data":"wrote 3573 responses to /kaggle/working/runs/d3_mini; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":5784.730370127,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":5784.7303761,"data":"14:27:53 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":5784.730386085,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":5784.730389546,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":5784.730392716,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":5784.730395772,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":5784.730398838,"data":"\n"}
+,{"stream_name":"stdout","time":5784.730401588,"data":"14:33:33 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":5784.730404471,"data":"14:36:38 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":5784.730407267,"data":"14:39:45 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":5784.730410025,"data":"14:42:48 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":5784.730412753,"data":"14:45:56 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":5784.730415639,"data":"14:48:57 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":5784.730443634,"data":"14:52:00 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":5784.730448404,"data":"\n"}
+,{"stream_name":"stdout","time":5784.730451669,"data":"\n"}
+,{"stream_name":"stdout","time":5784.730454799,"data":"14:55:46 INFO bn_belebele: 1600 written\n"}
+,{"stream_name":"stdout","time":5784.730458129,"data":"15:02:53 INFO bn_belebele: 1800 written\n"}
+,{"stream_name":"stdout","time":5784.730461385,"data":"15:10:10 INFO bn_belebele: 2000 written\n"}
+,{"stream_name":"stdout","time":5784.730464674,"data":"15:17:28 INFO bn_belebele: 2200 written\n"}
+,{"stream_name":"stdout","time":5784.73046792,"data":"15:24:43 INFO bn_belebele: 2400 written\n"}
+,{"stream_name":"stdout","time":5784.730471196,"data":"15:32:08 INFO bn_belebele: 2600 written\n"}
+,{"stream_name":"stdout","time":5784.730474509,"data":"15:39:32 INFO bn_belebele: 2800 written\n"}
+,{"stream_name":"stdout","time":5784.730477744,"data":"15:46:52 INFO bn_belebele: 3000 written\n"}
+,{"stream_name":"stdout","time":5784.730481037,"data":"15:54:07 INFO bn_belebele: 3200 written\n"}
+,{"stream_name":"stdout","time":5784.730484349,"data":"\n"}
+,{"stream_name":"stdout","time":5784.730487607,"data":"\n"}
+,{"stream_name":"stdout","time":5784.730490856,"data":"\n"}
+,{"stream_name":"stdout","time":5784.730495659,"data":"16:00:33 INFO bn_sib200: 3400 written\n"}
+,{"stream_name":"stdout","time":5784.730525365,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":11158.035442464,"data":"wrote 2990 responses to /kaggle/working/runs/d3_mini; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":11158.035505736,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":11158.035515929,"data":"16:03:40 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":11158.035521215,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":11158.035526154,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":11158.03553111,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":11158.035535803,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":11158.035549174,"data":"\n"}
+,{"stream_name":"stdout","time":11158.03555247,"data":"16:08:05 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":11158.035555536,"data":"16:12:23 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":11158.035558468,"data":"16:16:44 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":11158.03556137,"data":"16:21:04 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":11158.035564356,"data":"16:25:31 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":11158.035567446,"data":"16:29:51 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":11158.03557043,"data":"16:34:12 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":11158.035573517,"data":"\n"}
+,{"stream_name":"stdout","time":11158.035576508,"data":"16:40:09 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":11158.035607234,"data":"16:47:46 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":11158.035612423,"data":"16:55:22 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":11158.03561656,"data":"17:02:59 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":11158.035620084,"data":"17:10:36 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":11158.035623515,"data":"17:18:12 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":11158.035626954,"data":"17:25:49 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":11158.042665958,"data":"== d3_mini eval native rot0: 185.7 min; lines so far: 6563\n"}
+,{"stream_name":"stdout","time":11158.042948889,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_sib200 --split eval  --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":12676.936234323,"data":"wrote 1773 responses to /kaggle/working/runs/d3_mini; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":12676.936281894,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":12676.936286284,"data":"17:33:15 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":12676.936289569,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":12676.936292724,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":12676.936295641,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":12676.936298532,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":12676.936301717,"data":"17:36:14 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":12676.936304892,"data":"17:39:02 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":12676.936307606,"data":"17:41:50 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":12676.936310409,"data":"17:44:41 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":12676.936313147,"data":"17:47:32 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":12676.936316005,"data":"17:50:19 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":12676.936318737,"data":"17:53:07 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":12676.936321468,"data":"17:55:56 INFO bn_sib200: 1600 written\n"}
+,{"stream_name":"stdout","time":12676.936324256,"data":"$ python scripts/run_system_one_model.py bn_bnli bn_massive --split eval --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":17763.174046521,"data":"wrote 2989 responses to /kaggle/working/runs/d3_mini; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":17763.174109767,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":17763.174117349,"data":"17:58:32 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":17763.174133279,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":17763.174137002,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":17763.174140512,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":17763.174149592,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":17763.174152621,"data":"18:02:28 INFO bn_bnli: 200 written\n"}
+,{"stream_name":"stdout","time":17763.174154811,"data":"18:06:11 INFO bn_bnli: 400 written\n"}
+,{"stream_name":"stdout","time":17763.174156955,"data":"18:09:53 INFO bn_bnli: 600 written\n"}
+,{"stream_name":"stdout","time":17763.174159083,"data":"18:13:33 INFO bn_bnli: 800 written\n"}
+,{"stream_name":"stdout","time":17763.174161285,"data":"18:17:19 INFO bn_bnli: 1000 written\n"}
+,{"stream_name":"stdout","time":17763.17416343,"data":"18:20:59 INFO bn_bnli: 1200 written\n"}
+,{"stream_name":"stdout","time":17763.174165588,"data":"18:24:42 INFO bn_bnli: 1400 written\n"}
+,{"stream_name":"stdout","time":17763.174167725,"data":"18:30:21 INFO bn_massive: 1600 written\n"}
+,{"stream_name":"stdout","time":17763.17416997,"data":"18:38:00 INFO bn_massive: 1800 written\n"}
+,{"stream_name":"stdout","time":17763.174172133,"data":"18:45:35 INFO bn_massive: 2000 written\n"}
+,{"stream_name":"stdout","time":17763.174174268,"data":"18:53:11 INFO bn_massive: 2200 written\n"}
+,{"stream_name":"stdout","time":17763.174176393,"data":"19:00:47 INFO bn_massive: 2400 written\n"}
+,{"stream_name":"stdout","time":17763.174178601,"data":"19:08:22 INFO bn_massive: 2600 written\n"}
+,{"stream_name":"stdout","time":17763.174180765,"data":"19:15:58 INFO bn_massive: 2800 written\n"}
+,{"stream_name":"stdout","time":17763.185192652,"data":"== d3_mini eval roman rot0: 110.1 min; lines so far: 11325\n"}
+,{"stream_name":"stdout","time":17763.1854288,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":24454.897378847,"data":"wrote 4422 responses to /kaggle/working/runs/d3_mini; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":24454.897430693,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":24454.897437246,"data":"19:23:19 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":24454.897442988,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":24454.897448743,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":24454.8974539,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":24454.897459136,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":24454.897464285,"data":"\n"}
+,{"stream_name":"stdout","time":24454.897468679,"data":"19:26:36 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":24454.897473441,"data":"19:29:39 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":24454.89751343,"data":"19:32:38 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":24454.897520259,"data":"19:35:47 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":24454.897523457,"data":"19:38:56 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":24454.897526845,"data":"19:42:02 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":24454.897530434,"data":"19:45:07 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":24454.897533801,"data":"\n"}
+,{"stream_name":"stdout","time":24454.897537426,"data":"19:49:12 INFO bn_bnli: 1600 written\n"}
+,{"stream_name":"stdout","time":24454.897541716,"data":"19:53:32 INFO bn_bnli: 1800 written\n"}
+,{"stream_name":"stdout","time":24454.897545627,"data":"19:57:52 INFO bn_bnli: 2000 written\n"}
+,{"stream_name":"stdout","time":24454.897548998,"data":"20:02:14 INFO bn_bnli: 2200 written\n"}
+,{"stream_name":"stdout","time":24454.897552598,"data":"20:06:38 INFO bn_bnli: 2400 written\n"}
+,{"stream_name":"stdout","time":24454.89755569,"data":"20:11:03 INFO bn_bnli: 2600 written\n"}
+,{"stream_name":"stdout","time":24454.897559036,"data":"20:15:25 INFO bn_bnli: 2800 written\n"}
+,{"stream_name":"stdout","time":24454.89756258,"data":"\n"}
+,{"stream_name":"stdout","time":24454.897566016,"data":"20:20:42 INFO bn_massive: 3000 written\n"}
+,{"stream_name":"stdout","time":24454.89756943,"data":"20:28:18 INFO bn_massive: 3200 written\n"}
+,{"stream_name":"stdout","time":24454.89757266,"data":"20:35:58 INFO bn_massive: 3400 written\n"}
+,{"stream_name":"stdout","time":24454.897575961,"data":"20:43:35 INFO bn_massive: 3600 written\n"}
+,{"stream_name":"stdout","time":24454.897579781,"data":"20:51:09 INFO bn_massive: 3800 written\n"}
+,{"stream_name":"stdout","time":24454.897583501,"data":"20:58:45 INFO bn_massive: 4000 written\n"}
+,{"stream_name":"stdout","time":24454.897587223,"data":"21:06:18 INFO bn_massive: 4200 written\n"}
+,{"stream_name":"stdout","time":24454.897590955,"data":"21:13:50 INFO bn_massive: 4400 written\n"}
+,{"stream_name":"stdout","time":24454.913247149,"data":"== d3_mini dev native rot0: 111.5 min; lines so far: 15747\n"}
+,{"stream_name":"stdout","time":24454.913520967,"data":"$ python scripts/run_system_one_model.py bn_sentnob bn_bnli bn_massive --split dev --limit 1500 --backend vllmsr --model vllm-sr/d3-mini --tag-suffix @a475367de0 --max-len 4096 --out /kaggle/working/runs/d3_mini\n"}
+,{"stream_name":"stdout","time":30741.267441337,"data":"wrote 4413 responses to /kaggle/working/runs/d3_mini; 0 unsupported/failed items (see failures.jsonl)\n"}
+,{"stream_name":"stdout","time":30741.267530826,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":30741.267539132,"data":"21:14:50 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":30741.267544521,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":30741.267549488,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":30741.26755398,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":30741.267558884,"data":"[transformers] Missing validation function in 'RotaryEmbeddingConfigMixin' for 'rope_type'='axial'\n"}
+,{"stream_name":"stdout","time":30741.267563464,"data":"21:17:52 INFO bn_sentnob: 200 written\n"}
+,{"stream_name":"stdout","time":30741.267582135,"data":"21:20:42 INFO bn_sentnob: 400 written\n"}
+,{"stream_name":"stdout","time":30741.267585864,"data":"21:23:29 INFO bn_sentnob: 600 written\n"}
+,{"stream_name":"stdout","time":30741.267589124,"data":"21:26:21 INFO bn_sentnob: 800 written\n"}
+,{"stream_name":"stdout","time":30741.267592214,"data":"21:29:13 INFO bn_sentnob: 1000 written\n"}
+,{"stream_name":"stdout","time":30741.267595608,"data":"21:32:02 INFO bn_sentnob: 1200 written\n"}
+,{"stream_name":"stdout","time":30741.267598694,"data":"21:34:53 INFO bn_sentnob: 1400 written\n"}
+,{"stream_name":"stdout","time":30741.267601851,"data":"21:38:27 INFO bn_bnli: 1600 written\n"}
+,{"stream_name":"stdout","time":30741.267605426,"data":"21:42:10 INFO bn_bnli: 1800 written\n"}
+,{"stream_name":"stdout","time":30741.267609003,"data":"21:45:53 INFO bn_bnli: 2000 written\n"}
+,{"stream_name":"stdout","time":30741.267612903,"data":"21:49:38 INFO bn_bnli: 2200 written\n"}
+,{"stream_name":"stdout","time":30741.267617174,"data":"21:53:21 INFO bn_bnli: 2400 written\n"}
+,{"stream_name":"stdout","time":30741.267620857,"data":"21:57:04 INFO bn_bnli: 2600 written\n"}
+,{"stream_name":"stdout","time":30741.267624685,"data":"22:00:51 INFO bn_bnli: 2800 written\n"}
+,{"stream_name":"stdout","time":30741.267627956,"data":"22:05:47 INFO bn_massive: 3000 written\n"}
+,{"stream_name":"stdout","time":30741.267631361,"data":"22:13:21 INFO bn_massive: 3200 written\n"}
+,{"stream_name":"stdout","time":30741.267634419,"data":"22:20:57 INFO bn_massive: 3400 written\n"}
+,{"stream_name":"stdout","time":30741.267638052,"data":"22:28:34 INFO bn_massive: 3600 written\n"}
+,{"stream_name":"stdout","time":30741.267641302,"data":"22:36:09 INFO bn_massive: 3800 written\n"}
+,{"stream_name":"stdout","time":30741.267644742,"data":"22:43:46 INFO bn_massive: 4000 written\n"}
+,{"stream_name":"stdout","time":30741.267648044,"data":"22:51:21 INFO bn_massive: 4200 written\n"}
+,{"stream_name":"stdout","time":30741.267651447,"data":"22:58:57 INFO bn_massive: 4400 written\n"}
+,{"stream_name":"stdout","time":30741.288218578,"data":"== d3_mini dev roman rot0: 104.8 min; lines so far: 20160\n"}
+,{"stream_name":"stdout","time":30741.288240872,"data":"TIME GUARD: skipping remaining settings\n"}
+,{"stream_name":"stdout","time":30741.288245221,"data":"ALL DONE 8.535708900491397 h\n"}
+,{"stream_name":"stderr","time":30743.166450984,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":30743.166481395,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":30743.378561068,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":30743.378580363,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":30744.083447467,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":30744.928049075,"data":"[NbConvertApp] Writing 295371 bytes to __results__.html\n"}
+]
