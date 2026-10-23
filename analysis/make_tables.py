@@ -46,7 +46,7 @@ tasks_rows = [
     ("Belebele", "reading comprehension", "4 options", "accuracy", "human translation (FLORES-200)", f"{split['belebele']['n']} / 900"),
     ("SIB-200", "topic", "7 options", "accuracy", "human translation (FLORES-200)", f"{split['sib200']['n']} / 204"),
     ("XNLI-bn", "natural language inference", "3 options", "accuracy", "machine translation of XNLI", f"{split['bnli']['n']:,} / 1,500"),
-    ("MASSIVE bn-BD", "intent", "59 options", "accuracy", "human translation", f"{split['massive']['n']:,} / 1,500"),
+    ("MASSIVE bn-BD", "intent", "60 options", "accuracy", "human translation", f"{split['massive']['n']:,} / 1,500"),
     ("SentNoB", "sentiment", "3 options", "macro-F1", "native social-media comments", f"{split['sentnob']['n']:,} / 1,586"),
 ]
 write("tab_tasks.tex", "\\begin{tabular}{@{}llllll@{}}\\toprule\nDataset & Task & Options & Metric & Text origin & Test items (all / used) \\\\\\midrule\n" +
@@ -68,15 +68,20 @@ for m in [x for x in ORDER if not x.startswith("d3-flash")]:   # d3-flash ran a 
         s += f" ({f3(rom.value.iloc[0])})" if not rom.empty else ""
         cells.append(s)
     rows.append(f"{NAME[m]} & " + " & ".join(cells) + " \\\\")
-# majority-class baseline row (chance for multi-option tasks is given in the text)
+# baselines: majority-class and uniform-random, separately (SentNoB is macro-F1, so both are macro-F1 there)
 maj = a[(a.model == "jev-1.13.0") & (a.variant == "native")].set_index("task")
-base = []
+_g = pd.read_csv(HERE / "items.csv", usecols=["model", "task", "split", "variant", "rot", "gold_id"])
+_g = _g[(_g.model == "jev-1.13.0") & (_g.task == "bn_sentnob") & (_g.split == "eval") & (_g.variant == "native") & (_g.rot == 0)]
+_p = _g.gold_id.value_counts(normalize=True).to_numpy(); _K = len(_p)
+sent_major = (2 * _p.max() / (1 + _p.max())) / _K                                   # always the majority class: F1 = 2p/(1+p) on that class, 0 on the others
+sent_uniform = float(np.mean(2 * _p * (1 / _K) / (_p + 1 / _K)))                    # uniform random guess: precision p_i, recall 1/K for each class
+macro("sentMajorityFone", f3(sent_major)); macro("sentUniformFone", f3(sent_uniform))
+rows_major, rows_chance = [], []
 for t, _ in TASKS:
-    if t == "SentNoB":   # the column is macro-F1: always predicting the majority class (share p) scores F1 = 2p/(1+p) on that class and 0 on the other two
-        p_maj = maj.loc[t, "majority"]; base.append(f3(2 * p_maj / (1 + p_maj) / 3)); macro("sentMajorityFone", f3(2 * p_maj / (1 + p_maj) / 3)); continue
-    base.append("0.25" if t in ("Belebele",) else (f3(maj.loc[t, "majority"]) if t in maj.index else "--"))
-rows.append("Majority class / chance & " + " & ".join(base) + " \\\\")
-write("tab_main.tex", "\\begin{tabular}{@{}lccccc@{}}\\toprule\nModel & Belebele & SIB-200 & XNLI-bn & MASSIVE & SentNoB \\\\\\midrule\n" + "\n".join(rows[:-1]) + "\n\\midrule\n" + rows[-1] + "\n\\bottomrule\\end{tabular}\n")
+    rows_major.append("--" if t == "Belebele" else (f3(sent_major) if t == "SentNoB" else f3(maj.loc[t, "majority"])))
+    rows_chance.append(f3(sent_uniform) if t == "SentNoB" else f3(maj.loc[t, "chance"]))
+rows = rows + ["Majority class & " + " & ".join(rows_major) + " \\\\", "Uniform random & " + " & ".join(rows_chance) + " \\\\"]
+write("tab_main.tex", "\\begin{tabular}{@{}lccccc@{}}\\toprule\nModel & Belebele & SIB-200 & XNLI-bn & MASSIVE & SentNoB \\\\\\midrule\n" + "\n".join(rows[:-2]) + "\n\\midrule\n" + "\n".join(rows[-2:]) + "\n\\bottomrule\\end{tabular}\n")
 
 # d3-flash subset comparison (flash ran a 400-item-per-task hash-ordered subset): same items for Jev
 it = pd.read_csv(HERE / "items.csv", usecols=["model", "task", "split", "variant", "rot", "uid", "gold_id", "pred_id", "correct"])
