@@ -15,8 +15,8 @@ OUT.mkdir(parents=True, exist_ok=True)
 NUM = {}   # macro name -> text
 
 NAME = {"jev-1.13.0": "Jev", "d3-flash (4-bit)": r"d3-flash (4-bit)$^\dagger$", "gemma-4-E4B-it": "Gemma-4-E4B", "d3-mini": "d3-mini", "d3-nano": "d3-nano", "d3-lite": "d3-lite",
-        "d3-edge": "d3-edge", "laya-bangla v2": "laya-bangla", "laya-multilingual": "Laya-multilingual", "julia-1": "Julia-1"}
-ORDER = ["jev-1.13.0", "d3-flash (4-bit)", "gemma-4-E4B-it", "d3-mini", "d3-nano", "d3-lite", "d3-edge", "laya-bangla v2", "laya-multilingual", "julia-1"]
+        "d3-edge": "d3-edge", "laya-bangla v2": "laya-bangla", "laya-multilingual": "Laya-multilingual", "julia-1": "Julia-1", "kev-4b": "Kev-4B", "kev-0.8b": "Kev-0.8B"}
+ORDER = ["jev-1.13.0", "d3-flash (4-bit)", "gemma-4-E4B-it", "d3-mini", "d3-nano", "kev-4b", "d3-lite", "laya-bangla v2", "d3-edge", "kev-0.8b", "laya-multilingual", "julia-1"]
 TASKS = [("Belebele", "Belebele"), ("SIB-200", "SIB-200"), ("XNLI-bn", "XNLI-bn"), ("MASSIVE", "MASSIVE"), ("SentNoB", "SentNoB")]
 
 
@@ -72,6 +72,8 @@ for m in [x for x in ORDER if not x.startswith("d3-flash")]:   # d3-flash ran a 
 maj = a[(a.model == "jev-1.13.0") & (a.variant == "native")].set_index("task")
 base = []
 for t, _ in TASKS:
+    if t == "SentNoB":   # the column is macro-F1: always predicting the majority class (share p) scores F1 = 2p/(1+p) on that class and 0 on the other two
+        p_maj = maj.loc[t, "majority"]; base.append(f3(2 * p_maj / (1 + p_maj) / 3)); macro("sentMajorityFone", f3(2 * p_maj / (1 + p_maj) / 3)); continue
     base.append("0.25" if t in ("Belebele",) else (f3(maj.loc[t, "majority"]) if t in maj.index else "--"))
 rows.append("Majority class / chance & " + " & ".join(base) + " \\\\")
 write("tab_main.tex", "\\begin{tabular}{@{}lccccc@{}}\\toprule\nModel & Belebele & SIB-200 & XNLI-bn & MASSIVE & SentNoB \\\\\\midrule\n" + "\n".join(rows[:-1]) + "\n\\midrule\n" + rows[-1] + "\n\\bottomrule\\end{tabular}\n")
@@ -123,7 +125,7 @@ for m in ORDER:
     rows.append(f"{NAME[m]}{star} & {f3(x.native_edit)} & {f3(x.roman_edit)} & {f3(x.roman_nat_edit)} & {f3(x.human)} & {pts(h['diff'])} {ci(h.lo, h.hi)} & {pts(hr['diff'])} {ci(hr.lo, hr.hi)} \\\\")
 write("tab_human.tex", "\\begin{tabular}{@{}lcccccc@{}}\\toprule\n & \\multicolumn{4}{c}{Accuracy} & \\multicolumn{2}{c}{Change in points (95\\% CI)} \\\\\\cmidrule(lr){2-5}\\cmidrule(l){6-7}\n"
       "Model & Bengali & Rule-based & Natural-style & Banglish & Banglish $-$ Bengali & Banglish $-$ rule-based \\\\\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\n")
-tag = {"jev-1.13.0": "jev", "gemma-4-E4B-it": "gemma", "d3-flash (4-bit)": "flash", "d3-mini": "mini", "d3-nano": "nano", "d3-lite": "lite", "d3-edge": "edge", "laya-bangla v2": "layabn", "laya-multilingual": "layaml", "julia-1": "julia"}
+tag = {"jev-1.13.0": "jev", "gemma-4-E4B-it": "gemma", "d3-flash (4-bit)": "flash", "d3-mini": "mini", "d3-nano": "nano", "d3-lite": "lite", "d3-edge": "edge", "laya-bangla v2": "layabn", "laya-multilingual": "layaml", "julia-1": "julia", "kev-4b": "kevmd", "kev-0.8b": "kevsm"}
 for m, k in tag.items():
     if m in acc.index:
         x = acc.loc[m]
@@ -212,6 +214,8 @@ hours = 0.0
 for f in glob.glob(str(ROOT / "kaggle" / "out_*.txt")):
     mm = re.findall(r"ALL DONE ([0-9.]+)", open(f, errors="ignore").read())
     hours += sum(float(x) for x in mm)
+for f in glob.glob(str(ROOT / "kaggle" / "out_k*" / "bn-s1-main-k.log")):   # Kev runs, including the attempts that failed and were rerun
+    hours += sum(float(x) for x in re.findall(r"ALL DONE ([0-9.]+)", " ".join(d.get("data", "") for d in json.load(open(f)))))
 macro("gpuHours", f"{hours:.0f}")
 
 

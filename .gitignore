@@ -33,3 +33,5 @@ bengali-system-one-arxiv-plan.md
 harness/.git-upstream/
 analysis/romanization_handcheck.csv
 analysis/romanization_review.md
+kaggle/out_*/
+.DS_Store

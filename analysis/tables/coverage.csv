@@ -7,6 +7,8 @@ Belebele,native,eval,0,d3-nano,1800,1800,1.0
 Belebele,native,eval,0,gemma-4-E4B-it,1800,1800,1.0
 Belebele,native,eval,0,jev-1.13.0,1800,1800,1.0
 Belebele,native,eval,0,julia-1,1781,1800,0.9894444444444445
+Belebele,native,eval,0,kev-0.8b,1800,1800,1.0
+Belebele,native,eval,0,kev-4b,1800,1800,1.0
 Belebele,native,eval,0,laya-bangla v2,1800,1800,1.0
 Belebele,native,eval,0,laya-multilingual,1800,1800,1.0
 Belebele,native,eval,1,d3-edge,1800,1800,1.0
@@ -42,6 +44,8 @@ XNLI-bn,native,eval,0,d3-nano,1500,1500,1.0
 XNLI-bn,native,eval,0,gemma-4-E4B-it,1500,1500,1.0
 XNLI-bn,native,eval,0,jev-1.13.0,1500,1500,1.0
 XNLI-bn,native,eval,0,julia-1,1500,1500,1.0
+XNLI-bn,native,eval,0,kev-0.8b,1500,1500,1.0
+XNLI-bn,native,eval,0,kev-4b,1500,1500,1.0
 XNLI-bn,native,eval,0,laya-bangla v2,1500,1500,1.0
 XNLI-bn,native,eval,0,laya-multilingual,1500,1500,1.0
 XNLI-bn,native,eval,1,d3-edge,1500,1500,1.0
@@ -77,6 +81,8 @@ XNLI-bn,roman,eval,0,d3-nano,1500,1500,1.0
 XNLI-bn,roman,eval,0,gemma-4-E4B-it,1500,1500,1.0
 XNLI-bn,roman,eval,0,jev-1.13.0,1500,1500,1.0
 XNLI-bn,roman,eval,0,julia-1,1500,1500,1.0
+XNLI-bn,roman,eval,0,kev-0.8b,1500,1500,1.0
+XNLI-bn,roman,eval,0,kev-4b,1500,1500,1.0
 XNLI-bn,roman,eval,0,laya-bangla v2,1500,1500,1.0
 XNLI-bn,roman,eval,0,laya-multilingual,1500,1500,1.0
 XNLI-bn,roman,eval,1,d3-edge,1500,1500,1.0
@@ -102,6 +108,8 @@ MASSIVE,native,dev,0,d3-mini,1500,1500,1.0
 MASSIVE,native,dev,0,d3-nano,1500,1500,1.0
 MASSIVE,native,dev,0,gemma-4-E4B-it,1500,1500,1.0
 MASSIVE,native,dev,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,native,dev,0,kev-0.8b,12,1500,0.008
+MASSIVE,native,dev,0,kev-4b,12,1500,0.008
 MASSIVE,native,dev,0,laya-bangla v2,1500,1500,1.0
 MASSIVE,native,dev,0,laya-multilingual,1500,1500,1.0
 MASSIVE,native,eval,0,d3-edge,1500,1500,1.0
@@ -111,6 +119,8 @@ MASSIVE,native,eval,0,d3-mini,1500,1500,1.0
 MASSIVE,native,eval,0,d3-nano,1500,1500,1.0
 MASSIVE,native,eval,0,gemma-4-E4B-it,1500,1500,1.0
 MASSIVE,native,eval,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,native,eval,0,kev-0.8b,1500,1500,1.0
+MASSIVE,native,eval,0,kev-4b,1500,1500,1.0
 MASSIVE,native,eval,0,laya-bangla v2,1500,1500,1.0
 MASSIVE,native,eval,0,laya-multilingual,1500,1500,1.0
 MASSIVE,native,eval,1,d3-edge,1500,1500,1.0
@@ -134,6 +144,8 @@ MASSIVE,roman,dev,0,d3-mini,1500,1500,1.0
 MASSIVE,roman,dev,0,d3-nano,1500,1500,1.0
 MASSIVE,roman,dev,0,gemma-4-E4B-it,1500,1500,1.0
 MASSIVE,roman,dev,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,roman,dev,0,kev-0.8b,14,1500,0.009333333333333334
+MASSIVE,roman,dev,0,kev-4b,14,1500,0.009333333333333334
 MASSIVE,roman,dev,0,laya-bangla v2,1500,1500,1.0
 MASSIVE,roman,dev,0,laya-multilingual,1500,1500,1.0
 MASSIVE,roman,eval,0,d3-edge,1500,1500,1.0
@@ -143,6 +155,8 @@ MASSIVE,roman,eval,0,d3-mini,1500,1500,1.0
 MASSIVE,roman,eval,0,d3-nano,1500,1500,1.0
 MASSIVE,roman,eval,0,gemma-4-E4B-it,1500,1500,1.0
 MASSIVE,roman,eval,0,jev-1.13.0,1500,1500,1.0
+MASSIVE,roman,eval,0,kev-0.8b,1500,1500,1.0
+MASSIVE,roman,eval,0,kev-4b,1500,1500,1.0
 MASSIVE,roman,eval,0,laya-bangla v2,1500,1500,1.0
 MASSIVE,roman,eval,0,laya-multilingual,1500,1500,1.0
 MASSIVE,roman,eval,1,d3-edge,1500,1500,1.0
@@ -168,6 +182,8 @@ SentNoB,native,dev,0,d3-nano,1500,1500,1.0
 SentNoB,native,dev,0,gemma-4-E4B-it,1500,1500,1.0
 SentNoB,native,dev,0,jev-1.13.0,1500,1500,1.0
 SentNoB,native,dev,0,julia-1,1500,1500,1.0
+SentNoB,native,dev,0,kev-0.8b,50,1500,0.03333333333333333
+SentNoB,native,dev,0,kev-4b,50,1500,0.03333333333333333
 SentNoB,native,dev,0,laya-bangla v2,1500,1500,1.0
 SentNoB,native,dev,0,laya-multilingual,1500,1500,1.0
 SentNoB,native,eval,0,d3-edge,1586,1586,1.0
@@ -178,6 +194,8 @@ SentNoB,native,eval,0,d3-nano,1586,1586,1.0
 SentNoB,native,eval,0,gemma-4-E4B-it,1586,1586,1.0
 SentNoB,native,eval,0,jev-1.13.0,1586,1586,1.0
 SentNoB,native,eval,0,julia-1,1586,1586,1.0
+SentNoB,native,eval,0,kev-0.8b,1586,1586,1.0
+SentNoB,native,eval,0,kev-4b,1586,1586,1.0
 SentNoB,native,eval,0,laya-bangla v2,1586,1586,1.0
 SentNoB,native,eval,0,laya-multilingual,1586,1586,1.0
 SentNoB,native,eval,1,d3-edge,1586,1586,1.0
@@ -204,6 +222,8 @@ SentNoB,roman,dev,0,d3-nano,1500,1500,1.0
 SentNoB,roman,dev,0,gemma-4-E4B-it,1500,1500,1.0
 SentNoB,roman,dev,0,jev-1.13.0,1500,1500,1.0
 SentNoB,roman,dev,0,julia-1,1500,1500,1.0
+SentNoB,roman,dev,0,kev-0.8b,54,1500,0.036
+SentNoB,roman,dev,0,kev-4b,54,1500,0.036
 SentNoB,roman,dev,0,laya-bangla v2,1500,1500,1.0
 SentNoB,roman,dev,0,laya-multilingual,1500,1500,1.0
 SentNoB,roman,eval,0,d3-edge,1586,1586,1.0
@@ -214,6 +234,8 @@ SentNoB,roman,eval,0,d3-nano,1586,1586,1.0
 SentNoB,roman,eval,0,gemma-4-E4B-it,1586,1586,1.0
 SentNoB,roman,eval,0,jev-1.13.0,1586,1586,1.0
 SentNoB,roman,eval,0,julia-1,1586,1586,1.0
+SentNoB,roman,eval,0,kev-0.8b,1586,1586,1.0
+SentNoB,roman,eval,0,kev-4b,1586,1586,1.0
 SentNoB,roman,eval,0,laya-bangla v2,1586,1586,1.0
 SentNoB,roman,eval,0,laya-multilingual,1586,1586,1.0
 SentNoB,roman,eval,1,d3-edge,1586,1586,1.0
@@ -240,6 +262,8 @@ SIB-200,native,eval,0,d3-nano,204,204,1.0
 SIB-200,native,eval,0,gemma-4-E4B-it,204,204,1.0
 SIB-200,native,eval,0,jev-1.13.0,204,204,1.0
 SIB-200,native,eval,0,julia-1,204,204,1.0
+SIB-200,native,eval,0,kev-0.8b,204,204,1.0
+SIB-200,native,eval,0,kev-4b,204,204,1.0
 SIB-200,native,eval,0,laya-bangla v2,204,204,1.0
 SIB-200,native,eval,0,laya-multilingual,204,204,1.0
 SIB-200,native,eval,1,d3-edge,204,204,1.0
@@ -266,6 +290,8 @@ SIB-200,roman,eval,0,d3-nano,204,204,1.0
 SIB-200,roman,eval,0,gemma-4-E4B-it,204,204,1.0
 SIB-200,roman,eval,0,jev-1.13.0,204,204,1.0
 SIB-200,roman,eval,0,julia-1,204,204,1.0
+SIB-200,roman,eval,0,kev-0.8b,204,204,1.0
+SIB-200,roman,eval,0,kev-4b,204,204,1.0
 SIB-200,roman,eval,0,laya-bangla v2,204,204,1.0
 SIB-200,roman,eval,0,laya-multilingual,204,204,1.0
 SIB-200,roman,eval,1,d3-edge,204,204,1.0

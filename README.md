@@ -2,7 +2,7 @@
 
 Code, result tables and hand-written Banglish for my preprint *Decision Models on Bengali: Accuracy, Calibration and Script Robustness with Hand-Written Romanization* (Ismail Hossain Polas, Jahangirnagar University, ismailhossainpolash@gmail.com).
 
-I tested one hosted decision model (Jev) and eight open ones on five Bengali tasks, in Bengali script and in Latin letters, and compared tool-made romanization with Banglish I wrote by hand.
+I tested one hosted decision model (Jev), ten open decision models (the vLLM-SR d3 family, Laya, laya-bangla, Julia-1 and Kev) and a general-purpose baseline (Gemma) on five Bengali tasks, in Bengali script and in Latin letters, and compared tool-made romanization with Banglish I wrote by hand.
 
 ## Layout
 - `paper/` LaTeX source, figures, generated tables and `numbers.tex`. `main.pdf` is built with `tectonic`.

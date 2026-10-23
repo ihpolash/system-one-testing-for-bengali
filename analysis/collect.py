@@ -29,6 +29,8 @@ MODELS = {
     "d3-lite": ("hf:vllm-sr/d3-lite@a8d25a91ef", "d3_lite"),
     "d3-nano": ("hf:vllm-sr/d3-nano@3aeb1c22a5", "d3_nano"),
     "d3-mini": ("hf:vllm-sr/d3-mini@a475367de0", "d3_mini"),
+    "kev-4b": ("hf:jaredpalmer/kev-4b@v1.0", "kev_4b"),
+    "kev-0.8b": ("hf:jaredpalmer/kev-0.8b@v1.0", "kev_08b"),
 }
 
 

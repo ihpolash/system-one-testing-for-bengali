@@ -16,7 +16,7 @@ test:
 data:
 	$(PY) data/freeze_splits.py
 collect:
-	$(PY) analysis/collect.py
+	$(PY) analysis/collect.py --all
 	$(PY) analysis/human_models.py
 tables: collect
 	$(PY) analysis/make_tables.py

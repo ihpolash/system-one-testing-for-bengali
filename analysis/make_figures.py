@@ -22,7 +22,7 @@ plt.rcParams.update({"font.size": 8, "axes.edgecolor": INK2, "axes.labelcolor": 
                      "axes.spines.top": False, "axes.spines.right": False, "axes.linewidth": 0.6, "figure.facecolor": SURFACE, "axes.facecolor": SURFACE,
                      "axes.grid": True, "grid.color": GRID, "grid.linewidth": 0.5, "axes.axisbelow": True, "legend.frameon": False, "pdf.fonttype": 42})
 NAME = {"jev-1.13.0": "Jev", "gemma-4-E4B-it": "Gemma-4-E4B", "d3-flash (4-bit)": "d3-flash (4-bit)", "d3-mini": "d3-mini", "d3-nano": "d3-nano", "d3-lite": "d3-lite",
-        "d3-edge": "d3-edge", "laya-multilingual": "Laya-multilingual", "laya-bangla v2": "laya-bangla", "julia-1": "Julia-1"}
+        "d3-edge": "d3-edge", "laya-multilingual": "Laya-multilingual", "laya-bangla v2": "laya-bangla", "julia-1": "Julia-1", "kev-4b": "Kev-4B", "kev-0.8b": "Kev-0.8B"}
 
 
 def save(fig, name):
@@ -72,7 +72,7 @@ def fig_overstatement():
 # ------------------------------------------------------------------ Fig 3: native vs synthetic romanized, per task (full test sets)
 def fig_script_gap():
     a = pd.read_csv(HERE / "tables" / "rq1_accuracy.csv"); a = a[a.variant.isin(["native", "roman"]) & ~a.model.str.startswith("d3-flash")]
-    order = ["jev-1.13.0", "gemma-4-E4B-it", "d3-mini", "d3-nano", "d3-lite", "d3-edge", "laya-bangla v2", "laya-multilingual", "julia-1"]
+    order = ["jev-1.13.0", "gemma-4-E4B-it", "d3-mini", "d3-nano", "kev-4b", "d3-lite", "laya-bangla v2", "d3-edge", "kev-0.8b", "laya-multilingual", "julia-1"]
     tasks = [("XNLI-bn", "XNLI-bn (accuracy)"), ("SIB-200", "SIB-200 (accuracy)"), ("MASSIVE", "MASSIVE (accuracy)"), ("SentNoB", "SentNoB (macro-F1)")]
     fig, axes = plt.subplots(1, 4, figsize=(6.8, 3.0), sharey=True)
     for ax, (t, title) in zip(axes, tasks):

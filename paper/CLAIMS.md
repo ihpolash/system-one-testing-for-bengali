@@ -10,3 +10,6 @@
 | C6 | The harness reproduces independent numbers: Jev Belebele 0.918 vs published 0.917; Laya-multilingual MASSIVE 0.179 vs 0.18 and SIB-200 0.588 vs 0.57-0.58 (laya-bangla authors); laya-bangla SIB-200 0.750 vs 0.76, SentNoB 0.482 vs 0.48-0.49. Laya's SentNoB score is wording-sensitive (macro-F1 0.263 to 0.376). | analysis/RESULTS_AUDIT.md | Only some tasks comparable |
 
 Not claimed: that this is the first Bengali System One study (a gap table in Related Work states what each prior paper covers); any effect of fine-tuning; any statement about Jev's training data; any result for Kev, d3 (27B), or Microsoft-Decision-1.
+
+
+Update 2026-10-23: Kev-0.8B and Kev-4B added (test sets and hand-written items only; no dev split or rotations). Kev-4B is level with d3-lite; both Kev models are far below Jev. Banglish - rule-based: +10.7 (Kev-4B), +11.4 (Kev-0.8B), inside the range of the other models. Rank agreement over 11 systems: tau 0.89 (rule-based), 0.93 (natural-style). Fixed: the SentNoB majority-class baseline is a macro-F1 of 0.195, not 0.412 (that is an accuracy).

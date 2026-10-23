@@ -30,6 +30,8 @@ MODELS = {  # label -> (cache tag, run-folder stems)
     "laya-multilingual": ("hf:convaiinnovations/laya-multilingual", ["laya_ml_human", "laya_ml_human2"]),
     "laya-bangla v2": ("hf:algolyzer/laya-bangla@4c5eb48932", ["laya_bangla_human"]),
     "julia-1": ("hf:SupersonicLabs/Julia-1", ["julia1_human", "julia1_human2"]),
+    "kev-4b": ("hf:jaredpalmer/kev-4b@v1.0", ["kev_4b_human"]),
+    "kev-0.8b": ("hf:jaredpalmer/kev-0.8b@v1.0", ["kev_08b_human"]),
 }
 TASK = {"sentnob": "bn_sentnob", "massive": "bn_massive", "bnli": "bn_bnli"}
 VARIANTS = ["native", "native_edit", "roman", "roman_edit", "roman_nat", "roman_nat_edit", "human"]

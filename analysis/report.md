@@ -10,193 +10,233 @@
 | Belebele | human_roman | gemma-4-E4B-it     |  900 |        499 | accuracy |   0.588 |   0.556 |   0.618 |    nan     |    0.25  |
 | Belebele | human_roman | jev-1.13.0         |  900 |        499 | accuracy |   0.777 |   0.748 |   0.805 |    nan     |    0.25  |
 | Belebele | human_roman | julia-1            |  900 |        499 | accuracy |   0.282 |   0.252 |   0.312 |    nan     |    0.25  |
-| Belebele | human_roman | laya-bangla v2     |  900 |        499 | accuracy |   0.264 |   0.237 |   0.294 |    nan     |    0.25  |
-| Belebele | human_roman | laya-multilingual  |  900 |        499 | accuracy |   0.254 |   0.227 |   0.281 |    nan     |    0.25  |
-| Belebele | native      | d3-edge            |  900 |        488 | accuracy |   0.409 |   0.375 |   0.438 |    nan     |    0.25  |
-| Belebele | native      | d3-flash (4/8-bit) |  200 |        177 | accuracy |   0.85  |   0.799 |   0.895 |    nan     |    0.25  |
-| Belebele | native      | d3-lite            |  900 |        488 | accuracy |   0.577 |   0.545 |   0.609 |    nan     |    0.25  |
-| Belebele | native      | d3-mini            |  900 |        488 | accuracy |   0.727 |   0.697 |   0.757 |    nan     |    0.25  |
-| Belebele | native      | d3-nano            |  900 |        488 | accuracy |   0.702 |   0.672 |   0.731 |    nan     |    0.25  |
-| Belebele | native      | gemma-4-E4B-it     |  900 |        488 | accuracy |   0.773 |   0.746 |   0.801 |    nan     |    0.25  |
-| Belebele | native      | jev-1.13.0         |  900 |        488 | accuracy |   0.918 |   0.9   |   0.936 |    nan     |    0.25  |
-| Belebele | native      | julia-1            |  881 |        486 | accuracy |   0.287 |   0.257 |   0.317 |    nan     |    0.25  |
+| Belebele | human_roman | kev-0.8b           |  900 |        499 | accuracy |   0.366 |   0.333 |   0.398 |    nan     |    0.25  |
+| Belebele | human_roman | kev-4b             |  900 |        499 | accuracy |   0.407 |   0.376 |   0.439 |    nan     |    0.25  |
+| Belebele | human_roman | laya-bangla v2     |  900 |        499 | accuracy |   0.264 |   0.238 |   0.295 |    nan     |    0.25  |
+| Belebele | human_roman | laya-multilingual  |  900 |        499 | accuracy |   0.254 |   0.228 |   0.282 |    nan     |    0.25  |
+| Belebele | native      | d3-edge            |  900 |        488 | accuracy |   0.409 |   0.377 |   0.441 |    nan     |    0.25  |
+| Belebele | native      | d3-flash (4/8-bit) |  200 |        177 | accuracy |   0.85  |   0.798 |   0.894 |    nan     |    0.25  |
+| Belebele | native      | d3-lite            |  900 |        488 | accuracy |   0.577 |   0.542 |   0.609 |    nan     |    0.25  |
+| Belebele | native      | d3-mini            |  900 |        488 | accuracy |   0.727 |   0.697 |   0.758 |    nan     |    0.25  |
+| Belebele | native      | d3-nano            |  900 |        488 | accuracy |   0.702 |   0.671 |   0.733 |    nan     |    0.25  |
+| Belebele | native      | gemma-4-E4B-it     |  900 |        488 | accuracy |   0.773 |   0.743 |   0.801 |    nan     |    0.25  |
+| Belebele | native      | jev-1.13.0         |  900 |        488 | accuracy |   0.918 |   0.897 |   0.936 |    nan     |    0.25  |
+| Belebele | native      | julia-1            |  881 |        486 | accuracy |   0.287 |   0.258 |   0.316 |    nan     |    0.25  |
+| Belebele | native      | kev-0.8b           |  900 |        488 | accuracy |   0.374 |   0.341 |   0.407 |    nan     |    0.25  |
+| Belebele | native      | kev-4b             |  900 |        488 | accuracy |   0.561 |   0.528 |   0.592 |    nan     |    0.25  |
 | Belebele | native      | laya-bangla v2     |  900 |        488 | accuracy |   0.313 |   0.283 |   0.344 |    nan     |    0.25  |
-| Belebele | native      | laya-multilingual  |  900 |        488 | accuracy |   0.287 |   0.259 |   0.316 |    nan     |    0.25  |
-| XNLI-bn  | native      | d3-edge            | 1500 |       1077 | accuracy |   0.523 |   0.499 |   0.547 |      0.342 |    0.333 |
-| XNLI-bn  | native      | d3-flash (4/8-bit) |  400 |        368 | accuracy |   0.828 |   0.788 |   0.867 |      0.355 |    0.333 |
-| XNLI-bn  | native      | d3-lite            | 1500 |       1077 | accuracy |   0.704 |   0.68  |   0.727 |      0.342 |    0.333 |
-| XNLI-bn  | native      | d3-mini            | 1500 |       1077 | accuracy |   0.729 |   0.707 |   0.751 |      0.342 |    0.333 |
-| XNLI-bn  | native      | d3-nano            | 1500 |       1077 | accuracy |   0.746 |   0.724 |   0.768 |      0.342 |    0.333 |
-| XNLI-bn  | native      | gemma-4-E4B-it     | 1500 |       1077 | accuracy |   0.631 |   0.608 |   0.655 |      0.342 |    0.333 |
+| Belebele | native      | laya-multilingual  |  900 |        488 | accuracy |   0.287 |   0.259 |   0.314 |    nan     |    0.25  |
+| XNLI-bn  | native      | d3-edge            | 1500 |       1077 | accuracy |   0.523 |   0.497 |   0.548 |      0.342 |    0.333 |
+| XNLI-bn  | native      | d3-flash (4/8-bit) |  400 |        368 | accuracy |   0.828 |   0.789 |   0.863 |      0.355 |    0.333 |
+| XNLI-bn  | native      | d3-lite            | 1500 |       1077 | accuracy |   0.704 |   0.681 |   0.726 |      0.342 |    0.333 |
+| XNLI-bn  | native      | d3-mini            | 1500 |       1077 | accuracy |   0.729 |   0.705 |   0.752 |      0.342 |    0.333 |
+| XNLI-bn  | native      | d3-nano            | 1500 |       1077 | accuracy |   0.746 |   0.725 |   0.768 |      0.342 |    0.333 |
+| XNLI-bn  | native      | gemma-4-E4B-it     | 1500 |       1077 | accuracy |   0.631 |   0.606 |   0.655 |      0.342 |    0.333 |
 | XNLI-bn  | native      | jev-1.13.0         | 1500 |       1077 | accuracy |   0.751 |   0.729 |   0.772 |      0.342 |    0.333 |
 | XNLI-bn  | native      | julia-1            | 1500 |       1077 | accuracy |   0.382 |   0.359 |   0.406 |      0.342 |    0.333 |
-| XNLI-bn  | native      | laya-bangla v2     | 1500 |       1077 | accuracy |   0.625 |   0.598 |   0.651 |      0.342 |    0.333 |
-| XNLI-bn  | native      | laya-multilingual  | 1500 |       1077 | accuracy |   0.635 |   0.608 |   0.66  |      0.342 |    0.333 |
-| XNLI-bn  | roman       | d3-edge            | 1500 |       1077 | accuracy |   0.445 |   0.419 |   0.469 |      0.342 |    0.333 |
-| XNLI-bn  | roman       | d3-flash (4/8-bit) |  400 |        368 | accuracy |   0.598 |   0.551 |   0.642 |      0.355 |    0.333 |
+| XNLI-bn  | native      | kev-0.8b           | 1500 |       1077 | accuracy |   0.469 |   0.445 |   0.491 |      0.342 |    0.333 |
+| XNLI-bn  | native      | kev-4b             | 1500 |       1077 | accuracy |   0.624 |   0.603 |   0.648 |      0.342 |    0.333 |
+| XNLI-bn  | native      | laya-bangla v2     | 1500 |       1077 | accuracy |   0.625 |   0.599 |   0.65  |      0.342 |    0.333 |
+| XNLI-bn  | native      | laya-multilingual  | 1500 |       1077 | accuracy |   0.635 |   0.612 |   0.66  |      0.342 |    0.333 |
+| XNLI-bn  | roman       | d3-edge            | 1500 |       1077 | accuracy |   0.445 |   0.423 |   0.469 |      0.342 |    0.333 |
+| XNLI-bn  | roman       | d3-flash (4/8-bit) |  400 |        368 | accuracy |   0.598 |   0.552 |   0.648 |      0.355 |    0.333 |
 | XNLI-bn  | roman       | d3-lite            | 1500 |       1077 | accuracy |   0.463 |   0.44  |   0.488 |      0.342 |    0.333 |
-| XNLI-bn  | roman       | d3-mini            | 1500 |       1077 | accuracy |   0.562 |   0.538 |   0.586 |      0.342 |    0.333 |
-| XNLI-bn  | roman       | d3-nano            | 1500 |       1077 | accuracy |   0.497 |   0.472 |   0.52  |      0.342 |    0.333 |
-| XNLI-bn  | roman       | gemma-4-E4B-it     | 1500 |       1077 | accuracy |   0.519 |   0.495 |   0.543 |      0.342 |    0.333 |
-| XNLI-bn  | roman       | jev-1.13.0         | 1500 |       1077 | accuracy |   0.572 |   0.548 |   0.596 |      0.342 |    0.333 |
-| XNLI-bn  | roman       | julia-1            | 1500 |       1077 | accuracy |   0.316 |   0.293 |   0.34  |      0.342 |    0.333 |
-| XNLI-bn  | roman       | laya-bangla v2     | 1500 |       1077 | accuracy |   0.435 |   0.409 |   0.46  |      0.342 |    0.333 |
-| XNLI-bn  | roman       | laya-multilingual  | 1500 |       1077 | accuracy |   0.383 |   0.36  |   0.406 |      0.342 |    0.333 |
-| XNLI-bn  | roman_nat   | jev-1.13.0         | 1500 |       1077 | accuracy |   0.584 |   0.561 |   0.606 |      0.342 |    0.333 |
-| MASSIVE  | native      | d3-edge            | 1500 |       1500 | accuracy |   0.243 |   0.221 |   0.264 |      0.071 |    0.017 |
-| MASSIVE  | native      | d3-flash (4/8-bit) |  403 |        403 | accuracy |   0.819 |   0.782 |   0.854 |      0.077 |    0.017 |
-| MASSIVE  | native      | d3-lite            | 1500 |       1500 | accuracy |   0.624 |   0.602 |   0.647 |      0.071 |    0.017 |
-| MASSIVE  | native      | d3-mini            | 1500 |       1500 | accuracy |   0.749 |   0.727 |   0.769 |      0.071 |    0.017 |
-| MASSIVE  | native      | d3-nano            | 1500 |       1500 | accuracy |   0.705 |   0.682 |   0.729 |      0.071 |    0.017 |
-| MASSIVE  | native      | gemma-4-E4B-it     | 1500 |       1500 | accuracy |   0.689 |   0.664 |   0.713 |      0.071 |    0.017 |
-| MASSIVE  | native      | jev-1.13.0         | 1500 |       1500 | accuracy |   0.757 |   0.735 |   0.778 |      0.071 |    0.017 |
-| MASSIVE  | native      | laya-bangla v2     | 1500 |       1500 | accuracy |   0.575 |   0.549 |   0.599 |      0.071 |    0.017 |
-| MASSIVE  | native      | laya-multilingual  | 1500 |       1500 | accuracy |   0.179 |   0.159 |   0.198 |      0.071 |    0.017 |
-| MASSIVE  | roman       | d3-edge            | 1500 |       1500 | accuracy |   0.044 |   0.034 |   0.053 |      0.071 |    0.017 |
+| XNLI-bn  | roman       | d3-mini            | 1500 |       1077 | accuracy |   0.562 |   0.536 |   0.587 |      0.342 |    0.333 |
+| XNLI-bn  | roman       | d3-nano            | 1500 |       1077 | accuracy |   0.497 |   0.473 |   0.522 |      0.342 |    0.333 |
+| XNLI-bn  | roman       | gemma-4-E4B-it     | 1500 |       1077 | accuracy |   0.519 |   0.494 |   0.543 |      0.342 |    0.333 |
+| XNLI-bn  | roman       | jev-1.13.0         | 1500 |       1077 | accuracy |   0.572 |   0.549 |   0.595 |      0.342 |    0.333 |
+| XNLI-bn  | roman       | julia-1            | 1500 |       1077 | accuracy |   0.316 |   0.293 |   0.339 |      0.342 |    0.333 |
+| XNLI-bn  | roman       | kev-0.8b           | 1500 |       1077 | accuracy |   0.413 |   0.392 |   0.438 |      0.342 |    0.333 |
+| XNLI-bn  | roman       | kev-4b             | 1500 |       1077 | accuracy |   0.475 |   0.452 |   0.497 |      0.342 |    0.333 |
+| XNLI-bn  | roman       | laya-bangla v2     | 1500 |       1077 | accuracy |   0.435 |   0.412 |   0.46  |      0.342 |    0.333 |
+| XNLI-bn  | roman       | laya-multilingual  | 1500 |       1077 | accuracy |   0.383 |   0.358 |   0.407 |      0.342 |    0.333 |
+| XNLI-bn  | roman_nat   | jev-1.13.0         | 1500 |       1077 | accuracy |   0.584 |   0.561 |   0.608 |      0.342 |    0.333 |
+| MASSIVE  | native      | d3-edge            | 1500 |       1500 | accuracy |   0.243 |   0.223 |   0.264 |      0.071 |    0.017 |
+| MASSIVE  | native      | d3-flash (4/8-bit) |  403 |        403 | accuracy |   0.819 |   0.782 |   0.856 |      0.077 |    0.017 |
+| MASSIVE  | native      | d3-lite            | 1500 |       1500 | accuracy |   0.624 |   0.6   |   0.647 |      0.071 |    0.017 |
+| MASSIVE  | native      | d3-mini            | 1500 |       1500 | accuracy |   0.749 |   0.728 |   0.771 |      0.071 |    0.017 |
+| MASSIVE  | native      | d3-nano            | 1500 |       1500 | accuracy |   0.705 |   0.681 |   0.73  |      0.071 |    0.017 |
+| MASSIVE  | native      | gemma-4-E4B-it     | 1500 |       1500 | accuracy |   0.689 |   0.667 |   0.713 |      0.071 |    0.017 |
+| MASSIVE  | native      | jev-1.13.0         | 1500 |       1500 | accuracy |   0.757 |   0.735 |   0.779 |      0.071 |    0.017 |
+| MASSIVE  | native      | kev-0.8b           | 1500 |       1500 | accuracy |   0.372 |   0.347 |   0.397 |      0.071 |    0.017 |
+| MASSIVE  | native      | kev-4b             | 1500 |       1500 | accuracy |   0.575 |   0.551 |   0.6   |      0.071 |    0.017 |
+| MASSIVE  | native      | laya-bangla v2     | 1500 |       1500 | accuracy |   0.575 |   0.547 |   0.602 |      0.071 |    0.017 |
+| MASSIVE  | native      | laya-multilingual  | 1500 |       1500 | accuracy |   0.179 |   0.161 |   0.199 |      0.071 |    0.017 |
+| MASSIVE  | roman       | d3-edge            | 1500 |       1500 | accuracy |   0.044 |   0.033 |   0.055 |      0.071 |    0.017 |
 | MASSIVE  | roman       | d3-flash (4/8-bit) |  403 |        403 | accuracy |   0.412 |   0.365 |   0.459 |      0.077 |    0.017 |
-| MASSIVE  | roman       | d3-lite            | 1500 |       1500 | accuracy |   0.121 |   0.105 |   0.139 |      0.071 |    0.017 |
-| MASSIVE  | roman       | d3-mini            | 1500 |       1500 | accuracy |   0.383 |   0.357 |   0.409 |      0.071 |    0.017 |
-| MASSIVE  | roman       | d3-nano            | 1500 |       1500 | accuracy |   0.221 |   0.201 |   0.242 |      0.071 |    0.017 |
-| MASSIVE  | roman       | gemma-4-E4B-it     | 1500 |       1500 | accuracy |   0.429 |   0.404 |   0.455 |      0.071 |    0.017 |
-| MASSIVE  | roman       | jev-1.13.0         | 1500 |       1500 | accuracy |   0.481 |   0.458 |   0.507 |      0.071 |    0.017 |
-| MASSIVE  | roman       | laya-bangla v2     | 1500 |       1500 | accuracy |   0.077 |   0.064 |   0.091 |      0.071 |    0.017 |
-| MASSIVE  | roman       | laya-multilingual  | 1500 |       1500 | accuracy |   0.045 |   0.034 |   0.055 |      0.071 |    0.017 |
-| MASSIVE  | roman_nat   | jev-1.13.0         | 1500 |       1500 | accuracy |   0.526 |   0.5   |   0.551 |      0.071 |    0.017 |
-| SentNoB  | native      | d3-edge            | 1586 |       1586 | macro_f1 |   0.472 |   0.447 |   0.497 |      0.412 |    0.333 |
-| SentNoB  | native      | d3-flash (4/8-bit) |  405 |        405 | macro_f1 |   0.653 |   0.609 |   0.698 |      0.427 |    0.333 |
+| MASSIVE  | roman       | d3-lite            | 1500 |       1500 | accuracy |   0.121 |   0.105 |   0.138 |      0.071 |    0.017 |
+| MASSIVE  | roman       | d3-mini            | 1500 |       1500 | accuracy |   0.383 |   0.359 |   0.409 |      0.071 |    0.017 |
+| MASSIVE  | roman       | d3-nano            | 1500 |       1500 | accuracy |   0.221 |   0.2   |   0.242 |      0.071 |    0.017 |
+| MASSIVE  | roman       | gemma-4-E4B-it     | 1500 |       1500 | accuracy |   0.429 |   0.405 |   0.452 |      0.071 |    0.017 |
+| MASSIVE  | roman       | jev-1.13.0         | 1500 |       1500 | accuracy |   0.481 |   0.456 |   0.509 |      0.071 |    0.017 |
+| MASSIVE  | roman       | kev-0.8b           | 1500 |       1500 | accuracy |   0.118 |   0.101 |   0.135 |      0.071 |    0.017 |
+| MASSIVE  | roman       | kev-4b             | 1500 |       1500 | accuracy |   0.226 |   0.205 |   0.247 |      0.071 |    0.017 |
+| MASSIVE  | roman       | laya-bangla v2     | 1500 |       1500 | accuracy |   0.077 |   0.065 |   0.091 |      0.071 |    0.017 |
+| MASSIVE  | roman       | laya-multilingual  | 1500 |       1500 | accuracy |   0.045 |   0.035 |   0.055 |      0.071 |    0.017 |
+| MASSIVE  | roman_nat   | jev-1.13.0         | 1500 |       1500 | accuracy |   0.526 |   0.501 |   0.551 |      0.071 |    0.017 |
+| SentNoB  | native      | d3-edge            | 1586 |       1586 | macro_f1 |   0.472 |   0.451 |   0.498 |      0.412 |    0.333 |
+| SentNoB  | native      | d3-flash (4/8-bit) |  405 |        405 | macro_f1 |   0.653 |   0.611 |   0.697 |      0.427 |    0.333 |
 | SentNoB  | native      | d3-lite            | 1586 |       1586 | macro_f1 |   0.535 |   0.511 |   0.558 |      0.412 |    0.333 |
-| SentNoB  | native      | d3-mini            | 1586 |       1586 | macro_f1 |   0.579 |   0.556 |   0.604 |      0.412 |    0.333 |
-| SentNoB  | native      | d3-nano            | 1586 |       1586 | macro_f1 |   0.592 |   0.566 |   0.615 |      0.412 |    0.333 |
-| SentNoB  | native      | gemma-4-E4B-it     | 1586 |       1586 | macro_f1 |   0.59  |   0.569 |   0.614 |      0.412 |    0.333 |
-| SentNoB  | native      | jev-1.13.0         | 1586 |       1586 | macro_f1 |   0.623 |   0.603 |   0.646 |      0.412 |    0.333 |
-| SentNoB  | native      | julia-1            | 1586 |       1586 | macro_f1 |   0.403 |   0.378 |   0.425 |      0.412 |    0.333 |
-| SentNoB  | native      | laya-bangla v2     | 1586 |       1586 | macro_f1 |   0.464 |   0.44  |   0.49  |      0.412 |    0.333 |
-| SentNoB  | native      | laya-multilingual  | 1586 |       1586 | macro_f1 |   0.263 |   0.245 |   0.284 |      0.412 |    0.333 |
-| SentNoB  | roman       | d3-edge            | 1586 |       1586 | macro_f1 |   0.366 |   0.343 |   0.389 |      0.412 |    0.333 |
-| SentNoB  | roman       | d3-flash (4/8-bit) |  405 |        405 | macro_f1 |   0.519 |   0.468 |   0.563 |      0.427 |    0.333 |
-| SentNoB  | roman       | d3-lite            | 1586 |       1586 | macro_f1 |   0.343 |   0.32  |   0.367 |      0.412 |    0.333 |
-| SentNoB  | roman       | d3-mini            | 1586 |       1586 | macro_f1 |   0.486 |   0.462 |   0.508 |      0.412 |    0.333 |
-| SentNoB  | roman       | d3-nano            | 1586 |       1586 | macro_f1 |   0.408 |   0.382 |   0.432 |      0.412 |    0.333 |
-| SentNoB  | roman       | gemma-4-E4B-it     | 1586 |       1586 | macro_f1 |   0.533 |   0.508 |   0.557 |      0.412 |    0.333 |
-| SentNoB  | roman       | jev-1.13.0         | 1586 |       1586 | macro_f1 |   0.527 |   0.503 |   0.551 |      0.412 |    0.333 |
-| SentNoB  | roman       | julia-1            | 1586 |       1586 | macro_f1 |   0.299 |   0.278 |   0.319 |      0.412 |    0.333 |
+| SentNoB  | native      | d3-mini            | 1586 |       1586 | macro_f1 |   0.579 |   0.555 |   0.604 |      0.412 |    0.333 |
+| SentNoB  | native      | d3-nano            | 1586 |       1586 | macro_f1 |   0.592 |   0.568 |   0.614 |      0.412 |    0.333 |
+| SentNoB  | native      | gemma-4-E4B-it     | 1586 |       1586 | macro_f1 |   0.59  |   0.566 |   0.615 |      0.412 |    0.333 |
+| SentNoB  | native      | jev-1.13.0         | 1586 |       1586 | macro_f1 |   0.623 |   0.596 |   0.647 |      0.412 |    0.333 |
+| SentNoB  | native      | julia-1            | 1586 |       1586 | macro_f1 |   0.403 |   0.379 |   0.424 |      0.412 |    0.333 |
+| SentNoB  | native      | kev-0.8b           | 1586 |       1586 | macro_f1 |   0.359 |   0.337 |   0.38  |      0.412 |    0.333 |
+| SentNoB  | native      | kev-4b             | 1586 |       1586 | macro_f1 |   0.536 |   0.511 |   0.556 |      0.412 |    0.333 |
+| SentNoB  | native      | laya-bangla v2     | 1586 |       1586 | macro_f1 |   0.464 |   0.437 |   0.488 |      0.412 |    0.333 |
+| SentNoB  | native      | laya-multilingual  | 1586 |       1586 | macro_f1 |   0.263 |   0.244 |   0.283 |      0.412 |    0.333 |
+| SentNoB  | roman       | d3-edge            | 1586 |       1586 | macro_f1 |   0.366 |   0.343 |   0.39  |      0.412 |    0.333 |
+| SentNoB  | roman       | d3-flash (4/8-bit) |  405 |        405 | macro_f1 |   0.519 |   0.465 |   0.565 |      0.427 |    0.333 |
+| SentNoB  | roman       | d3-lite            | 1586 |       1586 | macro_f1 |   0.343 |   0.319 |   0.366 |      0.412 |    0.333 |
+| SentNoB  | roman       | d3-mini            | 1586 |       1586 | macro_f1 |   0.486 |   0.461 |   0.508 |      0.412 |    0.333 |
+| SentNoB  | roman       | d3-nano            | 1586 |       1586 | macro_f1 |   0.408 |   0.386 |   0.434 |      0.412 |    0.333 |
+| SentNoB  | roman       | gemma-4-E4B-it     | 1586 |       1586 | macro_f1 |   0.533 |   0.509 |   0.557 |      0.412 |    0.333 |
+| SentNoB  | roman       | jev-1.13.0         | 1586 |       1586 | macro_f1 |   0.527 |   0.506 |   0.552 |      0.412 |    0.333 |
+| SentNoB  | roman       | julia-1            | 1586 |       1586 | macro_f1 |   0.299 |   0.28  |   0.319 |      0.412 |    0.333 |
+| SentNoB  | roman       | kev-0.8b           | 1586 |       1586 | macro_f1 |   0.261 |   0.242 |   0.281 |      0.412 |    0.333 |
+| SentNoB  | roman       | kev-4b             | 1586 |       1586 | macro_f1 |   0.408 |   0.383 |   0.429 |      0.412 |    0.333 |
 | SentNoB  | roman       | laya-bangla v2     | 1586 |       1586 | macro_f1 |   0.216 |   0.197 |   0.236 |      0.412 |    0.333 |
 | SentNoB  | roman       | laya-multilingual  | 1586 |       1586 | macro_f1 |   0.141 |   0.128 |   0.155 |      0.412 |    0.333 |
-| SentNoB  | roman_nat   | jev-1.13.0         | 1586 |       1586 | macro_f1 |   0.536 |   0.513 |   0.563 |      0.412 |    0.333 |
+| SentNoB  | roman_nat   | jev-1.13.0         | 1586 |       1586 | macro_f1 |   0.536 |   0.509 |   0.559 |      0.412 |    0.333 |
 | SIB-200  | native      | d3-edge            |  204 |        204 | accuracy |   0.475 |   0.407 |   0.544 |      0.25  |    0.143 |
 | SIB-200  | native      | d3-flash (4/8-bit) |  204 |        204 | accuracy |   0.892 |   0.848 |   0.931 |      0.25  |    0.143 |
 | SIB-200  | native      | d3-lite            |  204 |        204 | accuracy |   0.76  |   0.701 |   0.819 |      0.25  |    0.143 |
 | SIB-200  | native      | d3-mini            |  204 |        204 | accuracy |   0.838 |   0.789 |   0.887 |      0.25  |    0.143 |
-| SIB-200  | native      | d3-nano            |  204 |        204 | accuracy |   0.848 |   0.799 |   0.892 |      0.25  |    0.143 |
-| SIB-200  | native      | gemma-4-E4B-it     |  204 |        204 | accuracy |   0.853 |   0.804 |   0.902 |      0.25  |    0.143 |
-| SIB-200  | native      | jev-1.13.0         |  204 |        204 | accuracy |   0.897 |   0.858 |   0.936 |      0.25  |    0.143 |
+| SIB-200  | native      | d3-nano            |  204 |        204 | accuracy |   0.848 |   0.799 |   0.897 |      0.25  |    0.143 |
+| SIB-200  | native      | gemma-4-E4B-it     |  204 |        204 | accuracy |   0.853 |   0.804 |   0.897 |      0.25  |    0.143 |
+| SIB-200  | native      | jev-1.13.0         |  204 |        204 | accuracy |   0.897 |   0.853 |   0.936 |      0.25  |    0.143 |
 | SIB-200  | native      | julia-1            |  204 |        204 | accuracy |   0.52  |   0.456 |   0.588 |      0.25  |    0.143 |
-| SIB-200  | native      | laya-bangla v2     |  204 |        204 | accuracy |   0.75  |   0.691 |   0.809 |      0.25  |    0.143 |
-| SIB-200  | native      | laya-multilingual  |  204 |        204 | accuracy |   0.588 |   0.524 |   0.652 |      0.25  |    0.143 |
-| SIB-200  | roman       | d3-edge            |  204 |        204 | accuracy |   0.235 |   0.181 |   0.294 |      0.25  |    0.143 |
+| SIB-200  | native      | kev-0.8b           |  204 |        204 | accuracy |   0.632 |   0.564 |   0.701 |      0.25  |    0.143 |
+| SIB-200  | native      | kev-4b             |  204 |        204 | accuracy |   0.779 |   0.721 |   0.833 |      0.25  |    0.143 |
+| SIB-200  | native      | laya-bangla v2     |  204 |        204 | accuracy |   0.75  |   0.686 |   0.814 |      0.25  |    0.143 |
+| SIB-200  | native      | laya-multilingual  |  204 |        204 | accuracy |   0.588 |   0.515 |   0.657 |      0.25  |    0.143 |
+| SIB-200  | roman       | d3-edge            |  204 |        204 | accuracy |   0.235 |   0.181 |   0.299 |      0.25  |    0.143 |
 | SIB-200  | roman       | d3-flash (4/8-bit) |  204 |        204 | accuracy |   0.627 |   0.564 |   0.691 |      0.25  |    0.143 |
-| SIB-200  | roman       | d3-lite            |  204 |        204 | accuracy |   0.265 |   0.206 |   0.324 |      0.25  |    0.143 |
-| SIB-200  | roman       | d3-mini            |  204 |        204 | accuracy |   0.549 |   0.485 |   0.623 |      0.25  |    0.143 |
+| SIB-200  | roman       | d3-lite            |  204 |        204 | accuracy |   0.265 |   0.206 |   0.328 |      0.25  |    0.143 |
+| SIB-200  | roman       | d3-mini            |  204 |        204 | accuracy |   0.549 |   0.485 |   0.613 |      0.25  |    0.143 |
 | SIB-200  | roman       | d3-nano            |  204 |        204 | accuracy |   0.377 |   0.314 |   0.446 |      0.25  |    0.143 |
-| SIB-200  | roman       | gemma-4-E4B-it     |  204 |        204 | accuracy |   0.73  |   0.667 |   0.789 |      0.25  |    0.143 |
+| SIB-200  | roman       | gemma-4-E4B-it     |  204 |        204 | accuracy |   0.73  |   0.667 |   0.784 |      0.25  |    0.143 |
 | SIB-200  | roman       | jev-1.13.0         |  204 |        204 | accuracy |   0.725 |   0.662 |   0.784 |      0.25  |    0.143 |
-| SIB-200  | roman       | julia-1            |  204 |        204 | accuracy |   0.284 |   0.225 |   0.348 |      0.25  |    0.143 |
-| SIB-200  | roman       | laya-bangla v2     |  204 |        204 | accuracy |   0.25  |   0.191 |   0.309 |      0.25  |    0.143 |
-| SIB-200  | roman       | laya-multilingual  |  204 |        204 | accuracy |   0.275 |   0.211 |   0.333 |      0.25  |    0.143 |
-| SIB-200  | roman_nat   | jev-1.13.0         |  204 |        204 | accuracy |   0.706 |   0.637 |   0.765 |      0.25  |    0.143 |
+| SIB-200  | roman       | julia-1            |  204 |        204 | accuracy |   0.284 |   0.23  |   0.343 |      0.25  |    0.143 |
+| SIB-200  | roman       | kev-0.8b           |  204 |        204 | accuracy |   0.265 |   0.206 |   0.324 |      0.25  |    0.143 |
+| SIB-200  | roman       | kev-4b             |  204 |        204 | accuracy |   0.451 |   0.387 |   0.52  |      0.25  |    0.143 |
+| SIB-200  | roman       | laya-bangla v2     |  204 |        204 | accuracy |   0.25  |   0.191 |   0.314 |      0.25  |    0.143 |
+| SIB-200  | roman       | laya-multilingual  |  204 |        204 | accuracy |   0.275 |   0.216 |   0.333 |      0.25  |    0.143 |
+| SIB-200  | roman_nat   | jev-1.13.0         |  204 |        204 | accuracy |   0.706 |   0.642 |   0.765 |      0.25  |    0.143 |
 
 ## RQ1 paired difference vs Jev (accuracy, cluster CI)
 
 | task     | variant     | model              | vs         |   n_common |   acc_diff |   ci_lo |   ci_hi |
 |:---------|:------------|:-------------------|:-----------|-----------:|-----------:|--------:|--------:|
-| Belebele | human_roman | d3-edge            | jev-1.13.0 |        900 |     -0.436 |  -0.479 |  -0.395 |
-| Belebele | human_roman | d3-flash (4/8-bit) | jev-1.13.0 |        200 |     -0.15  |  -0.208 |  -0.09  |
-| Belebele | human_roman | d3-lite            | jev-1.13.0 |        900 |     -0.406 |  -0.442 |  -0.372 |
-| Belebele | human_roman | d3-mini            | jev-1.13.0 |        900 |     -0.269 |  -0.307 |  -0.236 |
-| Belebele | human_roman | d3-nano            | jev-1.13.0 |        900 |     -0.358 |  -0.394 |  -0.319 |
-| Belebele | human_roman | gemma-4-E4B-it     | jev-1.13.0 |        900 |     -0.189 |  -0.22  |  -0.154 |
-| Belebele | human_roman | julia-1            | jev-1.13.0 |        900 |     -0.494 |  -0.532 |  -0.452 |
-| Belebele | human_roman | laya-bangla v2     | jev-1.13.0 |        900 |     -0.512 |  -0.553 |  -0.478 |
-| Belebele | human_roman | laya-multilingual  | jev-1.13.0 |        900 |     -0.522 |  -0.562 |  -0.485 |
-| Belebele | native      | d3-edge            | jev-1.13.0 |        900 |     -0.509 |  -0.543 |  -0.469 |
-| Belebele | native      | d3-flash (4/8-bit) | jev-1.13.0 |        200 |     -0.07  |  -0.107 |  -0.039 |
-| Belebele | native      | d3-lite            | jev-1.13.0 |        900 |     -0.341 |  -0.371 |  -0.308 |
-| Belebele | native      | d3-mini            | jev-1.13.0 |        900 |     -0.191 |  -0.22  |  -0.165 |
-| Belebele | native      | d3-nano            | jev-1.13.0 |        900 |     -0.216 |  -0.245 |  -0.19  |
-| Belebele | native      | gemma-4-E4B-it     | jev-1.13.0 |        900 |     -0.144 |  -0.169 |  -0.119 |
-| Belebele | native      | julia-1            | jev-1.13.0 |        881 |     -0.631 |  -0.664 |  -0.594 |
-| Belebele | native      | laya-bangla v2     | jev-1.13.0 |        900 |     -0.604 |  -0.64  |  -0.569 |
-| Belebele | native      | laya-multilingual  | jev-1.13.0 |        900 |     -0.631 |  -0.663 |  -0.597 |
-| XNLI-bn  | native      | d3-edge            | jev-1.13.0 |       1500 |     -0.229 |  -0.255 |  -0.199 |
-| XNLI-bn  | native      | d3-flash (4/8-bit) | jev-1.13.0 |        400 |      0.075 |   0.031 |   0.115 |
-| XNLI-bn  | native      | d3-lite            | jev-1.13.0 |       1500 |     -0.047 |  -0.072 |  -0.023 |
-| XNLI-bn  | native      | d3-mini            | jev-1.13.0 |       1500 |     -0.022 |  -0.047 |   0.002 |
+| Belebele | human_roman | d3-edge            | jev-1.13.0 |        900 |     -0.436 |  -0.476 |  -0.396 |
+| Belebele | human_roman | d3-flash (4/8-bit) | jev-1.13.0 |        200 |     -0.15  |  -0.217 |  -0.087 |
+| Belebele | human_roman | d3-lite            | jev-1.13.0 |        900 |     -0.406 |  -0.438 |  -0.37  |
+| Belebele | human_roman | d3-mini            | jev-1.13.0 |        900 |     -0.269 |  -0.304 |  -0.233 |
+| Belebele | human_roman | d3-nano            | jev-1.13.0 |        900 |     -0.358 |  -0.4   |  -0.318 |
+| Belebele | human_roman | gemma-4-E4B-it     | jev-1.13.0 |        900 |     -0.189 |  -0.223 |  -0.158 |
+| Belebele | human_roman | julia-1            | jev-1.13.0 |        900 |     -0.494 |  -0.532 |  -0.447 |
+| Belebele | human_roman | kev-0.8b           | jev-1.13.0 |        900 |     -0.411 |  -0.453 |  -0.37  |
+| Belebele | human_roman | kev-4b             | jev-1.13.0 |        900 |     -0.37  |  -0.411 |  -0.331 |
+| Belebele | human_roman | laya-bangla v2     | jev-1.13.0 |        900 |     -0.512 |  -0.551 |  -0.475 |
+| Belebele | human_roman | laya-multilingual  | jev-1.13.0 |        900 |     -0.522 |  -0.559 |  -0.483 |
+| Belebele | native      | d3-edge            | jev-1.13.0 |        900 |     -0.509 |  -0.543 |  -0.474 |
+| Belebele | native      | d3-flash (4/8-bit) | jev-1.13.0 |        200 |     -0.07  |  -0.109 |  -0.034 |
+| Belebele | native      | d3-lite            | jev-1.13.0 |        900 |     -0.341 |  -0.372 |  -0.309 |
+| Belebele | native      | d3-mini            | jev-1.13.0 |        900 |     -0.191 |  -0.221 |  -0.166 |
+| Belebele | native      | d3-nano            | jev-1.13.0 |        900 |     -0.216 |  -0.243 |  -0.186 |
+| Belebele | native      | gemma-4-E4B-it     | jev-1.13.0 |        900 |     -0.144 |  -0.168 |  -0.119 |
+| Belebele | native      | julia-1            | jev-1.13.0 |        881 |     -0.631 |  -0.664 |  -0.599 |
+| Belebele | native      | kev-0.8b           | jev-1.13.0 |        900 |     -0.543 |  -0.583 |  -0.509 |
+| Belebele | native      | kev-4b             | jev-1.13.0 |        900 |     -0.357 |  -0.39  |  -0.323 |
+| Belebele | native      | laya-bangla v2     | jev-1.13.0 |        900 |     -0.604 |  -0.641 |  -0.57  |
+| Belebele | native      | laya-multilingual  | jev-1.13.0 |        900 |     -0.631 |  -0.663 |  -0.599 |
+| XNLI-bn  | native      | d3-edge            | jev-1.13.0 |       1500 |     -0.229 |  -0.258 |  -0.2   |
+| XNLI-bn  | native      | d3-flash (4/8-bit) | jev-1.13.0 |        400 |      0.075 |   0.033 |   0.119 |
+| XNLI-bn  | native      | d3-lite            | jev-1.13.0 |       1500 |     -0.047 |  -0.069 |  -0.024 |
+| XNLI-bn  | native      | d3-mini            | jev-1.13.0 |       1500 |     -0.022 |  -0.045 |   0.003 |
 | XNLI-bn  | native      | d3-nano            | jev-1.13.0 |       1500 |     -0.005 |  -0.026 |   0.019 |
-| XNLI-bn  | native      | gemma-4-E4B-it     | jev-1.13.0 |       1500 |     -0.12  |  -0.146 |  -0.094 |
-| XNLI-bn  | native      | julia-1            | jev-1.13.0 |       1500 |     -0.369 |  -0.401 |  -0.339 |
-| XNLI-bn  | native      | laya-bangla v2     | jev-1.13.0 |       1500 |     -0.127 |  -0.154 |  -0.098 |
-| XNLI-bn  | native      | laya-multilingual  | jev-1.13.0 |       1500 |     -0.116 |  -0.144 |  -0.089 |
-| XNLI-bn  | roman       | d3-edge            | jev-1.13.0 |       1500 |     -0.127 |  -0.162 |  -0.099 |
-| XNLI-bn  | roman       | d3-flash (4/8-bit) | jev-1.13.0 |        400 |      0.04  |  -0.016 |   0.093 |
-| XNLI-bn  | roman       | d3-lite            | jev-1.13.0 |       1500 |     -0.109 |  -0.14  |  -0.074 |
-| XNLI-bn  | roman       | d3-mini            | jev-1.13.0 |       1500 |     -0.01  |  -0.036 |   0.015 |
-| XNLI-bn  | roman       | d3-nano            | jev-1.13.0 |       1500 |     -0.075 |  -0.107 |  -0.042 |
-| XNLI-bn  | roman       | gemma-4-E4B-it     | jev-1.13.0 |       1500 |     -0.053 |  -0.077 |  -0.03  |
-| XNLI-bn  | roman       | julia-1            | jev-1.13.0 |       1500 |     -0.256 |  -0.285 |  -0.226 |
-| XNLI-bn  | roman       | laya-bangla v2     | jev-1.13.0 |       1500 |     -0.137 |  -0.173 |  -0.103 |
-| XNLI-bn  | roman       | laya-multilingual  | jev-1.13.0 |       1500 |     -0.189 |  -0.226 |  -0.154 |
-| MASSIVE  | native      | d3-edge            | jev-1.13.0 |       1500 |     -0.515 |  -0.542 |  -0.487 |
-| MASSIVE  | native      | d3-flash (4/8-bit) | jev-1.13.0 |        403 |      0.02  |  -0.012 |   0.052 |
-| MASSIVE  | native      | d3-lite            | jev-1.13.0 |       1500 |     -0.133 |  -0.157 |  -0.109 |
-| MASSIVE  | native      | d3-mini            | jev-1.13.0 |       1500 |     -0.008 |  -0.029 |   0.011 |
+| XNLI-bn  | native      | gemma-4-E4B-it     | jev-1.13.0 |       1500 |     -0.12  |  -0.146 |  -0.097 |
+| XNLI-bn  | native      | julia-1            | jev-1.13.0 |       1500 |     -0.369 |  -0.397 |  -0.34  |
+| XNLI-bn  | native      | kev-0.8b           | jev-1.13.0 |       1500 |     -0.283 |  -0.309 |  -0.258 |
+| XNLI-bn  | native      | kev-4b             | jev-1.13.0 |       1500 |     -0.127 |  -0.155 |  -0.104 |
+| XNLI-bn  | native      | laya-bangla v2     | jev-1.13.0 |       1500 |     -0.127 |  -0.151 |  -0.098 |
+| XNLI-bn  | native      | laya-multilingual  | jev-1.13.0 |       1500 |     -0.116 |  -0.143 |  -0.09  |
+| XNLI-bn  | roman       | d3-edge            | jev-1.13.0 |       1500 |     -0.127 |  -0.155 |  -0.098 |
+| XNLI-bn  | roman       | d3-flash (4/8-bit) | jev-1.13.0 |        400 |      0.04  |  -0.01  |   0.09  |
+| XNLI-bn  | roman       | d3-lite            | jev-1.13.0 |       1500 |     -0.109 |  -0.142 |  -0.076 |
+| XNLI-bn  | roman       | d3-mini            | jev-1.13.0 |       1500 |     -0.01  |  -0.037 |   0.017 |
+| XNLI-bn  | roman       | d3-nano            | jev-1.13.0 |       1500 |     -0.075 |  -0.104 |  -0.044 |
+| XNLI-bn  | roman       | gemma-4-E4B-it     | jev-1.13.0 |       1500 |     -0.053 |  -0.077 |  -0.027 |
+| XNLI-bn  | roman       | julia-1            | jev-1.13.0 |       1500 |     -0.256 |  -0.291 |  -0.225 |
+| XNLI-bn  | roman       | kev-0.8b           | jev-1.13.0 |       1500 |     -0.159 |  -0.184 |  -0.131 |
+| XNLI-bn  | roman       | kev-4b             | jev-1.13.0 |       1500 |     -0.097 |  -0.122 |  -0.075 |
+| XNLI-bn  | roman       | laya-bangla v2     | jev-1.13.0 |       1500 |     -0.137 |  -0.169 |  -0.101 |
+| XNLI-bn  | roman       | laya-multilingual  | jev-1.13.0 |       1500 |     -0.189 |  -0.221 |  -0.155 |
+| MASSIVE  | native      | d3-edge            | jev-1.13.0 |       1500 |     -0.515 |  -0.545 |  -0.487 |
+| MASSIVE  | native      | d3-flash (4/8-bit) | jev-1.13.0 |        403 |      0.02  |  -0.015 |   0.05  |
+| MASSIVE  | native      | d3-lite            | jev-1.13.0 |       1500 |     -0.133 |  -0.158 |  -0.108 |
+| MASSIVE  | native      | d3-mini            | jev-1.13.0 |       1500 |     -0.008 |  -0.03  |   0.014 |
 | MASSIVE  | native      | d3-nano            | jev-1.13.0 |       1500 |     -0.053 |  -0.074 |  -0.032 |
-| MASSIVE  | native      | gemma-4-E4B-it     | jev-1.13.0 |       1500 |     -0.068 |  -0.087 |  -0.048 |
-| MASSIVE  | native      | laya-bangla v2     | jev-1.13.0 |       1500 |     -0.182 |  -0.212 |  -0.153 |
-| MASSIVE  | native      | laya-multilingual  | jev-1.13.0 |       1500 |     -0.578 |  -0.603 |  -0.553 |
-| MASSIVE  | roman       | d3-edge            | jev-1.13.0 |       1500 |     -0.437 |  -0.463 |  -0.41  |
-| MASSIVE  | roman       | d3-flash (4/8-bit) | jev-1.13.0 |        403 |     -0.107 |  -0.149 |  -0.06  |
+| MASSIVE  | native      | gemma-4-E4B-it     | jev-1.13.0 |       1500 |     -0.068 |  -0.088 |  -0.048 |
+| MASSIVE  | native      | kev-0.8b           | jev-1.13.0 |       1500 |     -0.385 |  -0.412 |  -0.354 |
+| MASSIVE  | native      | kev-4b             | jev-1.13.0 |       1500 |     -0.182 |  -0.205 |  -0.153 |
+| MASSIVE  | native      | laya-bangla v2     | jev-1.13.0 |       1500 |     -0.182 |  -0.215 |  -0.156 |
+| MASSIVE  | native      | laya-multilingual  | jev-1.13.0 |       1500 |     -0.578 |  -0.603 |  -0.555 |
+| MASSIVE  | roman       | d3-edge            | jev-1.13.0 |       1500 |     -0.437 |  -0.464 |  -0.41  |
+| MASSIVE  | roman       | d3-flash (4/8-bit) | jev-1.13.0 |        403 |     -0.107 |  -0.15  |  -0.057 |
 | MASSIVE  | roman       | d3-lite            | jev-1.13.0 |       1500 |     -0.36  |  -0.388 |  -0.331 |
-| MASSIVE  | roman       | d3-mini            | jev-1.13.0 |       1500 |     -0.098 |  -0.124 |  -0.074 |
-| MASSIVE  | roman       | d3-nano            | jev-1.13.0 |       1500 |     -0.26  |  -0.287 |  -0.232 |
-| MASSIVE  | roman       | gemma-4-E4B-it     | jev-1.13.0 |       1500 |     -0.053 |  -0.08  |  -0.029 |
-| MASSIVE  | roman       | laya-bangla v2     | jev-1.13.0 |       1500 |     -0.405 |  -0.43  |  -0.376 |
-| MASSIVE  | roman       | laya-multilingual  | jev-1.13.0 |       1500 |     -0.437 |  -0.464 |  -0.408 |
-| SentNoB  | native      | d3-edge            | jev-1.13.0 |       1586 |     -0.17  |  -0.199 |  -0.143 |
-| SentNoB  | native      | d3-flash (4/8-bit) | jev-1.13.0 |        405 |     -0.02  |  -0.065 |   0.017 |
-| SentNoB  | native      | d3-lite            | jev-1.13.0 |       1586 |     -0.116 |  -0.142 |  -0.09  |
-| SentNoB  | native      | d3-mini            | jev-1.13.0 |       1586 |     -0.078 |  -0.103 |  -0.051 |
-| SentNoB  | native      | d3-nano            | jev-1.13.0 |       1586 |     -0.058 |  -0.082 |  -0.033 |
+| MASSIVE  | roman       | d3-mini            | jev-1.13.0 |       1500 |     -0.098 |  -0.123 |  -0.072 |
+| MASSIVE  | roman       | d3-nano            | jev-1.13.0 |       1500 |     -0.26  |  -0.286 |  -0.233 |
+| MASSIVE  | roman       | gemma-4-E4B-it     | jev-1.13.0 |       1500 |     -0.053 |  -0.077 |  -0.027 |
+| MASSIVE  | roman       | kev-0.8b           | jev-1.13.0 |       1500 |     -0.363 |  -0.391 |  -0.334 |
+| MASSIVE  | roman       | kev-4b             | jev-1.13.0 |       1500 |     -0.255 |  -0.281 |  -0.23  |
+| MASSIVE  | roman       | laya-bangla v2     | jev-1.13.0 |       1500 |     -0.405 |  -0.433 |  -0.378 |
+| MASSIVE  | roman       | laya-multilingual  | jev-1.13.0 |       1500 |     -0.437 |  -0.462 |  -0.409 |
+| SentNoB  | native      | d3-edge            | jev-1.13.0 |       1586 |     -0.17  |  -0.198 |  -0.141 |
+| SentNoB  | native      | d3-flash (4/8-bit) | jev-1.13.0 |        405 |     -0.02  |  -0.062 |   0.02  |
+| SentNoB  | native      | d3-lite            | jev-1.13.0 |       1586 |     -0.116 |  -0.139 |  -0.091 |
+| SentNoB  | native      | d3-mini            | jev-1.13.0 |       1586 |     -0.078 |  -0.102 |  -0.055 |
+| SentNoB  | native      | d3-nano            | jev-1.13.0 |       1586 |     -0.058 |  -0.081 |  -0.034 |
 | SentNoB  | native      | gemma-4-E4B-it     | jev-1.13.0 |       1586 |     -0.02  |  -0.035 |  -0.004 |
-| SentNoB  | native      | julia-1            | jev-1.13.0 |       1586 |     -0.25  |  -0.284 |  -0.219 |
-| SentNoB  | native      | laya-bangla v2     | jev-1.13.0 |       1586 |     -0.177 |  -0.203 |  -0.152 |
-| SentNoB  | native      | laya-multilingual  | jev-1.13.0 |       1586 |     -0.357 |  -0.39  |  -0.325 |
-| SentNoB  | roman       | d3-edge            | jev-1.13.0 |       1586 |     -0.157 |  -0.189 |  -0.128 |
-| SentNoB  | roman       | d3-flash (4/8-bit) | jev-1.13.0 |        405 |     -0.086 |  -0.133 |  -0.037 |
-| SentNoB  | roman       | d3-lite            | jev-1.13.0 |       1586 |     -0.158 |  -0.185 |  -0.129 |
-| SentNoB  | roman       | d3-mini            | jev-1.13.0 |       1586 |     -0.071 |  -0.097 |  -0.045 |
-| SentNoB  | roman       | d3-nano            | jev-1.13.0 |       1586 |     -0.115 |  -0.14  |  -0.09  |
-| SentNoB  | roman       | gemma-4-E4B-it     | jev-1.13.0 |       1586 |      0.003 |  -0.019 |   0.024 |
+| SentNoB  | native      | julia-1            | jev-1.13.0 |       1586 |     -0.25  |  -0.283 |  -0.219 |
+| SentNoB  | native      | kev-0.8b           | jev-1.13.0 |       1586 |     -0.265 |  -0.296 |  -0.237 |
+| SentNoB  | native      | kev-4b             | jev-1.13.0 |       1586 |     -0.127 |  -0.156 |  -0.101 |
+| SentNoB  | native      | laya-bangla v2     | jev-1.13.0 |       1586 |     -0.177 |  -0.203 |  -0.146 |
+| SentNoB  | native      | laya-multilingual  | jev-1.13.0 |       1586 |     -0.357 |  -0.388 |  -0.321 |
+| SentNoB  | roman       | d3-edge            | jev-1.13.0 |       1586 |     -0.157 |  -0.184 |  -0.125 |
+| SentNoB  | roman       | d3-flash (4/8-bit) | jev-1.13.0 |        405 |     -0.086 |  -0.138 |  -0.03  |
+| SentNoB  | roman       | d3-lite            | jev-1.13.0 |       1586 |     -0.158 |  -0.187 |  -0.125 |
+| SentNoB  | roman       | d3-mini            | jev-1.13.0 |       1586 |     -0.071 |  -0.098 |  -0.043 |
+| SentNoB  | roman       | d3-nano            | jev-1.13.0 |       1586 |     -0.115 |  -0.139 |  -0.089 |
+| SentNoB  | roman       | gemma-4-E4B-it     | jev-1.13.0 |       1586 |      0.003 |  -0.017 |   0.027 |
 | SentNoB  | roman       | julia-1            | jev-1.13.0 |       1586 |     -0.177 |  -0.21  |  -0.142 |
-| SentNoB  | roman       | laya-bangla v2     | jev-1.13.0 |       1586 |     -0.299 |  -0.336 |  -0.263 |
-| SentNoB  | roman       | laya-multilingual  | jev-1.13.0 |       1586 |     -0.34  |  -0.376 |  -0.304 |
+| SentNoB  | roman       | kev-0.8b           | jev-1.13.0 |       1586 |     -0.273 |  -0.307 |  -0.24  |
+| SentNoB  | roman       | kev-4b             | jev-1.13.0 |       1586 |     -0.162 |  -0.191 |  -0.13  |
+| SentNoB  | roman       | laya-bangla v2     | jev-1.13.0 |       1586 |     -0.299 |  -0.337 |  -0.264 |
+| SentNoB  | roman       | laya-multilingual  | jev-1.13.0 |       1586 |     -0.34  |  -0.375 |  -0.306 |
 | SIB-200  | native      | d3-edge            | jev-1.13.0 |        204 |     -0.422 |  -0.49  |  -0.35  |
-| SIB-200  | native      | d3-flash (4/8-bit) | jev-1.13.0 |        204 |     -0.005 |  -0.049 |   0.044 |
-| SIB-200  | native      | d3-lite            | jev-1.13.0 |        204 |     -0.137 |  -0.201 |  -0.074 |
-| SIB-200  | native      | d3-mini            | jev-1.13.0 |        204 |     -0.059 |  -0.098 |  -0.012 |
+| SIB-200  | native      | d3-flash (4/8-bit) | jev-1.13.0 |        204 |     -0.005 |  -0.049 |   0.039 |
+| SIB-200  | native      | d3-lite            | jev-1.13.0 |        204 |     -0.137 |  -0.196 |  -0.081 |
+| SIB-200  | native      | d3-mini            | jev-1.13.0 |        204 |     -0.059 |  -0.098 |  -0.02  |
 | SIB-200  | native      | d3-nano            | jev-1.13.0 |        204 |     -0.049 |  -0.103 |   0     |
-| SIB-200  | native      | gemma-4-E4B-it     | jev-1.13.0 |        204 |     -0.044 |  -0.091 |   0     |
-| SIB-200  | native      | julia-1            | jev-1.13.0 |        204 |     -0.377 |  -0.451 |  -0.292 |
-| SIB-200  | native      | laya-bangla v2     | jev-1.13.0 |        204 |     -0.147 |  -0.211 |  -0.083 |
-| SIB-200  | native      | laya-multilingual  | jev-1.13.0 |        204 |     -0.309 |  -0.385 |  -0.245 |
-| SIB-200  | roman       | d3-edge            | jev-1.13.0 |        204 |     -0.49  |  -0.571 |  -0.417 |
-| SIB-200  | roman       | d3-flash (4/8-bit) | jev-1.13.0 |        204 |     -0.098 |  -0.147 |  -0.034 |
-| SIB-200  | roman       | d3-lite            | jev-1.13.0 |        204 |     -0.461 |  -0.534 |  -0.39  |
-| SIB-200  | roman       | d3-mini            | jev-1.13.0 |        204 |     -0.176 |  -0.253 |  -0.098 |
-| SIB-200  | roman       | d3-nano            | jev-1.13.0 |        204 |     -0.348 |  -0.422 |  -0.267 |
-| SIB-200  | roman       | gemma-4-E4B-it     | jev-1.13.0 |        204 |      0.005 |  -0.054 |   0.071 |
-| SIB-200  | roman       | julia-1            | jev-1.13.0 |        204 |     -0.441 |  -0.525 |  -0.368 |
-| SIB-200  | roman       | laya-bangla v2     | jev-1.13.0 |        204 |     -0.475 |  -0.552 |  -0.402 |
-| SIB-200  | roman       | laya-multilingual  | jev-1.13.0 |        204 |     -0.451 |  -0.534 |  -0.377 |
+| SIB-200  | native      | gemma-4-E4B-it     | jev-1.13.0 |        204 |     -0.044 |  -0.086 |   0     |
+| SIB-200  | native      | julia-1            | jev-1.13.0 |        204 |     -0.377 |  -0.449 |  -0.304 |
+| SIB-200  | native      | kev-0.8b           | jev-1.13.0 |        204 |     -0.265 |  -0.333 |  -0.189 |
+| SIB-200  | native      | kev-4b             | jev-1.13.0 |        204 |     -0.118 |  -0.172 |  -0.064 |
+| SIB-200  | native      | laya-bangla v2     | jev-1.13.0 |        204 |     -0.147 |  -0.216 |  -0.088 |
+| SIB-200  | native      | laya-multilingual  | jev-1.13.0 |        204 |     -0.309 |  -0.382 |  -0.24  |
+| SIB-200  | roman       | d3-edge            | jev-1.13.0 |        204 |     -0.49  |  -0.566 |  -0.407 |
+| SIB-200  | roman       | d3-flash (4/8-bit) | jev-1.13.0 |        204 |     -0.098 |  -0.162 |  -0.046 |
+| SIB-200  | roman       | d3-lite            | jev-1.13.0 |        204 |     -0.461 |  -0.542 |  -0.382 |
+| SIB-200  | roman       | d3-mini            | jev-1.13.0 |        204 |     -0.176 |  -0.248 |  -0.108 |
+| SIB-200  | roman       | d3-nano            | jev-1.13.0 |        204 |     -0.348 |  -0.419 |  -0.262 |
+| SIB-200  | roman       | gemma-4-E4B-it     | jev-1.13.0 |        204 |      0.005 |  -0.054 |   0.074 |
+| SIB-200  | roman       | julia-1            | jev-1.13.0 |        204 |     -0.441 |  -0.52  |  -0.358 |
+| SIB-200  | roman       | kev-0.8b           | jev-1.13.0 |        204 |     -0.461 |  -0.534 |  -0.387 |
+| SIB-200  | roman       | kev-4b             | jev-1.13.0 |        204 |     -0.275 |  -0.356 |  -0.196 |
+| SIB-200  | roman       | laya-bangla v2     | jev-1.13.0 |        204 |     -0.475 |  -0.559 |  -0.397 |
+| SIB-200  | roman       | laya-multilingual  | jev-1.13.0 |        204 |     -0.451 |  -0.529 |  -0.37  |
 
 ## RQ2 calibration, rot0 (pmax)
 
@@ -210,6 +250,8 @@
 | Belebele | human_roman | gemma-4-E4B-it     |  900 | 0.589 |       0.9   |        0.311 |   0.311 |        0.311 |   0.689 | 2.375 |  0.225 |       0.665 |       0.78  |
 | Belebele | human_roman | jev-1.13.0         |  900 | 0.778 |       0.811 |        0.033 |   0.036 |        0.035 |   0.309 | 0.697 |  0.076 |       0.869 |       0.944 |
 | Belebele | human_roman | julia-1            |  900 | 0.282 |       0.678 |        0.396 |   0.396 |        0.396 |   1.011 | 2.313 |  0.689 |       0.286 |       0.304 |
+| Belebele | human_roman | kev-0.8b           |  900 | 0.364 |       0.445 |        0.08  |   0.083 |        0.084 |   0.738 | 1.385 |  0.546 |       0.383 |       0.418 |
+| Belebele | human_roman | kev-4b             |  900 | 0.407 |       0.494 |        0.088 |   0.09  |        0.088 |   0.696 | 1.317 |  0.44  |       0.447 |       0.531 |
 | Belebele | human_roman | laya-bangla v2     |  900 | 0.264 |       0.42  |        0.156 |   0.156 |        0.156 |   0.803 | 1.497 |  0.733 |       0.272 |       0.278 |
 | Belebele | human_roman | laya-multilingual  |  900 | 0.254 |       0.49  |        0.235 |   0.235 |        0.235 |   0.895 | 1.908 |  0.744 |       0.253 |       0.249 |
 | Belebele | native      | d3-edge            |  900 | 0.409 |       0.589 |        0.18  |   0.186 |        0.183 |   0.761 | 1.489 |  0.474 |       0.443 |       0.493 |
@@ -220,6 +262,8 @@
 | Belebele | native      | gemma-4-E4B-it     |  900 | 0.773 |       0.959 |        0.186 |   0.188 |        0.186 |   0.399 | 1.37  |  0.081 |       0.854 |       0.944 |
 | Belebele | native      | jev-1.13.0         |  900 | 0.917 |       0.896 |       -0.02  |   0.033 |        0.029 |   0.136 | 0.292 |  0.019 |       0.976 |       0.987 |
 | Belebele | native      | julia-1            |  881 | 0.287 |       0.574 |        0.286 |   0.286 |        0.286 |   0.899 | 1.725 |  0.683 |       0.287 |       0.286 |
+| Belebele | native      | kev-0.8b           |  900 | 0.374 |       0.477 |        0.102 |   0.107 |        0.102 |   0.736 | 1.395 |  0.515 |       0.397 |       0.447 |
+| Belebele | native      | kev-4b             |  900 | 0.561 |       0.663 |        0.101 |   0.101 |        0.102 |   0.566 | 1.131 |  0.219 |       0.643 |       0.78  |
 | Belebele | native      | laya-bangla v2     |  900 | 0.313 |       0.463 |        0.15  |   0.15  |        0.16  |   0.796 | 1.485 |  0.666 |       0.325 |       0.353 |
 | Belebele | native      | laya-multilingual  |  900 | 0.287 |       0.531 |        0.245 |   0.248 |        0.245 |   0.869 | 1.655 |  0.7   |       0.296 |       0.289 |
 | XNLI-bn  | native      | d3-edge            | 1500 | 0.523 |       0.699 |        0.177 |   0.178 |        0.177 |   0.634 | 1.093 |  0.355 |       0.558 |       0.636 |
@@ -230,6 +274,8 @@
 | XNLI-bn  | native      | gemma-4-E4B-it     | 1500 | 0.631 |       0.959 |        0.327 |   0.327 |        0.327 |   0.684 | 2.421 |  0.214 |       0.667 |       0.759 |
 | XNLI-bn  | native      | jev-1.13.0         | 1500 | 0.753 |       0.835 |        0.082 |   0.088 |        0.087 |   0.371 | 0.683 |  0.128 |       0.802 |       0.868 |
 | XNLI-bn  | native      | julia-1            | 1500 | 0.382 |       0.801 |        0.419 |   0.42  |        0.419 |   0.957 | 2.375 |  0.591 |       0.388 |       0.417 |
+| XNLI-bn  | native      | kev-0.8b           | 1500 | 0.469 |       0.64  |        0.171 |   0.173 |        0.171 |   0.649 | 1.09  |  0.385 |       0.51  |       0.588 |
+| XNLI-bn  | native      | kev-4b             | 1500 | 0.624 |       0.862 |        0.238 |   0.238 |        0.238 |   0.59  | 1.204 |  0.235 |       0.676 |       0.761 |
 | XNLI-bn  | native      | laya-bangla v2     | 1500 | 0.625 |       0.828 |        0.203 |   0.203 |        0.203 |   0.576 | 1.122 |  0.258 |       0.665 |       0.741 |
 | XNLI-bn  | native      | laya-multilingual  | 1500 | 0.635 |       0.911 |        0.276 |   0.276 |        0.276 |   0.609 | 1.469 |  0.217 |       0.697 |       0.785 |
 | XNLI-bn  | roman       | d3-edge            | 1500 | 0.445 |       0.509 |        0.065 |   0.066 |        0.067 |   0.644 | 1.074 |  0.455 |       0.47  |       0.515 |
@@ -240,6 +286,8 @@
 | XNLI-bn  | roman       | gemma-4-E4B-it     | 1500 | 0.519 |       0.92  |        0.402 |   0.402 |        0.402 |   0.854 | 2.672 |  0.355 |       0.548 |       0.612 |
 | XNLI-bn  | roman       | jev-1.13.0         | 1500 | 0.573 |       0.762 |        0.189 |   0.197 |        0.196 |   0.599 | 1.053 |  0.293 |       0.597 |       0.679 |
 | XNLI-bn  | roman       | julia-1            | 1500 | 0.316 |       0.848 |        0.532 |   0.532 |        0.532 |   1.147 | 3.658 |  0.673 |       0.31  |       0.32  |
+| XNLI-bn  | roman       | kev-0.8b           | 1500 | 0.413 |       0.544 |        0.131 |   0.131 |        0.131 |   0.688 | 1.142 |  0.522 |       0.428 |       0.465 |
+| XNLI-bn  | roman       | kev-4b             | 1500 | 0.475 |       0.791 |        0.315 |   0.316 |        0.315 |   0.774 | 1.456 |  0.418 |       0.506 |       0.553 |
 | XNLI-bn  | roman       | laya-bangla v2     | 1500 | 0.435 |       0.721 |        0.286 |   0.286 |        0.286 |   0.777 | 1.355 |  0.487 |       0.454 |       0.493 |
 | XNLI-bn  | roman       | laya-multilingual  | 1500 | 0.383 |       0.851 |        0.469 |   0.469 |        0.469 |   1.029 | 2.62  |  0.609 |       0.396 |       0.395 |
 | XNLI-bn  | roman_nat   | jev-1.13.0         | 1500 | 0.585 |       0.773 |        0.188 |   0.192 |        0.188 |   0.59  | 1.061 |  0.282 |       0.612 |       0.677 |
@@ -250,6 +298,8 @@
 | MASSIVE  | native      | d3-nano            | 1500 | 0.705 |       0.773 |        0.068 |   0.073 |        0.068 |   0.407 | 1.07  |  0.104 |       0.805 |       0.928 |
 | MASSIVE  | native      | gemma-4-E4B-it     | 1500 | 0.689 |       0.939 |        0.249 |   0.249 |        0.249 |   0.546 | 2.758 |  0.136 |       0.781 |       0.892 |
 | MASSIVE  | native      | jev-1.13.0         | 1500 | 0.757 |       0.844 |        0.087 |   0.087 |        0.087 |   0.341 | 1.082 |  0.072 |       0.864 |       0.963 |
+| MASSIVE  | native      | kev-0.8b           | 1500 | 0.372 |       0.206 |       -0.166 |   0.166 |        0.167 |   0.809 | 2.716 |  0.399 |       0.433 |       0.592 |
+| MASSIVE  | native      | kev-4b             | 1500 | 0.575 |       0.306 |       -0.269 |   0.27  |        0.269 |   0.645 | 1.84  |  0.212 |       0.668 |       0.792 |
 | MASSIVE  | native      | laya-bangla v2     | 1500 | 0.575 |       0.51  |       -0.065 |   0.071 |        0.07  |   0.557 | 1.61  |  0.215 |       0.675 |       0.817 |
 | MASSIVE  | native      | laya-multilingual  | 1500 | 0.179 |       0.415 |        0.236 |   0.236 |        0.236 |   0.994 | 4.264 |  0.636 |       0.22  |       0.315 |
 | MASSIVE  | roman       | d3-edge            | 1500 | 0.044 |       0.467 |        0.423 |   0.423 |        0.423 |   1.216 | 5.231 |  0.931 |       0.045 |       0.057 |
@@ -259,6 +309,8 @@
 | MASSIVE  | roman       | d3-nano            | 1500 | 0.221 |       0.35  |        0.129 |   0.129 |        0.129 |   0.905 | 3.374 |  0.579 |       0.262 |       0.352 |
 | MASSIVE  | roman       | gemma-4-E4B-it     | 1500 | 0.429 |       0.825 |        0.397 |   0.397 |        0.397 |   0.919 | 4.461 |  0.327 |       0.505 |       0.669 |
 | MASSIVE  | roman       | jev-1.13.0         | 1500 | 0.481 |       0.562 |        0.081 |   0.081 |        0.081 |   0.664 | 2.782 |  0.269 |       0.573 |       0.723 |
+| MASSIVE  | roman       | kev-0.8b           | 1500 | 0.118 |       0.15  |        0.032 |   0.053 |        0.052 |   0.959 | 3.944 |  0.771 |       0.135 |       0.177 |
+| MASSIVE  | roman       | kev-4b             | 1500 | 0.226 |       0.129 |       -0.097 |   0.101 |        0.106 |   0.906 | 3.326 |  0.575 |       0.264 |       0.369 |
 | MASSIVE  | roman       | laya-bangla v2     | 1500 | 0.077 |       0.215 |        0.138 |   0.138 |        0.138 |   1.006 | 4.106 |  0.882 |       0.085 |       0.104 |
 | MASSIVE  | roman       | laya-multilingual  | 1500 | 0.045 |       0.513 |        0.468 |   0.468 |        0.468 |   1.311 | 7.348 |  0.923 |       0.052 |       0.067 |
 | MASSIVE  | roman_nat   | jev-1.13.0         | 1500 | 0.524 |       0.597 |        0.073 |   0.073 |        0.073 |   0.61  | 2.491 |  0.224 |       0.619 |       0.783 |
@@ -270,6 +322,8 @@
 | SentNoB  | native      | gemma-4-E4B-it     | 1586 | 0.639 |       0.972 |        0.332 |   0.333 |        0.332 |   0.68  | 3.059 |  0.251 |       0.702 |       0.782 |
 | SentNoB  | native      | jev-1.13.0         | 1586 | 0.66  |       0.858 |        0.198 |   0.202 |        0.198 |   0.542 | 1.69  |  0.212 |       0.705 |       0.788 |
 | SentNoB  | native      | julia-1            | 1586 | 0.409 |       0.853 |        0.444 |   0.444 |        0.444 |   0.987 | 2.883 |  0.516 |       0.418 |       0.449 |
+| SentNoB  | native      | kev-0.8b           | 1586 | 0.394 |       0.586 |        0.192 |   0.192 |        0.192 |   0.743 | 1.354 |  0.495 |       0.416 |       0.484 |
+| SentNoB  | native      | kev-4b             | 1586 | 0.532 |       0.699 |        0.166 |   0.17  |        0.169 |   0.612 | 1.137 |  0.302 |       0.581 |       0.683 |
 | SentNoB  | native      | laya-bangla v2     | 1586 | 0.482 |       0.821 |        0.339 |   0.339 |        0.339 |   0.817 | 1.63  |  0.464 |       0.503 |       0.536 |
 | SentNoB  | native      | laya-multilingual  | 1586 | 0.303 |       0.832 |        0.529 |   0.53  |        0.529 |   1.124 | 2.46  |  0.674 |       0.296 |       0.3   |
 | SentNoB  | roman       | d3-edge            | 1586 | 0.413 |       0.53  |        0.117 |   0.117 |        0.117 |   0.697 | 1.179 |  0.507 |       0.445 |       0.477 |
@@ -280,6 +334,8 @@
 | SentNoB  | roman       | gemma-4-E4B-it     | 1586 | 0.573 |       0.947 |        0.374 |   0.374 |        0.374 |   0.774 | 2.997 |  0.295 |       0.632 |       0.715 |
 | SentNoB  | roman       | jev-1.13.0         | 1586 | 0.567 |       0.728 |        0.161 |   0.161 |        0.161 |   0.59  | 1.324 |  0.289 |       0.614 |       0.699 |
 | SentNoB  | roman       | julia-1            | 1586 | 0.393 |       0.849 |        0.456 |   0.456 |        0.456 |   1.014 | 2.866 |  0.577 |       0.404 |       0.427 |
+| SentNoB  | roman       | kev-0.8b           | 1586 | 0.297 |       0.543 |        0.246 |   0.247 |        0.246 |   0.803 | 1.394 |  0.648 |       0.305 |       0.327 |
+| SentNoB  | roman       | kev-4b             | 1586 | 0.408 |       0.613 |        0.205 |   0.205 |        0.205 |   0.726 | 1.312 |  0.471 |       0.429 |       0.475 |
 | SentNoB  | roman       | laya-bangla v2     | 1586 | 0.27  |       0.838 |        0.568 |   0.568 |        0.568 |   1.166 | 2.317 |  0.708 |       0.271 |       0.28  |
 | SentNoB  | roman       | laya-multilingual  | 1586 | 0.23  |       0.883 |        0.653 |   0.654 |        0.653 |   1.309 | 2.852 |  0.75  |       0.239 |       0.251 |
 | SentNoB  | roman_nat   | jev-1.13.0         | 1586 | 0.569 |       0.742 |        0.173 |   0.173 |        0.173 |   0.601 | 1.389 |  0.298 |       0.616 |       0.694 |
@@ -291,6 +347,8 @@
 | SIB-200  | native      | gemma-4-E4B-it     |  204 | 0.853 |       0.974 |        0.121 |   0.121 |        0.121 |   0.236 | 0.681 |  0.022 |       0.951 |       1     |
 | SIB-200  | native      | jev-1.13.0         |  204 | 0.897 |       0.912 |        0.015 |   0.05  |        0.033 |   0.141 | 0.33  |  0.019 |       0.975 |       0.99  |
 | SIB-200  | native      | julia-1            |  204 | 0.52  |       0.848 |        0.329 |   0.331 |        0.329 |   0.798 | 2.266 |  0.364 |       0.564 |       0.588 |
+| SIB-200  | native      | kev-0.8b           |  204 | 0.632 |       0.638 |        0.006 |   0.073 |        0.045 |   0.506 | 1.112 |  0.182 |       0.73  |       0.824 |
+| SIB-200  | native      | kev-4b             |  204 | 0.779 |       0.719 |       -0.061 |   0.092 |        0.09  |   0.296 | 0.614 |  0.06  |       0.883 |       0.98  |
 | SIB-200  | native      | laya-bangla v2     |  204 | 0.75  |       0.811 |        0.061 |   0.069 |        0.078 |   0.37  | 0.787 |  0.125 |       0.816 |       0.912 |
 | SIB-200  | native      | laya-multilingual  |  204 | 0.588 |       0.872 |        0.284 |   0.29  |        0.284 |   0.673 | 1.736 |  0.23  |       0.62  |       0.765 |
 | SIB-200  | roman       | d3-edge            |  204 | 0.235 |       0.455 |        0.22  |   0.22  |        0.22  |   0.907 | 2.16  |  0.631 |       0.264 |       0.304 |
@@ -301,6 +359,8 @@
 | SIB-200  | roman       | gemma-4-E4B-it     |  204 | 0.73  |       0.939 |        0.208 |   0.216 |        0.208 |   0.462 | 1.744 |  0.106 |       0.816 |       0.882 |
 | SIB-200  | roman       | jev-1.13.0         |  204 | 0.725 |       0.789 |        0.063 |   0.101 |        0.105 |   0.417 | 1.001 |  0.112 |       0.816 |       0.863 |
 | SIB-200  | roman       | julia-1            |  204 | 0.284 |       0.857 |        0.573 |   0.574 |        0.573 |   1.234 | 3.841 |  0.635 |       0.301 |       0.343 |
+| SIB-200  | roman       | kev-0.8b           |  204 | 0.265 |       0.503 |        0.238 |   0.256 |        0.256 |   0.895 | 2.016 |  0.619 |       0.276 |       0.333 |
+| SIB-200  | roman       | kev-4b             |  204 | 0.451 |       0.516 |        0.065 |   0.097 |        0.101 |   0.675 | 1.465 |  0.355 |       0.491 |       0.627 |
 | SIB-200  | roman       | laya-bangla v2     |  204 | 0.25  |       0.52  |        0.27  |   0.27  |        0.27  |   0.916 | 2.098 |  0.635 |       0.27  |       0.314 |
 | SIB-200  | roman       | laya-multilingual  |  204 | 0.275 |       0.867 |        0.593 |   0.593 |        0.593 |   1.251 | 4.856 |  0.666 |       0.307 |       0.333 |
 | SIB-200  | roman_nat   | jev-1.13.0         |  204 | 0.706 |       0.79  |        0.084 |   0.117 |        0.087 |   0.393 | 0.89  |  0.101 |       0.81  |       0.922 |
@@ -399,45 +459,53 @@
 
 | task                    | model              |    n |   acc_native |   acc_roman |   gap |   ci_lo |   ci_hi |
 |:------------------------|:-------------------|-----:|-------------:|------------:|------:|--------:|--------:|
-| XNLI-bn                 | d3-edge            | 1500 |        0.523 |       0.445 | 0.078 |   0.051 |   0.107 |
-| XNLI-bn                 | d3-flash (4/8-bit) |  400 |        0.828 |       0.598 | 0.23  |   0.179 |   0.282 |
-| XNLI-bn                 | d3-lite            | 1500 |        0.704 |       0.463 | 0.241 |   0.209 |   0.27  |
-| XNLI-bn                 | d3-mini            | 1500 |        0.729 |       0.562 | 0.167 |   0.14  |   0.194 |
-| XNLI-bn                 | d3-nano            | 1500 |        0.746 |       0.497 | 0.249 |   0.222 |   0.276 |
-| XNLI-bn                 | gemma-4-E4B-it     | 1500 |        0.631 |       0.519 | 0.113 |   0.092 |   0.134 |
-| XNLI-bn                 | jev-1.13.0         | 1500 |        0.751 |       0.572 | 0.179 |   0.154 |   0.203 |
-| XNLI-bn                 | julia-1            | 1500 |        0.382 |       0.316 | 0.066 |   0.037 |   0.096 |
-| XNLI-bn                 | laya-bangla v2     | 1500 |        0.625 |       0.435 | 0.19  |   0.157 |   0.222 |
+| XNLI-bn                 | d3-edge            | 1500 |        0.523 |       0.445 | 0.078 |   0.048 |   0.104 |
+| XNLI-bn                 | d3-flash (4/8-bit) |  400 |        0.828 |       0.598 | 0.23  |   0.176 |   0.288 |
+| XNLI-bn                 | d3-lite            | 1500 |        0.704 |       0.463 | 0.241 |   0.212 |   0.273 |
+| XNLI-bn                 | d3-mini            | 1500 |        0.729 |       0.562 | 0.167 |   0.139 |   0.194 |
+| XNLI-bn                 | d3-nano            | 1500 |        0.746 |       0.497 | 0.249 |   0.219 |   0.278 |
+| XNLI-bn                 | gemma-4-E4B-it     | 1500 |        0.631 |       0.519 | 0.113 |   0.091 |   0.135 |
+| XNLI-bn                 | jev-1.13.0         | 1500 |        0.751 |       0.572 | 0.179 |   0.155 |   0.204 |
+| XNLI-bn                 | julia-1            | 1500 |        0.382 |       0.316 | 0.066 |   0.034 |   0.097 |
+| XNLI-bn                 | kev-0.8b           | 1500 |        0.469 |       0.413 | 0.055 |   0.034 |   0.079 |
+| XNLI-bn                 | kev-4b             | 1500 |        0.624 |       0.475 | 0.149 |   0.124 |   0.172 |
+| XNLI-bn                 | laya-bangla v2     | 1500 |        0.625 |       0.435 | 0.19  |   0.158 |   0.224 |
 | XNLI-bn                 | laya-multilingual  | 1500 |        0.635 |       0.383 | 0.253 |   0.219 |   0.288 |
-| MASSIVE                 | d3-edge            | 1500 |        0.243 |       0.044 | 0.199 |   0.178 |   0.219 |
-| MASSIVE                 | d3-flash (4/8-bit) |  403 |        0.819 |       0.412 | 0.407 |   0.357 |   0.46  |
-| MASSIVE                 | d3-lite            | 1500 |        0.624 |       0.121 | 0.503 |   0.476 |   0.531 |
-| MASSIVE                 | d3-mini            | 1500 |        0.749 |       0.383 | 0.366 |   0.336 |   0.393 |
-| MASSIVE                 | d3-nano            | 1500 |        0.705 |       0.221 | 0.483 |   0.455 |   0.51  |
-| MASSIVE                 | gemma-4-E4B-it     | 1500 |        0.689 |       0.429 | 0.261 |   0.237 |   0.287 |
-| MASSIVE                 | jev-1.13.0         | 1500 |        0.757 |       0.481 | 0.276 |   0.252 |   0.303 |
-| MASSIVE                 | laya-bangla v2     | 1500 |        0.575 |       0.077 | 0.499 |   0.471 |   0.526 |
-| MASSIVE                 | laya-multilingual  | 1500 |        0.179 |       0.045 | 0.135 |   0.113 |   0.154 |
-| SentNoB                 | d3-edge            | 1586 |        0.489 |       0.413 | 0.076 |   0.049 |   0.103 |
-| SentNoB                 | d3-flash (4/8-bit) |  405 |        0.659 |       0.531 | 0.128 |   0.081 |   0.172 |
-| SentNoB                 | d3-lite            | 1586 |        0.544 |       0.412 | 0.131 |   0.104 |   0.157 |
-| SentNoB                 | d3-mini            | 1586 |        0.582 |       0.499 | 0.083 |   0.059 |   0.109 |
-| SentNoB                 | d3-nano            | 1586 |        0.602 |       0.455 | 0.147 |   0.12  |   0.172 |
-| SentNoB                 | gemma-4-E4B-it     | 1586 |        0.639 |       0.573 | 0.066 |   0.046 |   0.084 |
-| SentNoB                 | jev-1.13.0         | 1586 |        0.66  |       0.57  | 0.09  |   0.068 |   0.113 |
-| SentNoB                 | julia-1            | 1586 |        0.409 |       0.393 | 0.016 |  -0.012 |   0.05  |
-| SentNoB                 | laya-bangla v2     | 1586 |        0.482 |       0.27  | 0.212 |   0.182 |   0.239 |
-| SentNoB                 | laya-multilingual  | 1586 |        0.303 |       0.23  | 0.073 |   0.054 |   0.089 |
-| SIB-200                 | d3-edge            |  204 |        0.475 |       0.235 | 0.24  |   0.147 |   0.319 |
-| SIB-200                 | d3-flash (4/8-bit) |  204 |        0.892 |       0.627 | 0.265 |   0.181 |   0.338 |
-| SIB-200                 | d3-lite            |  204 |        0.76  |       0.265 | 0.495 |   0.419 |   0.569 |
-| SIB-200                 | d3-mini            |  204 |        0.838 |       0.549 | 0.289 |   0.216 |   0.363 |
-| SIB-200                 | d3-nano            |  204 |        0.848 |       0.377 | 0.471 |   0.404 |   0.549 |
-| SIB-200                 | gemma-4-E4B-it     |  204 |        0.853 |       0.73  | 0.123 |   0.066 |   0.181 |
-| SIB-200                 | jev-1.13.0         |  204 |        0.897 |       0.725 | 0.172 |   0.103 |   0.24  |
-| SIB-200                 | julia-1            |  204 |        0.52  |       0.284 | 0.235 |   0.164 |   0.309 |
-| SIB-200                 | laya-bangla v2     |  204 |        0.75  |       0.25  | 0.5   |   0.431 |   0.578 |
-| SIB-200                 | laya-multilingual  |  204 |        0.588 |       0.275 | 0.314 |   0.235 |   0.402 |
+| MASSIVE                 | d3-edge            | 1500 |        0.243 |       0.044 | 0.199 |   0.175 |   0.22  |
+| MASSIVE                 | d3-flash (4/8-bit) |  403 |        0.819 |       0.412 | 0.407 |   0.356 |   0.453 |
+| MASSIVE                 | d3-lite            | 1500 |        0.624 |       0.121 | 0.503 |   0.476 |   0.53  |
+| MASSIVE                 | d3-mini            | 1500 |        0.749 |       0.383 | 0.366 |   0.337 |   0.395 |
+| MASSIVE                 | d3-nano            | 1500 |        0.705 |       0.221 | 0.483 |   0.453 |   0.511 |
+| MASSIVE                 | gemma-4-E4B-it     | 1500 |        0.689 |       0.429 | 0.261 |   0.236 |   0.282 |
+| MASSIVE                 | jev-1.13.0         | 1500 |        0.757 |       0.481 | 0.276 |   0.252 |   0.301 |
+| MASSIVE                 | kev-0.8b           | 1500 |        0.372 |       0.118 | 0.254 |   0.228 |   0.279 |
+| MASSIVE                 | kev-4b             | 1500 |        0.575 |       0.226 | 0.349 |   0.32  |   0.378 |
+| MASSIVE                 | laya-bangla v2     | 1500 |        0.575 |       0.077 | 0.499 |   0.471 |   0.527 |
+| MASSIVE                 | laya-multilingual  | 1500 |        0.179 |       0.045 | 0.135 |   0.113 |   0.156 |
+| SentNoB                 | d3-edge            | 1586 |        0.489 |       0.413 | 0.076 |   0.05  |   0.103 |
+| SentNoB                 | d3-flash (4/8-bit) |  405 |        0.659 |       0.531 | 0.128 |   0.081 |   0.178 |
+| SentNoB                 | d3-lite            | 1586 |        0.544 |       0.412 | 0.131 |   0.104 |   0.163 |
+| SentNoB                 | d3-mini            | 1586 |        0.582 |       0.499 | 0.083 |   0.06  |   0.108 |
+| SentNoB                 | d3-nano            | 1586 |        0.602 |       0.455 | 0.147 |   0.12  |   0.174 |
+| SentNoB                 | gemma-4-E4B-it     | 1586 |        0.639 |       0.573 | 0.066 |   0.048 |   0.088 |
+| SentNoB                 | jev-1.13.0         | 1586 |        0.66  |       0.57  | 0.09  |   0.068 |   0.111 |
+| SentNoB                 | julia-1            | 1586 |        0.409 |       0.393 | 0.016 |  -0.012 |   0.048 |
+| SentNoB                 | kev-0.8b           | 1586 |        0.394 |       0.297 | 0.097 |   0.07  |   0.124 |
+| SentNoB                 | kev-4b             | 1586 |        0.532 |       0.408 | 0.124 |   0.099 |   0.152 |
+| SentNoB                 | laya-bangla v2     | 1586 |        0.482 |       0.27  | 0.212 |   0.185 |   0.243 |
+| SentNoB                 | laya-multilingual  | 1586 |        0.303 |       0.23  | 0.073 |   0.056 |   0.089 |
+| SIB-200                 | d3-edge            |  204 |        0.475 |       0.235 | 0.24  |   0.159 |   0.328 |
+| SIB-200                 | d3-flash (4/8-bit) |  204 |        0.892 |       0.627 | 0.265 |   0.191 |   0.333 |
+| SIB-200                 | d3-lite            |  204 |        0.76  |       0.265 | 0.495 |   0.426 |   0.569 |
+| SIB-200                 | d3-mini            |  204 |        0.838 |       0.549 | 0.289 |   0.216 |   0.368 |
+| SIB-200                 | d3-nano            |  204 |        0.848 |       0.377 | 0.471 |   0.392 |   0.537 |
+| SIB-200                 | gemma-4-E4B-it     |  204 |        0.853 |       0.73  | 0.123 |   0.059 |   0.176 |
+| SIB-200                 | jev-1.13.0         |  204 |        0.897 |       0.725 | 0.172 |   0.113 |   0.235 |
+| SIB-200                 | julia-1            |  204 |        0.52  |       0.284 | 0.235 |   0.152 |   0.306 |
+| SIB-200                 | kev-0.8b           |  204 |        0.632 |       0.265 | 0.368 |   0.284 |   0.441 |
+| SIB-200                 | kev-4b             |  204 |        0.779 |       0.451 | 0.328 |   0.25  |   0.407 |
+| SIB-200                 | laya-bangla v2     |  204 |        0.75  |       0.25  | 0.5   |   0.419 |   0.564 |
+| SIB-200                 | laya-multilingual  |  204 |        0.588 |       0.275 | 0.314 |   0.24  |   0.392 |
 | Belebele (human roman.) | d3-edge            |  900 |        0.408 |       0.341 | 0.067 | nan     | nan     |
 | Belebele (human roman.) | d3-flash (4/8-bit) |  200 |        0.85  |       0.61  | 0.24  | nan     | nan     |
 | Belebele (human roman.) | d3-lite            |  900 |        0.576 |       0.371 | 0.204 | nan     | nan     |
@@ -446,6 +514,8 @@
 | Belebele (human roman.) | gemma-4-E4B-it     |  900 |        0.773 |       0.588 | 0.186 | nan     | nan     |
 | Belebele (human roman.) | jev-1.13.0         |  900 |        0.917 |       0.777 | 0.14  | nan     | nan     |
 | Belebele (human roman.) | julia-1            |  881 |        0.286 |       0.282 | 0.004 | nan     | nan     |
+| Belebele (human roman.) | kev-0.8b           |  900 |        0.373 |       0.366 | 0.008 | nan     | nan     |
+| Belebele (human roman.) | kev-4b             |  900 |        0.56  |       0.406 | 0.154 | nan     | nan     |
 | Belebele (human roman.) | laya-bangla v2     |  900 |        0.313 |       0.263 | 0.05  | nan     | nan     |
 | Belebele (human roman.) | laya-multilingual  |  900 |        0.286 |       0.253 | 0.032 | nan     | nan     |
 
@@ -460,7 +530,7 @@
 | Belebele | jev-1.13.0        | 1800 |      0.847 |      0.856 |      0.855 |   0.009 |                   0.853 |                   0.854 |                       0.927 |
 | Belebele | julia-1           | 1781 |      0.285 |      0.291 |      0.303 |   0.018 |                   0.293 |                   0.303 |                       0.309 |
 | Belebele | laya-bangla v2    | 1800 |      0.289 |      0.27  |      0.268 |   0.021 |                   0.276 |                   0.284 |                       0.284 |
-| Belebele | laya-multilingual | 1800 |      0.271 |      0.262 |      0.273 |   0.011 |                   0.268 |                   0.278 |                       0.153 |
+| Belebele | laya-multilingual | 1800 |      0.271 |      0.262 |      0.273 |   0.011 |                   0.268 |                   0.277 |                       0.153 |
 | XNLI-bn  | d3-edge           | 1500 |      0.523 |      0.509 |      0.528 |   0.019 |                   0.52  |                   0.519 |                       0.919 |
 | XNLI-bn  | d3-lite           | 1500 |      0.704 |      0.705 |      0.711 |   0.007 |                   0.707 |                   0.705 |                       0.955 |
 | XNLI-bn  | d3-nano           | 1500 |      0.746 |      0.744 |      0.751 |   0.007 |                   0.747 |                   0.748 |                       0.961 |
@@ -542,6 +612,8 @@
 | gemma-4-E4B-it     |              0.109 |             255.915 |   11380 |                  0     |
 | jev-1.13.0         |              0.312 |             566.809 |   16170 |                  0.024 |
 | julia-1            |              0.024 |               0     |    8361 |                  0     |
+| kev-0.8b           |              0.175 |             224.083 |   11380 |                  0     |
+| kev-4b             |              0.891 |             224.083 |   11380 |                  0     |
 | laya-bangla v2     |              0.03  |             199.121 |   11380 |                  0     |
 | laya-multilingual  |              0.029 |             199.121 |   11380 |                  0     |
 

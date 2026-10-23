@@ -167,6 +167,12 @@ def main() -> None:
                     fails.write(json.dumps({"key": key, "task": task.name, "uid": e.uid, "error": str(err)[:200]}) + "\n")
                     nfail += 1
                     continue
+                except Exception as err:  # a Kev server that returns HTTP 500 (e.g. out of GPU memory on one input): record the item as failed; anything else is a real fault
+                    if getattr(getattr(err, "response", None), "status_code", None) != 500:
+                        raise
+                    fails.write(json.dumps({"key": key, "task": task.name, "uid": e.uid, "error": "HTTP 500 from server"}) + "\n")
+                    nfail += 1
+                    continue
                 dt = time.monotonic() - t0
                 out.write(json.dumps({
                     "key": key, "task": task.name, "uid": e.uid, "latency_s": dt,
