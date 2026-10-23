@@ -16,9 +16,10 @@ I tested one hosted decision model (Jev), ten open decision models (the vLLM-SR 
 - `data/banglish_ai_release.csv` the corrected Bengali and the AI-generated Banglish for the MASSIVE and XNLI-bn sentences. SentNoB is CC-BY-ND, so its text and the Banglish of its sentences are not included. `data/freeze_splits.py` rebuilds the splits from the public datasets.
 
 ## What you can rerun
-- `make test` runs the unit tests.
-- Install `pip install -r requirements.txt` first. `make audit` recomputes the headline numbers from the committed tables and checks them against `paper/numbers.tex`. `make paper` compiles the PDF from the committed source. Both work from a fresh clone.
-- `make collect tables figures` rebuild `analysis/tables/`, the LaTeX tables and the figures from the raw model outputs. Those outputs (`runs/`, the Jev response cache, the 288 MB item file) are not published: Jev's raw responses fall under the provider's terms, and the open-model outputs are large.
+- `pip install -r requirements.txt`, then `make audit` recomputes the headline numbers from the committed tables and checks every released file against `results/MANIFEST.sha256`; `make paper` compiles the PDF. Both work from a fresh clone. `make test` runs the unit tests.
+- `make collect tables release figures` rebuild `analysis/tables/`, the LaTeX tables, the released predictions and the figures from the raw model outputs. Those inputs (`runs/`, the Jev response cache, the 307 MB item file, the SentNoB Banglish) are not published, so these targets do not run from a clone. `docs/ARTIFACTS.md` maps every figure and table to its script and input.
+- Released: result tables, open-model item-level predictions with probabilities (`results/predictions_open_models.csv.gz`; no dataset text except Belebele's option labels, CC BY-SA 4.0), checksums, and the AI-generated Banglish for MASSIVE and XNLI-bn. Not released: Jev raw responses (provider terms), SentNoB text and its Banglish (CC BY-ND), the original generation prompts (never recorded).
+- `docs/MODELS.md` lists every system's identifier, revision and settings; `docs/PROMPTS.md` the question structure for each task.
 - Running the models again needs a TypeSafe API key for Jev (`TYPESAFE_API_KEY`) and a Kaggle GPU for the open ones (`kaggle/`).
 
 ## Licence

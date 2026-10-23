@@ -8,8 +8,8 @@
 #   Not covered here: model inference. Jev needs TYPESAFE_API_KEY (analysis/human_roman_eval.py, runs/run_jev_*.sh);
 #   open models ran on Kaggle GPUs (kaggle/ kernels, tools/run_models.py). Raw Jev responses are not redistributed.
 PY ?= .venv/bin/python
-.PHONY: all test data collect tables figures paper audit
-all: test collect tables figures audit paper
+.PHONY: all test data collect tables release figures paper audit
+all: test collect tables release figures audit paper
 test:
 	cd harness && ../$(PY) -m pytest tests -q
 	$(PY) -m pytest analysis/test_metrics.py -q
@@ -20,6 +20,8 @@ collect:
 	$(PY) analysis/human_models.py
 tables: collect
 	$(PY) analysis/make_tables.py
+release: tables
+	$(PY) analysis/make_release.py
 figures: tables
 	$(PY) analysis/make_figures.py
 paper:

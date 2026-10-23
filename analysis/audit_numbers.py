@@ -1,6 +1,6 @@
 """Independent check of the headline numbers in paper/numbers.tex against the committed item-level correctness table
 (analysis/tables/human_items_all_models.csv) and the accuracy table (analysis/tables/rq1_accuracy.csv).
-Recomputes each number from scratch, without importing make_tables.py, and exits non-zero on any mismatch.   python analysis/audit_numbers.py"""
+Recomputes each number from scratch (and verifies results/MANIFEST.sha256), without importing make_tables.py, and exits non-zero on any mismatch.   python analysis/audit_numbers.py"""
 import re, sys
 from pathlib import Path
 import pandas as pd
@@ -34,5 +34,19 @@ check("jevBelebele", x.value)
 for t, k in (("Belebele", "Bel"), ("SIB-200", "Sib"), ("XNLI-bn", "Xnli"), ("MASSIVE", "Mas"), ("SentNoB", "Sent")):  # Jev tops every full-set model on all five tasks
     full = r1[(r1.task == t) & (r1.variant == "native") & (~r1.model.str.contains("flash"))]
     assert full.loc[full.value.idxmax(), "model"] == J, f"Jev is not top on {t}"
+# common-item rank agreement: items every system answered (recomputed here, not imported)
+wide = d.pivot_table(index=["dataset", "id"], columns=["model", "variant"], values="ok")
+ms = sorted(acc.index); need = [(m, v) for m in ms for v in ("human", "roman_edit", "roman_nat_edit")]
+com = wide.dropna(subset=need)
+accs = pd.DataFrame({v: [com[(m, v)].mean() for m in ms] for v in ("human", "roman_edit", "roman_nat_edit")}, index=ms)
+check("nCommon", len(com), "{:d}")
+check("tauComRule", kendalltau(accs.human, accs.roman_edit)[0], "{:.2f}")
+check("tauComNat", kendalltau(accs.human, accs.roman_nat_edit)[0], "{:.2f}")
+# released files match their recorded checksums
+import hashlib
+for line in (A.parent / "results" / "MANIFEST.sha256").read_text().splitlines():
+    h, f = line.split("  ", 1)
+    if hashlib.sha256((A.parent / f).read_bytes()).hexdigest() != h:
+        bad.append(f"checksum mismatch: {f}")
 print("AUDIT FAILED:\n" + "\n".join(bad) if bad else "audit ok: headline numbers match an independent recomputation")
 sys.exit(1 if bad else 0)
