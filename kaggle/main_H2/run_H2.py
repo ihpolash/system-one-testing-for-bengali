@@ -1,4 +1,4 @@
-"""[round 2, hand-written Banglish of 2026-10-21] Kaggle: score every model on the items a human romanized (SentNoB, MASSIVE, XNLI-bn pairs; ~880 items) under four spellings:
+"""[round 2, AI-generated Banglish of 2026-10-21] Kaggle: score every model on the items with AI-generated Banglish (SentNoB, MASSIVE, XNLI-bn pairs; ~880 items) under four spellings:
 native Bengali, rule-based romanization, natural-style romanization, and the user's own Banglish. Rot0 only, English question wording.
 Items and Banglish come from data/human_rows.json and data/banglish_human.csv (via BN_ROWS_JSON / BN_HUMAN_CSV). Resumable; cheapest models first."""
 import json, os, shutil, subprocess, sys, time

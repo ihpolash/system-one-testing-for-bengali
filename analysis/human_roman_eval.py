@@ -1,4 +1,4 @@
-"""End-to-end Jev check on the author's own, hand-written Banglish (all three files; confirmed 2026-10-21).
+"""End-to-end Jev check on the AI-generated Banglish (ChatGPT output, corrected with Grok and Claude, reviewed by the author; internal variant name "human"). Supplied as three CSV files.
 
 Inputs: analysis/banglish_gold{,2,3}_completed.csv. The author corrected spellings in the Bengali column before writing the Banglish, so items are matched to
 the dataset by their ORIGINAL text (read from data/raw via the sources JSON), never by the edited column. Whole inputs only: SentNoB and MASSIVE rows, and
@@ -9,7 +9,7 @@ Conditions on the SAME items:
   native_edit       the author's corrected Bengali (isolates the effect of spelling correction alone)
   roman / roman_nat rule-based / natural-style romanization of the original text
   roman_edit / roman_nat_edit   the same romanizers applied to the corrected text (the fair comparators for the Banglish)
-  human             the author's Banglish (written from the corrected text)
+  human             the AI-generated Banglish (made from the corrected text)
 The user's files are never edited. Sends only uncached Jev requests (about $0.0001 per request).
     python analysis/human_roman_eval.py"""
 import asyncio, csv, json, os, re, shutil, sys

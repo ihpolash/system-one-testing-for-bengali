@@ -1,6 +1,6 @@
 """Kaggle round 3 (2026-10-21): (A) laya-bangla v2 (algolyzer/laya-bangla, a Bangla fine-tune of Laya-multilingual published 2026-10-18) on all test/dev settings;
 (B) Laya-multilingual re-run under laya==0.4.11 on native rot0 to measure package-version drift against the earlier 0.4.3/0.4.6 runs;
-(C) laya-bangla on the author's hand-written Banglish items (7 conditions); (D) SentNoB wording sensitivity (minimal English options, Bengali wording) for both Laya models."""
+(C) laya-bangla on the AI-generated Banglish items (7 conditions); (D) SentNoB wording sensitivity (minimal English options, Bengali wording) for both Laya models."""
 import json, os, shutil, subprocess, sys, time
 from pathlib import Path
 
@@ -51,7 +51,7 @@ for rot in (1, 2):
 out = "/kaggle/working/runs/laya_ml_v0411"
 run(ALL, "eval", "", LM, out, BN_VARIANT="native"); run(LARGE, "eval", "--limit 1500", LM, out, BN_VARIANT="native")
 
-# (C) hand-written Banglish items, seven conditions
+# (C) AI-generated Banglish items, seven conditions
 out = "/kaggle/working/runs/laya_bangla_human"
 HT = "bn_sentnob bn_massive bn_bnli"
 for v, rows in (("native", ROWS), ("roman", ROWS), ("roman_nat", ROWS), ("human", ROWS), ("native_edit", ROWS_ED), ("roman_edit", ROWS_ED), ("roman_nat_edit", ROWS_ED)):

@@ -1,4 +1,4 @@
-"""Every model on the items the author romanized by hand, under seven conditions (see human_roman_eval.py).
+"""Every model on the items with AI-generated Banglish (internal name "human"), under seven conditions (see human_roman_eval.py).
 
 Reads Kaggle outputs runs/<model>_human/ (round 1: native, roman, roman_nat) and runs/<model>_human2/ (round 2: human, native_edit, roman_edit, roman_nat_edit),
 and the Jev cache. Requests are content-keyed, so a corrected-text condition that equals the original on an unedited sentence reuses the stored response.

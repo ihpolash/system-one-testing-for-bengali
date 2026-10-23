@@ -1,5 +1,5 @@
 """Kaggle round 4 (2026-10-21): Kev 1.0 (jaredpalmer/kev-0.8b, kev-4b; tag v1.0) served with kev.serve and scored through the System One endpoint.
-Per model: native and rule-based romanized test sets (rotation 0), then the author's 877 hand-written items in seven conditions.
+Per model: native and rule-based romanized test sets (rotation 0), then the 877 items with AI-generated Banglish in seven conditions.
 SMOKE=1 runs 12 items only and prints latency (always run it first)."""
 import json, os, shutil, signal, subprocess, sys, time
 from pathlib import Path

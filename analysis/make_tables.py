@@ -124,7 +124,7 @@ for m in ORDER:
     star = r"$^\ddagger$" if m == "julia-1" else ""
     rows.append(f"{NAME[m]}{star} & {f3(x.native_edit)} & {f3(x.roman_edit)} & {f3(x.roman_nat_edit)} & {f3(x.human)} & {pts(h['diff'])} {ci(h.lo, h.hi)} & {pts(hr['diff'])} {ci(hr.lo, hr.hi)} \\\\")
 write("tab_human.tex", "\\begin{tabular}{@{}lcccccc@{}}\\toprule\n & \\multicolumn{4}{c}{Accuracy} & \\multicolumn{2}{c}{Change in points (95\\% CI)} \\\\\\cmidrule(lr){2-5}\\cmidrule(l){6-7}\n"
-      "Model & Bengali & Rule-based & Natural-style & Banglish & Banglish $-$ Bengali & Banglish $-$ rule-based \\\\\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\n")
+      "Model & Bengali & Rule-based & Natural-style & AI Banglish & AI Banglish $-$ Bengali & AI Banglish $-$ rule-based \\\\\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\n")
 tag = {"jev-1.13.0": "jev", "gemma-4-E4B-it": "gemma", "d3-flash (4-bit)": "flash", "d3-mini": "mini", "d3-nano": "nano", "d3-lite": "lite", "d3-edge": "edge", "laya-bangla v2": "layabn", "laya-multilingual": "layaml", "julia-1": "julia", "kev-4b": "kevmd", "kev-0.8b": "kevsm"}
 for m, k in tag.items():
     if m in acc.index:
@@ -276,7 +276,7 @@ for m in ORDER:
     if m not in acc.index:
         continue
     trows.append(f"{NAME[m]} & " + " & ".join(task_row(m, "human - roman_edit")) + " & " + " & ".join(task_row(m, "human - native_edit")) + " \\\\")
-write("tab_human_tasks.tex", "\\begin{tabular}{@{}lcccccccc@{}}\\toprule\n & \\multicolumn{4}{c}{Banglish $-$ rule-based} & \\multicolumn{4}{c}{Banglish $-$ Bengali} \\\\\\cmidrule(lr){2-5}\\cmidrule(l){6-9}\n"
+write("tab_human_tasks.tex", "\\begin{tabular}{@{}lcccccccc@{}}\\toprule\n & \\multicolumn{4}{c}{AI Banglish $-$ rule-based} & \\multicolumn{4}{c}{AI Banglish $-$ Bengali} \\\\\\cmidrule(lr){2-5}\\cmidrule(l){6-9}\n"
       "Model & MASSIVE & SentNoB & XNLI-bn & task mean & MASSIVE & SentNoB & XNLI-bn & task mean \\\\\\midrule\n" + "\n".join(trows) + "\n\\bottomrule\\end{tabular}\n")
 bal = [np.mean([r[(r.model == m) & (r.scope == sc) & (r.comparison == "human - roman_edit")]["diff"].iloc[0] for sc in ("massive", "sentnob", "bnli")]) for m in ORDER if m in acc.index and m != "julia-1"]
 macro("sentGainMax", f"{100*max(r[(r.model == m) & (r.scope == 'sentnob') & (r.comparison == 'human - roman_edit')]['diff'].iloc[0] for m in ORDER if m in acc.index):.1f}")
