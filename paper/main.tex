@@ -24,7 +24,7 @@ Jev scored highest on all five tasks among the models run on the full test sets;
 The open d3-flash matched or beat it on three tasks, on a subset of about \flashNmax{} items per task.
 Romanization hurt every model that was above chance on Bengali script, and tool-made romanization hurt more than real typing.
 On \nHuman{} items that I rewrote by hand in Banglish, Jev lost \jevLossHuman{} points against the Bengali original, where rule-based romanization of the same text cost it \jevLossRule.
-The model ranking was the same either way (Kendall $\tau=\tauRule$ over \nModelsRank{} models), so synthetic romanization ranks models well but overstates how much they lose.
+The model ranking was the same either way (Kendall $\tau=\tauRule$ over \nModelsRank{} models), so synthetic romanization ranks models well but overstates how much they lose. The difference is concentrated in MASSIVE; on SentNoB, the only native text, it is at most \sentGainMax{} points for any model.
 Every open model was overconfident on Bengali text, and one temperature fitted on a separate development set removed most of that, but less of it on romanized text.
 Code, tables and the hand-written Banglish are at \url{https://github.com/ihpolash/system-one-testing-for-bengali}.
 \end{abstract}
@@ -43,7 +43,7 @@ I could not find a measurement of how far tool-made romanization differs from wh
 
 I made that measurement for Bengali.
 I rewrote \nSentences{} sentences from three datasets in Banglish by hand and scored all models on the same items in four spellings (Section~\ref{sec:human}).
-Around it sits a zero-shot benchmark of eleven systems on five tasks, with calibration, risk--coverage and option-order analyses (Section~\ref{sec:results}).
+Around it sits a zero-shot benchmark of twelve systems on five tasks, with calibration, risk--coverage and option-order analyses (Section~\ref{sec:results}).
 Every number here is produced by the released code, and the harness reproduces published numbers from independent groups for Jev, Laya-multilingual and laya-bangla (Section~\ref{sec:audit}).
 This is not the first Bengali result for any decision model, since Jev's Belebele and SIB-200 numbers exist. Kev-9B, Kev-27B, d3-27B and Microsoft-Decision-1 are not covered.
 
@@ -63,7 +63,7 @@ Study & Decision models & Bengali & Romanized & Calibration & Hand-written text 
 \citet{wang2026chinesejev} & trained model & no & no & yes & no \\
 \citet{khullar2025scriptgap} & no & no & tool-made & routing only & no \\
 \citet{jawad2026fivedialects} & no & dialects & tool-made & no & no \\
-This paper & 11 models & 5 tasks & rule, natural-style, hand & yes & 877 items \\
+This paper & 12 systems & 5 tasks & rule, natural-style, hand & yes & 877 items \\
 \bottomrule\end{tabular}}
 \caption{What each closest study covers, from reading the papers. A ``no'' means the paper does not report it.}
 \label{tab:gap}
@@ -83,7 +83,7 @@ Kev-9B and Kev-27B do not fit on that GPU, and d3-27B and Microsoft-Decision-1 (
 
 \paragraph{Tasks.}
 The five tasks are in Table~\ref{tab:tasks}.
-Each item is a single-choice question with English instructions and option names; only the passage or utterance changes between conditions.
+Each item is a single-choice question with English instructions and option names; only the passage or utterance changes between conditions. The exact question structure for every task is in \texttt{docs/PROMPTS.md} in the repository.
 I cut XNLI-bn and MASSIVE to hash-ordered subsets of 1,500 items so that any smaller run is nested in a larger one.
 Bengali option names changed Jev's accuracy by at most \labelMaxDiff{} points on SentNoB, XNLI-bn and SIB-200, so I kept English names throughout.
 The metric is accuracy, and macro-F1 for SentNoB.
@@ -104,15 +104,22 @@ Both are synthetic. Belebele passages were not romanized.
 I took \nSentences{} Bengali sentences from SentNoB, MASSIVE and XNLI-bn, corrected spelling errors in \nEdited{} of them, and wrote every sentence again in Banglish, the way I would type it.
 All of it was written by hand, one sentence at a time, from the corrected Bengali.
 Items are matched to the datasets by their original text.
-An XNLI-bn item needs both sentences, so the usable set is \nHuman{} items: \nHumanMassive{} from MASSIVE, \nHumanSentnob{} from SentNoB and \nHumanNli{} XNLI-bn pairs.
+An XNLI-bn item needs both sentences, so the usable set is \nHuman{} items: \nHumanMassive{} from MASSIVE, \nHumanSentnob{} from SentNoB and \nHumanNli{} XNLI-bn pairs. No sentence was dropped; Table~\ref{tab:flow} shows how \nSentences{} sentences become \nHuman{} items.
 Spelling correction alone moved Jev by \spellEffect{} points (95\% CI \spellLo{} to \spellHi) and no model by more than \spellMaxAny{}, so I compare the Banglish with the corrected Bengali, and I apply both romanizers to the corrected text as well.
+
+\begin{table}[t]
+\centering\footnotesize
+\input{tables/tab_flow}
+\caption{From sentences to scored items. An XNLI-bn item is a premise--hypothesis pair, so two sentences make one item; nothing was excluded.}
+\label{tab:flow}
+\end{table}
 
 \paragraph{Statistics.}
 Intervals are 95\% percentile bootstraps over premise or passage clusters (Belebele, XNLI-bn) or over items, and over items for the paired comparisons on the hand-written set.
 Calibration is measured with expected calibration error over 15 equal-width bins (ECE), the signed gap between confidence and accuracy, Brier score and risk--coverage curves.
 Temperature scaling is fitted on a development split disjoint from the test items, on Bengali text only, and applied unchanged.
 Option-order sensitivity uses three cyclic rotations of the options.
-I report no significance tests. Comparisons are point estimates with intervals, with no correction for the number of comparisons.
+I report no significance tests. The main comparison is Banglish against rule-based romanization on the pooled hand-written items; every other comparison is descriptive, and none is corrected for the number of comparisons.
 
 \section{Results}
 \label{sec:results}
@@ -150,6 +157,7 @@ Figure~\ref{fig:spell} and Table~\ref{tab:human} put four spellings of the same 
 Every model but Julia-1 does better on my Banglish than on rule-based romanization, by \hvrMin{} to \hvrMax{} points. For Jev the gain is \jevHumanVsRule{} points (95\% CI \jevHumanVsRuleLo{} to \jevHumanVsRuleHi).
 Natural-style romanization lands between the two, so tuning a romanizer on real typing narrows the gap but does not close it.
 The gain varies by task (Figure~\ref{fig:over}). For Jev it is \jevHumanVsRuleMassive{} points on MASSIVE (\jevHumanVsRuleMassiveLo{} to \jevHumanVsRuleMassiveHi), \jevHumanVsRuleNli{} on XNLI-bn (\jevHumanVsRuleNliLo{} to \jevHumanVsRuleNliHi, from only \nHumanNli{} pairs), and \jevHumanVsRuleSentnob{} on SentNoB (\jevHumanVsRuleSentnobLo{} to \jevHumanVsRuleSentnobHi).
+Because MASSIVE makes up \pctMassive\% of the pooled items, Table~\ref{tab:tasks2} gives each task separately and the unweighted mean of the three task differences. For Jev that mean is \balJev{} points, and across the models other than Julia-1 it runs from \balMin{} to \balMax{}, so the gain does not come from the weighting. It does come mostly from MASSIVE. On SentNoB the interval for the Banglish gain includes zero for six of the twelve systems, and for Julia-1 it is negative.
 My guess is that MASSIVE's short commands, full of English loan words that people spell the same way every time, are what a tool gets wrong. I did not test that.
 Julia-1, near chance on these items, shows no gain.
 
@@ -194,8 +202,8 @@ Figure~\ref{fig:rel} shows the reliability curves and Figure~\ref{fig:rc} the ri
 \end{figure}
 
 A confidence gate set on Bengali development text to reach \gateTarget\% accuracy does not carry over.
-On MASSIVE, Jev accepts \gatejevNatCov\% of Bengali items at \gatejevNatAcc\% accuracy, but only \gatejevRomCov\% of romanized items, at \gatejevRomAcc\%. d3-mini accepts \gateminiNatCov\% at \gateminiNatAcc\% and \gateminiRomCov\% at \gateminiRomAcc\%.
-For laya-bangla the accepted romanized items are \gatelayabnRomAcc\% accurate, at \gatelayabnRomCov\% coverage.
+On MASSIVE, Jev accepts \gatejevNatCov\% of Bengali items (\gatejevNatN{} items) at \gatejevNatAcc\% accuracy, but only \gatejevRomCov\% of romanized items (\gatejevRomN{}), at \gatejevRomAcc\%. d3-mini accepts \gateminiNatCov\% (\gateminiNatN{}) at \gateminiNatAcc\% and \gateminiRomCov\% (\gateminiRomN{}) at \gateminiRomAcc\%.
+For laya-bangla the accepted romanized items are \gatelayabnRomAcc\% accurate, but only \gatelayabnRomN{} items are accepted, so that figure is close to anecdote.
 So for Jev and d3-mini the gate keeps its accuracy by refusing most romanized input, and for laya-bangla it fails.
 This rests on one task and, for some models, on few accepted items, so I treat it as exploratory.
 
@@ -253,6 +261,12 @@ The author used an AI assistant (Claude, Anthropic) for implementation support, 
 
 \appendix
 \section{Additional tables}
+\begin{table}[h]
+\centering\footnotesize
+\resizebox{\linewidth}{!}{\input{tables/tab_human_tasks}}
+\caption{The two differences of Table~\ref{tab:human} for each task, in points with 95\% bootstrap intervals, and the unweighted mean of the three task differences. XNLI-bn has only \nHumanNli{} pairs. Julia-1 cannot take MASSIVE.}
+\label{tab:tasks2}
+\end{table}
 \begin{table}[h]
 \centering\footnotesize
 \resizebox{\linewidth}{!}{\input{tables/tab_main_ci}}

@@ -6,6 +6,7 @@ and the paper carries the numbers in tables); thin marks, recessive grid, one ax
 """
 from pathlib import Path
 
+from labels import BANGLISH, BANGLISH_LOWER
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -42,9 +43,9 @@ def fig_spellings():
     ax.scatter(acc.native_edit, y, s=26, color=BLUE, marker="o", zorder=3, label="Corrected Bengali script")
     ax.scatter(acc.roman_edit, y, s=26, color=ORANGE, marker="s", zorder=3, label="Rule-based romanization (synthetic)")
     ax.scatter(acc.roman_nat_edit, y, s=30, facecolor=SURFACE, edgecolor=ORANGE, linewidth=1.0, marker="D", zorder=3, label="Natural-style romanization (synthetic)")
-    ax.scatter(acc.human, y, s=30, color=AQUA, marker="^", zorder=4, label="Hand-written Banglish")
+    ax.scatter(acc.human, y, s=30, color=AQUA, marker="^", zorder=4, label=BANGLISH)
     ax.set_yticks(y, [NAME[m] for m in acc.index]); ax.set_xlim(0.05, 0.8); ax.grid(axis="y", visible=False)
-    ax.set_xlabel("Accuracy on the 877 items the author romanized by hand (pooled over SentNoB, MASSIVE, XNLI-bn)")
+    ax.set_xlabel(f"Accuracy on the 877 {BANGLISH_LOWER} items (pooled over SentNoB, MASSIVE, XNLI-bn)")
     ax.legend(loc="upper left", fontsize=7, handletextpad=0.3, labelcolor=INK2, bbox_to_anchor=(0.0, 1.0))
     save(fig, "fig1_spellings")
 
@@ -65,7 +66,7 @@ def fig_overstatement():
     axes[0].set_yticks(range(len(order)), [NAME[m] for m in order])
     for ax in axes:
         ax.set_ylim(-0.6, len(order) - 0.4)
-    fig.supxlabel("Accuracy of hand-written Banglish minus accuracy of rule-based romanization of the same text (95% CI)", fontsize=7.5, y=-0.04)
+    fig.supxlabel(f"Accuracy of {BANGLISH_LOWER} minus accuracy of rule-based romanization of the same text (95% CI)", fontsize=7.5, y=-0.04)
     save(fig, "fig2_overstatement")
 
 

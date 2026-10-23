@@ -8,6 +8,7 @@ I tested one hosted decision model (Jev), ten open decision models (the vLLM-SR 
 - `paper/` LaTeX source, figures, generated tables and `numbers.tex`. `main.pdf` is built with `tectonic`.
 - `analysis/` metrics, table and figure scripts. `analysis/tables/` holds the result tables the paper is generated from. `audit_numbers.py` recomputes the headline numbers independently of the table script.
 - `harness/` my fork of [jev-benchmarking](https://github.com/AppliedMachineLearning-Lab/jev-benchmarking) (MIT, Deußer et al.), with the Bengali tasks, the romanization variants and adapters for the open models.
+- `docs/PROMPTS.md` the exact question structure sent for each task (dataset text replaced by placeholders). Regenerate with `analysis/dump_prompts.py`.
 - `kaggle/` the kernel scripts that ran the open models on Kaggle GPUs.
 - `data/banglish_human_release.csv` my corrected Bengali and hand-written Banglish for the MASSIVE and XNLI-bn sentences. SentNoB is CC-BY-ND, so its text and the Banglish of its sentences are not included. `data/freeze_splits.py` rebuilds the splits from the public datasets.
 
