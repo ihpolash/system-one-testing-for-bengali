@@ -354,7 +354,7 @@ dsha = hashlib.sha256((ROOT / "data" / "raw" / "dakshina_bn.jsonl").read_bytes()
 LIC = {"belebele": "CC BY-SA 4.0 (dataset card)", "sib200": "CC BY-SA 4.0 (dataset card)", "massive": "CC BY 4.0 (original release; the mirror's card gives none)",
        "bnli": "CC BY-NC-SA 4.0 (dataset card)", "sentnob": "none stated by the authors; not confirmed"}
 SRC = {"belebele": "facebook/belebele, ben\\_Beng, test", "sib200": "Davlan/sib200, ben\\_Beng, test", "massive": "SetFit/\\allowbreak amazon\\_massive\\_intent\\_bn-BD, test (mirror of MASSIVE bn-BD)",
-       "bnli": "csebuetnlp/xnli\\_bn, test", "sentnob": "sadi2oo3q/SentNoB, test (third-party mirror; 1,567 test items in the BLUB table)"}
+       "bnli": "csebuetnlp/xnli\\_bn, test", "sentnob": "sadi2oo3q/SentNoB, test (third-party mirror; 1,586 items, against 1,567 in BLUB and 1,564 in the laya-bangla card)"}
 NM = {"belebele": "Belebele", "sib200": "SIB-200", "massive": "MASSIVE bn-BD", "bnli": "XNLI-bn", "sentnob": "SentNoB"}
 prow = [f"{NM[k]} & {SRC[k]} & {sh_[k]['n']:,} & {sh_[k]['sha256'][:12]} & {LIC[k]} \\\\" for k in ("belebele", "sib200", "massive", "bnli", "sentnob")]
 prow.append(f"Dakshina-bn & google-research-datasets/\\allowbreak dakshina, bn romanized, dev and test (filtered to 8,244) & 8,244 & {dsha[:12]} & CC BY-SA 4.0 (repository) \\\\")
@@ -364,6 +364,59 @@ MOD = [("Jev", "jev-1.13.0 (TypeSafe API)", "hosted, accessed October 2026"), ("
        ("laya-bangla", "algolyzer/laya-bangla", "v2, 4c5eb48932; package laya 0.4.11"), ("Julia-1", "SupersonicLabs/Julia-1", "a85b127321"), ("Kev-0.8B, Kev-4B", "jaredpalmer/kev-0.8b, kev-4b", "tag v1.0; code 2ecafc49fe"),
        ("Gemma-4-E4B", "google/gemma-4-E4B-it", "not pinned")]
 write("tab_models.tex", "\\begin{tabular}{@{}lll@{}}\\toprule\nSystem & Identifier & Revision or version \\\\\\midrule\n" + "\n".join(f"{a} & \\texttt{{{b.replace('_', chr(92)+'_')}}} & {c} \\\\" for a, b, c in MOD) + "\n\\bottomrule\\end{tabular}\n")
+
+# ---------------------------------------------------------------- SentNoB: the mirror's test split overlaps its training split; macro-F1 on all items vs on the non-overlapping items (from the released predictions)
+au = json.load(open(T / "sentnob_split_audit.json"))
+for k_, v_ in au.items():
+    macro("sn" + "".join(w.capitalize() for w in k_.split("_")), f"{v_:,}".replace(",", "{,}"))
+fl = pd.read_csv(ROOT / "results" / "sentnob_overlap_flags.csv")
+pr = pd.read_csv(ROOT / "results" / "predictions_test_sets.csv.gz", usecols=["model", "task", "split", "variant", "rot", "uid", "gold_id", "pred_id"])
+sn = pr[(pr.task == "bn_sentnob") & (pr.split == "eval") & (pr.variant == "native") & (pr.rot == 0)].merge(fl, on="uid")
+def macro_f1(g):
+    f = []
+    for c in sorted(g.gold_id.unique()):
+        tp = ((g.gold_id == c) & (g.pred_id == c)).sum(); fp = ((g.gold_id != c) & (g.pred_id == c)).sum(); fn = ((g.gold_id == c) & (g.pred_id != c)).sum()
+        f.append(0 if tp == 0 else 2 * tp / (2 * tp + fp + fn))
+    return float(np.mean(f))
+srows, full_f, sub_f = [], {}, {}
+for m in ORDER:
+    mm = "d3-flash (4/8-bit)" if m == "d3-flash (4-bit)" else m
+    g = sn[sn.model == mm]
+    if m == "d3-flash (4-bit)" or len(g) < 1000:
+        continue
+    full_f[m], sub_f[m] = macro_f1(g), macro_f1(g[g.overlap == 0])
+    srows.append(f"{NAME[m]} & {f3(full_f[m])} & {f3(sub_f[m])} & {pts(sub_f[m] - full_f[m])} \\\\")
+write("tab_sentnob_overlap.tex", "\\begin{tabular}{@{}lccc@{}}\\toprule\nSystem & All \\sntestN{} items & Items not in train, validation or repeated & Change (points) \\\\\\midrule\n".replace("\\sntestN{}", f"{len(fl):,}") + "\n".join(srows) + "\n\\bottomrule\\end{tabular}\n")
+macro("snSubsetN", f"{int((fl.overlap == 0).sum()):,}".replace(",", "{,}")); macro("snFullN", f"{len(fl):,}".replace(",", "{,}"))
+macro("snMaxShift", f"{100*max(abs(sub_f[m] - full_f[m]) for m in full_f):.1f}")
+from scipy.stats import kendalltau as _kt
+macro("snTau", f"{_kt([full_f[m] for m in full_f], [sub_f[m] for m in full_f])[0]:.2f}")
+macro("snJevFull", f3(full_f["jev-1.13.0"])); macro("snJevSub", f3(sub_f["jev-1.13.0"]))
+macro("snOverlapPct", f"{100*au['test_overlap_any']/au['mirror_test']:.0f}"); macro("snTrainPct", f"{100*au['test_in_train']/au['mirror_test']:.0f}")
+
+# ---------------------------------------------------------------- Brier score: per-item sum over the options of (p - one-hot)^2, averaged over items; per task here, and a uniform-guess reference 1 - 1/K
+KT = {"XNLI-bn": 3, "MASSIVE": 60, "SentNoB": 3}
+for t_, k_ in KT.items():
+    macro("brierUni" + {"XNLI-bn": "Xnli", "MASSIVE": "Mas", "SentNoB": "Sent"}[t_], f3(1 - 1 / k_))
+macro("brierUniMean", f3(np.mean([1 - 1 / k for k in KT.values()]))); macro("brierUniMeanTwo", f3(np.mean([1 - 1 / 3, 1 - 1 / 3])))
+brow = []
+for m in ORDER:
+    if m == "d3-flash (4-bit)":
+        continue
+    cs = c[(c.model == m)]
+    cells = []
+    for t_ in ("XNLI-bn", "MASSIVE", "SentNoB"):
+        for var in ("native", "roman"):
+            g = cs[(cs.task == t_) & (cs.variant == var)]
+            cells.append(f3(g.brier.iloc[0]) if len(g) else "--")
+    if all(x == "--" for x in cells):
+        continue
+    brow.append(f"{NAME[m]} & " + " & ".join(cells) + " \\\\")
+_cb = c[c.task.isin(KT) & (~c.model.str.contains("flash")) & c.variant.isin(["native", "roman"])].copy()
+_cb["uni"] = _cb.task.map(lambda t_: 1 - 1 / KT[t_]); _cb["worse"] = _cb.brier > _cb.uni
+for var, nm in (("native", "Bn"), ("roman", "Rule")):
+    q_ = _cb[_cb.variant == var]; macro(f"brierWorse{nm}", int(q_.worse.sum())); macro(f"brierCells{nm}", len(q_))
+write("tab_brier_tasks.tex", "\\begin{tabular}{@{}lcccccc@{}}\\toprule\n & \\multicolumn{2}{c}{XNLI-bn} & \\multicolumn{2}{c}{MASSIVE} & \\multicolumn{2}{c}{SentNoB} \\\\\\cmidrule(lr){2-3}\\cmidrule(lr){4-5}\\cmidrule(l){6-7}\nModel & Bengali & Rule & Bengali & Rule & Bengali & Rule \\\\\\midrule\n" + "\n".join(brow) + "\n\\midrule\nUniform guess & \\multicolumn{2}{c}{" + f3(1 - 1 / 3) + "} & \\multicolumn{2}{c}{" + f3(1 - 1 / 60) + "} & \\multicolumn{2}{c}{" + f3(1 - 1 / 3) + "} \\\\\n\\bottomrule\\end{tabular}\n")
 
 (ROOT / "paper" / "numbers.tex").write_text("% generated by analysis/make_tables.py; do not edit\n" + "\n".join(f"\\newcommand{{\\{k}}}{{{v}}}" for k, v in sorted(NUM.items())) + "\n")
 print(f"{len(NUM)} macros; tables:", ", ".join(sorted(p.name for p in OUT.glob('*.tex'))))

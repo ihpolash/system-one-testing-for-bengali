@@ -26,3 +26,5 @@ Not released: Jev raw responses and probability vectors (provider terms; for the
 | 3 | `make collect tables release figures` | the unreleased model outputs, the Jev response cache and the Kaggle logs | everything, including calibration, temperature scaling and the confidence gate |
 
 Not reproducible from released data: Jev's probability-based results (Brier score, temperature scaling, the confidence gate for Jev), because its probability vectors are not released.
+
+SentNoB split audit: `analysis/sentnob_overlap.py` downloads the mirror's splits, compares their sizes with the original paper, BanglaBERT and the laya-bangla card, and writes `results/sentnob_overlap_flags.csv` (item id and overlap flags, no text) and `analysis/tables/sentnob_split_audit.json`.

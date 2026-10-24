@@ -23,7 +23,7 @@ dk["conf"] = dk.probs.map(lambda x: round(max(json.loads(x).values()), 4))
 dk["probs"] = [("" if m.startswith("jev") else json.dumps({k: round(v, 4) for k, v in json.loads(x).items()}, separators=(",", ":"))) for m, x in zip(dk.model, dk.probs)]
 dk[["model", "variant", "id", "choice", "conf", "probs"]].to_csv(OUT / "predictions_dakshina.csv.gz", index=False, compression={"method": "gzip", "compresslevel": 9, "mtime": 0})
 print(len(dk), "Dakshina rows;", round((OUT / "predictions_dakshina.csv.gz").stat().st_size / 1e6, 1), "MB")
-files = sorted([*OUT.glob("*.csv.gz"), *(ROOT / "analysis" / "tables").glob("*.csv"), ROOT / "data" / "split_hashes.json", *(ROOT / "paper" / "tables").glob("*.tex"), ROOT / "paper" / "numbers.tex"])
+files = sorted([*OUT.glob("*.csv.gz"), *OUT.glob("*.csv"), *(ROOT / "analysis" / "tables").glob("*.csv"), ROOT / "data" / "split_hashes.json", *(ROOT / "paper" / "tables").glob("*.tex"), ROOT / "paper" / "numbers.tex"])
 def published(f):   # a file that git ignores is not part of the repository, so it must not be in the manifest
     return subprocess.run(["git", "check-ignore", "-q", str(f)], cwd=ROOT).returncode != 0
 files = [f for f in files if published(f)]

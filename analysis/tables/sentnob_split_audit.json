@@ -1,0 +1,15 @@
+{
+ "mirror_train": 12575,
+ "mirror_validation": 1567,
+ "mirror_test": 1586,
+ "mirror_total": 15728,
+ "paper_total": 15728,
+ "blub_train": 12575,
+ "blub_validation": 1567,
+ "blub_test": 1567,
+ "laya_bangla_card_test": 1564,
+ "test_in_train": 362,
+ "test_in_validation": 54,
+ "test_repeated": 17,
+ "test_overlap_any": 425
+}
