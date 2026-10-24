@@ -1,3 +1,5 @@
+> **About this folder.** This is a fork of [AppliedMachineLearning-Lab/jev-benchmarking](https://github.com/AppliedMachineLearning-Lab/jev-benchmarking) (MIT, Deußer, Sparrenberg and Sifa), kept for the response cache, runner and task base classes. It adds `jev_benchmarking/tasks/bengali.py` (five Bengali tasks and the Dakshina task), `bn_text.py`, `bn_roman.py` and `bn_roman2.py` (the romanization variants) and `scripts/run_system_one_model.py` (adapters for the open models). The upstream paper source, cluster scripts and report generator were removed; the rest of the text below describes the upstream project.
+
 # Evaluating and Benchmarking the System One Model Jev
 
 Code for the paper **[Evaluating and Benchmarking the System One Model Jev](https://arxiv.org/abs/2609.37647)**

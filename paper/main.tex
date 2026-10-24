@@ -150,7 +150,7 @@ Laya-multilingual's SentNoB score also depends on the wording of the question: m
 Table~\ref{tab:dak} and Figure~\ref{fig:dak} give the agreement for all twelve systems.
 Under native-speaker romanization every system kept its Bengali-script answer more often than under rule-based romanization, by \dakRuleDiffMin{} to \dakRuleDiffMax{} points, and the interval excludes zero for all \dakNsBeatsRule{}. For Jev the gain is \dakjevNsVsRule{} points (95\% CI \dakjevNsVsRuleLo{} to \dakjevNsVsRuleHi): it kept its answer on \dakjevNs{} of the sentences against \dakjevRule{}, where chance is about \dakChance{}.
 The smallest gain is Julia-1's, at \dakjuliaNsVsRule{} points, which fits a system that sits near its floor; the largest is d3-edge's, at \dakedgeNsVsRule{}.
-Natural-style romanization, which looks each word up in a corpus of typed Banglish, ends up close to the rule-based text. It differs from the rule-based spelling by \dakNatDiffMin{} to \dakNatDiffMax{} points: it keeps the Bengali answer more often for \dakNatBeatsRule{} systems, makes no detectable difference for \dakNatTied{}, and is worse for \dakNatLosesRule{}. For Jev the difference is \dakjevNatVsRule{} points (\dakjevNatVsRuleLo{} to \dakjevNatVsRuleHi). Native-speaker romanization beats it for \dakNsBeatsNat{} of the \dakSystems{} systems, by \dakNsNatMin{} to \dakNsNatMax{} points, and the remaining system is within noise.
+Natural-style romanization, which looks each word up in a corpus of typed Banglish, ends up close to the rule-based text. It differs from the rule-based spelling by \dakNatDiffMin{} to \dakNatDiffMax{} points: it keeps the Bengali answer more often for \dakNatBeatsRule{} systems, makes no detectable difference for \dakNatTied{}, and is worse for \dakNatLosesRule{}. For Jev the difference is \dakjevNatVsRule{} points (\dakjevNatVsRuleLo{} to \dakjevNatVsRuleHi). Native-speaker romanization keeps the Bengali answer more often than natural-style for all \dakSystems{} systems, by \dakNsNatMin{} to \dakNsNatMax{} points, and clearly so for \dakNsBeatsNat{} of them; for the remaining system the interval includes zero.
 Tuning a romanizer on typed Banglish therefore gives little, and the gap to what native speakers write remains.
 The probability vectors tell the same story: the total-variation distance from the Bengali answer is smaller under native-speaker romanization for every system (Table~\ref{tab:daktv}).
 
@@ -219,7 +219,7 @@ I measured latency under mixed conditions, so it is not comparable across models
 \section{Discussion}
 \paragraph{What rule-based romanization can and cannot tell you.}
 Rule-based romanization ranked the systems in nearly the same order as native-speaker romanization, and moved their answers further. For Jev, the rule-based text cost \dropjev{} points of accuracy on average over four tasks, and the same system kept its answer on \dakjevRule{} of the Dakshina sentences under rule-based romanization against \dakjevNs{} under native-speaker romanization.
-So a penalty measured on tool-made text is an upper bound on what a system loses on text people write, for the systems and sentences I tested, and not a good estimate of it.
+So for the systems and sentences I tested, tool-made text moves a system's answers further than native speakers' own spelling does. I did not measure whether it also overstates the accuracy loss on labelled tasks, which would need labelled sentences typed by native speakers.
 I do not know why the native speakers' spelling is easier. A plausible reason is that people spell common words, and English loan words, the way models have seen them in web text; I did not test that.
 
 \paragraph{Choosing a model.}
@@ -239,7 +239,7 @@ The calibration and gate results are exploratory and use no multiplicity correct
 
 \section{Conclusion}
 On five Bengali tasks Jev leads, several small open models come close on Bengali script, and the open models' overconfidence is largely fixed by one temperature on Bengali text but less fully on rule-based romanized text.
-Rule-based romanization lowers every system's accuracy, but it overstates the effect of real typing: on Bengali sentences that native speakers romanized, all twelve systems kept their Bengali-script answer more often than under the rule-based text, while ranking in nearly the same order.
+Rule-based romanization lowers every system's accuracy, but it moves their answers further than native speakers' own spelling does: on Bengali sentences that native speakers romanized, all twelve systems kept their Bengali-script answer more often than under the rule-based text, while ranking in nearly the same order.
 Measuring the effect on labelled tasks needs Banglish typed by many writers for sentences that have labels.
 
 \paragraph{Availability.}

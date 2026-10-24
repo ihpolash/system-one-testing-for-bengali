@@ -219,7 +219,7 @@ macro("labelMaxDiff", f"{100*ll.diff_bn_minus_en.abs().max():.1f}")
 for m, k in (("jev-1.13.0", "jev"), ("d3-mini", "mini"), ("laya-bangla v2", "layabn")):
     for v, vk in (("native", "Nat"), ("roman", "Rom")):
         g = gt[(gt.model == m) & (gt.task == "MASSIVE") & (gt.test_variant == v)].iloc[0]
-        macro(f"gate{k}{vk}N", f"{int(g.n_accepted)}")
+        macro(f"gate{k}{vk}N", f"{int(g.n_accepted):,}".replace(",", "{,}"))
 
 # ---------------------------------------------------------------- Brier score and signed gap (confidence minus accuracy), Bengali vs rule-based, mean over XNLI-bn, MASSIVE, SentNoB
 brow = []
@@ -304,11 +304,11 @@ for m, k in tag.items():
     if mm in nr.index:
         macro(f"dak{k}NatVsRule", pts(nr.loc[mm, "diff"])); macro(f"dak{k}NatVsRuleLo", pts(nr.loc[mm, "lo"])); macro(f"dak{k}NatVsRuleHi", pts(nr.loc[mm, "hi"]))
 
-macro("dakN", int(da.n.max())); macro("dakChance", f3(da.chance.mean()))
+macro("dakN", f"{int(da.n.max()):,}".replace(",", "{,}")); macro("dakChance", f3(da.chance.mean()))
 
 # ---------------------------------------------------------------- natural-style lookup: corpus pairs removed because they are Dakshina sentences, and what the leak did before the fix
 flt = json.load(open(T / "natural_lookup_filter.json")); macro("lookupRemoved", f"{flt['removed_pairs']:,}".replace(",", "{,}")); macro("lookupKept", f"{flt['kept_sentences']:,}".replace(",", "{,}"))
-_old = pd.read_csv(HERE / "archive" / "dak_agreement_contaminated_natural_style.csv")
+_old = pd.read_csv(T / "dak_agreement_natural_style_leaked.csv")
 _o = _old[(_old.model == "jev-1.13.0") & (_old.variant == "roman_nat")].iloc[0]
 macro("dakLeakJevNat", f3(_o.agreement))
 
