@@ -1,7 +1,7 @@
 """Build the shareable result files and their checksums.   python analysis/make_release.py
  results/predictions_test_sets.csv.gz  item-level predictions of every system (labels only, except that Belebele option labels are the Bengali option texts, CC BY-SA 4.0; for Jev only the top choice and its confidence, since raw outputs fall under the provider's terms)
  results/MANIFEST.sha256                 SHA-256 of every released result/data file, so a reader can check they hold the files the paper was built from"""
-import hashlib, json
+import hashlib, json, subprocess
 from pathlib import Path
 import pandas as pd
 
@@ -24,5 +24,8 @@ dk["probs"] = [("" if m.startswith("jev") else json.dumps({k: round(v, 4) for k,
 dk[["model", "variant", "id", "choice", "conf", "probs"]].to_csv(OUT / "predictions_dakshina.csv.gz", index=False, compression={"method": "gzip", "compresslevel": 9, "mtime": 0})
 print(len(dk), "Dakshina rows;", round((OUT / "predictions_dakshina.csv.gz").stat().st_size / 1e6, 1), "MB")
 files = sorted([*OUT.glob("*.csv.gz"), *(ROOT / "analysis" / "tables").glob("*.csv"), ROOT / "data" / "split_hashes.json", *(ROOT / "paper" / "tables").glob("*.tex"), ROOT / "paper" / "numbers.tex"])
+def published(f):   # a file that git ignores is not part of the repository, so it must not be in the manifest
+    return subprocess.run(["git", "check-ignore", "-q", str(f)], cwd=ROOT).returncode != 0
+files = [f for f in files if published(f)]
 (OUT / "MANIFEST.sha256").write_text("".join(f"{hashlib.sha256(f.read_bytes()).hexdigest()}  {f.relative_to(ROOT)}\n" for f in files))
 print(len(files), "files in manifest")
