@@ -66,6 +66,8 @@ for m in [x for x in ORDER if not x.startswith("d3-flash")]:   # d3-flash ran a 
             cells.append("--"); continue
         s = f3(nat.value.iloc[0])
         s += f" ({f3(rom.value.iloc[0])})" if not rom.empty else ""
+        if m == "laya-bangla v2" and t in ("MASSIVE", "SIB-200"):
+            s += r"$^\ddagger$"
         cells.append(s)
     rows.append(f"{NAME[m]} & " + " & ".join(cells) + " \\\\")
 # baselines: majority-class and uniform-random, separately (SentNoB is macro-F1, so both are macro-F1 there)
@@ -311,6 +313,57 @@ flt = json.load(open(T / "natural_lookup_filter.json")); macro("lookupRemoved", 
 _old = pd.read_csv(T / "dak_agreement_natural_style_leaked.csv")
 _o = _old[(_old.model == "jev-1.13.0") & (_old.variant == "roman_nat")].iloc[0]
 macro("dakLeakJevNat", f3(_o.agreement))
+
+# ---------------------------------------------------------------- paired differences to Jev: the closest full-set open system per task, and d3-flash on its subset
+pj = pd.read_csv(T / "rq1_paired_vs_jev.csv"); pj = pj[pj.variant == "native"]
+TK2 = {"Belebele": "Bel", "SIB-200": "Sib", "XNLI-bn": "Xnli", "MASSIVE": "Mas", "SentNoB": "Sent"}
+nm = {**{k: v for k, v in NAME.items()}, "d3-flash (4/8-bit)": "d3-flash (4-bit)"}
+prow = []
+for t, tk in TK2.items():
+    q = pj[(pj.task == t)]
+    full = q[(~q.model.str.contains("flash")) & (q.n_common >= 0.9 * q.n_common.max())].sort_values("acc_diff", ascending=False).iloc[0]
+    fl = q[q.model.str.contains("flash")]
+    fl = fl.iloc[0] if len(fl) else None
+    macro(f"pd{tk}", pts(full.acc_diff)); macro(f"pd{tk}Lo", pts(full.ci_lo)); macro(f"pd{tk}Hi", pts(full.ci_hi))
+    cell_f = "--" if fl is None else f"{pts(fl.acc_diff)} {ci(fl.ci_lo, fl.ci_hi)} ({int(fl.n_common)})"
+    if fl is not None:
+        macro(f"pdFlash{tk}", pts(fl.acc_diff)); macro(f"pdFlash{tk}Lo", pts(fl.ci_lo)); macro(f"pdFlash{tk}Hi", pts(fl.ci_hi))
+    prow.append(f"{t} & {NAME.get(full.model, full.model)} & {pts(full.acc_diff)} {ci(full.ci_lo, full.ci_hi)} & {cell_f} \\\\")
+write("tab_vs_jev.tex", "\\begin{tabular}{@{}llcc@{}}\\toprule\nTask & Closest open system & System $-$ Jev, points (95\\% CI) & d3-flash $-$ Jev on its subset (items) \\\\\\midrule\n" + "\n".join(prow) + "\n\\bottomrule\\end{tabular}\n")
+
+# ---------------------------------------------------------------- scope of the calibration evidence
+cn = c[(c.variant == "native") & c.task.isin(["XNLI-bn", "MASSIVE", "SentNoB"]) & (~c.model.str.contains("flash"))]
+gap = cn.groupby("model").signed_gap.mean()
+macro("calFull", len(gap)); macro("calOverAvg", int((gap > 0).sum()))
+under = cn[cn.signed_gap < 0]
+macro("calUnderCells", len(under)); macro("calCells", len(cn))
+names = sorted({NAME[m] for m in under.model if m in NAME})
+macro("calUnderNames", ", ".join(names[:-1]) + (" and " if len(names) > 1 else "") + names[-1] if names else "none")
+_t = ts[ts.test_variant == "native"]
+macro("tsSystems", _t.model.nunique()); macro("tsCells", len(_t)); macro("tsLowered", int((_t.ece15_after < _t.ece15_before).sum()))
+
+# ---------------------------------------------------------------- Bonferroni check, dataset provenance, model revisions
+bf = pd.read_csv(T / "dak_bonferroni.csv")
+_bf = bf[bf.comparison == "dakshina - roman"]
+_fail = sorted({NAME.get(m, NAME.get("d3-flash (4-bit)")) if m != "d3-flash (4/8-bit)" else NAME["d3-flash (4-bit)"] for m in _bf[_bf.lo_bonf <= 0].model})
+macro("dakBonfFail", ", ".join(_fail[:-1]) + (" and " if len(_fail) > 1 else "") + _fail[-1] if _fail else "none")
+macro("dakBonfRule", int((bf[bf.comparison == "dakshina - roman"].lo_bonf > 0).sum())); macro("dakBonfNat", int((bf[bf.comparison == "dakshina - roman_nat"].lo_bonf > 0).sum()))
+import hashlib
+sh_ = json.load(open(ROOT / "data" / "split_hashes.json"))
+dsha = hashlib.sha256((ROOT / "data" / "raw" / "dakshina_bn.jsonl").read_bytes()).hexdigest()
+LIC = {"belebele": "CC BY-SA 4.0 (dataset card)", "sib200": "CC BY-SA 4.0 (dataset card)", "massive": "CC BY 4.0 (original release; the mirror's card gives none)",
+       "bnli": "CC BY-NC-SA 4.0 (dataset card)", "sentnob": "none stated by the authors; not confirmed"}
+SRC = {"belebele": "facebook/belebele, ben\\_Beng, test", "sib200": "Davlan/sib200, ben\\_Beng, test", "massive": "SetFit/\\allowbreak amazon\\_massive\\_intent\\_bn-BD, test (mirror of MASSIVE bn-BD)",
+       "bnli": "csebuetnlp/xnli\\_bn, test", "sentnob": "sadi2oo3q/SentNoB, test (third-party mirror; 1,567 test items in the BLUB table)"}
+NM = {"belebele": "Belebele", "sib200": "SIB-200", "massive": "MASSIVE bn-BD", "bnli": "XNLI-bn", "sentnob": "SentNoB"}
+prow = [f"{NM[k]} & {SRC[k]} & {sh_[k]['n']:,} & {sh_[k]['sha256'][:12]} & {LIC[k]} \\\\" for k in ("belebele", "sib200", "massive", "bnli", "sentnob")]
+prow.append(f"Dakshina-bn & google-research-datasets/\\allowbreak dakshina, bn romanized, dev and test (filtered to 8,244) & 8,244 & {dsha[:12]} & CC BY-SA 4.0 (repository) \\\\")
+write("tab_prov.tex", "\\begin{tabular}{@{}lp{4.6cm}rlp{3.4cm}@{}}\\toprule\nDataset & Source and split & Items & SHA-256 (first 12) & Licence \\\\\\midrule\n" + "\n".join(prow) + "\n\\bottomrule\\end{tabular}\n")
+MOD = [("Jev", "jev-1.13.0 (TypeSafe API)", "hosted, accessed October 2026"), ("d3-edge", "vllm-sr/d3-edge", "18d61df786"), ("d3-lite", "vllm-sr/d3-lite", "a8d25a91ef"), ("d3-nano", "vllm-sr/d3-nano", "3aeb1c22a5"),
+       ("d3-mini", "vllm-sr/d3-mini", "a475367de0"), ("d3-flash", "vllm-sr/d3-flash", "521525effa; 4-bit NF4"), ("Laya-multilingual", "convaiinnovations/laya-multilingual", "not pinned; package laya 0.4.3"),
+       ("laya-bangla", "algolyzer/laya-bangla", "v2, 4c5eb48932; package laya 0.4.11"), ("Julia-1", "SupersonicLabs/Julia-1", "a85b127321"), ("Kev-0.8B, Kev-4B", "jaredpalmer/kev-0.8b, kev-4b", "tag v1.0; code 2ecafc49fe"),
+       ("Gemma-4-E4B", "google/gemma-4-E4B-it", "not pinned")]
+write("tab_models.tex", "\\begin{tabular}{@{}lll@{}}\\toprule\nSystem & Identifier & Revision or version \\\\\\midrule\n" + "\n".join(f"{a} & \\texttt{{{b.replace('_', chr(92)+'_')}}} & {c} \\\\" for a, b, c in MOD) + "\n\\bottomrule\\end{tabular}\n")
 
 (ROOT / "paper" / "numbers.tex").write_text("% generated by analysis/make_tables.py; do not edit\n" + "\n".join(f"\\newcommand{{\\{k}}}{{{v}}}" for k, v in sorted(NUM.items())) + "\n")
 print(f"{len(NUM)} macros; tables:", ", ".join(sorted(p.name for p in OUT.glob('*.tex'))))

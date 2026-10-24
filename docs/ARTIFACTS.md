@@ -13,6 +13,16 @@ Every table and number in the paper is generated; nothing is typed in. `results/
 | Fig. 2-5 | `make_figures.py` | the same CSVs and `analysis/items.csv` |
 | Every number in the text | `numbers.tex` from `make_tables.py`; checked by `analysis/audit_numbers.py` | as above |
 
-Released: result tables (`analysis/tables/`), open-model item-level predictions (`results/predictions_open_models.csv.gz`), per-sentence Dakshina answers (`results/predictions_dakshina.csv.gz`), generated LaTeX tables and numbers. The test-set predictions have no dataset text except that Belebele's option labels are the Bengali option texts (CC BY-SA 4.0). The Dakshina predictions are keyed by sentence id; `docs/DAKSHINA.md` shows how to rebuild the sentences.
+Released: result tables (`analysis/tables/`), item-level predictions of all systems (`results/predictions_test_sets.csv.gz`; for Jev only its top choice and confidence), per-sentence Dakshina answers (`results/predictions_dakshina.csv.gz`), generated LaTeX tables and numbers. The test-set predictions have no dataset text except that Belebele's option labels are the Bengali option texts (CC BY-SA 4.0). The Dakshina predictions are keyed by sentence id; `docs/DAKSHINA.md` shows how to rebuild the sentences.
 
-Not released: Jev raw responses and probability vectors (provider terms; for the Dakshina sentences only its top choice and confidence are in the predictions file); SentNoB text (CC BY-ND). `make tables` cannot be fully rerun from a clone because it needs the unreleased model outputs; `make audit` and `make paper` can.
+Not released: Jev raw responses and probability vectors (provider terms; for the Dakshina sentences only its top choice and confidence are in the predictions file); SentNoB text (its authors state no licence; terms unconfirmed). `make tables` cannot be fully rerun from a clone because it needs the unreleased model outputs; `make audit` and `make paper` can.
+
+## What can be reproduced, and from what
+
+| Level | Command | Needs | Reproduces |
+|---|---|---|---|
+| 1 | `make paper` | the committed source | the PDF, from the generated tables and numbers in the repository |
+| 2 | `make audit` | `pip install -r requirements.txt` | the headline numbers, every released-file checksum, and (`analysis/reproduce_intervals.py`) all reported accuracy and macro-F1 intervals, the paired differences to Jev and the Dakshina agreement intervals, from the released predictions with an independent bootstrap |
+| 3 | `make collect tables release figures` | the unreleased model outputs, the Jev response cache and the Kaggle logs | everything, including calibration, temperature scaling and the confidence gate |
+
+Not reproducible from released data: Jev's probability-based results (Brier score, temperature scaling, the confidence gate for Jev), because its probability vectors are not released.

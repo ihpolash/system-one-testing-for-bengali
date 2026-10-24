@@ -8,7 +8,7 @@ I tested one hosted decision model (Jev), ten open decision models (the vLLM-SR 
 
 ## Layout
 - `paper/` LaTeX source, figures, generated tables and `numbers.tex`. `main.pdf` is built with `tectonic`.
-- `analysis/` metrics, table and figure scripts. `analysis/tables/` holds the result tables the paper is generated from; `dakshina.py` computes the cross-script agreement; `audit_numbers.py` recomputes the headline numbers independently of the table script.
+- `analysis/` metrics, table and figure scripts. `analysis/tables/` holds the result tables the paper is generated from; `dakshina.py` computes the cross-script agreement; `audit_numbers.py` recomputes the headline numbers and `reproduce_intervals.py` every reported interval from the released predictions, both independently of the table script; `check_references.py` checks the bibliography against the source PDFs.
 - `harness/` my fork of [jev-benchmarking](https://github.com/AppliedMachineLearning-Lab/jev-benchmarking) (MIT, Deußer et al.), with the Bengali tasks, the romanization variants, the Dakshina task and adapters for the open models.
 - `kaggle/` the kernel scripts that ran the open models on Kaggle GPUs.
 - `data/make_dakshina.py` builds the Dakshina sentence file from the public dataset (see `docs/DAKSHINA.md`); `data/freeze_splits.py` rebuilds the other splits.
@@ -16,9 +16,9 @@ I tested one hosted decision model (Jev), ten open decision models (the vLLM-SR 
 - `docs/` model identifiers and settings (`MODELS.md`), the question structure per task (`PROMPTS.md`), the source of each table and figure (`ARTIFACTS.md`), and how to get the Dakshina data (`DAKSHINA.md`).
 
 ## What you can rerun
-- `pip install -r requirements.txt`, then `make audit` recomputes the headline numbers from the committed tables and the released predictions and checks every released file against `results/MANIFEST.sha256`; `make paper` compiles the PDF. Both work from a fresh clone. `make test` runs the unit tests.
+- `pip install -r requirements.txt`, then `make audit` recomputes the headline numbers and every reported interval from the committed tables and the released predictions with an independent bootstrap, and checks every released file against `results/MANIFEST.sha256`; `make paper` compiles the PDF. Both work from a fresh clone. `make test` runs the unit tests.
 - `make collect tables release figures` rebuild the tables, released predictions and figures from the raw model outputs. Those inputs (`runs/`, the Jev response cache, the item file) are not published, so these targets do not run from a clone.
-- Released: result tables; open-model item-level predictions with probabilities (no dataset text except Belebele's option labels, CC BY-SA 4.0); per-sentence Dakshina answers (for Jev only the top choice and its confidence). Not released: Jev raw responses and probability vectors (provider terms), SentNoB text (CC BY-ND).
+- Released: result tables; item-level predictions of all systems (probabilities for the open ones, top choice and confidence only for Jev; no dataset text except Belebele's option labels, CC BY-SA 4.0); per-sentence Dakshina answers (for Jev only the top choice and its confidence). Not released: Jev raw responses and probability vectors (provider terms), SentNoB text (its authors state no licence). See `results/README.md`.
 - Running the models again needs a TypeSafe API key for Jev (`TYPESAFE_API_KEY`) and a Kaggle GPU for the open ones (`kaggle/`).
 
 ## Licence

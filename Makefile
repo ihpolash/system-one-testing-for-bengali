@@ -1,6 +1,6 @@
 # Reproduction. Targets that need an API key or a GPU say so; everything downstream of the stored results runs on a laptop.
 #   make test      unit tests (harness + analysis)
-#   make audit     recompute the headline numbers from the committed tables (runs from a fresh clone)
+#   make audit     recompute the headline numbers and every reported interval from the committed tables and released predictions (runs from a fresh clone)
 #   make tables    results CSVs -> paper/tables/*.tex and paper/numbers.tex     (needs the unpublished raw outputs, see README)
 #   make figures   paper/figures/*.pdf                                          (same)
 #   make paper     builds paper/main.pdf with tectonic
@@ -28,3 +28,4 @@ paper:
 	cd paper && tectonic --keep-intermediates main.tex
 audit:
 	$(PY) analysis/audit_numbers.py
+	$(PY) analysis/reproduce_intervals.py

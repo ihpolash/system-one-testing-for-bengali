@@ -39,7 +39,6 @@ data/dakshina/
 analysis/dak_items.csv
 kaggle/out_*
 analysis/report.md
-analysis/tables/rq1_paired_vs_jev.csv
 analysis/tables/rq3_*.csv
 analysis/tables/rq4_position_*.csv
 analysis/tables/rq4_rotation_accuracy.csv

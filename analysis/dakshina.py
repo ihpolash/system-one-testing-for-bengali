@@ -53,7 +53,9 @@ if df.empty:
     sys.exit("no responses found")
 df.to_csv(ROOT / "analysis" / "dak_items.csv", index=False)   # every response used below (gitignored; the release script derives results/predictions_dakshina.csv.gz from it)
 rng = np.random.default_rng(0)
-agree_rows, paired_rows = [], []
+agree_rows, paired_rows, bonf_rows = [], [], []
+rng2 = np.random.default_rng(1)          # separate stream, so adding this check leaves the other intervals unchanged
+nsys = df.model.nunique()
 for m, g in df.groupby("model"):
     wide = g.pivot(index="uid", columns="variant", values="choice")
     pw = g.pivot(index="uid", columns="variant", values="probs")
@@ -71,12 +73,16 @@ for m, g in df.groupby("model"):
         b = [agree[v][rng.integers(0, len(ok), len(ok))].mean() for _ in range(1000)]
         agree_rows.append(dict(model=m, variant=v, n=len(ok), agreement=agree[v].mean(), ci_lo=np.percentile(b, 2.5), ci_hi=np.percentile(b, 97.5), tv=tv[v].mean(), chance=chance,
                                conf_native=P["native"][opts].max(axis=1).mean(), conf_variant=P[v][opts].max(axis=1).mean()))
+    for b_ in ("roman", "roman_nat"):   # Bonferroni-adjusted interval over the nsys systems (5,000 draws) for the two main comparisons
+        x = agree["dakshina"] - agree[b_]; bs = [x[rng2.integers(0, len(x), len(x))].mean() for _ in range(5000)]
+        bonf_rows.append(dict(model=m, comparison=f"dakshina - {b_}", lo_bonf=np.percentile(bs, 100 * 0.05 / nsys / 2), hi_bonf=np.percentile(bs, 100 * (1 - 0.05 / nsys / 2))))
     for a_, b_ in (("dakshina", "roman"), ("dakshina", "roman_nat"), ("roman_nat", "roman")):
         for name, arr in (("agreement", agree), ("tv", tv)):
             x = arr[a_] - arr[b_]; bs = [x[rng.integers(0, len(x), len(x))].mean() for _ in range(1000)]
             paired_rows.append(dict(model=m, metric=name, comparison=f"{a_} - {b_}", n=len(x), diff=x.mean(), lo=np.percentile(bs, 2.5), hi=np.percentile(bs, 97.5)))
 out = ROOT / "analysis" / "tables"
 A, Pd = pd.DataFrame(agree_rows), pd.DataFrame(paired_rows)
+pd.DataFrame(bonf_rows).to_csv(out / "dak_bonferroni.csv", index=False)
 A.to_csv(out / "dak_agreement.csv", index=False); Pd.to_csv(out / "dak_paired.csv", index=False)
 print(A.pivot_table(index="model", columns="variant", values="agreement").round(3).to_string())
 print(Pd[Pd.metric == "agreement"].pivot_table(index="model", columns="comparison", values="diff").round(3).to_string())
