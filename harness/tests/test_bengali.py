@@ -26,3 +26,29 @@ def test_belebele_gold_follows_option_text(monkeypatch, rot):
 
 def test_romanize_keeps_latin_and_digits():
     assert romanize("COVID-19 এর ২০২৪") == "COVID-19 er 2024"
+
+
+def test_dakshina_spellings():
+    """bn_dakshina: the four spellings of one sentence are different texts for the same item, and 'dakshina' returns the native-speaker romanization."""
+    import json
+    from pathlib import Path
+
+    import pytest
+
+    f = Path(__file__).resolve().parents[2] / "data" / "raw" / "dakshina_bn.jsonl"
+    if not f.exists():
+        pytest.skip("data/raw/dakshina_bn.jsonl not built (data/make_dakshina.py)")
+    from jev_benchmarking import bn_text
+    from jev_benchmarking.tasks import get_tasks
+
+    rows = [json.loads(line) for line in open(f, encoding="utf-8")]
+    by_text = {r["text"]: r["roman_human"] for r in rows}
+    task = get_tasks(["bn_dakshina"])[0]
+    seen = {}
+    for v in ("native", "dakshina", "roman", "roman_nat"):
+        bn_text.VARIANT = v
+        e = task.examples("eval", limit=1)[0]
+        seen[v] = e.state["text"]
+    bn_text.VARIANT = "native"
+    assert seen["dakshina"] == by_text[seen["native"]]
+    assert len({seen["native"], seen["dakshina"], seen["roman"], seen["roman_nat"]}) == 4

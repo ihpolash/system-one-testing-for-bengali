@@ -1,2 +1,0 @@
-{"id": "ipolas/bn-s1-main-h", "title": "bn-s1-main-h", "code_file": "run_H.py", "language": "python", "kernel_type": "script",
- "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["ipolas/bn-s1-code"], "competition_sources": [], "kernel_sources": []}

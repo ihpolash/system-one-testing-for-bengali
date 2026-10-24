@@ -174,10 +174,6 @@ class Task:
     def _iter_config(self, config: str | None, hf_split: str) -> Iterator[Example]:
         ds = self._load_with_retry(config, hf_split)
         order = sorted(range(len(ds)), key=lambda i: _rank(self.name, self.uid(config, i)))
-        rows_file = os.environ.get("BN_ROWS_JSON")  # restrict to given raw-row indices, e.g. the items a human romanized
-        if rows_file:
-            allowed = set(json.loads(Path(rows_file).read_text()).get(self.name, []))
-            order = [i for i in order if i in allowed]
         taken = 0
         for i in order:
             built = self.build(ds[i], config)

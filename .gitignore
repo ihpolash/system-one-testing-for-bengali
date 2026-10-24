@@ -35,3 +35,6 @@ analysis/romanization_handcheck.csv
 analysis/romanization_review.md
 kaggle/out_*/
 .DS_Store
+data/dakshina/
+analysis/dak_items.csv
+kaggle/out_*

@@ -100,7 +100,7 @@ class BnBNLI(_Local):
 class BnMASSIVE(_Local):
     name = "bn_massive"
     jsonl = "massive.jsonl"
-    description = "MASSIVE bn-BD intent classification, 59 intents (utterances are human translations)."
+    description = "MASSIVE bn-BD intent classification, 60 intents offered, 59 of them present in the test split (utterances are human translations)."
 
     @cached_property
     def intents(self):
@@ -119,7 +119,7 @@ class BnMASSIVE(_Local):
 
 
 class BnBelebele(Belebele):
-    """Belebele restricted to Bengali script and human romanization, with option rotation (letters stay A-D)."""
+    """Belebele restricted to Bengali script and its Latin-script variant (ben_Latn: annotators transliterated with IndicXlit support, so tool-assisted, not natural typing), with option rotation (letters stay A-D)."""
 
     name = "bn_belebele"
     configs = ("ben_Beng", "ben_Latn")
@@ -134,6 +134,21 @@ class BnBelebele(Belebele):
         q = choice("Which option correctly answers `question` according to `passage`?", mc_criteria([o for _, o in rotated]))
         gold = option_keys(4)[[i for i, _ in rotated].index(gold_idx)]
         return ex({"passage": row["flores_passage"], "question": row["question"]}, {"answer": q}, {"answer": gold})
+
+
+class BnDakshina(_Local):
+    """Bengali Wikipedia sentences that native speakers romanized by hand (Dakshina). No task labels exist, so every sentence carries a placeholder gold
+    answer that must NOT be used for accuracy: the analysis measures agreement with the model's own answer on the Bengali-script sentence (analysis/dakshina.py)."""
+    name = "bn_dakshina"
+    jsonl = "dakshina_bn.jsonl"
+    splits = {"eval": "test"}
+    primary = Primary("answer", "accuracy")
+    labels = SIB200.labels
+    description = "Dakshina-bn sentences, 7-way topic question; unlabelled, used only for cross-script agreement."
+
+    def build(self, row, config):
+        q = choice("What is the topic of `text`?", {lk(l): None for l in rot_items(list(self.labels))})
+        return ex({"text": transform(row["text"])}, {"answer": q}, {"answer": lk(row["category"])})
 
 
 class BnSIB200(SIB200):

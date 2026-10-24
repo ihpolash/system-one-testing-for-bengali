@@ -1,5 +1,5 @@
 """Kaggle round 4 (2026-10-21): Kev 1.0 (jaredpalmer/kev-0.8b, kev-4b; tag v1.0) served with kev.serve and scored through the System One endpoint.
-Per model: native and rule-based romanized test sets (rotation 0), then the 877 items with AI-generated Banglish in seven conditions.
+Per model: native and rule-based romanized test sets (rotation 0).
 SMOKE=1 runs 12 items only and prints latency (always run it first)."""
 import json, os, shutil, signal, subprocess, sys, time
 from pathlib import Path
@@ -26,14 +26,13 @@ src = next(p for p in ("/kaggle/input/bn-s1-code", "/kaggle/input/datasets/ipola
 work = "/kaggle/tmp/proj"; shutil.copytree(src, work, dirs_exist_ok=True)
 for f in ("sentnob", "bnli", "massive", "belebele", "sib200"):   # fail fast: a missing split makes a task silently write 0 responses
     assert os.path.getsize(f"{work}/data/raw/{f}.jsonl") > 1000, f"data/raw/{f}.jsonl missing from the dataset"
-assert os.path.exists(f"{work}/analysis/natural_banglish_lookup.json") and os.path.exists(f"{work}/data/banglish_human.csv")
+assert os.path.exists(f"{work}/analysis/natural_banglish_lookup.json")
 sh("nvidia-smi --query-gpu=name,memory.total --format=csv")
 sh(f"pip install -q -e {work}/harness requests 2>&1 | tail -2")
 # Official Kev setup (README "Run It Locally"): uv, isolated Python 3.13 environment, `uv sync --extra serve`. Kaggle's own packages are never touched.
 sh("pip install -q uv 2>&1 | tail -1")
 sh("mkdir -p /kaggle/tmp && cd /kaggle/tmp && git clone -q https://github.com/jaredpalmer/kev.git && cd kev && git checkout -q 2ecafc49fe && uv sync --extra serve --python 3.13 2>&1 | tail -5", timeout=1500)
 os.chdir(f"{work}/harness")
-ROWS, ROWS_ED, HUMAN = f"{work}/data/human_rows.json", f"{work}/data/human_rows_edited.json", f"{work}/data/banglish_human.csv"
 RUN = "python scripts/run_system_one_model.py {tasks} --split eval {lim} {args} --out {out}"
 t_all = time.time()
 
@@ -64,9 +63,6 @@ for mi, m in enumerate(MODELS):
         for v in ("native", "roman"):
             tasks_s = "bn_sentnob bn_belebele bn_sib200" if v == "native" else "bn_sentnob bn_sib200"
             run(tasks_s, "", A, out, BN_VARIANT=v); run("bn_bnli bn_massive", "--limit 1500", A, out, BN_VARIANT=v)
-        hout = out + "_human"
-        for v, rows in (("native", ROWS), ("roman", ROWS), ("roman_nat", ROWS), ("human", ROWS), ("native_edit", ROWS_ED), ("roman_edit", ROWS_ED), ("roman_nat_edit", ROWS_ED)):
-            run("bn_sentnob bn_massive bn_bnli", "", A, hout, BN_VARIANT=v, BN_ROWS_JSON=rows, BN_HUMAN_CSV=HUMAN)
     os.killpg(srv.pid, signal.SIGKILL); srv.wait(); time.sleep(10)   # kill the whole process group (uv run spawns the python server)
     sh("nvidia-smi --query-gpu=memory.used --format=csv")
 print("ALL DONE", (time.time() - t_all) / 3600, "h")

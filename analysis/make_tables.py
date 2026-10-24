@@ -114,44 +114,7 @@ nflash = sub[(sub.model == "d3-flash (4/8-bit)") & (sub.variant == "native")].gr
 macro("flashNmin", int(nflash.min())); macro("flashNmax", int(nflash.max()))
 write("tab_flash_subset.tex", "\\begin{tabular}{@{}lccccc@{}}\\toprule\nOn the d3-flash subset & Belebele & SIB-200 & XNLI-bn & MASSIVE & SentNoB \\\\\\midrule\n" + "\n".join(srows) + "\n\\bottomrule\\end{tabular}\n")
 
-# ---------------------------------------------------------------- Table 3 + macros: hand-written Banglish
-d = pd.read_csv(T / "human_items_all_models.csv"); d = d[d.answered == 1]
-p = d.pivot_table(index=["model", "dataset", "id"], columns="variant", values="ok")
-acc = p.groupby("model")[["native_edit", "roman_edit", "roman_nat_edit", "human"]].mean()
-cnt = p.groupby("model").size()
-r = pd.read_csv(T / "human_items_paired.csv")
-allr = r[r.scope == "all tasks"].set_index(["model", "comparison"])
-rows = []
-for m in ORDER:
-    if m not in acc.index:
-        continue
-    x = acc.loc[m]; h = allr.loc[(m, "human - native_edit")]; hr = allr.loc[(m, "human - roman_edit")]
-    star = r"$^\ddagger$" if m == "julia-1" else ""
-    rows.append(f"{NAME[m]}{star} & {f3(x.native_edit)} & {f3(x.roman_edit)} & {f3(x.roman_nat_edit)} & {f3(x.human)} & {pts(h['diff'])} {ci(h.lo, h.hi)} & {pts(hr['diff'])} {ci(hr.lo, hr.hi)} \\\\")
-write("tab_human.tex", "\\begin{tabular}{@{}lcccccc@{}}\\toprule\n & \\multicolumn{4}{c}{Accuracy} & \\multicolumn{2}{c}{Change in points (95\\% CI)} \\\\\\cmidrule(lr){2-5}\\cmidrule(l){6-7}\n"
-      "Model & Bengali & Rule-based & Natural-style & AI Banglish & AI Banglish $-$ Bengali & AI Banglish $-$ rule-based \\\\\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\n")
 tag = {"jev-1.13.0": "jev", "gemma-4-E4B-it": "gemma", "d3-flash (4-bit)": "flash", "d3-mini": "mini", "d3-nano": "nano", "d3-lite": "lite", "d3-edge": "edge", "laya-bangla v2": "layabn", "laya-multilingual": "layaml", "julia-1": "julia", "kev-4b": "kevmd", "kev-0.8b": "kevsm"}
-for m, k in tag.items():
-    if m in acc.index:
-        x = acc.loc[m]
-        macro(f"{k}Bengali", f3(x.native_edit)); macro(f"{k}Rule", f3(x.roman_edit)); macro(f"{k}Nat", f3(x.roman_nat_edit)); macro(f"{k}Human", f3(x.human))
-        h = allr.loc[(m, "human - native_edit")]; hr = allr.loc[(m, "human - roman_edit")]; hn = allr.loc[(m, "human - roman_nat_edit")]; rr = allr.loc[(m, "roman_edit - native_edit")]
-        macro(f"{k}LossHuman", pts(h["diff"], False).lstrip("-")); macro(f"{k}LossRule", pts(rr["diff"], False).lstrip("-"))
-        macro(f"{k}HumanVsRule", pts(hr["diff"])); macro(f"{k}HumanVsRuleLo", pts(hr.lo)); macro(f"{k}HumanVsRuleHi", pts(hr.hi)); macro(f"{k}HumanVsNat", pts(hn["diff"]))
-macro("nHuman", int(cnt.loc["jev-1.13.0"])); macro("julianHuman", int(cnt.loc["julia-1"]))
-by_task = r[(r.model == "jev-1.13.0") & (r.comparison == "human - roman_edit")].set_index("scope")
-for sc, k in (("massive", "Massive"), ("sentnob", "Sentnob"), ("bnli", "Nli")):
-    macro(f"jevHumanVsRule{k}", pts(by_task.loc[sc, "diff"])); macro(f"jevHumanVsRule{k}Lo", pts(by_task.loc[sc, "lo"])); macro(f"jevHumanVsRule{k}Hi", pts(by_task.loc[sc, "hi"])); macro(f"nHuman{k}", int(by_task.loc[sc, "n"]))
-ne = allr.loc[("jev-1.13.0", "native_edit - native")]
-macro("spellEffect", pts(ne["diff"])); macro("spellLo", pts(ne.lo)); macro("spellHi", pts(ne.hi))
-spell_max = r[(r.scope == "all tasks") & (r.comparison == "native_edit - native")]["diff"].abs().max()
-macro("spellMaxAny", f"{100*spell_max:.1f}")
-# rank agreement between the Banglish ordering and the synthetic orderings (eight models above chance: julia-1 excluded)
-from scipy.stats import kendalltau
-a8 = acc.drop(index="julia-1")
-macro("tauRule", f"{kendalltau(a8.human, a8.roman_edit)[0]:.2f}"); macro("tauNat", f"{kendalltau(a8.human, a8.roman_nat_edit)[0]:.2f}"); macro("nModelsRank", len(a8))
-edited = pd.read_csv(ROOT / "data" / "banglish_human.csv")
-macro("nSentences", len(edited)); macro("nEdited", int((edited.raw_bengali.str.split().str.join(" ") != edited.bengali.str.split().str.join(" ")).sum()))
 
 # ---------------------------------------------------------------- Table 4: calibration (mean over XNLI-bn, MASSIVE, SentNoB; those with a dev split)
 c = pd.read_csv(T / "rq2_calibration.csv"); ts = pd.read_csv(T / "rq2_temperature_scaling.csv")
@@ -238,13 +201,9 @@ for m, k in (("jev-1.13.0", "jev"), ("d3-flash (4/8-bit)", "flash")):
 for tname, tk in (("bn_bnli", "Xnli"),):
     for m, k in (("jev-1.13.0", "jev"), ("d3-flash (4/8-bit)", "flash")):
         macro(f"sub{k}{tk}", f3(score(sub[(sub.model == m) & (sub.task == tname) & (sub.variant == "native")], tname)))
-hv = [allr.loc[(m, "human - roman_edit"), "diff"] for m in acc.index if m != "julia-1"]
-macro("hvrMin", f"{100*min(hv):.1f}"); macro("hvrMax", f"{100*max(hv):.1f}")
-macro("pctMassive", f"{100*int(by_task.loc['massive', 'n'])/int(cnt.loc['jev-1.13.0']):.0f}")
 mm = re.search(r"macro-F1 (0\.\d+) \(default English\), (0\.\d+) \(options only\), (0\.\d+) \(Bengali wording\)", audit)
 macro("layamlSentDefault", mm.group(1)); macro("layamlSentOpts", mm.group(2)); macro("layamlSentBn", mm.group(3))
 macro("jevBelebeleZenodo", re.search(r"recomputed from the authors' Zenodo responses (0\.\d+)", audit).group(1))
-macro("lossRuleVsHuman", f"{float(NUM['jevLossRule'])-float(NUM['jevLossHuman']):.0f}")
 
 # ---------------------------------------------------------------- confidence gate fitted on native dev text, applied to romanized text (MASSIVE)
 gt = pd.read_csv(T / "rq2_gate_transfer.csv")
@@ -256,62 +215,11 @@ macro("gateTarget", "90")
 ll = pd.read_csv(T / "rq4_label_language.csv").iloc[:3]
 macro("labelMaxDiff", f"{100*ll.diff_bn_minus_en.abs().max():.1f}")
 
-# ---------------------------------------------------------------- sample flow: sentences -> scorable items (nothing is excluded; an XNLI-bn item is a premise-hypothesis pair)
-hb = pd.read_csv(ROOT / "data" / "banglish_human.csv", encoding="utf-8-sig")
-hb["edited"] = hb.raw_bengali.str.split().str.join(" ") != hb.bengali.str.split().str.join(" ")
-frows = []
-for ds, name, unit in (("massive", "MASSIVE", "utterance"), ("sentnob", "SentNoB", "comment"), ("bnli", "XNLI-bn", "premise--hypothesis pair")):
-    g = hb[hb.dataset == ds]; n_items = len(g) // (2 if ds == "bnli" else 1)
-    frows.append(f"{name} & {len(g)} & {int(g.edited.sum())} & {n_items} ({unit}) \\\\")
-frows.append(f"Total & {len(hb)} & {int(hb.edited.sum())} & {int(NUM['nHuman'])} \\\\")
-write("tab_flow.tex", "\\begin{tabular}{@{}lccl@{}}\\toprule\nDataset & Sentences romanized & of which spelling corrected & Scored items \\\\\\midrule\n" + "\n".join(frows[:-1]) + "\n\\midrule\n" + frows[-1] + "\n\\bottomrule\\end{tabular}\n")
-
-# ---------------------------------------------------------------- per-task differences (the pooled set is 56% MASSIVE) and a task-balanced mean
-def task_row(m, comp):
-    out, vals = [], []
-    for sc in ("massive", "sentnob", "bnli"):
-        q = r[(r.model == m) & (r.scope == sc) & (r.comparison == comp)]
-        if q.empty:
-            out.append("--"); continue
-        q = q.iloc[0]; vals.append(q["diff"]); out.append(f"{pts(q['diff'])} [{100*q.lo:+.1f}, {100*q.hi:+.1f}]")
-    out.append(pts(float(np.mean(vals))) if len(vals) == 3 else "--")
-    return out
-trows = []
-for m in ORDER:
-    if m not in acc.index:
-        continue
-    trows.append(f"{NAME[m]} & " + " & ".join(task_row(m, "human - roman_edit")) + " & " + " & ".join(task_row(m, "human - native_edit")) + " \\\\")
-write("tab_human_tasks.tex", "\\begin{tabular}{@{}lcccccccc@{}}\\toprule\n & \\multicolumn{4}{c}{AI Banglish $-$ rule-based} & \\multicolumn{4}{c}{AI Banglish $-$ Bengali} \\\\\\cmidrule(lr){2-5}\\cmidrule(l){6-9}\n"
-      "Model & MASSIVE & SentNoB & XNLI-bn & task mean & MASSIVE & SentNoB & XNLI-bn & task mean \\\\\\midrule\n" + "\n".join(trows) + "\n\\bottomrule\\end{tabular}\n")
-bal = [np.mean([r[(r.model == m) & (r.scope == sc) & (r.comparison == "human - roman_edit")]["diff"].iloc[0] for sc in ("massive", "sentnob", "bnli")]) for m in ORDER if m in acc.index and m != "julia-1"]
-macro("sentGainMax", f"{100*max(r[(r.model == m) & (r.scope == 'sentnob') & (r.comparison == 'human - roman_edit')]['diff'].iloc[0] for m in ORDER if m in acc.index):.1f}")
-macro("balMin", f"{100*min(bal):.1f}"); macro("balMax", f"{100*max(bal):.1f}")
-macro("balJev", f"{100*np.mean([r[(r.model == 'jev-1.13.0') & (r.scope == sc) & (r.comparison == 'human - roman_edit')]['diff'].iloc[0] for sc in ('massive', 'sentnob', 'bnli')]):.1f}")
-
 # ---------------------------------------------------------------- accepted-item counts behind the gate rows
 for m, k in (("jev-1.13.0", "jev"), ("d3-mini", "mini"), ("laya-bangla v2", "layabn")):
     for v, vk in (("native", "Nat"), ("roman", "Rom")):
         g = gt[(gt.model == m) & (gt.task == "MASSIVE") & (gt.test_variant == v)].iloc[0]
         macro(f"gate{k}{vk}N", f"{int(g.n_accepted)}")
-
-# ---------------------------------------------------------------- calibration on the 877 items in all three Latin-script/Bengali conditions (raw confidence: no temperature is fitted for these items)
-def ece15(ok, conf, bins=15):
-    ok, conf = np.asarray(ok, float), np.asarray(conf, float); idx = np.minimum((conf * bins).astype(int), bins - 1); e = 0.0
-    for b in range(bins):
-        m = idx == b
-        if m.any():
-            e += m.mean() * abs(ok[m].mean() - conf[m].mean())
-    return e
-crow = []
-for m in ORDER:
-    if m not in acc.index or m == "d3-flash (4-bit)":
-        continue
-    g = d[d.model == m]; vals = [ece15(g[g.variant == v].ok, g[g.variant == v].pmax) for v in ("native_edit", "roman_edit", "human")]
-    crow.append(f"{NAME[m]} & " + " & ".join(f3(v) for v in vals) + " \\\\")
-    if m in tag:
-        for v, vn in zip(vals, ("Bn", "Rule", "Ai")):
-            macro(f"eceItems{tag[m]}{vn}", f3(v))
-write("tab_cal_items.tex", "\\begin{tabular}{@{}lccc@{}}\\toprule\nModel & Bengali & Rule-based & AI-generated Banglish \\\\\\midrule\n" + "\n".join(crow) + "\n\\bottomrule\\end{tabular}\n")
 
 # ---------------------------------------------------------------- Brier score and signed gap (confidence minus accuracy), Bengali vs rule-based, mean over XNLI-bn, MASSIVE, SentNoB
 brow = []
@@ -325,31 +233,7 @@ for m in ORDER:
     brow.append(f"{NAME[m]} & {f3(f('native', 'brier'))} & {f3(f('roman', 'brier'))} & {f('native', 'signed_gap'):+.3f} & {f('roman', 'signed_gap'):+.3f} \\\\")
 write("tab_cal_brier.tex", "\\begin{tabular}{@{}lcccc@{}}\\toprule\n & \\multicolumn{2}{c}{Brier score} & \\multicolumn{2}{c}{Confidence $-$ accuracy} \\\\\\cmidrule(lr){2-3}\\cmidrule(l){4-5}\nModel & Bengali & Rule-based & Bengali & Rule-based \\\\\\midrule\n" + "\n".join(brow) + "\n\\bottomrule\\end{tabular}\n")
 
-# ---------------------------------------------------------------- ranking agreement on the items EVERY system answered (Julia-1 cannot take MASSIVE, so this is the SentNoB and XNLI-bn items only)
-wide = d.pivot_table(index=["dataset", "id"], columns=["model", "variant"], values="ok")
-need = [(m, v) for m in acc.index for v in ("human", "roman_edit", "roman_nat_edit")]
-common = wide.dropna(subset=need)
-ca = pd.DataFrame({v: {m: common[(m, v)].mean() for m in acc.index} for v in ("human", "roman_edit", "roman_nat_edit")})
-macro("nCommon", len(common)); macro("nSystemsCommon", len(ca))
-macro("tauComRule", f"{kendalltau(ca.human, ca.roman_edit)[0]:.2f}"); macro("tauComNat", f"{kendalltau(ca.human, ca.roman_nat_edit)[0]:.2f}")
-
-# ---------------------------------------------------------------- uncertainty on the rank agreement: resample ITEMS, recompute every model's accuracy, recompute tau (1,000 draws, seed 0)
-def tau_ci(df_items, models, va, vb, draws=1000, seed=0):
-    rng_t = np.random.default_rng(seed)
-    A = np.stack([df_items[(m, va)].to_numpy(float) for m in models]); Bm = np.stack([df_items[(m, vb)].to_numpy(float) for m in models])
-    pt = kendalltau(A.mean(1), Bm.mean(1))[0]; n = A.shape[1]; out = []
-    for _ in range(draws):
-        ix = rng_t.integers(0, n, n); out.append(kendalltau(A[:, ix].mean(1), Bm[:, ix].mean(1))[0])
-    return pt, np.nanpercentile(out, 2.5), np.nanpercentile(out, 97.5)
-m11 = [m for m in acc.index if m != "julia-1"]; m12 = list(acc.index)
-full = wide.dropna(subset=[(m, v) for m in m11 for v in ("human", "roman_edit", "roman_nat_edit")])
-for tag_, items_, ms_ in (("Full", full, m11), ("Com", common, m12)):
-    for vb, nm in (("roman_edit", "Rule"), ("roman_nat_edit", "Nat")):
-        pt, lo, hi = tau_ci(items_, ms_, "human", vb)
-        macro(f"tau{tag_}{nm}", f"{pt:.2f}"); macro(f"tau{tag_}{nm}Lo", f"{lo:.2f}"); macro(f"tau{tag_}{nm}Hi", f"{hi:.2f}")
-macro("nFull", len(full))
-
-# ---------------------------------------------------------------- task-level ECE (the primary calibration measure) next to the pooled-item ECE of tab_cal_items
+# ---------------------------------------------------------------- task-level ECE (the primary calibration measure)
 trow = []
 for m in ORDER:
     if m == "d3-flash (4-bit)":
@@ -364,6 +248,69 @@ for m in ORDER:
         continue
     trow.append(f"{NAME[m]} & " + " & ".join(cells) + " \\\\")
 write("tab_cal_tasks.tex", "\\begin{tabular}{@{}lcccccc@{}}\\toprule\n & \\multicolumn{2}{c}{XNLI-bn} & \\multicolumn{2}{c}{MASSIVE} & \\multicolumn{2}{c}{SentNoB} \\\\\\cmidrule(lr){2-3}\\cmidrule(lr){4-5}\\cmidrule(l){6-7}\nModel & Bengali & Rule & Bengali & Rule & Bengali & Rule \\\\\\midrule\n" + "\n".join(trow) + "\n\\bottomrule\\end{tabular}\n")
+
+# ---------------------------------------------------------------- accuracy lost under rule-based romanization: mean over the tasks where both were run (points)
+_pv = a.pivot_table(index=["model", "task"], columns="variant", values="value").dropna(subset=["native", "roman"])
+_drop = (100 * (_pv.native - _pv.roman)).groupby("model").mean()
+for m, k in tag.items():
+    if m in _drop.index:
+        macro(f"drop{k}", f"{_drop.loc[m]:.1f}")
+macro("dropMaxVal", f"{_drop.max():.1f}"); macro("dropMinVal", f"{_drop.min():.1f}")
+
+# ---------------------------------------------------------------- Dakshina-bn: agreement with the Bengali-script answer, native-speaker romanization vs the two synthetic ones
+da = pd.read_csv(T / "dak_agreement.csv"); dp = pd.read_csv(T / "dak_paired.csv")
+DORDER = [m for m in ORDER if m in set(da.model)] + [m for m in ("d3-flash (4/8-bit)",) if m in set(da.model)]
+def dlab(m):
+    return NAME.get(m, NAME.get("d3-flash (4-bit)")) if m != "d3-flash (4/8-bit)" else NAME["d3-flash (4-bit)"]
+drows, tvrows = [], []
+for m in ORDER:
+    mm = "d3-flash (4/8-bit)" if m == "d3-flash (4-bit)" else m
+    g = da[da.model == mm].set_index("variant")
+    if g.empty:
+        continue
+    pr = dp[(dp.model == mm) & (dp.metric == "agreement")].set_index("comparison")
+    tr = dp[(dp.model == mm) & (dp.metric == "tv")].set_index("comparison")
+    nn = int(g.n.iloc[0])
+    drows.append(f"{NAME[m]} & {nn:,} & {f3(g.loc['dakshina','agreement'])} & {f3(g.loc['roman_nat','agreement'])} & {f3(g.loc['roman','agreement'])} & "
+                 f"{pts(pr.loc['dakshina - roman','diff'])} {ci(pr.loc['dakshina - roman','lo'], pr.loc['dakshina - roman','hi'])} & {pts(pr.loc['dakshina - roman_nat','diff'])} {ci(pr.loc['dakshina - roman_nat','lo'], pr.loc['dakshina - roman_nat','hi'])} \\\\")
+    tvrows.append(f"{NAME[m]} & {f3(g.loc['dakshina','tv'])} & {f3(g.loc['roman_nat','tv'])} & {f3(g.loc['roman','tv'])} & {f3(g.loc['dakshina','conf_variant'])} & {f3(g.loc['roman','conf_variant'])} & {f3(g.loc['dakshina','conf_native'])} \\\\")
+    k = tag.get(m)
+    if k:
+        for v, vn in (("dakshina", "Ns"), ("roman_nat", "Nat"), ("roman", "Rule")):
+            macro(f"dak{k}{vn}", f3(g.loc[v, "agreement"]))
+        macro(f"dak{k}NsVsRule", pts(pr.loc["dakshina - roman", "diff"])); macro(f"dak{k}NsVsRuleLo", pts(pr.loc["dakshina - roman", "lo"])); macro(f"dak{k}NsVsRuleHi", pts(pr.loc["dakshina - roman", "hi"]))
+        macro(f"dak{k}NsVsNat", pts(pr.loc["dakshina - roman_nat", "diff"])); macro(f"dak{k}NsVsNatLo", pts(pr.loc["dakshina - roman_nat", "lo"])); macro(f"dak{k}NsVsNatHi", pts(pr.loc["dakshina - roman_nat", "hi"]))
+write("tab_dak.tex", "\\begin{tabular}{@{}lrccccc@{}}\\toprule\n & & \\multicolumn{3}{c}{Agreement with own Bengali answer} & \\multicolumn{2}{c}{Difference in points (95\\% CI)} \\\\\\cmidrule(lr){3-5}\\cmidrule(l){6-7}\n"
+      "Model & Sentences & Native-speaker & Natural-style & Rule-based & Native-speaker $-$ rule-based & Native-speaker $-$ natural-style \\\\\\midrule\n" + "\n".join(drows) + "\n\\bottomrule\\end{tabular}\n")
+write("tab_dak_tv.tex", "\\begin{tabular}{@{}lcccccc@{}}\\toprule\n & \\multicolumn{3}{c}{Probability shift (TV)} & \\multicolumn{3}{c}{Mean top-option confidence} \\\\\\cmidrule(lr){2-4}\\cmidrule(l){5-7}\n"
+      "Model & Native-speaker & Natural-style & Rule-based & Native-speaker & Rule-based & Bengali \\\\\\midrule\n" + "\n".join(tvrows) + "\n\\bottomrule\\end{tabular}\n")
+# summary counts over the systems with the full 1,500 sentences plus d3-flash on its subset
+pivot = dp[dp.metric == "agreement"].pivot_table(index="model", columns="comparison", values=["diff", "lo", "hi"])
+nsys = len(pivot)
+pos_rule = int(((pivot[("lo", "dakshina - roman")] > 0)).sum()); pos_nat = int(((pivot[("lo", "dakshina - roman_nat")] > 0)).sum())
+macro("dakSystems", nsys); macro("dakNsBeatsRule", pos_rule); macro("dakNsBeatsNat", pos_nat)
+macro("dakRuleDiffMin", pts(pivot[("diff", "dakshina - roman")].min())); macro("dakRuleDiffMax", pts(pivot[("diff", "dakshina - roman")].max()))
+full_models = da[da.n == da.n.max()].model.unique()
+ag = da[da.model.isin(full_models)].pivot_table(index="model", columns="variant", values="agreement")
+from scipy.stats import kendalltau
+macro("dakTauRule", f"{kendalltau(ag.dakshina, ag.roman)[0]:.2f}"); macro("dakTauNat", f"{kendalltau(ag.dakshina, ag.roman_nat)[0]:.2f}"); macro("dakNTau", len(ag))
+# natural-style (rebuilt lookup) against rule-based, paired, per system
+nr = dp[(dp.metric == "agreement") & (dp.comparison == "roman_nat - roman")].set_index("model")
+macro("dakNatBeatsRule", int((nr.lo > 0).sum())); macro("dakNatLosesRule", int((nr.hi < 0).sum())); macro("dakNatTied", int(((nr.lo <= 0) & (nr.hi >= 0)).sum()))
+macro("dakNatDiffMin", pts(nr["diff"].min())); macro("dakNatDiffMax", pts(nr["diff"].max()))
+macro("dakNsNatMin", pts(pivot[("diff", "dakshina - roman_nat")].min())); macro("dakNsNatMax", pts(pivot[("diff", "dakshina - roman_nat")].max()))
+for m, k in tag.items():
+    mm = "d3-flash (4/8-bit)" if m == "d3-flash (4-bit)" else m
+    if mm in nr.index:
+        macro(f"dak{k}NatVsRule", pts(nr.loc[mm, "diff"])); macro(f"dak{k}NatVsRuleLo", pts(nr.loc[mm, "lo"])); macro(f"dak{k}NatVsRuleHi", pts(nr.loc[mm, "hi"]))
+
+macro("dakN", int(da.n.max())); macro("dakChance", f3(da.chance.mean()))
+
+# ---------------------------------------------------------------- natural-style lookup: corpus pairs removed because they are Dakshina sentences, and what the leak did before the fix
+flt = json.load(open(T / "natural_lookup_filter.json")); macro("lookupRemoved", f"{flt['removed_pairs']:,}".replace(",", "{,}")); macro("lookupKept", f"{flt['kept_sentences']:,}".replace(",", "{,}"))
+_old = pd.read_csv(HERE / "archive" / "dak_agreement_contaminated_natural_style.csv")
+_o = _old[(_old.model == "jev-1.13.0") & (_old.variant == "roman_nat")].iloc[0]
+macro("dakLeakJevNat", f3(_o.agreement))
 
 (ROOT / "paper" / "numbers.tex").write_text("% generated by analysis/make_tables.py; do not edit\n" + "\n".join(f"\\newcommand{{\\{k}}}{{{v}}}" for k, v in sorted(NUM.items())) + "\n")
 print(f"{len(NUM)} macros; tables:", ", ".join(sorted(p.name for p in OUT.glob('*.tex'))))

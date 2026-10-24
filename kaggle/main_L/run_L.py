@@ -1,6 +1,6 @@
 """Kaggle round 3 (2026-10-21): (A) laya-bangla v2 (algolyzer/laya-bangla, a Bangla fine-tune of Laya-multilingual published 2026-10-18) on all test/dev settings;
 (B) Laya-multilingual re-run under laya==0.4.11 on native rot0 to measure package-version drift against the earlier 0.4.3/0.4.6 runs;
-(C) laya-bangla on the AI-generated Banglish items (7 conditions); (D) SentNoB wording sensitivity (minimal English options, Bengali wording) for both Laya models."""
+(D) SentNoB wording sensitivity (minimal English options, Bengali wording) for both Laya models."""
 import json, os, shutil, subprocess, sys, time
 from pathlib import Path
 
@@ -22,7 +22,6 @@ sh("nvidia-smi --query-gpu=name,memory.total --format=csv")
 sh(f"pip install -q -e {work}/harness 'laya==0.4.11' 2>&1 | tail -2")
 sh("python -c \"import laya; print('laya', laya.__version__)\"")
 os.chdir(f"{work}/harness")
-ROWS, ROWS_ED, HUMAN = f"{work}/data/human_rows.json", f"{work}/data/human_rows_edited.json", f"{work}/data/banglish_human.csv"
 LB = "--backend laya --model algolyzer/laya-bangla --revision v2 --tag-suffix @4c5eb48932 --max-len 4096"
 LM = "--backend laya --model convaiinnovations/laya-multilingual --max-len 4096"
 RUN = "python scripts/run_system_one_model.py {tasks} --split {split} {lim} {args} --out {out}"
@@ -50,12 +49,6 @@ for rot in (1, 2):
 # (B) package-version drift: Laya-multilingual native rot0 under 0.4.11 (same request keys as the earlier runs)
 out = "/kaggle/working/runs/laya_ml_v0411"
 run(ALL, "eval", "", LM, out, BN_VARIANT="native"); run(LARGE, "eval", "--limit 1500", LM, out, BN_VARIANT="native")
-
-# (C) AI-generated Banglish items, seven conditions
-out = "/kaggle/working/runs/laya_bangla_human"
-HT = "bn_sentnob bn_massive bn_bnli"
-for v, rows in (("native", ROWS), ("roman", ROWS), ("roman_nat", ROWS), ("human", ROWS), ("native_edit", ROWS_ED), ("roman_edit", ROWS_ED), ("roman_nat_edit", ROWS_ED)):
-    run(HT, "eval", "", LB, out, BN_VARIANT=v, BN_ROWS_JSON=rows, BN_HUMAN_CSV=HUMAN)
 
 # (D) SentNoB wording sensitivity (test split, native text, rot0): minimal English options; Bengali wording
 for name, args in (("laya_bangla", LB), ("laya_ml", LM)):

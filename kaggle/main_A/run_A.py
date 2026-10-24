@@ -20,7 +20,7 @@ MODELS = {
 }
 SETS = {"A": ["laya_ml", "julia1"], "B": ["d3_edge", "d3_lite", "d3_nano", "d3_mini"]}
 SETTINGS = [("native", 0), ("roman", 0), ("native", 1), ("native", 2), ("roman", 1), ("roman", 2)]
-SMALL = {"native": "bn_sentnob bn_belebele bn_sib200", "roman": "bn_sentnob bn_sib200"}  # belebele ben_Latn is the human romanization
+SMALL = {"native": "bn_sentnob bn_belebele bn_sib200", "roman": "bn_sentnob bn_sib200"}  # belebele ben_Latn is the annotator-transliterated (IndicXlit-assisted) Latin variant
 LARGE = "bn_bnli bn_massive"
 
 os.makedirs("/kaggle/tmp/hf", exist_ok=True)

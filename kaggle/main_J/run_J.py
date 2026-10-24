@@ -23,7 +23,7 @@ SETS = {"C": ["julia1"]}
 MAX_HOURS = 8.0  # stop starting new settings after this; Kaggle sessions end at 9-12 h
 # (variant, rotation, split). Dev runs (disjoint from test) feed temperature scaling; they come right after rot0 test.
 SETTINGS = [("native", 0, "eval"), ("roman", 0, "eval"), ("native", 1, "eval"), ("native", 2, "eval"), ("roman", 1, "eval"), ("roman", 2, "eval")]
-SMALL = {"native": "bn_sib200", "roman": "bn_sib200"}  # belebele ben_Latn is the human romanization
+SMALL = {"native": "bn_sib200", "roman": "bn_sib200"}  # belebele ben_Latn is the annotator-transliterated (IndicXlit-assisted) Latin variant
 LARGE = ""
 
 os.makedirs("/kaggle/tmp/hf", exist_ok=True)

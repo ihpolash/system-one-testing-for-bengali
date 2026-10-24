@@ -19,7 +19,7 @@ _CLASSES = [
     safety.ToxiGen, safety.OpenAIModeration, safety.ToxicChat, safety.PromptInjections, safety.AGBDE,
     safety.UnfairToS,
     # Bengali (this study)
-    bengali.BnSentNoB, bengali.BnBNLI, bengali.BnMASSIVE, bengali.BnBelebele, bengali.BnSIB200,
+    bengali.BnSentNoB, bengali.BnBNLI, bengali.BnMASSIVE, bengali.BnBelebele, bengali.BnSIB200, bengali.BnDakshina,
     # Score primitive
     scoring.STSB, scoring.SST5, scoring.SummEval, scoring.HelpSteer2,
 ]  # fmt: skip

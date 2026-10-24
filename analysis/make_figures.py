@@ -6,7 +6,6 @@ and the paper carries the numbers in tables); thin marks, recessive grid, one ax
 """
 from pathlib import Path
 
-from labels import BANGLISH, BANGLISH_LOWER
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -31,46 +30,23 @@ def save(fig, name):
     print("wrote", name)
 
 
-# ------------------------------------------------------------------ Fig 1: pooled accuracy per model under four spellings (hand-written items)
-def fig_spellings():
-    d = pd.read_csv(HERE / "tables" / "human_items_all_models.csv"); d = d[d.answered == 1]
-    p = d.pivot_table(index=["model", "dataset", "id"], columns="variant", values="ok")
-    acc = p.groupby("model")[["native_edit", "roman_edit", "roman_nat_edit", "human"]].mean()
-    acc = acc.drop(index="julia-1", errors="ignore").sort_values("human")          # Julia-1 answers only 44% of items (no MASSIVE)
-    fig, ax = plt.subplots(figsize=(6.6, 3.3)); y = np.arange(len(acc))
-    for i, (m, r) in enumerate(acc.iterrows()):
-        ax.plot([r.min(), r.max()], [i, i], color=GRID, lw=1.2, zorder=1)
-    ax.scatter(acc.native_edit, y, s=26, color=BLUE, marker="o", zorder=3, label="Corrected Bengali script")
-    ax.scatter(acc.roman_edit, y, s=26, color=ORANGE, marker="s", zorder=3, label="Rule-based romanization (synthetic)")
-    ax.scatter(acc.roman_nat_edit, y, s=30, facecolor=SURFACE, edgecolor=ORANGE, linewidth=1.0, marker="D", zorder=3, label="Natural-style romanization (synthetic)")
-    ax.scatter(acc.human, y, s=30, color=AQUA, marker="^", zorder=4, label=BANGLISH)
-    ax.set_yticks(y, [NAME[m] for m in acc.index]); ax.set_xlim(0.05, 0.8); ax.grid(axis="y", visible=False)
-    ax.set_xlabel(f"Accuracy on the 877 {BANGLISH_LOWER} items (pooled over SentNoB, MASSIVE, XNLI-bn)")
-    ax.legend(loc="upper left", fontsize=7, handletextpad=0.3, labelcolor=INK2, bbox_to_anchor=(0.0, 1.0))
-    save(fig, "fig1_spellings")
+# ------------------------------------------------------------------ Fig D: agreement with the Bengali-script answer, by spelling of the same Dakshina sentences
+def fig_dakshina():
+    a = pd.read_csv(HERE / "tables" / "dak_agreement.csv"); a = a[~a.model.str.contains("flash")]
+    w = a.pivot_table(index="model", columns="variant", values="agreement").sort_values("dakshina")
+    lo = a.pivot_table(index="model", columns="variant", values="ci_lo").reindex(w.index); hi = a.pivot_table(index="model", columns="variant", values="ci_hi").reindex(w.index)
+    fig, ax = plt.subplots(figsize=(6.6, 3.5)); y = np.arange(len(w))
+    for i, (m, r) in enumerate(w.iterrows()):
+        ax.plot([r.roman, r.dakshina], [i, i], color=GRID, lw=1.2, zorder=1)
+    for col, c, mk, lab, face in (("roman", ORANGE, "s", "Rule-based romanization (synthetic)", ORANGE), ("roman_nat", ORANGE, "D", "Natural-style romanization (synthetic)", "white"), ("dakshina", AQUA, "^", "Native-speaker romanization (Dakshina)", AQUA)):
+        ax.scatter(w[col], y, s=30, marker=mk, facecolor=face, edgecolor=c, linewidth=1.2, zorder=4, label=lab)
+    ax.axvline(a.chance.mean(), color=INK2, lw=0.6, ls=(0, (3, 3)), zorder=1); ax.text(a.chance.mean() + 0.005, len(w) - 0.55, "chance", fontsize=6.5, color=INK2)
+    ax.set_yticks(y, [NAME[m] for m in w.index]); ax.set_xlim(0.1, 0.8); ax.grid(axis="y", visible=False)
+    ax.legend(loc="lower right", fontsize=6.8, labelcolor=INK2)
+    ax.set_xlabel("Share of 1,500 sentences whose topic answer matches the system's own answer on the Bengali-script sentence")
+    save(fig, "fig1_dakshina")
 
 
-# ------------------------------------------------------------------ Fig 2: Banglish minus rule-based romanization, with CIs
-def fig_overstatement():
-    r = pd.read_csv(HERE / "tables" / "human_items_paired.csv"); r = r[r.comparison == "human - roman_edit"]
-    order = [m for m in r[r.scope == "all tasks"].sort_values("diff").model.tolist() if m != "julia-1"]   # Julia-1 answers 44% of items
-    panels = [("all tasks", "All tasks (877)"), ("massive", "MASSIVE (494)"), ("sentnob", "SentNoB (325)"), ("bnli", "XNLI-bn pairs (58)")]
-    fig, axes = plt.subplots(1, 4, figsize=(6.8, 2.8), sharey=True)
-    for ax, (scope, title) in zip(axes, panels):
-        s = r[r.scope == scope].set_index("model")
-        for i, m in enumerate(order):
-            if m in s.index:
-                x = s.loc[m]; ax.plot([x.lo, x.hi], [i, i], color=INK2, lw=0.9, zorder=2); ax.scatter(x["diff"], i, s=22, color=AQUA, marker="^", zorder=3)
-        ax.axvline(0, color=INK2, lw=0.8); ax.set_title(title, fontsize=7.5, color=INK); ax.grid(axis="y", visible=False)
-        ax.set_xlim(-0.2, 0.42)
-    axes[0].set_yticks(range(len(order)), [NAME[m] for m in order])
-    for ax in axes:
-        ax.set_ylim(-0.6, len(order) - 0.4)
-    fig.supxlabel(f"Accuracy of {BANGLISH_LOWER} minus accuracy of rule-based romanization of the same text (95% CI)", fontsize=7.5, y=-0.04)
-    save(fig, "fig2_overstatement")
-
-
-# ------------------------------------------------------------------ Fig 3: native vs synthetic romanized, per task (full test sets)
 def fig_script_gap():
     a = pd.read_csv(HERE / "tables" / "rq1_accuracy.csv"); a = a[a.variant.isin(["native", "roman"]) & ~a.model.str.startswith("d3-flash")]
     order = ["jev-1.13.0", "gemma-4-E4B-it", "d3-mini", "d3-nano", "kev-4b", "d3-lite", "laya-bangla v2", "d3-edge", "kev-0.8b", "laya-multilingual", "julia-1"]
@@ -86,10 +62,10 @@ def fig_script_gap():
     axes[0].set_yticks(range(len(order)), [NAME[m] for m in order[::-1]])
     handles = [Line2D([], [], marker="o", color=BLUE, ls="", ms=5, label="Bengali script"), Line2D([], [], marker="s", color=ORANGE, ls="", ms=5, label="Rule-based romanization")]
     fig.legend(handles=handles, loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.06), fontsize=7.5, labelcolor=INK2)
-    save(fig, "fig3_script_gap")
+    save(fig, "fig2_script_gap")
 
 
-# ------------------------------------------------------------------ helpers for Fig 4-5: pooled items on identical requests across the plotted models
+# ------------------------------------------------------------------ helpers for Fig 3-4: pooled items on identical requests across the plotted models
 def pooled_items(models):
     it = pd.read_csv(HERE / "items.csv", usecols=["model", "task", "split", "variant", "rot", "uid", "pmax", "correct"])
     it = it[(it.split == "eval") & (it.rot == 0) & it.variant.isin(["native", "roman"]) & it.model.isin(models) & (it.task != "bn_belebele")]
@@ -111,7 +87,7 @@ def fig_calibration_and_gating():
     axes[0].set_ylabel("Observed accuracy", fontsize=7)
     handles = [Line2D([], [], marker="o", color=BLUE, ms=4, lw=1, label="Bengali script"), Line2D([], [], marker="s", color=ORANGE, ms=4, lw=1, label="Rule-based romanization")]
     fig.legend(handles=handles, loc="upper center", ncol=2, bbox_to_anchor=(0.5, 1.16), fontsize=7.5, labelcolor=INK2)
-    save(fig, "fig4_reliability")
+    save(fig, "fig3_reliability")
 
     fig, axes = plt.subplots(1, 4, figsize=(6.8, 1.9), sharey=True); cov = np.linspace(0.05, 1, 40)
     for ax, m in zip(axes, models):
@@ -122,7 +98,7 @@ def fig_calibration_and_gating():
         ax.set_title(NAME[m], fontsize=7.5); ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.set_xlabel("Coverage", fontsize=7)
     axes[0].set_ylabel("Accuracy on covered items", fontsize=7)
     fig.legend(handles=handles, loc="upper center", ncol=2, bbox_to_anchor=(0.5, 1.16), fontsize=7.5, labelcolor=INK2)
-    save(fig, "fig5_risk_coverage")
+    save(fig, "fig4_risk_coverage")
 
 
 # ------------------------------------------------------------------ Fig 6: how often the answer survives rotating the options
@@ -135,8 +111,8 @@ def fig_rotation():
         ax.text(v + 0.012, i, f"{v:.0%}", va="center", fontsize=7, color=INK2)
     ax.set_yticks(y, [NAME[m] for m in g.index]); ax.set_xlim(0, 1.08); ax.grid(axis="y", visible=False)
     ax.set_xlabel("Share of items answered identically under all three option rotations")
-    save(fig, "fig6_rotation")
+    save(fig, "fig5_rotation")
 
 
 if __name__ == "__main__":
-    fig_spellings(); fig_overstatement(); fig_script_gap(); fig_calibration_and_gating(); fig_rotation()
+    fig_dakshina(); fig_script_gap(); fig_calibration_and_gating(); fig_rotation()
