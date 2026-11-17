@@ -1,6 +1,6 @@
 # System One decision models on Bengali
 
-Code, result tables and per-sentence predictions for my preprint *Decision Models on Bengali: Accuracy, Calibration and Robustness to Romanization* (Ismail Hossain Polas, Jahangirnagar University, ismailhossainpolash@gmail.com).
+Code, result tables and per-sentence predictions for my preprint *Decision Models on Bengali: Accuracy, Calibration, and Sensitivity to Tool-Made versus Native-Speaker Romanization* (Ismail Hossain Polas, Jahangirnagar University, ismailhossainpolash@gmail.com).
 
 I tested one hosted decision model (Jev), ten open decision models (the vLLM-SR d3 family, Laya, laya-bangla, Julia-1 and Kev) and a general-purpose baseline (Gemma) on five Bengali tasks, in Bengali script and under rule-based romanization. I then compared rule-based and natural-style romanization with the Latin-script spelling that native speakers wrote for 1,500 Bengali Wikipedia sentences (the Dakshina dataset), measuring how often each system's answer survives the change of script.
 
