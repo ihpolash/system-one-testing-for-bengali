@@ -19,35 +19,39 @@
 \maketitle
 
 \begin{abstract}
-\noindent Decision models answer a typed question in one forward pass and return a probability for every option, so a system built on them can act on their confidence.
-Almost all evidence about these models comes from English.
-I evaluated twelve systems zero-shot on five Bengali tasks: one hosted decision model (Jev), ten open decision models and one general-purpose language model.
-Among the systems run on the full test sets, Jev had the highest score on all five tasks, but its lead over the closest open system is clear on only \jevSepN{} of them.
-Rule-based romanization lowered every system's score on every task it was applied to, by \dropMinVal{} to \dropMaxVal{} points on average.
-Such tool-made text is what romanization studies usually test, so I compared it with the romanization that native speakers wrote for \dakN{} Bengali Wikipedia sentences.
-These sentences have no labels; the measure is how often a system keeps its own Bengali-script answer.
-All twelve systems kept it more often under the native speakers' spelling than under the rule-based one, by \dakRuleDiffMin{} to \dakRuleDiffMax{} points.
-The ranking of the systems barely changed (Kendall $\tau=\dakTauRule$).
-One temperature fitted on Bengali development data lowered calibration error in all \tsLowered{} model-task cells where it was fitted, but less on rule-based romanized text.
-Whether tool-made romanization also overstates the loss in accuracy on labelled tasks is untested.
+\noindent Many applications need a model that picks one answer from a fixed list and says how sure it is.
+Decision models do this in a single step, returning a probability for every option, but almost all tests of them are in English.
+This paper tests them on Bengali, a language typed both in its own script and in Latin letters (``Banglish'').
+I evaluated twelve systems zero-shot on five Bengali tasks: one hosted decision model (Jev), ten open decision models and, as a baseline, one general-purpose language model.
+Among the systems run on the full test sets, Jev scored highest on all five tasks, but its lead over the closest open system is clear on only \jevSepN{} of them.
+Converting the test text to Latin letters with a rule-based tool lowered every system's score, by \dropMinVal{} to \dropMaxVal{} points on average.
+Romanization studies usually test such tool-made text, so I also used \dakN{} Bengali sentences that native speakers had written in Latin letters.
+These sentences have no labels, so the measure is how often a system gives the same answer as it gives on the Bengali-script version.
+All twelve systems did so more often for the native speakers' spelling than for the tool's, by \dakRuleDiffMin{} to \dakRuleDiffMax{} points.
+Their ranking stayed broadly similar (Kendall $\tau=\dakTauRule$).
+A single temperature fitted on Bengali data reduced calibration error in all \tsLowered{} cases where it was fitted, but less on romanized text.
+Whether tool-made romanization also overstates the loss in accuracy on labelled tasks remains untested.
 Code and per-item predictions are released.
 \end{abstract}
 
 \section{Introduction}
-A decision model reads a text and a typed question and returns one probability per option, without generating any text.
-The output is easy to act on: a pipeline can accept confident answers and send the rest to a larger model or a person \citep{deusser2026jev,nandakishore2026laya}.
-Almost all evidence for this comes from English.
-The one study that moved to another language shows why that matters: on Chinese tasks Laya-multilingual scored 40.2\% where Jev scored 68.4\% \citep{wang2026chinesejev}.
+Many systems need to choose one answer from a fixed list: route a support ticket, flag a comment as abusive, or decide whether a sentence follows from another.
+A decision model is built for this.
+It reads a text and a typed question and, in a single forward pass, returns one probability per option, without generating any text.
+Because the output is a probability, a pipeline can accept confident answers and pass the rest to a larger model or a person \citep{deusser2026jev,nandakishore2026laya}.
+That only works if two things hold: the model is accurate, and its confidence means what it says.
 
-For Bengali, I found only the Belebele and SIB-200 numbers that ship with the Jev benchmark \citep{deusser2026jev}.
-I found no study that asks whether a decision model's confidence still carries information in Bengali.
+This paper checks both on Bengali, where they have barely been tested, and adds a question that Bengali makes unavoidable.
+Bengali has its own script, but much of everyday Bengali is typed in Latin letters (``Banglish'') with no standard spelling.
+Studies of romanized text build their test data with a transliteration tool, which applies one rule per letter.
+People do not type that way, so a model's behaviour on tool-made romanization may differ from its behaviour on what people actually write.
 
-Bengali raises a second question. A large share of everyday Bengali is typed in Latin letters (``Banglish''), with no standard spelling.
-Studies of romanized Indic text build their test data with a transliteration tool and report large losses \citep{khullar2025scriptgap,jawad2026fivedialects}.
-A tool applies one rule per letter; people do not.
-For Bengali, I found no measurement of how far a model's behaviour on tool-made romanization differs from its behaviour on what native speakers actually write.
+The evidence on both points is thin.
+Almost all tests of decision models are in English, and the one study that moved to another language shows why that matters: on Chinese tasks Laya-multilingual scored 40.2\% where Jev scored 68.4\% \citep{wang2026chinesejev}.
+For Bengali I found only the Belebele and SIB-200 numbers that ship with the Jev benchmark \citep{deusser2026jev}, and no study that asks whether a decision model's confidence still carries information in Bengali.
+Studies of romanized Indic text report large losses, but only on tool-made text \citep{khullar2025scriptgap,jawad2026fivedialects}; for Bengali I found no comparison with romanization written by native speakers.
 
-This paper asks how decision models behave on Bengali, and whether tool-made romanization is a fair stand-in for romanization written by people.
+This paper therefore asks how decision models behave on Bengali, and whether tool-made romanization is a good stand-in for romanization written by people.
 Four questions structure the results (Table~\ref{tab:overview}):
 \begin{enumerate}[label=\textbf{RQ\arabic*}]
 \item How accurate are the systems on Bengali script, and how much does rule-based romanization cost them? (Section~\ref{sec:acc})
@@ -76,7 +80,7 @@ Work in other languages is thin: Chinese-Jev trains a Chinese model \citep{wang2
 Script robustness has been studied for generative models only \citep{khullar2025scriptgap,jawad2026fivedialects}, and always on tool-made romanization.
 The large Bengali romanization corpus of \citet{gharami2025romanized} is also generated by rule rather than typed by people.
 For calibration and selective prediction I use standard measures \citep{guo2017calibration,geifman2017selective}; the option-rotation test follows \citet{zheng2024selectors}.
-The tasks are Belebele \citep{bandarkar2023belebele}, SIB-200 \citep{adelani2023sib200}, MASSIVE \citep{fitzgerald2022massive}, SentNoB \citep{islam2021sentnob} and the Bengali translation of XNLI.
+The benchmark described next is built to fill these gaps. Its tasks are Belebele \citep{bandarkar2023belebele}, SIB-200 \citep{adelani2023sib200}, MASSIVE \citep{fitzgerald2022massive}, SentNoB \citep{islam2021sentnob} and the Bengali translation of XNLI.
 \begin{table}[t]
 \centering\footnotesize
 \begin{tabular}{@{}L{2.6cm}L{1.9cm}L{2.5cm}L{2.7cm}L{1.6cm}L{2.2cm}@{}}\toprule
@@ -93,7 +97,7 @@ This paper & 12 systems & 5 tasks & rule-based, natural-style, native-speaker & 
 
 \section{Benchmark}
 \label{sec:method}
-Table~\ref{tab:overview} summarises which data, systems, conditions and measures answer each research question.
+This section describes the systems, the data, the four text conditions, the measures and how the statistics are reported. Table~\ref{tab:overview} summarises which data, systems, conditions and measures answer each research question.
 \begin{table}[t]
 \centering\footnotesize
 \begin{tabular}{@{}L{1.9cm}L{3.3cm}L{2.0cm}L{2.7cm}L{3.9cm}@{}}\toprule
@@ -108,12 +112,17 @@ RQ4\newline option order & five test sets, three rotations & \rotSystems{} & Ben
 \end{table}
 
 \subsection{Systems}
+Two kinds of system are compared.
+A \emph{decision model} is trained for typed decisions: it receives the question and the options as structured input and returns a probability for each option directly.
+A \emph{general-purpose language model} is trained to generate text; to use one here, I read the probability it assigns to each option label as its next word.
+Eleven of the twelve systems are decision models; Gemma-4-E4B-it is the general-purpose baseline, included to show what a model without decision-specific training achieves.
+
 Jev (\texttt{jev-1.13.0}) is reached through its API; the open systems ran on a 15 GB Kaggle T4 GPU.
 \begin{itemize}
 \item \textbf{Encoders.} Laya-multilingual, built on mmBERT \citep{marone2025mmbert}; laya-bangla v2, a Bangla fine-tune of it; and Julia-1, with 144M parameters.
 \item \textbf{vLLM-SR Decision 3.0} \citep{liu2026vllmsr}: d3-edge, d3-lite, d3-nano, d3-mini and d3-flash. d3-flash has 9B parameters and ran in 4-bit NF4 on a hash-ordered subset (about \flashNmax{} items per task, 500 Dakshina sentences).
 \item \textbf{Kev 1.0}: Kev-0.8B and Kev-4B, served with the project's own code in bf16 with its shipped temperature. Their model cards list English as the only language. Kev-4B ran with CUDA-graph replay and the prefix cache switched off to fit in memory; these settings change speed and memory, not the model.
-\item \textbf{Baseline.} Gemma-4-E4B-it is not a decision model. Each option is scored by the next-token probability of its label, normalized over the options.
+\item \textbf{General-purpose baseline.} Gemma-4-E4B-it. Each option is scored by the next-token probability of its label, normalized over the options.
 \end{itemize}
 Kev was run on the test sets and the Dakshina sentences only, so it has no development-split or rotation results.
 Kev-9B, Kev-27B and d3-27B do not fit on the GPU, and Microsoft-Decision-1 is available only through an API that I did not use.
@@ -203,6 +212,7 @@ I report no significance tests.
 
 \section{Results}
 \label{sec:results}
+The results follow the four research questions, and each subsection opens with its finding.
 \subsection{RQ1: How accurate are the systems, and what does rule-based romanization cost?}
 \label{sec:acc}
 \paragraph{Jev scores highest, but its lead is clear on only \jevSepN{} of the 5 tasks.}
@@ -266,7 +276,7 @@ Native-speaker romanization is ahead of natural-style for all \dakSystems{} syst
 
 \paragraph{The ranking hardly changes.}
 Over the \dakNTau{} systems with all \dakN{} sentences, Kendall $\tau$ between the ranking under native-speaker romanization and under rule-based romanization is \dakTauRule.
-So rule-based romanization ranks the systems almost as native speakers' spelling does, but it moves their answers further.
+So rule-based romanization preserves a broadly similar ranking of the systems, but it moves their answers further.
 This result covers Wikipedia sentences and one topic question, and it measures consistency, not correctness.
 \begin{figure}[t]
 \centering\includegraphics[width=.92\linewidth]{figures/fig1_dakshina}
@@ -291,7 +301,7 @@ Raw ECE on Bengali script runs from \eceminiNatRaw{} for d3-mini to \ecejuliaNat
 On Bengali script, \brierWorseBn{} of \brierCellsBn{} system-task cells have a Brier score worse than a uniform guess; on rule-based romanization, \brierWorseRule{} of \brierCellsRule{} do (Table~\ref{tab:brtasks}).
 
 \paragraph{One temperature fixes most of it on Bengali script, less on romanized text.}
-A temperature fitted on Bengali development data lowered ECE on Bengali test items in all \tsLowered{} system-task cells where it was fitted.
+A temperature fitted on Bengali development data lowered ECE on Bengali test items in all \tsLowered{} system-task cells where it was fitted. These are the \tsSystems{} systems on three tasks, \tsPossible{} cells, less \tsMissing, which it cannot take.
 Averaged over the \tsSystems{} systems, ECE falls from \eceMeanRawBn{} to \eceMeanTsBn{} on Bengali script and from \eceMeanRawRule{} to \eceMeanTsRule{} on rule-based romanization.
 After scaling, ECE remains higher on romanized text than on Bengali script for \tsRomHigher{} of the \tsRomSystems{} systems; \tsRomExc{} is the exception.
 The risk--coverage curves (Figure~\ref{fig:rc}) show that confidence still ranks answers within each condition, but rule-based romanization lowers accuracy at every coverage level.
@@ -355,7 +365,7 @@ Native-speaker romanization keeps the Bengali answer more often than rule-based 
 \midrule
 Native-speaker romanization keeps it more often than natural-style & unadjusted intervals exclude zero for \dakNsBeatsNat{} of \dakSystems{} & a tuned romanizer closes little of the gap \\
 Jev leads the closest open system & unadjusted paired intervals exclude zero on \jevSepTasks{} only & separable on \jevSepN{} of 5 tasks \\
-Ranking is similar under both spellings & Kendall $\tau=\dakTauRule$ over \dakNTau{} systems; no interval & rule-based text ranks systems fairly \\
+Ranking is similar under both spellings & Kendall $\tau=\dakTauRule$ over \dakNTau{} systems; no interval & rule-based text preserves a broadly similar ranking \\
 SentNoB results do not depend on the train-test overlap & sensitivity check on SentNoB only; macro-F1 moves at most \snMaxShift{} points & scope: one task \\
 \midrule
 Rule-based romanization lowers accuracy & observed on every system-task pair; no interval & large, consistent \\
@@ -368,7 +378,7 @@ Option order moves the encoders & observed; three rotations & descriptive \\
 
 \paragraph{What tool-made romanization can and cannot tell.}
 Rule-based romanization ranked the systems almost as native speakers' spelling did, but it moved their answers further.
-For the systems and sentences tested, a tool-made test set is therefore a reasonable way to rank systems and a poor way to estimate how much their answers move on real Banglish.
+For the systems and sentences tested, a tool-made test set therefore preserved a broadly similar ranking of the systems but overstated how much their answers move on Banglish written by people.
 I did not measure whether it also overstates the loss in accuracy, which would need labelled sentences romanized by native speakers.
 Why the native speakers' spelling is easier is untested.
 One possible reason is visible in Box~1: people keep English loan words in English spelling (``candy crush'', ``game''), the form models have likely seen in web text, while the rule-based romanizer respells them (``kyandi krash'', ``gem'').
